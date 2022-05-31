@@ -1,0 +1,258 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to Computers and Programming</title>
+  <metadata>
+  <md:content-id>m27277</md:content-id><md:title>Introduction to Computers and Programming</md:title>
+  <md:abstract>This chapter discusses what computers are, how they work and how they are programmed. This chapter also includes an introduction to problem solving and program development.</md:abstract>
+  <md:uuid>0397130d-0b0a-4a8f-a1c7-4547c68670e8</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-803755378301">
+      <title>Hardware and Software</title>
+      <para id="id38176052">A <emphasis>computer</emphasis> is a device capable of performing computations and making logical decisions at speeds millions and even billions of times faster than human beings can. For example, many of today’s personal computers can perform hundreds of millions of additions per second.</para>
+      <para id="id41463590">Computers process data under the control of sets of instructions called <emphasis>computer programs</emphasis>. These computer programs guide the computer through orderly sets of actions specified by people called computer programmers.</para>
+      <para id="id41295639">A computer is comprised of various devices (such as the keyboard, screen, “mouse”, disks, memory, CD-ROM and processing units) that are referred to as <emphasis>hardware</emphasis>. The computer programs that run on a computer are referred to as <emphasis>software</emphasis>.</para>
+      <section id="id-753462756963">
+        <title>Computer Hardware</title>
+        <para id="id36127903">Almost every computer may be seen as being divided into six logical units. Figure 1 illustrates the main computer components.</para>
+        <section id="id-949981397446">
+          <title>Input Unit</title>
+          <para id="id40661677">This unit obtains information from various input devices and places this information at the disposal of the other units so that the information may be processed. The information is entered into computers today through keyboards and mouse devices. </para>
+        </section>
+        <section id="id-551609325772">
+          <title>Output Unit</title>
+          <para id="id37964905">This unit takes information that has been processed by the computer and places it on various output devices to make information available for use outside the computer. Most output from computer today is displayed on screens, printed on paper, or used to control other devices.</para>
+        </section>
+        <section id="id-305393307728">
+          <title>Memory Unit</title>
+          <para id="id32798240">The memory unit stores information. Each computer contains memory of two main types: <emphasis>RAM</emphasis> and <emphasis>ROM</emphasis>.</para>
+          <para id="id40899014"><emphasis>RAM</emphasis> (random access memory) is volatile. Your program and data are stored in RAM when you are using the computer.</para>
+          <figure id="id40724352"><media id="id11402263" alt=""><image src="../../media/graphics1-52d6.png" mime-type="image/png" height="391" width="505"/></media>
+          <caption> Basic hardware units of a computer</caption></figure>
+          <para id="id41562776"><emphasis>ROM</emphasis> (read only memory) contains fundamental instructions that cannot be lost or changed by the user. ROM is non-volatile.</para>
+        </section>
+        <section id="id-808682571958">
+          <title>Arithmetic and Logic Unit (ALU)</title>
+          <para id="id41283070">The ALU performs all the arithmetic and logic operations. Ex: addition, subtraction, comparison, etc.</para>
+        </section>
+        <section id="id-809051257092">
+          <title>Central Processing Unit (CPU)</title>
+          <para id="id36487401">The unit supervises the overall operation of the computer. The CPU tells the input unit when information should be read into the memory unit, tell the ALU when information from the memory should be used in calculations and tells the output unit when to send information from the memory unit to certain output devices.</para>
+        </section>
+        <section id="id-434223450155">
+          <title>Secondary Storage</title>
+          <para id="id41489256">Secondary storage devices are used to be permanent storage area for programs and data.</para>
+          <para id="id38838773">Virtually all secondary storage is now done on magnetic tapes, magnetic disks and CD-ROMs.</para>
+          <para id="id41293972">A magnetic hard disk consists of either a single rigid platter or several platters that spin together on a common spindle. A movable access arm positions the read and write mechanisms over, but not quite touching, the recordable surfaces. Such a configuration is shown in Figure 2.</para>
+          <figure id="id41111380"><media id="id15525409" alt=""><image src="../../media/graphics2-4e0c.png" mime-type="image/png" height="283" width="367"/></media>
+                    <caption>The internal structure of a magnetic hard disk drive</caption></figure>
+        </section>
+      </section>
+      <section id="id-327370937125">
+        <title>Computer Software</title>
+        <para id="id41109162">A <emphasis>computer program</emphasis> is a set of instructions used to operate a computer to produce a specific result.</para>
+        <para id="id41572144">Another term for a program or a set of programs is <emphasis>software</emphasis>, and we use both terms interchangeably throughout the text.</para>
+        <para id="id39923000">Writing computer programs is called <emphasis>computer programming</emphasis>.</para>
+        <para id="id40510617">The languages used to create computer programs are called <emphasis>programming languages</emphasis>.</para>
+        <para id="id41167230">To understand C++ programming, it is helpful to know a little background about how current programming languages evolved.</para>
+        <section id="id-578648055732">
+          <title>Machine and Assembly Languages</title>
+          <para id="id40596802"><emphasis>Machine languages</emphasis> are the lowest level of computer languages. Programs written in machine language consist of entirely of 1s and 0s.</para>
+          <para id="id40862214">Programs in machine language can control directly to the computer’s hardware.</para>
+          <para id="id37723018">00101010 000000000001 000000000010</para>
+          <para id="id41488813">10011001 000000000010 000000000011</para>
+          <para id="id41295634">A machine language instruction consists of two parts: an instruction part and an address part.</para>
+          <para id="id41126929">The <emphasis>instruction part</emphasis> (opcode) is the leftmost group of bits in the instruction and tells the computer the operation to be performed.</para>
+          <para id="id41190366">The <emphasis>address part</emphasis> specifies the memory address of the data to be used in the instruction.</para>
+          <para id="id40950384"><emphasis>Assembly languages </emphasis>perform the same tasks as machine languages, but use symbolic names for opcodes and operands instead of 1s and 0s.</para>
+          <para id="id41196353">LOAD BASEPAY</para>
+          <para id="id41623558">ADD OVERPAY</para>
+          <para id="id41623562">STORE GROSSPAY</para>
+          <para id="id33786152">Since computers can only execute machine language programs, an assembly language program must be translated into a machine language program before it can be executed on a computer.</para>
+          <figure id="id40860263"><media id="id16199580" alt=""><image src="../../media/graphics3-34eb.png" mime-type="image/png" height="107" width="453"/></media>
+          <caption> Assembly translation</caption></figure>
+          <para id="id41907802">Machine languages and assembly languages are called low-level languages since they are closest to computer hardware.</para>
+        </section>
+        <section id="id-592886343871">
+          <title>High-level Programming Languages</title>
+          <para id="id40996382">High-level programming languages create computer programs using instructions that much easier to understand than machine or assembly language instructions.</para>
+          <para id="id41446616">Programs written in a high-level language must be translated into a low level language using a program called a <emphasis>compiler</emphasis>.</para>
+          <para id="id40092399">A compiler translates programming code into a low-level format.</para>
+          <para id="id41050829">High-level languages allow programmers to write instructions that look like every English sentences and commonly used mathematical notations.</para>
+          <para id="id36937483">Each line in a high-level language program is called a <emphasis>statement</emphasis>.</para>
+          <para id="id40354761">Ex: Result = (First + Second)*Third.</para>
+          <para id="id41681521">Once a program is written in a high-level language, it must also be translated into the machine language of the computer on which it will be run. This translation can be accomplished in two ways.</para>
+          <para id="id38928468">When each statement in a high-level source program is translated individually and executed immediately upon translation, the programming language used is called an <emphasis>interpreted language</emphasis>, and the program doing the translation is called an <emphasis>interpreter</emphasis>.</para>
+          <para id="id41434758">When all of the statements in a high-level source program are translated as a complete unit before any one statement is executed, the programming language used is called is called a <emphasis>compiled language</emphasis>. In this case, the program doing the translation is called a <emphasis>compiler</emphasis>.</para>
+        </section>
+        <section id="id-797358448543">
+          <title>Application and System Software</title>
+          <para id="id37019648">Two types of computer programs are: application software and system software.</para>
+          <para id="id39871840"><emphasis>Application software</emphasis> consists of those programs written to perform particular tasks required by the users.</para>
+          <para id="id40770126"><emphasis>System software</emphasis> is the collection of programs that must be available to any computer system for it to operate.</para>
+          <para id="id40093682">The most important system software is the <emphasis>operating system</emphasis>. Examples of some well-known operating systems include MS-DOS, UNIX, and MS WINDOWS. Many operating systems allow user to run multiple programs. Such operating systems are called <emphasis>multitasking systems</emphasis>.</para>
+          <para id="id40340396">Beside operating systems, language translators are also system softwares.</para>
+        </section>
+      </section>
+    </section>
+    <section id="id-126099151623">
+      <title>High-Level Programming Languages</title>
+      <para id="id35600434">Because of the difficulty of working with low-level languages, high-level languages were developed to make it easier to write computer programs. High level programming languages create computer programs using instructions that are much easier to understand than machine or assembly language code because you can use words that more clearly describe the task being performed. Examples of high-level languages include FORTRAN, COBOL, BASIC, PASCAL, C, C++ and JAVA.</para>
+      <para id="id41572667">C and C++ are two separate, but related programming languages. In the 1970s, at Bell Laboratories, Dennis Ritchie and Brian Kernighan designed the C programming language. In 1985, at Bell Laboratories, Bjarne Stroutrup created C++ based on the C language. C++ is an extension of C that adds object-oriented programming capabilities.</para>
+      <section id="id-570643059556">
+        <title>What is Syntax?</title>
+        <para id="id41471471">A programming language’s <emphasis>syntax</emphasis> is the set of rules for writing grammatically correct language statements. In practice this means a C statement with correct syntax has a proper form specified for the compiler. As such, the compiler accepts the statement and does not generate an error message.</para>
+      </section>
+      <section id="id-317561924545">
+        <title>The C Programming Language</title>
+        <para id="id41276517">C was used exclusively on UNIX and on mini-computers. During the 1980s, C compilers were written for other platforms, including PCs.</para>
+        <para id="id41321262">To provide a level of standardization for C language, in 1989, ANSI created a standard version of C that is called ANSI C.</para>
+        <para id="id40772485">One main benefit of the C language is that it is much closer to assembly language other than other types of high-level programming languages.</para>
+        <para id="id40280968">The programs written in C often run much faster and more efficiently than programs written in other types of high-level programming language.</para>
+      </section>
+      <section id="id-30430404388">
+        <title>The C++ Programming Language</title>
+        <para id="id41173322">C++ is an extension of C that adds object-oriented programming capabilities. C++ is a popular programming language for writing graphical programs that run on Windows and Macintosh.</para>
+        <para id="id36853949">The standardized version of C++ is commonly referred to as ANSI C++.</para>
+        <para id="id41257888">The ANSI C and ANSI C++ standards define how C/C++ code can be written.</para>
+        <para id="id40759965">The ANSI standards also define <emphasis>run-time libraries</emphasis>, which contains useful functions, variables, constants, and other programming items that you can add to your programs.</para>
+        <para id="id41473235">The ANSI C++ run-time library is also called the Standard Template Library or Standard C++ Library.</para>
+      </section>
+      <section id="id-846014631496">
+        <title>Structured Programming and Object Oriented Programming</title>
+        <para id="id39562408">During the 1960s, many large software development effects encountered severe difficulties. Software schedules were typically late, costs greatly exceeded budgets and finished products were unreliable. People began to realize that software development was a far more complex activity than they had imagined. Research activity in the 1960s resulted in the evolution of structured programming – a discipline approach to writing programs that are clearer than unstructured programs, easier to test and debug and easier to modify. Chapter 5 discusses the principles of structured programming. Chapters 2 through 6 develop many structured programs.</para>
+        <para id="id41311517">One of the more tangible results of this research was the development of the Pascal programming language by Niklaus Wirth in 1971. Pascal was designed for teaching structured programming in academic environments and rapidly became the preferred programming languages in most universities. </para>
+        <para id="id40948294">In the 1980s, there is a revolution brewing in the software community: <emphasis>object- oriented programming</emphasis>. Objects are essentially reusable software components that model items in the real world. Software developers are discovering that using a modular, object-oriented design and implementation approach can make software development groups much more productive than with previous popular programming techniques such as structured programming.</para>
+        <para id="id39346422">Object-oriented programming refers to the creation of reusable software objects that can be easily incorporated into another program. An <emphasis>object</emphasis> is programming code and data that can be treated as an individual unit or component. <emphasis>Data</emphasis> refers to information contained within variables, constants, or other types of storage structures. The procedures associated with an object are referred as <emphasis>functions</emphasis> or <emphasis>methods</emphasis>. Variables that are associated with an object are referred to as <emphasis>properties</emphasis> or <emphasis>attributes</emphasis>. Object-oriented programming allows programmers to use programming objects that they have written themselves or that have been written by others. </para>
+      </section>
+    </section>
+    <section id="id-371168805625">
+      <title>Problem Solution and Software Development</title>
+      <para id="id36841703">No matter what field of work you choose, you may have to solve problems. Many of these can be solved quickly and easily. Still others require considerable planning and forethought if the solution is to be appropriate and efficient. </para>
+      <para id="id40491712">Creating a program is no different because a program is a solution developed to solve a particular problem. As such, writing a program is almost the last step in a process of first determining what the problem is and the method that will be used to solve the problem.</para>
+      <para id="id40357808">One technique used by professional software developers for understanding the problem that is being solved and for creating an effective and appropriate software solution is called the software development procedure. The procedure consists of three overlapping phases</para>
+      <para id="id40596945">- Development and Design</para>
+      <para id="id40974617">- Documentation</para>
+      <para id="id38119133">- Maintenance</para>
+      <para id="id40168407">As a discipline, software engineering is concerned with creating readable, efficient, reliable, and maintainable programs and systems.</para>
+      <section id="id-677418201193">
+        <title>Phase I: Development and Design</title>
+        <para id="id40348114">The first phase consists of four steps:</para>
+        <section id="id-0935155779432">
+          <title>1. Analyze the problem</title>
+          <para id="id39550000">This step is required to ensure that the problem is clearly defined and understood. The person doing the analysis has to analyze the problem requirements in order to understand what the program must do, what outputs are required and what inputs are needed. Understanding the problem is very important. Do not start to solve the problem until you have understood clearly the problem.</para>
+        </section>
+        <section id="id-341763786807">
+          <title>2. Develop a Solution</title>
+          <para id="id41217223">Programming is all about solving problems. In this step, </para>
+          <para id="id41190358">you have to develop an algorithm to solve a given problem. <emphasis>Algorithm</emphasis> is a sequence of steps that describes how the data are to be processed to produce the desired outputs.</para>
+          <para id="id41281230">An algorithm should be (at least)</para>
+          <para id="id41132091">–complete (i.e. cover all the parts)</para>
+          <para id="id40738655">–unambiguous (no doubt about what it does)</para>
+          <para id="id35380587">–finite (it should finish)</para>
+        </section>
+        <section id="id-705202072994">
+          <title>3. Code the solution</title>
+          <para id="id41418333">This step consists of translating the algorithm into a computer program using a programming language.</para>
+        </section>
+        <section id="id-102666802491">
+          <title>4. Test and correct the program</title>
+          <para id="id40952070">This step requires testing of the completed computer program to ensure that it does, in fact, provide a solution to the problem. Any errors that are found during the tests must be corrected.</para>
+          <para id="id34714243">Figure below lists the relative amount of effort that is typically expended on each of these four development and design steps in large commercial programming projects. </para>
+          <figure id="id40351769"><media id="id15101230" alt=""><image src="../../media/graphics4-3446.png" mime-type="image/png" height="117" width="489"/></media>
+          <caption> Four development and design steps in commercial programming projects </caption></figure>
+        </section>
+      </section>
+      <section id="id-356394259456">
+        <title>Phase II: Documentation</title>
+        <para id="id40798550">Documentation requires collecting critical documents during the analysis, design, coding, and testing.</para>
+        <para id="id39448377">There are five documents for every program solution:</para>
+        <list id="id40357860" list-type="bulleted">
+          <item>Program description</item>
+          <item>Algorithm development and changes</item>
+          <item>Well-commented program listing</item>
+          <item>Sample test runs</item>
+          <item>User’s manual</item>
+        </list>
+      </section>
+      <section id="id-462432833574">
+        <title>Phase III: Maintenance</title>
+        <para id="id40753106">This phase is concerned with the ongoing correction of problems, revisions to meet changing needs and the addition of new features. Maintenance is often the major effort, and the longest lasting of the three phases. While development may take days or months, maintenance may continue for years or decades.</para>
+      </section>
+    </section>
+    <section id="id-701769164664">
+      <title>Algorithms</title>
+      <para id="id40410247">An algorithm is defined as a step-by-step sequence of instructions that describes how the data are to be processed to produce the desired outputs. In essence, an algorithm answers the question: “What method will you use to solve the problem?”</para>
+      <para id="id40713336">You can describe an algorithm by using flowchart symbols. By that way, you obtain a flowchart which is an outline of the basic structure or logic of the program.</para>
+      <section id="id-750419197486">
+        <title>Flowchart Symbols</title>
+        <para id="id40065271">To draw flowchart, we employ the symbols shown in the Figure below. </para>
+        <figure id="id41214247"><media id="id15050981" alt=""><image src="../../media/graphics5-5f4b.png" mime-type="image/png" height="416" width="347"/></media>
+<caption> Flowchart symbols</caption></figure>
+        <para id="id40523287">The meaning of each flowchart symbol is given as follows.</para>
+        <figure id="id41471208"><media id="id16027671" alt=""><image src="../../media/graphics6-e85a.png" mime-type="image/png" height="226" width="600"/></media>
+        <caption> Description of flowchart symbols</caption></figure>
+        <para id="id38943342">To illustrate an algorithm, we consider the simple program that computes the pay of a person. The flowchart for this program is given in the Figure below. </para>
+        <para id="id40376650">Note: Name, Hours and Pay are <emphasis>variables</emphasis> in the program.</para>
+        
+        <figure id="id40489502"><media id="id8719669" alt=""><image src="../../media/graphics7-6c24.png" mime-type="image/png" height="423" width="231"/></media>
+        <caption> A sample flowchart</caption></figure>
+      </section>
+      <section id="id-339723936142">
+        <title>Algorithms in pseudo-code</title>
+        <para id="id41111377">You also can use English-like phases to describe an algorithm. In this case, the description is called pseudocode. Pseudocode is an artificial and informal language that helps programmers develop algorithms. Pseudocode has some ways to represent sequence, decision and repetition in algorithms. A carefully prepared pseudocode can be converted easily to a corresponding C++ program. </para>
+        <para id="id41609068">Example: The following set of instructions forms a detailed algorithm in pseudocode for calculating the payment of person.</para>
+        <para id="id39562400">
+          <code>Input the three values into the variables Name, Hours, Rate.</code>
+        </para>
+        <para id="id41644535">
+          <code>Calculate Pay = Hours </code>
+          <code></code>
+          <code> Rate.</code>
+        </para>
+        <para id="id39550534">
+          <code>Display Name and Pay.</code>
+        </para>
+      </section>
+      <section id="id-683317673086">
+        <title>Loops in Algorithms</title>
+        <para id="id39552104">Many problems require repetition capability, in which the same calculation or sequence of instructions is repeated, over and over, using different sets of data.</para>
+        <para id="id36121173">Example 1.1. Write a program to do the task: Print a list of the numbers from 4 to 9, next to each number, print the square of the number.</para>
+        <para id="id38928744">The flowchart for the algorithm that solves this problem is given in Figure below. You will see in this figure the flowchart symbol for decision and the flowline that can connect backward to represent a loop.</para>
+        <figure id="id41280012"><media id="id13104676" alt=""><image src="../../media/graphics8-78c8.png" mime-type="image/png" height="507" width="334"/></media>
+        <caption> Flowcharts of example 1.1 </caption></figure>
+        <para id="id35512912">Note:</para>
+        <list id="id39134337" list-type="enumerated">
+          <item>In the flowchart, the statement </item>
+        </list>
+        <para id="id40948330">NUM = NUM + 1</para>
+        <para id="id41470738">means “old value of NUM + 1 becomes new value of NUM ”.</para>
+        <para id="id39850477">The above algorithm can be described in pseudocode as follows:</para>
+        <para id="id39850483">
+          <code>NUM = 4</code>
+        </para>
+        <para id="id41544190">
+          <code>do </code>
+        </para>
+        <para id="id40937682">
+          <code>SQNUM = NUM*NUM</code>
+        </para>
+        <para id="id41047873">
+          <code>Print NUM, SQNUM</code>
+        </para>
+        <para id="id41288696">
+          <code>NUM = NUM + 1</code>
+        </para>
+        <para id="id36276452">
+          <code>while (NUM &lt;= 9)</code>
+        </para>
+        <para id="id41180699">You can compare the pseudo-code and the flowchart in Figure above to understand the meaning of the <emphasis>do… while</emphasis> construct used in the pseudo-code.</para>
+      </section>
+      <section id="id-519319895815">
+        <title>Flowchart versus pseudocode</title>
+        <para id="id40352087">Since flowcharts are inconvenient to revise, they have fallen out of favor by programmers. Nowadays, the use of pseudocode has gained increasing acceptance.</para>
+        <para id="id39847965">Only after an algorithm has been selected and the programmer understands the steps required can the algorithm be written using computer-language statements. The writing of an algorithm using computer-language statements is called <emphasis>coding</emphasis> the algorithm, which is the third step in our program development process.</para>
+      </section>
+    </section>
+  </content>
+</document>

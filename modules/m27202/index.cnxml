@@ -1,0 +1,102 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Assignments</title>
+  <metadata>
+  <md:content-id>m27202</md:content-id><md:title>Assignments</md:title>
+  <md:abstract/>
+  <md:uuid>c8641082-24d1-473b-ad81-f44792edbcc4</md:uuid>
+</metadata>
+
+<content>
+    <para id="id23829669"><emphasis>1)</emphasis> Here is a challenging problem for those who know a little calculus. The Newton-Raphson method can be used to find the roots of any equation y(x) = 0. </para>
+    <figure id="id38473723"><media id="id1164720635355" alt=""><image src="../../media/graphics1-f8f9.png" mime-type="image/png" height="157" width="587"/></media>
+    <caption> Newton-Raphson method</caption></figure>
+    <list id="id21413592" list-type="enumerated"><item>Using the Newton-Raphson method, find the two roots of the equation 3x^2 + 2x –2 = 0. (Hint: Stop the loop when the difference between the two approximations is less than 0.00001.)</item>
+      <item>Extend the program written for a) so that it finds the roots of any function y(x) = 0, when the function for y(x) and the derivative of y(x) are placed in the code.</item>
+    </list>
+    <para id="id35527352"><emphasis>2)</emphasis> a. See the definition of determinant of a matrix as below.</para>
+    <figure id="id20212640"><media id="id2601124" alt=""><image src="../../media/graphics2-ab7f.png" mime-type="image/png" height="400" width="442"/></media>
+        <caption> Determinant of matrix</caption></figure>
+    <para id="id36377823">Using this information, write and test two functions, named det2() and det3(). The det2() function should accept the four coefficients of a 2 X 2 matrix and return its determinant. The det3() function should accept the nine coefficients of a 3 X 3 matrix and return its determinant by calling det2() to calculate the required 2 X 2 determinants.</para>
+    <para id="id20701679">b. Write and run a C++ program that accepts the nine coefficients of a 3 X 3 matrix in one main() function, passes these coefficients to det3() to calculate its determinant and then displays the calculated determinant. </para>
+    <para id="id35641527"><emphasis>3)</emphasis> Your professor has asked you to write a C++ program that can be used to determine grades at the end of the semester. For each student, who is identified by an integer number between 1 and 60, four examination grades must be kept. Additionally, two final grade averages must be computed. The first grade average is simply the average of all four grades. The second grade average is computed by weighting the four grades as follows: the first grade gets a weight of 0.2, the second grade gets a weight of 0.3,the third grade a weight of 0.3 and the fourth grade a weight of 0.2; that is, the final grade is computed as:</para>
+    <para id="id34181852">0.2* grade1 + 0.3*grade2 + 0.3*grade3 + 0.2*grade4</para>
+    <para id="id23855969">Using this information, you are to construct a 60 X 6 two-dimensional array, in which the the first four columns for the grades, and the last two columns for the computed final grades. The output of the program should be a display of the data in the completed array.</para>
+    <para id="id21291059">For test purposes, the professor has provided the following data:</para>
+    <figure id="id23357111"><media id="id1164716935905" alt=""><image src="../../media/graphics3-c94e.png" mime-type="image/png" height="179" width="465"/></media>
+        <caption> Test data </caption></figure>
+    <para id="id36661347"><emphasis>4)</emphasis> A magic square is an n X n matrix in which each of the integer values from 1 to n*n appears exactly once and all column sums, row sums and diagonal sums are equal. For example, the following is a 3 X 3 magic square in which each row, each column, and each diagonal adds up to 15.</para>
+    <figure id="id38963550"><media id="id3213367" alt=""><image src="../../media/graphics4-f7d1.png" mime-type="image/png" height="89" width="124"/></media>
+        <caption> Magic matrix</caption></figure>
+    <list id="id22317677" list-type="enumerated"><item>Write a function that accepts a two-dimensional array and integer n and checks if the n X n matrix stored in the array is a magic square. The function should return true if it is a magic square and false if it isn’t. And also design it to return the “magic sum” of the magic square (sum of each row = sum of each column = sum of each diagonal).</item>
+      <item>Write the driver program that:<list id="id24283719" list-type="bulleted"><item>Let you enter the elements of a matrix.</item><item>Calls a matrix-printer function to display it.</item><item>Calls your magic-square-checker function to check if it is a magic square and displays an appropriate message (including the magic sum if it is a magic square.)</item></list></item>
+    </list>
+    <para id="id36659581"><emphasis>5)</emphasis> A prime integer is any integer that is evenly divisible only by itself and 1. The Sieve of Eratosthenes is a method of finding prime numbers. It operates as follows:</para>
+    <list id="id37266432" list-type="enumerated">
+      <item>Create an array with all elements initialized to 1 (true). Array elements with prime subscripts will remain 1. All other array elements will eventually be set to zero.</item>
+      <item>Starting with array subscript 2 (subscript 1 must be prime), every time an array element is found whose value is 1, loop through the remainder of the array and set to zero every element whose subscript is a multiple of the subscript for the element with value 1. For array subscript 2, all elements beyond 2 in the array that are multiple of 2 will be set to zero (subscript 4, 6, 8, 10,etc.); for array subscript 3, all elements beyond 3 in the array that are multiple of 3 will be set to zero (subscripts 6, 9, 12, 15, etc.); and so on.</item>
+    </list>
+    <para id="id3321644">When this process is complete, the array elements that are still set to one indicate that the subscript is a prime number. These subscripts can then be printed. </para>
+    <para id="id22371902">Write and run a C++ program that uses an array of 1000 elements to determine and print the prime numbers between 1 and 999. Ignore element 0 of the array.</para>
+    <para id="id19502566"><emphasis>6)</emphasis> The Colossus Airlines fleet consists of one plane with a seating capacity of 12. It makes one flight daily. Write a seating reservation program with the following features:</para>
+    <para id="id22486401">a. The program uses an array of 12 structures. Each structure should hold a seat identification number, a marker that indicates whether the seat is assigned and the name of the seat holder. Assume that the name of a customer is not more than 20 characters long.</para>
+    <para id="id23568069">b. The program displays the following menu:</para>
+    <list id="id21652881" list-type="enumerated">
+      <item>Show the number of empty seats</item>
+      <item>Show the list of empty seats.</item>
+    </list>
+    <list id="id36378231" list-type="enumerated"><item>Show the list of customers together with their seat numbers in the order of the seat numbers</item>
+
+      <item>Assign a customer to a seat</item>
+      <item>Remove a seat assignment</item>
+      <item>Quit</item></list>
+    
+    <para id="element-309">c. The program successfully executes the promises of its menu. Choices (4) and (5) need additional input from the user, which is done inside the respective functions.</para><para id="element-266">d. After executing a particular function, the program shows the menu again, except for choice (6).</para>
+    <para id="id36620350"><emphasis>7)</emphasis> In this problem, a customer calls in an order for bicycles, giving his or her name, address, number of bicycles desired, and the kind of bicycle. For now, all bicycles on one order must be the same kind. Mountain bikes cost $269.95 each and street bikes $149.50. The total bill is to be calculated for the order. Additionally, based on the user’s knowledge of the customer, the customer is classified as either a good or bad credit risk. Based on the input data, the program is to prepare shipping instructions listing the customer’s name, address, number and type of bikes, and the total amount due. Based on the creditworthiness of the customer, the program must indicate on the shipping instructions if this is a C.O.D. (cash on delivery) shipment or whether the customer will be billed separately.</para>
+    <para id="id20949211">The input and output requirements of this problem are relatively simple. On the input side, the items that must be obtained are:</para>
+    <list id="id20212636" list-type="enumerated">
+      <item>Customer’s name</item>
+      <item>Customer’s address</item>
+      <item>Number of bicycles ordered</item>
+      <item>Type of bicycle (mountain or street)</item>
+      <item>Creditworthiness of the customer (good or bad)</item>
+    </list>
+    <para id="id37114007">For output, a set of shipping instructions is to be generated. The instructions must contain the first four input items, the total cost of the order, and the type of billing. The total cost is obtained as the number of bicycles ordered (input item 3) times the appropriate cost per bicycle, and the type of billing is determined by the creditworthiness of the customer (input item 5). If the customer is creditworthy, a bill be sent; otherwise requires cash payment on delivery. The customer record layout is as follows.</para>
+    <figure id="id35350634"><media id="id1164717377857" alt=""><image src="../../media/graphics5-41fe.png" mime-type="image/png" height="188" width="451"/></media>
+        <caption> Layout of result</caption></figure>
+    <para id="id21062662"><emphasis>8)</emphasis> The Hanoi Tower is a puzzle consisting of a number of disks placed on three columns.</para>
+    <para id="id23668631">The disks all have different diameters and holes in the middle so they will fit over the columns (see Figure 1). All the disks start out on column A. The object of the puzzle is to transfer all the disks from column A to column C. Only one disk can be moved at a time, and no disk can be placed on a disk that is smaller that itself.</para>
+    <para id="id3469790">The solution to this puzzle is easily expressed as a recursive procedure where each n disk solution is defined in terms of an n-1 disk solution. To see how this works, first consider a one-disk puzzle. Clearly, this has a simple solution, where we move the disk from column A to column C.</para>
+    <para id="id25738365">Now consider the n-disk problem. Moving n disks can be viewed in terms of moving only n –1 disks (hence, the recursion) as follows:</para>
+    <para id="id33335994">a) Move n-1 disks from column A to column B, using column C as a temporary holding area.</para>
+    <para id="id34696271">b) Move the last disk (the largest) from A to from C.</para>
+    <para id="id35351405">c) Move the n-1 disks from column B to column C, using column A as a temporary holding area.</para>
+    <para id="id19370020">The process ends when the last task involving n =1 disk, i.e., the base case. This is accomplished by trivially moving the disk.</para>
+    <para id="id33369312">Write a program to solve the Hanoi Tower puzzle. Use a recursive function with four parameters:</para>
+    <para id="id37059334">a) The number of disks to be moved</para>
+    <para id="id37480861">b) The column on which these disks are initially threaded.</para>
+    <para id="id37276205">c) The column to which this stack of disks is to be moved</para>
+    <para id="id34478834">d) The column to be used as a temporary holding area.</para>
+    <para id="id23819894">Your program should print the precise instructions it will take to move the disks from a starting column to the destination column. For example, to move a stack of three disks from column A to column C, your program should print the following series of moves:</para>
+    <figure id="id23234256"><media id="id1164717180445" alt=""><image src="../../media/graphics6-3f39.png" mime-type="image/png" height="190" width="587"/></media>
+        <caption> Hanoi-Tower puzzle</caption></figure>
+    <para id="id38474961"><emphasis>9)</emphasis> a. Create a class named Fractions having two integer data members named for a fraction’s numerator and denominator. The class’s default constructor should provide both data members with default values of 1 if no explicit user initialization is provided. Additionally, provide member functions for displaying an object’s data values. Also provide the class with the member functions that are capable of adding, subtracting, multiplying, and dividing two Fraction objects according to the following formulas:</para>
+    <para id="id37464476">Sum of two fractions: a/b + c/d = (ad +cb)/bd</para>
+    <para id="id36974467">Difference of two fractions: a/b – c/d = (ad – cb)/bd</para>
+    <para id="id21641130">Product of two fractions: (a/b)X (c/d) = ac/bd</para>
+    <para id="id34251498">Division of two fractions: (a/b)/(c/d) = ad/cb</para>
+    <para id="id34581918">b. Include the class written for a) in a working C++ program that tests each of the class’s member functions.</para>
+    <para id="id4253226"><emphasis>10)</emphasis> A stack is an ordered collection of data items in which access is possible only at one end, called the top of the stack with the following basic operations:</para>
+    <para id="id24206549">1. Push: add an element to the top of the stack.</para>
+    <para id="id38477838">2. Pop: remove and return the top element of the stack.</para>
+    <para id="id32803487">3. Check if the stack is empty</para>
+    <para id="id21424350">4. Check if the stack is full.</para>
+    <para id="id36300522">It would be nice to have a stack class, because we could then use it to easily develop some applications which need stack data structure.</para>
+    <para id="id4344790">a. For the moment, assume that we need to define an integer stack class. Since a stack must stores a collection of integers, we can use an integer array to model the stack and a “pointer” named Top to indicate the location of the top of the stack. The array should have a fixed size. So we can begin the declaration of the class by selection two data members:</para>
+    <list id="id20658263" list-type="bulleted"><item>Provide an integer array data member to hold the stack elements (the size of the array is a constant).</item>
+      <item>Provide an integer data member to indicate the top of the stack.As for the member functions of the stack class, we have to define 5 member functions: the constructor which creates an empty stack and four other member functions (push, pop, check if the stack is empty, check if the stack is full).</item>
+    </list>
+    <para id="element-480">b. After defining the stack class, write a main() function which does the following tasks:</para><list id="element-161" list-type="bulleted"><item>Creating one stack object.</item>
+	<item>Pushing into the stack object ten integer elements which take values from 1 to 10 with the increment of 1.</item>
+	<item>Popping one by one element from the stack object and displaying it out, repeating this action until the stack becomes empty.</item></list><para id="id4322164">c. Next, apply the stack data structure in solving the following problem: write a program that accepts a string from the user and prints the string backward. (Hint: Use a character stack)</para>
+  </content>
+</document>

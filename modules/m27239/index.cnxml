@@ -1,0 +1,1304 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Exercises</title>
+  <metadata>
+  <md:content-id>m27239</md:content-id><md:title>Exercises</md:title>
+  <md:abstract/>
+  <md:uuid>e55b7e75-d651-4d55-827f-f4f2acc59c08</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-633768076552">
+      <title>Exercise 1</title>
+      <para id="id39388602"><emphasis>1. </emphasis>Design an algorithm in flowchart to find the smallest number in a group of three real numbers.</para>
+      <para id="id38080614"><emphasis>2.</emphasis> Design an algorithm in flowchart to solve the quadratic equation: ax^2 + bx + c =0 with the inputs a, b, and c.</para>
+      <para id="id38080652"><emphasis>3.</emphasis> A set of linear equations:</para>
+      <para id="id37896448">aX + bY = c</para>
+      <para id="id37896456">dX + eY = f</para>
+      <para id="id37896462">can be solved using Cramer’s rule as:</para>
+      <para id="id37896471">X = (ce – bf)/(ae – bd)</para>
+      <para id="id37896478">Y = (af – cd)/(ae – bd)</para>
+      <para id="id37896486">Design an algorithm in flowchart to read in a, b, c, d, e and f and then solve for X and Y.</para>
+      <para id="id39205947"><emphasis>4.</emphasis> Design an algorithm in flowchart to read in a group of N numbers and compute the average of them, where N is also an input.</para>
+      <para id="id39205978"><emphasis>5.</emphasis> Design an algorithm in flowchart to read in a group of N numbers and compute the sum of them, where N is also an input.</para>
+    </section>
+    <section id="id-642814602376">
+      <title>Exercise 2</title>
+      <para id="id37662185"><emphasis>1.</emphasis> Read the following C++ program for understanding. Add some suitable declarations to complete the program and run it.</para>
+      <para id="id37662199">
+        <code>#&lt;include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id37662210">
+        <code>void main(){</code>
+      </para>
+      <para id="id37662221">
+        <code>...</code>
+      </para>
+      <para id="id41066718">
+        <code>units = 5; </code>
+      </para>
+      <para id="id41066726">
+        <code>price = 12.5;</code>
+      </para>
+      <para id="id41066733">
+        <code>idnumber = 12583;</code>
+      </para>
+      <para id="id41066741">
+        <code>cost = price*units;</code>
+      </para>
+      <para id="id41066748">
+        <code>cout &lt;&lt; idnumber &lt;&lt; “ “ &lt;&lt; units &lt;&lt; “ “ &lt;&lt; price &lt;&lt; “ “ &lt;&lt; cost &lt;&lt; endl;</code>
+      </para>
+      <para id="id41066765">
+        <code>tax = cost*0.06;</code>
+      </para>
+      <para id="id41066773">
+        <code>total = cost + tax;</code>
+      </para>
+      <para id="id40957517">
+        <code>cout &lt;&lt; tax &lt;&lt; “ “ &lt;&lt; total &lt;&lt; endl;</code>
+      </para>
+      <para id="id40957528">
+        <code>}</code>
+      </para>
+      <para id="id40957539"><emphasis>2.</emphasis> Write and run a program to print your first name on the first line, your middle name on the second line and your last name on the third line using only cout statement.</para>
+      <para id="id40957563"><emphasis>3.</emphasis> Write and run a program that performs the following steps:</para>
+      <list id="id40957576" list-type="bulleted">
+        <item>Assigning value to the radius r.</item>
+        <item>Calculating the circumference using the formula: C = 2*pi*r.</item>
+        <item>Displaying the circumference.</item>
+      </list>
+      <para id="id37507455"><emphasis>4.</emphasis> Given an initial deposit of money, denoted as P, in a bank that pays interest annually, the amount of money at a time N years later is given by the formula:</para>
+      <para id="id40896754">Amount = P*(1 + R)^N</para>
+      <para id="id40896765">where R is the interest rate as a decimal number (e.g., 6.5% is 0.065). Using this formula, design, write and run a program that determines the amount of money that will be available in 4 years if $10.000 is deposited in a bank that pays 7% interest annually.</para>
+      <para id="id40896785"><emphasis>5.</emphasis> Write and run a program that performs the following steps:</para>
+      <list id="id40896798" list-type="bulleted">
+        <item>Assigning value to a Fahrenheit temperature f.</item>
+        <item>Calculating the equivalent Celsius temperature C using the formula: </item>
+      </list>
+      <para id="id38112446">C = (5/9)(f –32).</para>
+      <list id="id38112454" list-type="bulleted">
+        <item>Displaying the Celsius temperature C.</item>
+      </list>
+    </section>
+    <section id="id-553613059363">
+      <title>Exercise 3</title>
+      <para id="id38112481"><emphasis>1.</emphasis> Write and run a program that performs the following steps:</para>
+      <list id="id38112494" list-type="bulleted">
+        <item>Reading the radius r from the keyboard.</item>
+        <item>Calculating the circumference using the formula: C = 2*pi*r.</item>
+        <item>Displaying the circumference C.</item>
+      </list>
+      <para id="id40831607"><emphasis>2.</emphasis> Write and run a program that performs the following steps:</para>
+      <list id="id40831620" list-type="bulleted">
+        <item>Reading a Fahrenheit temperature f from the keyboard.</item>
+        <item>Calculating the equivalent Celsius temperature C using the formula: </item>
+      </list>
+      <para id="id40160644">C = (5/9)(f –32).</para>
+      <list id="id40160651" list-type="bulleted">
+        <item>Displaying the Celsius temperature C.</item>
+      </list>
+      <para id="id40160671"><emphasis>3.</emphasis> Write and run a program that reads two integers through the keyboard and performs simple arithmetic operations (i.e., addition, subtraction, multiplication and division) and displays the results.</para>
+      <para id="id40160686"><emphasis>4.</emphasis> Write and run a program that reads a floating-point number through the keyboard and performs its square root and displays the result with 4 digits of precision to the right of the decimal point.</para>
+      <para id="id34756603"><emphasis>5.</emphasis> Given an initial deposit of money, denoted as P, in a bank that pays interest annually, the amount of money at a time N years later is given by the formula:</para>
+      <para id="id34756634">Amount = P*(1 + R)^N</para>
+      <para id="id34756648">where R is the interest rate as a decimal number (e.g., 6.5% is 0.065). Write and run a program that performs the following steps:</para>
+      <list id="id36684138" list-type="bulleted">
+        <item>Reading the values of P and R from the keyboard.</item>
+        <item>Calculating the amount of money that will be available in 5 years.</item>
+        <item>Displaying the result.</item>
+      </list>
+      <para id="id36684178"><emphasis>6.</emphasis> Write and run a program that reads the name, age, sex, height and weight of a student and displays with proper heading for each variable.</para>
+      <para id="id36684192"><emphasis>7.</emphasis> Write a program to accept a single character from the keyboard. Using <emphasis>cout</emphasis> statement to display the character or keystroke and its decimal, hexadecimal and octal values. Display in the following format:</para>
+      <figure id="id37896349">
+        <media id="id5088829" alt=""><image src="../../media/graphics1-151b.png" mime-type="image/png" height="52" width="473"/></media>
+      </figure>
+      <para id="id37896373"/>
+    </section>
+    <section id="id-0933235736111">
+      <title>Exercise 4</title>
+      <para id="id37896384">1. Write and run a program that reads a character and writes out a name corresponding to the character:</para>
+      <para id="id37896394">
+        <code>if the character is ‘F’ or ‘f’ then the name is ‘Frank’</code>
+      </para>
+      <para id="id37896404">
+        <code>if the character is ‘C’ or ‘c’ then the name is ‘Christine’</code>
+      </para>
+      <para id="id37896414">
+        <code>if the character is ‘A’ or ‘a’ then the name is ‘Amanda’</code>
+      </para>
+      <para id="id40625488">
+        <code>if the character is ‘B’ or ‘b’ then the name is ‘Bernard’</code>
+      </para>
+      <para id="id40625498">
+        <code>otherwise, the name is just the character.</code>
+      </para>
+      <para id="id40625505"><emphasis>2.</emphasis> Write and run a program that reads an angle (expressed in degrees) and states in which quadrant the given angle lies. An angle A is said to be in the </para>
+      <list id="id40625521" list-type="bulleted">
+        <item>first quadrant if it is in the range 0 &lt;= A &lt; 90</item>
+        <item>second quadrant if it is in the range 90 &lt;= A &lt; 180</item>
+        <item>third quadrant if it is in the range 180 &lt;= A &lt; 270</item>
+        <item>and fourth quadrant if it is in the range 270 &lt;= A &lt; 360.</item>
+      </list>
+      <para id="id40625552"><emphasis>3.</emphasis> Write and run a program that reads a month from the user and displays the number of days in that month.</para>
+      <para id="id37110464"><emphasis>4.</emphasis> Write and run a program that reads a numeric grade from a student and displays a corresponding character grade for that numeric grade. The program prints ‘A’ for exam grades greater than or equal to 90, ‘B’ for grades in the range 80 to 89, ‘C’ for grades in the range 70 to 79, ‘D’ for grades in the range 60 to 69 and ‘F’ for all other grades.</para>
+      <para id="id37110481"><emphasis>5.</emphasis> Write and run a program that reads a marriage code (one character) and writes out a message corresponding to the character:</para>
+      <para id="id37110491">
+        <code>if the character is ‘M’ or ‘m’ then the message is “Individual is married”</code>
+      </para>
+      <para id="id37110502">
+        <code>if the character is ‘D’ or ‘d’ then the message is “Individual is divorced”</code>
+      </para>
+      <para id="id37110512">
+        <code>if the character is ‘W’ or ‘w’ then the message is “Individual is widowed”</code>
+      </para>
+      <para id="id37110523">
+        <code>otherwise, the message is “An invalid code was entered”.</code>
+      </para>
+      <para id="id38942626">(Hint: use switch statement).</para>
+      <para id="id38942639"><emphasis>6.</emphasis> Chapter 4 contains the example program which can solve quadratic equations. Modify that program so that when the discriminant del is negative, the imaginary roots are calculated and displayed. For this case, the two roots of the equation are:</para>
+      <para id="id38942657">x1 = (-b)/(2a) + sqrt(-del)/(2a)i</para>
+      <para id="id38942666">x2 = (-b)/(2a) + sqrt(-del)/(2a)i</para>
+      <para id="id38942675">where i is the imaginary number symbol for the square root of –1. (Hint: Calculate the real and imaginary parts of each root separately).</para>
+      <para id="id38942689"><emphasis>7.</emphasis> Write and run a program that gives the user only three choices: convert from Fahrenheit to Celsius, convert from Celsius to Fahrenheit, or quit. If the third choice is selected, the program stops. If one of the first two choices is selected, the program should prompt the user for either a Fahrenheit or Celsius temperature, as appropriate, and then compute and display a corresponding temperature. Use the conversion formulas:</para>
+      <para id="id38946869">F = (9/5)C + 32</para>
+      <para id="id38946874">C = (5/9)(F-32)</para>
+      <para id="id38946880"><emphasis>8.</emphasis> Write a C++ program to calculate the square root and the reciprocal of a user-entered number. Before calculating the square root, you should validate that the number is not negative, and before calculating the reciprocal, check that the number is not zero.</para>
+    </section>
+    <section id="id-161595422436">
+      <title>Exercise 5</title>
+      <para id="id38946905"><emphasis>1.</emphasis> Write and run a program that reads a positive integer value for K and then computes K! = 1*2*3*…*(K-1)*K and displays the result out.</para>
+      <para id="id38946928"><emphasis>2.</emphasis> Write and run a program that computes x raised to the power n by repetitive multiplication. Then modify your program to calculate x raised to the power (-n).</para>
+      <para id="id38289508"><emphasis>3.</emphasis> Write and run a program to tabulate sin(x), cos(x) and tan(x) for x = 5, 10, 15,…,85 degrees. Notice that you have to convert x from degrees to radians before using standard functions sin(x), cos(x), tan(x).</para>
+      <para id="id38289534"><emphasis>4.</emphasis> Write and run a program to read a list of real numbers and then find the number of positive values and the number of negative ones among them. The number of entries is also entered by the user.</para>
+      <para id="id38289549"><emphasis>5.</emphasis> Write and run a program to compute the sum of square of the integers from 1 to N, where N is an input parameter.</para>
+      <para id="id39924326"><emphasis>6.</emphasis> Write and run a program to compute the value of pi, using the series for approximating:</para>
+      <para id="id39924347">pi/4 = 1-1/3+1/5-1/7+ ... + (-1)^n/(2*n+1)</para>
+      <para id="id39924354">Hint: Use a <emphasis>while</emphasis> loop that terminates when the difference between two successive approximations is less than 1.0E-6.</para>
+      <para id="id39924375"><emphasis>7.</emphasis> The value of Euler’s number, e, can be approximated using the formula:</para>
+      <para id="id36529974">e = 1 + 1/1! +1/2! + 1/3! +1/4! + … +1/n! </para>
+      <para id="id36529980">Using this formula, write a program that approximates the value of e using a <emphasis>while</emphasis> loop that terminates when the difference between two successive approximations is less than 1.0E-6.</para>
+      <para id="id36530011"><emphasis>8.</emphasis> The Fibonacci sequence is 0, 1, 1, 2, 3, 5, 8, 13,…, where the first two terms are 0 and 1, and each term thereafter is the sum of the two preceding terms, that is, Fib(n) = Fib(n-1) + Fib(n-2). Using this information, write a program that calculates the nth number in a Fibonacci sequence, where n is entered into the program by the user. </para>
+      <para id="id36530048"><emphasis>9.</emphasis> Write and run a program that inputs an array of N real numbers, and then computes the average value of the array elements. N should be an input parameter.</para>
+      <para id="id37290526"><emphasis>10.</emphasis> Write and run a program that inputs an array of N real numbers, and then finds the largest element in the array. N should be an input parameter.</para>
+      <para id="id37290556"><emphasis>11.</emphasis> Write and run a program that inputs an integer matrix of order n and transposes it and then prints it out. Transposing a square matrix means:</para>
+      <para id="id37290570">
+        <code>a(i,j) &lt;==&gt; a(j,i) for all i, j.</code>
+      </para>
+      <para id="id37618520"><emphasis>12.</emphasis> The Fibonacci sequence is 0, 1, 1, 2, 3, 5, 8, 13,…, where the first two terms are 0 and 1, and each term thereafter is the sum of the two preceding terms. Write a program that computes and stores the Fibonacci sequence in an integer array F, such that F[i] will store the ith number in a Fibonacci sequence. The size of the array is an input parameter which is entered by the user.</para>
+      <para id="id37618561"><emphasis>13. </emphasis>Write a program that stores the following hourly rates in an array name hourly_rates: 9.5, 6.4, 12.5, 5.5, 10.5. Your program should also create two arrays named working_hours and wages, each capaple of storing five double-precision numbers. Using a for loop and a cin statement, have your program accept five user-input numbers into working_hours array when the program is run. Your program should store the product of the corresponding values in the hourly_rates and working_hours arrays in the wages array (for example, wages[1] = hourly_rate[1]*working_hours[1]) and display the output as a table consisting of three columns.</para>
+      <para id="id40588366"><emphasis>14.</emphasis> Write and run a program that reads three strings and prints them out in an alphabetical order. (Hint: Use the strcmp() function).</para>
+      <para id="id38014256"><emphasis>15.</emphasis> Modify the program in Section <emphasis>Array of Structures</emphasis> to compute and display the average rate of the five first employees. </para>
+      <para id="id38014278"><emphasis>16. </emphasis>The following program reads a set of name, roll number, sex, height and weight of the students from the keyboard using a structure within an array.</para>
+      <para id="id38014293">
+        <code>#include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id38014301">
+        <code>#include&lt;string.h&gt;</code>
+      </para>
+      <para id="id38014310">
+        <code>const int MAX = 100</code>
+      </para>
+      <para id="id38014317">
+        <code>struct student{</code>
+      </para>
+      <para id="id38014325">
+        <code>char name[20];</code>
+      </para>
+      <para id="id33978778">
+        <code>long int rollno;</code>
+      </para>
+      <para id="id33978787">
+        <code>char sex;</code>
+      </para>
+      <para id="id33978796">
+        <code>float height;</code>
+      </para>
+      <para id="id33978805">
+        <code>float weight;</code>
+      </para>
+      <para id="id33978813">
+        <code>};</code>
+      </para>
+      <para id="id33978821">
+        <code>void main(){</code>
+      </para>
+      <para id="id33978829">
+        <code>student cls[MAX];</code>
+      </para>
+      <para id="id33978840">
+        <code>int i,n;</code>
+      </para>
+      <para id="id33978851">
+        <code>cout &lt;&lt; “ How many names ? \n“;</code>
+      </para>
+      <para id="id41058449">
+        <code>cin &gt;&gt; n;</code>
+      </para>
+      <para id="id41058460">
+        <code>for( i = 0; i &lt;= n-1; ++i){</code>
+      </para>
+      <para id="id41058470">
+        <code>cout &lt;&lt; “record = “&lt;&lt; i+1 &lt;&lt; endl;</code>
+      </para>
+      <para id="id41058480">
+        <code>cout &lt;&lt; “name : “; cin&gt;&gt; cls[i].name;</code>
+      </para>
+      <para id="id41058490">
+        <code>cout &lt;&lt; “rollno : “; cin&gt;&gt; cls[i].rollno;</code>
+      </para>
+      <para id="id41058500">
+        <code>cout &lt;&lt; “sex : “; cin&gt;&gt; cls[i].sex;</code>
+      </para>
+      <para id="id41058510">
+        <code>cout &lt;&lt; “height : “; cin&gt;&gt; cls[i].height;</code>
+      </para>
+      <para id="id41058520">
+        <code>cout &lt;&lt; “weight : “; cin&gt;&gt; cls[i].weight;</code>
+      </para>
+      <para id="id40897395">
+        <code>cout &gt;&gt; endl;</code>
+      </para>
+      <para id="id40897404">
+        <code>}</code>
+      </para>
+      <para id="id40897415">
+        <code>……</code>
+      </para>
+      <para id="id40897423">
+        <code>}</code>
+      </para>
+      <para id="id40897431">Include into the above program the code that performs two tasks: </para>
+      <para id="id40897436">a. displaying data of n students in the following format:</para>
+      <figure id="id40897458">
+        <media id="id6933056" alt=""><image src="../../media/graphics2-b3bd.png" mime-type="image/png" height="55" width="341"/></media>
+      </figure>
+      <para id="id35582945">b. computing and displaying the average of heights and the average of weights of the students.</para>
+    </section>
+    <section id="id-817594641808">
+      <title>Exercise 6</title>
+      <para id="id35582961"><emphasis>1.</emphasis> a. Write a function <emphasis>inorder</emphasis> that determines whether the three characters are in alphabetic order or not. It returns <emphasis>true</emphasis> if the three arguments are in order or <emphasis>false</emphasis> otherwise.</para>
+      <para id="id35583000">b. Write a complete program that reads three characters and calls the function <emphasis>inorder</emphasis> to report whether they are in alphabetic order, loops until reading “***”.</para>
+      <para id="id37816645"><emphasis>2.</emphasis> a. Write a function <emphasis>IntSquare</emphasis> that computes the greatest integer so that its square is less than or equal to a given number.</para>
+      <para id="id37816667">b. Write a complete program that reads an integer n and invokes the function <emphasis>IntSquare</emphasis> to compute the greatest integer so that its square is less than or equal to n.</para>
+      <para id="id37816705"><emphasis>3.</emphasis> a. Write a function that computes the fourth root of its integer argument k. The value returned should be a double. (Hint: Use the library function sqrt()).</para>
+      <para id="id40497053">b. Write a complete program that reads an integer n and invokes the function to compute the fourth root of n.</para>
+      <para id="id40497082"><emphasis>4.</emphasis> a. Write a function is_prime(n) that returns true if n is a prime or false, otherwise. </para>
+      <para id="id40497113">b. Write a complete program that reads an integer n and invokes the function to check whether n is prime.</para>
+      <para id="id40383793"><emphasis>5.</emphasis> We can recursively define the number of combinations of m things out of n, denote C(n, m), for n &gt;= 1 and 0 &lt;= m &lt;= n, by</para>
+      <para id="id40383824">C(n,m) = 1 if m = 0 or m=n</para>
+      <para id="id40383834">C(n, m) = C(n-1, m) + C(n-1, m-1) if 0 &lt; m &lt; n</para>
+      <list id="id40383848" list-type="enumerated">
+        <item>Write a recursive function to compute C(n, m).</item>
+        <item>Write a complete program that reads two integers N and M and invokes the function to compute C(N, M) and prints the result out.</item>
+      </list>
+      <para id="id38848558"><emphasis>6.</emphasis> Given a function as follows:</para>
+      <para id="id38848570">
+        <code>int cube(int a)</code>
+      </para>
+      <para id="id38848581">
+        <code>{</code>
+      </para>
+      <para id="id38848591">
+        <code>a = a*a*a;</code>
+      </para>
+      <para id="id38848602">
+        <code>return a;</code>
+      </para>
+      <para id="id38848613">
+        <code>}</code>
+      </para>
+      <list id="id35890735" list-type="enumerated">
+        <item>Write a complete program that reads an integer n and invokes the function to compute its cube.</item>
+        <item>Rewrite the function so that the parameter is passed by reference. It is named by cube2. Write a complete program that reads an integer n and invokes the function cube2 to compute its cube, prints the result out and then displays the value of n. What is the value of n after the function call?</item>
+      </list>
+      <para id="id35890811"><emphasis>7.</emphasis> a. Write a function that can find the largest element in the array that is passed to the function as a parameter.</para>
+      <para id="id40928379">b. Write a program that inputs an array and invokes the above function to find the largest element in the array and print it out.</para>
+      <para id="id40928388"><emphasis>8.</emphasis> Given the following function that can find a specified value in an array. If the search is successful, this function returns the position of the specified value in the array, otherwise, it returns –1.</para>
+      <para id="id40928407">
+        <code>int linearSearch(int array[], int key, int sizeofArray)</code>
+      </para>
+      <para id="id40928416">
+        <code>{</code>
+      </para>
+      <para id="id40928424">
+        <code>for(int n = 0; n&lt; sizeofArray; n++)</code>
+      </para>
+      <para id="id40928435">
+        <code>if (array[n] = = key)</code>
+      </para>
+      <para id="id40928445">
+        <code>return n;</code>
+      </para>
+      <para id="id40928456">
+        <code>return –1;</code>
+      </para>
+      <para id="id37248229">
+        <code>}</code>
+      </para>
+      <para id="id37248237">Write a program that performs the following steps:</para>
+      <list id="id37248242" list-type="bulleted">
+        <item>Input the integer array of N elements. (N is also an input data).</item>
+        <item>Input a value you want to search on the array.</item>
+        <item>Invoke the function linearSearch to find the element in the array which is equal to the specified value(assume that position is k).</item>
+        <item>Remove that element at location k from the array.</item>
+      </list>
+      <para id="id37796351"><emphasis>9.</emphasis> A palindrome is a string that reads the same both forward and backward. Some examples are</para>
+      <figure id="id37796368">
+        <media id="id5064396" alt=""><image src="../../media/graphics3-7adc.png" mime-type="image/png" height="36" width="421"/></media>
+      </figure>
+      <para id="id37796392">Given the following function that returns true if the parameter string is a palindrome or false, otherwise.</para>
+      <para id="id37796417">
+        <code>bool palindrome(char strg[])</code>
+      </para>
+      <para id="id37796425">
+        <code>{</code>
+      </para>
+      <para id="id37796433">
+        <code>int len, k, j;</code>
+      </para>
+      <para id="id37993943">
+        <code>len = strlen(strg);</code>
+      </para>
+      <para id="id37993954">
+        <code>k = len/2;</code>
+      </para>
+      <para id="id37993965">
+        <code>j = 0;</code>
+      </para>
+      <para id="id37993976">
+        <code>bool palin = true;</code>
+      </para>
+      <para id="id37993986">
+        <code>while ( j &lt; k &amp;&amp; palin)</code>
+      </para>
+      <para id="id37993998">
+        <code>if (strg[j] != strg[len -1-j])</code>
+      </para>
+      <para id="id37994009">
+        <code>palin = false;</code>
+      </para>
+      <para id="id37994019">
+        <code>else</code>
+      </para>
+      <para id="id40896660">
+        <code>++ j;</code>
+      </para>
+      <para id="id40896671">
+        <code>return (palin)</code>
+      </para>
+      <para id="id40896682">
+        <code>}</code>
+      </para>
+      <para id="id40896690">Write a C++ program that reads several strings, one at a time and checks if each string is a palindrome or not. Use a while loop in your program. The loop terminates when the user enters a string starting with a ‘*’.</para>
+      <para id="id40896714"><emphasis>10.</emphasis> Given the following program:</para>
+      <para id="id40896725">
+        <code>#include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id40896734">
+        <code>int main()</code>
+      </para>
+      <para id="id40896742">
+        <code>{</code>
+      </para>
+      <para id="id39582806">
+        <code>const int NUMS = 5;</code>
+      </para>
+      <para id="id39582817">
+        <code>int nums[NUMS] = {16, 54, 7, 43, -5}</code>
+      </para>
+      <para id="id39582828">
+        <code>int i, total = 0;</code>
+      </para>
+      <para id="id39582839">
+        <code>int *nPt;</code>
+      </para>
+      <para id="id39582850">
+        <code/>
+      </para>
+      <para id="id39582856">
+        <code>nPt = nums;</code>
+      </para>
+      <para id="id39582868">
+        <code>for( i = 0; i&lt;NUMS; i++)</code>
+      </para>
+      <para id="id39582878">
+        <code>total = total + *nPt++;</code>
+      </para>
+      <para id="id39582889">
+        <code>cout &lt;&lt; total&lt;&lt; endl;</code>
+      </para>
+      <para id="id34682712">
+        <code>return 0;</code>
+      </para>
+      <para id="id34682723">
+        <code>}</code>
+      </para>
+      <para id="id34682731">a. Explain the meaning of the program.</para>
+      <para id="id34682735">b. Run to determine the result of the program.</para>
+      <para id="id34682740"><emphasis>11.</emphasis> Given the following function that can find the largest element in an integer array. Notice that the function uses pointer arithmetic:</para>
+      <para id="id34682754">
+        <code>int findMax(int * vals, int numEls)</code>
+      </para>
+      <para id="id34682762">
+        <code>{ </code>
+      </para>
+      <para id="id34682771">
+        <code>int j, max = *vals;</code>
+      </para>
+      <para id="id34682781">
+        <code>for (j = 1; j &lt; numEls; j++)</code>
+      </para>
+      <para id="id34682792">
+        <code>if (max &lt; *(vals + j))</code>
+      </para>
+      <para id="id34682804">
+        <code>max = *(vals + j);</code>
+      </para>
+      <para id="id37751121">
+        <code>return max;</code>
+      </para>
+      <para id="id37751132">
+        <code>}</code>
+      </para>
+      <para id="id37751140">Write a C++ program that inputs an integer array and invokes the above function to find the largest element in that array and displays the result out.</para>
+      <para id="id37751147"><emphasis>12.</emphasis> a. Write a function named days() that determines the number of days from the date 1/1/1900 for any date passed as a structure. Use the Date structure:</para>
+      <para id="id37751182">
+        <code>struct Date</code>
+      </para>
+      <para id="id37751193">
+        <code>{</code>
+      </para>
+      <para id="id37751204">
+        <code>int month;</code>
+      </para>
+      <para id="id38831861">
+        <code>int day;</code>
+      </para>
+      <para id="id38831870">
+        <code>int year;</code>
+      </para>
+      <para id="id38831879">
+        <code>}</code>
+      </para>
+      <para id="id38831890">In writing the days() function, use the convention that all years have 360 days and each month consists of 30 days. The function should return the number of days for any Date structure passed to it.</para>
+      <para id="id38831916">b. Rewrite the days() function to receive a pointer to a Date structure rather than a copy of the complete structure.</para>
+      <para id="id38831945">c. Include the function written in b) in a complete C++ program.</para>
+    </section>
+    <section id="id-235281796333">
+      <title>Exercise 7</title>
+      <para id="id32737488"><emphasis>1.</emphasis> Given the class <emphasis>student</emphasis> which is defined as follows:</para>
+      <para id="id32737509">
+        <code>class student{</code>
+      </para>
+      <para id="id32737516">
+        <code>private:</code>
+      </para>
+      <para id="id32737524">
+        <code>long int rollno;</code>
+      </para>
+      <para id="id32737533">
+        <code>int age;</code>
+      </para>
+      <para id="id32737542">
+        <code>char sex;</code>
+      </para>
+      <para id="id32737551">
+        <code>float height;</code>
+      </para>
+      <para id="id32737560">
+        <code>float weight;</code>
+      </para>
+      <para id="id32737569">
+        <code>public:</code>
+      </para>
+      <para id="id37993366">
+        <code>void getinfo();</code>
+      </para>
+      <para id="id37993375">
+        <code>void disinfo();</code>
+      </para>
+      <para id="id37993384">
+        <code>};</code>
+      </para>
+      <para id="id37993392">
+        <code>void student::getinfo()</code>
+      </para>
+      <para id="id37993400">
+        <code>{</code>
+      </para>
+      <para id="id37993407">
+        <code>cout &lt;&lt; " Roll no :";</code>
+      </para>
+      <para id="id37993419">
+        <code>cin &gt;&gt; rollno;</code>
+      </para>
+      <para id="id37993431">
+        <code>cout &lt;&lt; " Age :";</code>
+      </para>
+      <para id="id37993442">
+        <code>cin &gt;&gt; age;</code>
+      </para>
+      <para id="id37993454">
+        <code>cout &lt;&lt; " Sex:";</code>
+      </para>
+      <para id="id40072100">
+        <code>cin &gt;&gt; sex;</code>
+      </para>
+      <para id="id40072111">
+        <code>cout &lt;&lt; " Height :";</code>
+      </para>
+      <para id="id40072123">
+        <code>cin &gt;&gt; height;</code>
+      </para>
+      <para id="id40072135">
+        <code>cout &lt;&lt; " Weight :";</code>
+      </para>
+      <para id="id40072147">
+        <code>cin &gt;&gt; weight;</code>
+      </para>
+      <para id="id40072158">
+        <code>}</code>
+      </para>
+      <para id="id40072166">
+        <code>void student::disinfo()</code>
+      </para>
+      <para id="id40072174">
+        <code>{</code>
+      </para>
+      <para id="id40072182">
+        <code>cout&lt;&lt;endl;</code>
+      </para>
+      <para id="id40072193">
+        <code>cout&lt;&lt; " Roll no = "&lt;&lt; rollno &lt;&lt; endl;</code>
+      </para>
+      <para id="id33738226">
+        <code>cout&lt;&lt; " Age =" &lt;&lt; age &lt;&lt; endl;</code>
+      </para>
+      <para id="id33738240">
+        <code>cout&lt;&lt; " Sex =" &lt;&lt; sex &lt;&lt; endl;</code>
+      </para>
+      <para id="id33738255">
+        <code>cout&lt;&lt; " Height =" &lt;&lt; height &lt;&lt; endl;</code>
+      </para>
+      <para id="id33738269">
+        <code>cout&lt;&lt; " Weight =" &lt;&lt; weight &lt;&lt; endl;</code>
+      </para>
+      <para id="id33738284">
+        <code>}</code>
+      </para>
+      <para id="id33738291">Write the main program that creates an array of <emphasis>student</emphasis> objects, accepts the data of n students and displays the data of all elements in this array. The value of n is also entered by the user.</para>
+      <para id="id40786823">Remember to organize the program into one interface file and one implementation file and run them again.</para>
+      <para id="id40786829"><emphasis>2.</emphasis> Construct a class named <emphasis>Account</emphasis> consisting of four private data members: name of the customer, account number, balance and rate. The public member functions include a constructor and five other member functions that are listed as follows.</para>
+      <list id="id40786853" list-type="bulleted">
+        <item>to make a deposit</item>
+        <item>to withdraw an amount from the balance</item>
+        <item>to get the rate of interest</item>
+        <item>to know the balance amount</item>
+      </list>
+      <para id="id40786877">Include the class <emphasis>Account</emphasis> within a complete program. The program should declare two objects of type <emphasis>Account</emphasis> and accept and display data for the objects to verify the operation of the member functions.</para>
+      <para id="id40786906"><emphasis>3.</emphasis> Given the class <emphasis>equation</emphasis> which is defined as follows:</para>
+      <para id="id36972418">
+        <code>class equation{</code>
+      </para>
+      <para id="id36972426">
+        <code>private:</code>
+      </para>
+      <para id="id36972434">
+        <code>float a;</code>
+      </para>
+      <para id="id36972445">
+        <code>float b;</code>
+      </para>
+      <para id="id36972456">
+        <code>float c;</code>
+      </para>
+      <para id="id36972467">
+        <code>public:</code>
+      </para>
+      <para id="id36972475">
+        <code>void getinfo(float a, float b, float c);</code>
+      </para>
+      <para id="id36972486">
+        <code>void display( );</code>
+      </para>
+      <para id="id36972497">
+        <code>void equal(float a, float b);</code>
+      </para>
+      <para id="id38175532">
+        <code>void imag( );</code>
+      </para>
+      <para id="id38175542">
+        <code>void real(float a, float b, float det);</code>
+      </para>
+      <para id="id38175553">
+        <code>}; // end of class declaration section</code>
+      </para>
+      <para id="id38175561">
+        <code/>
+      </para>
+      <para id="id38175568">
+        <code>// beginning of implementation section</code>
+      </para>
+      <para id="id38175577">
+        <code>void equation::getinfo(float aa, float bb, float cc)</code>
+      </para>
+      <para id="id38175586">
+        <code>{</code>
+      </para>
+      <para id="id38175594">
+        <code>a = aa; b = bb; c = cc;</code>
+      </para>
+      <para id="id38175609">
+        <code>}</code>
+      </para>
+      <para id="id38175617">
+        <code>void equation::display( )</code>
+      </para>
+      <para id="id37197331">
+        <code>{</code>
+      </para>
+      <para id="id37197339">
+        <code>cout &lt;&lt; endl;</code>
+      </para>
+      <para id="id37197350">
+        <code>cout &lt;&lt; “ a = “&lt;&lt; a &lt;&lt; “\t”;</code>
+      </para>
+      <para id="id37197362">
+        <code>cout &lt;&lt; “ b = “ &lt;&lt; b &lt;&lt; “\t”;</code>
+      </para>
+      <para id="id37197373">
+        <code>cout &lt;&lt; “ c = “ &lt;&lt; c &lt;&lt; endl;</code>
+      </para>
+      <para id="id37197385">
+        <code>}</code>
+      </para>
+      <para id="id37197393">
+        <code>void equation::equal(float a, float b)</code>
+      </para>
+      <para id="id37197400">
+        <code>{</code>
+      </para>
+      <para id="id37197408">
+        <code>float x;</code>
+      </para>
+      <para id="id37197419">
+        <code>x = -b/(2*a);</code>
+      </para>
+      <para id="id40300088">
+        <code>cout &lt;&lt; “ roots are equal = “&lt;&lt; x &lt;&lt; endl;</code>
+      </para>
+      <para id="id40300101">
+        <code>}</code>
+      </para>
+      <para id="id40300108">
+        <code>void equation::imag(){</code>
+      </para>
+      <para id="id40300116">
+        <code>cout &lt;&lt; “ roots are imaginary \n”;</code>
+      </para>
+      <para id="id40300128">
+        <code>}</code>
+      </para>
+      <para id="id40300136">
+        <code>void equation::real(float a, float b, float det)</code>
+      </para>
+      <para id="id40300145">
+        <code>{</code>
+      </para>
+      <para id="id40300153">
+        <code>float x1, x2, temp;</code>
+      </para>
+      <para id="id40300163">
+        <code>tem = sqrt(det);</code>
+      </para>
+      <para id="id40300174">
+        <code>x1 = (-b+temp)/(2*a); x2 = (-b-temp)/(2*a);</code>
+      </para>
+      <para id="id40300185">
+        <code>cout &lt;&lt; “ roots are real \n”;</code>
+      </para>
+      <para id="id40197449">
+        <code>cout &lt;&lt; “ x1 = “ &lt;&lt; x1 &lt;&lt; endl;</code>
+      </para>
+      <para id="id40197461">
+        <code>cout &lt;&lt; “ x2 = “ &lt;&lt; x2 &lt;&lt; endl;</code>
+      </para>
+      <para id="id40197473">
+        <code>}</code>
+      </para>
+      <para id="id40197481">Write a main program that accepts the coefficients of a given quadratic equation and makes use of the member functions of the class equation to solve the equation.</para>
+      <para id="id40197488">Remember to organize the program into one interface file and one implementation file and run them again.</para>
+      <para id="id40197494"><emphasis>4.</emphasis> Construct a class named <emphasis>IntArray</emphasis> consisting of two private data members: a pointer to the beginning of the array, and an integer representing the size of the array. The public functions include a constructor and member functions that show all elements in the IntArray, and search a specified integer in the array.</para>
+      <para id="id40197528">Include the class <emphasis>IntArray</emphasis> within a complete program. The program should declare one object of type <emphasis>IntArray</emphasis> and accept and display data for the object to verify operation of the member functions.</para>
+      <para id="id40502201"><emphasis>5.</emphasis> Construct a class named <emphasis>Student</emphasis> consisting of an integer student idenfification number, an array of five floating point grades, and an integer representing the total number of grades entered. The constructor for this class should initialize all Student data members to zero. Included in the class should be member functions to</para>
+      <para id="id40502235">- enter a student ID number,</para>
+      <para id="id40502242">- enter a single test grade and update the total number of grades entered, and</para>
+      <para id="id40502251">- compute an average grade and display the student ID following by the average grade.</para>
+      <para id="id40502260">Include the class <emphasis>Student</emphasis> within a complete program. The program should declare two objects of type <emphasis>Student</emphasis> and accept and display data for the two objects to verify operation of the member functions.</para>
+      <para id="id40386074"><emphasis>6.</emphasis> Construct a class named <emphasis>Rectangle</emphasis> that has floating-point data members named <emphasis>length</emphasis> and <emphasis>width</emphasis>. The class should have a constructor that sets each data member to 0, member functions named <emphasis>perimeter() </emphasis>and <emphasis>area() </emphasis>to calculate the perimeter and area of a rectangle, respectively, a member function named <emphasis>getdata()</emphasis> to get a rectangle’s length and width, and a member function named <emphasis>showdata() </emphasis>that displays a rectangle’s length, width, perimeter, and area.</para>
+      <para id="id40386157">Include the <emphasis>Rectangle</emphasis> class within a working C++ program.</para>
+      <para id="id35782953"><emphasis>7.</emphasis> Given the class <emphasis>point</emphasis> which is defined as follows:</para>
+      <para id="id35782974">
+        <code>class point {</code>
+      </para>
+      <para id="id35782982">
+        <code>private:</code>
+      </para>
+      <para id="id35782990">
+        <code>int x,y;</code>
+      </para>
+      <para id="id35783001">
+        <code>public:</code>
+      </para>
+      <para id="id35783009">
+        <code>point( int xnew, int ynew);</code>
+      </para>
+      <para id="id35783020">
+        <code>void getdata();</code>
+      </para>
+      <para id="id35783031">
+        <code>void display();</code>
+      </para>
+      <para id="id35783042">
+        <code>};</code>
+      </para>
+      <para id="id41105571">
+        <code>point::point(int xnew, ynew) //constructor</code>
+      </para>
+      <para id="id41105583">
+        <code>{</code>
+      </para>
+      <para id="id41105591">
+        <code>x = xnew;</code>
+      </para>
+      <para id="id41105602">
+        <code>y = ynew;</code>
+      </para>
+      <para id="id41105613">
+        <code>}</code>
+      </para>
+      <para id="id41105621">
+        <code>void point::getdata()</code>
+      </para>
+      <para id="id41105628">
+        <code>{</code>
+      </para>
+      <para id="id41105636">
+        <code>cout &lt;&lt; “Enter an integer value \n”;</code>
+      </para>
+      <para id="id41105649">
+        <code>cin &gt;&gt; x;</code>
+      </para>
+      <para id="id41105660">
+        <code>cout &lt;&lt; “Enter an integer value \n”;</code>
+      </para>
+      <para id="id37671372">
+        <code>cin &gt;&gt; y;</code>
+      </para>
+      <para id="id37671383">
+        <code>}</code>
+      </para>
+      <para id="id37671391">
+        <code>void point::display()</code>
+      </para>
+      <para id="id37671399">
+        <code>{</code>
+      </para>
+      <para id="id37671407">
+        <code>cout &lt;&lt; “Entered numbers are \n”;</code>
+      </para>
+      <para id="id37671419">
+        <code>cout &lt;&lt; “ x = “ &lt;&lt; x &lt;&lt; ‘\t’ &lt;&lt; “ y = “ &lt;&lt; y &lt;&lt; endl;</code>
+      </para>
+      <para id="id37671432">
+        <code>}</code>
+      </para>
+      <para id="id37671440">Write a main program that creates two <emphasis>point</emphasis> objects on the heap, displays these objects and then destroys the two objects.</para>
+      <para id="id37671458"><emphasis>8.</emphasis> Given the following program:</para>
+      <para id="id37671469">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id37376284">
+        <code>void main( )</code>
+      </para>
+      <para id="id37376292">
+        <code>{</code>
+      </para>
+      <para id="id37376300">
+        <code>int *ptr_a = new int[20];</code>
+      </para>
+      <para id="id37376308">
+        <code>int *ptr_n = new int;</code>
+      </para>
+      <para id="id37376317">
+        <code>int i;</code>
+      </para>
+      <para id="id37376326">
+        <code>cout &lt;&lt; “ How many numbers are there ? \n”;</code>
+      </para>
+      <para id="id37376337">
+        <code>cin &gt;&gt; *ptr_n;</code>
+      </para>
+      <para id="id37376346">
+        <code>for (i = 0; i &lt;= *ptr_n – 1; ++i){</code>
+      </para>
+      <para id="id37376357">
+        <code>cout &lt;&lt; “ element : “;</code>
+      </para>
+      <para id="id37376368">
+        <code>cin &gt;&gt; ptr_a[i];</code>
+      </para>
+      <para id="id41320414">
+        <code>}</code>
+      </para>
+      <para id="id41320423">
+        <code>cout &lt;&lt; “ Contents of the array \n”;</code>
+      </para>
+      <para id="id41320433">
+        <code>for (i = 0; i &lt;= *ptr_n – 1; ++i){</code>
+      </para>
+      <para id="id41320444">
+        <code>cout &lt;&lt; ptr_a[i];</code>
+      </para>
+      <para id="id41320454">
+        <code>cout &lt;&lt; “\t”;</code>
+      </para>
+      <para id="id41320465">
+        <code>}</code>
+      </para>
+      <para id="id41320474">
+        <code>delete ptr_n;</code>
+      </para>
+      <para id="id41320483">
+        <code>delete [] ptr_a;</code>
+      </para>
+      <para id="id41320492">
+        <code>}</code>
+      </para>
+      <para id="id41320499">a. Explain the meaning of the program.</para>
+      <para id="id41320503">b. Run to determine the result of the program.</para>
+    </section>
+    <section id="id-955800727375">
+      <title>Exercise 8</title>
+      <para id="id40767706"><emphasis>1.</emphasis> Construct a class named <emphasis>Complex</emphasis> that contains two double-precision floating point data members named <emphasis>real</emphasis> and <emphasis>imag</emphasis>, which will be used to store the real and imaginary parts of a complex number. The function members should include a constructor that provides default values of 0 for each data member and a display function that prints an object’s data values.</para>
+      <para id="id40767758">Include the above class in a working C++ program that creates and displays the values of two <emphasis>Complex</emphasis> objects.</para>
+      <para id="id40767780"><emphasis>2.</emphasis> Construct a class named <emphasis>Car</emphasis> that contains the following three data members: a floating point variable named <emphasis>engineSize</emphasis> , a character variable named <emphasis>bodyStyle</emphasis> and an integer variable named <emphasis>colorCode</emphasis>. The function members should include (1) a constructor that provides default values of 0 for each numeric data members and ‘X’ for each character variable; and (2) a display function that prints the engine size, body style, and color code.</para>
+      <para id="id40730840">Include the class <emphasis>Car</emphasis> in a working C++ program that creates and displays two car objects.</para>
+      <para id="id40730858"><emphasis>3.</emphasis> Given the following class:</para>
+      <para id="id40730870">
+        <code>class Auto {</code>
+      </para>
+      <para id="id40730877">
+        <code>public:</code>
+      </para>
+      <para id="id40730885">
+        <code>Auto(char*, double);</code>
+      </para>
+      <para id="id40730896">
+        <code>displayAuto();</code>
+      </para>
+      <para id="id40372980">
+        <code>private:</code>
+      </para>
+      <para id="id40372988">
+        <code>char* szCarMake;</code>
+      </para>
+      <para id="id40372999">
+        <code>double dCarEngine;</code>
+      </para>
+      <para id="id40373010">
+        <code>};</code>
+      </para>
+      <para id="id40373018">
+        <code>Auto::Auto(char* szMake, double dEngine){</code>
+      </para>
+      <para id="id40373025">
+        <code>szCarMake = new char[25];</code>
+      </para>
+      <para id="id40373036">
+        <code>strcpy(szCarMake, szMake);</code>
+      </para>
+      <para id="id40373047">
+        <code>dCarEngine = dEngine;</code>
+      </para>
+      <para id="id40373058">
+        <code>}</code>
+      </para>
+      <para id="id40373066">
+        <code>Auto::displayAuto(){</code>
+      </para>
+      <para id="id40373073">
+        <code>cout&lt;&lt; “The car make: “&lt;&lt; szCarMake&lt;&lt; endl;</code>
+      </para>
+      <para id="id39176975">
+        <code>cout&lt;&lt; “The car engine size: “&lt;&lt; dCarEngine&lt;&lt; endl;</code>
+      </para>
+      <para id="id39176988">
+        <code>}</code>
+      </para>
+      <para id="id39176995">
+        <code>void main(){</code>
+      </para>
+      <para id="id39177003">
+        <code>Auto oldCar(“Chevy”, 351);</code>
+      </para>
+      <para id="id39177015">
+        <code>Auto newCar(oldCar);</code>
+      </para>
+      <para id="id39177026">
+        <code>oldCar.displayAuto();</code>
+      </para>
+      <para id="id39177037">
+        <code>newCar.displayAuto();</code>
+      </para>
+      <para id="id39177048">
+        <code>}</code>
+      </para>
+      <list id="id39177055" list-type="enumerated">
+        <item>Add an appropriate destructor to the class <emphasis>Auto</emphasis>.</item>
+        <item>Include the class <emphasis>Auto</emphasis> in a working C++ program that creates two <emphasis>Auto</emphasis> objects on the heap, displays them and destroys them. </item>
+      </list>
+      <para id="id37069198"><emphasis>4.</emphasis> Given the following class:</para>
+      <para id="id37069210">
+        <code>class Employee{</code>
+      </para>
+      <para id="id37069218">
+        <code>public:</code>
+      </para>
+      <para id="id37069226">
+        <code>Employee(const char*, const char*);</code>
+      </para>
+      <para id="id37069237">
+        <code>char *getFirstName() const;</code>
+      </para>
+      <para id="id37069248">
+        <code>char *getLastName() const;</code>
+      </para>
+      <para id="id37069258">
+        <code>private:</code>
+      </para>
+      <para id="id36979912">
+        <code>char *firstName;</code>
+      </para>
+      <para id="id36979922">
+        <code>char *lastName;</code>
+      </para>
+      <para id="id36979933">
+        <code>};</code>
+      </para>
+      <para id="id36979941">
+        <code>Employee::Employee(const char *first, const char *last){</code>
+      </para>
+      <para id="id36979950">
+        <code>firstName = new char[strlen(first)+1];</code>
+      </para>
+      <para id="id36979960">
+        <code>strcpy(firstName, first);</code>
+      </para>
+      <para id="id36979971">
+        <code>lastName = new char[strlen(last)+1];</code>
+      </para>
+      <para id="id36979982">
+        <code>strcpy(lastName, last);</code>
+      </para>
+      <para id="id36979993">
+        <code>}</code>
+      </para>
+      <para id="id36980000">
+        <code>char *Employee::getFirstName() const{</code>
+      </para>
+      <para id="id36980008">
+        <code>return firstName;</code>
+      </para>
+      <para id="id41335198">
+        <code>}</code>
+      </para>
+      <para id="id41335206">
+        <code>char *Employee::getLastName() const{</code>
+      </para>
+      <para id="id41335214">
+        <code>return lastName;</code>
+      </para>
+      <para id="id41335225">
+        <code>}</code>
+      </para>
+      <para id="id41335232">
+        <code>void main(){</code>
+      </para>
+      <para id="id41335240">
+        <code>Employee *e1Ptr = new Employee(“Susan”, “Baker”);</code>
+      </para>
+      <para id="id41335253">
+        <code>Employee *e2Ptr = new Employee(“Robert”, “Jones”);</code>
+      </para>
+      <para id="id41335266">
+        <code>cout &lt;&lt; “\n Employee 1: “</code>
+      </para>
+      <para id="id41335278">
+        <code>&lt;&lt; e1Ptr-&gt;getFirstName()</code>
+      </para>
+      <para id="id41335289">
+        <code> &lt;&lt; “ “ &lt;&lt; e1Ptr-&gt;getLastName()</code>
+      </para>
+      <para id="id37254738">
+        <code>&lt;&lt; “\n Employee 2: “</code>
+      </para>
+      <para id="id37254750">
+        <code>&lt;&lt; e2Ptr-&gt;getFirstName()</code>
+      </para>
+      <para id="id37254761">
+        <code> &lt;&lt; “ “ &lt;&lt; e2Ptr-&gt;getLastName()&lt;&lt; endl;</code>
+      </para>
+      <para id="id37254779">
+        <code>delete e1Ptr;</code>
+      </para>
+      <para id="id37254790">
+        <code>delete e2Ptr;</code>
+      </para>
+      <para id="id37254801">
+        <code>}</code>
+      </para>
+      <para id="id37254809">Add an appropriate destructor to the class <emphasis>Employee</emphasis>.</para>
+      <para id="id37254825"><emphasis>5.</emphasis> Given the following program which defines and uses the class Ob. What is the output of the <emphasis>main()</emphasis> function?</para>
+      <para id="id40535350">
+        <code>class Ob</code>
+      </para>
+      <para id="id40535358">
+        <code>{</code>
+      </para>
+      <para id="id40535367">
+        <code>private:</code>
+      </para>
+      <para id="id40535378">
+        <code>int field;</code>
+      </para>
+      <para id="id40535389">
+        <code>public:</code>
+      </para>
+      <para id="id40535400">
+        <code>Ob();</code>
+      </para>
+      <para id="id40535411">
+        <code>~Ob();</code>
+      </para>
+      <para id="id40835997">
+        <code>}</code>
+      </para>
+      <para id="id40836005">
+        <code>Ob::Ob()</code>
+      </para>
+      <para id="id40836013">
+        <code>{</code>
+      </para>
+      <para id="id40836021">
+        <code>field = 0;</code>
+      </para>
+      <para id="id40836032">
+        <code>cout &lt;&lt; “Object created. “&lt;&lt; endl;</code>
+      </para>
+      <para id="id40836045">
+        <code>}</code>
+      </para>
+      <para id="id40836052">
+        <code>Ob::~Ob()</code>
+      </para>
+      <para id="id40836060">
+        <code>Cout &lt;&lt; “Object detroyed. “&lt;&lt; endl;</code>
+      </para>
+      <para id="id40836072">
+        <code>}</code>
+      </para>
+      <para id="id40836080">
+        <code>void main()</code>
+      </para>
+      <para id="id40836088">
+        <code>{</code>
+      </para>
+      <para id="id40836096">
+        <code>Ob obj[6];</code>
+      </para>
+      <para id="id37454743">
+        <code>}</code>
+      </para>
+      <para id="id37454751"><emphasis>6.</emphasis> Given a base class named <emphasis>Circle</emphasis> which is defined as follows.</para>
+      <para id="id37454774">
+        <code>const double PI = 3.14159;</code>
+      </para>
+      <para id="id37454782">
+        <code>class Circle</code>
+      </para>
+      <para id="id37454789">
+        <code>{</code>
+      </para>
+      <para id="id37454797">
+        <code>protected:</code>
+      </para>
+      <para id="id37454808">
+        <code>double radius;</code>
+      </para>
+      <para id="id37454819">
+        <code>public:</code>
+      </para>
+      <para id="id37454830">
+        <code>Circle(double = 1.0); // constructor</code>
+      </para>
+      <para id="id41095549">
+        <code>double calcval();</code>
+      </para>
+      <para id="id41095560">
+        <code>};</code>
+      </para>
+      <para id="id41095567">
+        <code>// implementation section for Circle</code>
+      </para>
+      <para id="id41095575">
+        <code>// constructor</code>
+      </para>
+      <para id="id41095583">
+        <code>Circle::Circle(double r)</code>
+      </para>
+      <para id="id41095590">
+        <code>{</code>
+      </para>
+      <para id="id41095598">
+        <code>radius = r;</code>
+      </para>
+      <para id="id41095609">
+        <code>}</code>
+      </para>
+      <para id="id41095617">
+        <code>// calculate the area of a circle</code>
+      </para>
+      <para id="id41095625">
+        <code>double Circle::calcval()</code>
+      </para>
+      <para id="id41095632">
+        <code>{</code>
+      </para>
+      <para id="id41095640">
+        <code>return(PI * radius * radius);</code>
+      </para>
+      <para id="id9986188">
+        <code>}</code>
+      </para>
+      <para id="id9986195">a. Derive from the base class another class named <emphasis>Cylinder</emphasis> which contains an additional data member to store <emphasis>length</emphasis>. The only additional function members of <emphasis>Sphere</emphasis> should be a constructor and a <emphasis>calcval() </emphasis>function that returns the volume of the cylinder (Note: Volume = length*(pi*radius^2)).</para>
+      <para id="id9986242">b. Define another derived class name <emphasis>Sphere</emphasis> from the base <emphasis>Circle</emphasis> class. The only additional class members of <emphasis>Sphere</emphasis> should be a constructor and a <emphasis>calcval()</emphasis> function that returns the volume of the spere. (Note: Volume = 4/3*pi*radius^3). </para>
+      <para id="id33780142">c. Write the <emphasis>main() </emphasis>function in such a way that your program call all of the member functions in the <emphasis>Cylinder</emphasis> class and <emphasis>Sphere</emphasis> class.</para>
+      <para id="id33780179"><emphasis>7.</emphasis> Create a base class named <emphasis>Point</emphasis> that consists of an x and y coordinate. From this class, derive a class named <emphasis>Circle</emphasis> that has an additional data member named <emphasis>radius</emphasis>. For this derived class, the x and y data members represents the center coordinates of a circle. The function members of the first class should consist of a constructor and a <emphasis>distance()</emphasis> function that returns the distance between two points, where</para>
+      <para id="id36167176">distance = square-root((x2 – x1)^2 + (y2 – y1)^2)</para>
+      <para id="id36167183">Additionally, the derived class should have a constructor, an override <emphasis>distance()</emphasis> function that calculates the distance between circle centers, and a function named <emphasis>area</emphasis> that returns the area of a circle.</para>
+      <para id="id36167211">Include the two classes in a complete C++ program. Have your program call all of the member functions in each class. In addition, call the base class <emphasis>distance</emphasis> function with two <emphasis>Circle</emphasis> objects and explain the result returned by the function.</para>
+      <para id="id36167246"><emphasis>8.</emphasis>Create a base class named <emphasis>Rectangle</emphasis> that contains <emphasis>length</emphasis> and <emphasis>width</emphasis> data members. From this class, derive a class named Box having an additional data member named <emphasis>depth</emphasis>. The function members of the base <emphasis>Rectangle</emphasis> class should consist of a constructor and an <emphasis>area</emphasis> function. The derived <emphasis>Box</emphasis> class should have a constructor and an override function named <emphasis>area</emphasis> that returns the surface area of the box and a <emphasis>volume()</emphasis> function.</para>
+      <para id="id39448535">Include the two classes in a complete C++ program. Have your program call all of the member functions in each class and explain the result when the <emphasis>area()</emphasis> function is called using a <emphasis>Box</emphasis> object.</para>
+      <para id="id39977489"><emphasis>9.</emphasis> Modify the following code so that the overridden <emphasis>setSound()</emphasis> function executes correctly with the statements in the <emphasis>main()</emphasis> method.</para>
+      <para id="id39977520">
+        <code>class Instruments</code>
+      </para>
+      <para id="id39977528">
+        <code>{</code>
+      </para>
+      <para id="id39977536">
+        <code>public:</code>
+      </para>
+      <para id="id39977547">
+        <code>Instruments();</code>
+      </para>
+      <para id="id39977558">
+        <code>void setSound(char*);</code>
+      </para>
+      <para id="id16895813">
+        <code>char* getSound();</code>
+      </para>
+      <para id="id16895823">
+        <code>protected:</code>
+      </para>
+      <para id="id16895834">
+        <code>char* szSound;</code>
+      </para>
+      <para id="id16895845">
+        <code>}</code>
+      </para>
+      <para id="id16895853">
+        <code>Instruments:: Instruments(){</code>
+      </para>
+      <para id="id16895860">
+        <code>szSound = new char[25];</code>
+      </para>
+      <para id="id16895871">
+        <code>}</code>
+      </para>
+      <para id="id16895879">
+        <code>void Instruments::setSound(char* szSound){</code>
+      </para>
+      <para id="id16895887">
+        <code>szSound = “quiet”;</code>
+      </para>
+      <para id="id16895898">
+        <code>}</code>
+      </para>
+      <para id="id16895906">
+        <code>char* getSound(){</code>
+      </para>
+      <para id="id16895914">
+        <code>return szSound;</code>
+      </para>
+      <para id="id39158232">
+        <code>}</code>
+      </para>
+      <para id="id39158239">
+        <code>class Percussion: public Instruments </code>
+      </para>
+      <para id="id39158247">
+        <code>{</code>
+      </para>
+      <para id="id39158255">
+        <code>public:</code>
+      </para>
+      <para id="id39158266">
+        <code>Percussion();</code>
+      </para>
+      <para id="id39158277">
+        <code>void setSound(char*);</code>
+      </para>
+      <para id="id39158288">
+        <code>}</code>
+      </para>
+      <para id="id39158296">
+        <code>Percussion::Percussion(){</code>
+      </para>
+      <para id="id39158304">
+        <code>cout &lt;&lt; “I repeat, the drum goes “</code>
+      </para>
+      <para id="id39158316">
+        <code>&lt;&lt; getSound() &lt;&lt; endl;</code>
+      </para>
+      <para id="id40002034">
+        <code>}</code>
+      </para>
+      <para id="id40002042">
+        <code>void Percussion::setSound(char* szSound){</code>
+      </para>
+      <para id="id40002049">
+        <code>szSound = “boom”;</code>
+      </para>
+      <para id="id40002061">
+        <code>}</code>
+      </para>
+      <para id="id40002069">
+        <code>void main(){</code>
+      </para>
+      <para id="id40002076">
+        <code>Instruments* drums = new Percussion;</code>
+      </para>
+      <para id="id40002089">
+        <code>drums-&gt; setSound();</code>
+      </para>
+      <para id="id40002101">
+        <code>cout&lt;&lt; “The drum goes “ &lt;&lt; drums-&gt;getSound() &lt;&lt; endl;</code>
+      </para>
+      <para id="id40002113">
+        <code>}</code>
+      </para>
+    </section>
+  </content>
+</document>

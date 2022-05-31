@@ -1,0 +1,831 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Completing the Basics</title>
+  <metadata>
+  <md:content-id>m27210</md:content-id><md:title>Completing the Basics</md:title>
+  <md:abstract>In the last chapter, we explored how results are displayed and how numerical data are stored and processed using variables and assignment statements. In this chapter, we complete our introduction to the basics of C++ by presenting additional processing and input capabilities.</md:abstract>
+  <md:uuid>092fe56c-ece7-4dde-bcdb-57b9cf8165a5</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-681676037538">
+      <title>Assignment Operators</title>
+      <para id="id8197603"><emphasis>Assignment operator</emphasis> (=) is used for assignment a value to a variable and for performing computations.</para>
+      <para id="id3273078">Assignment statement has the syntax:</para>
+      <para id="id10970850">
+        <code>variable = expression;</code>
+      </para>
+      <para id="id12141823"><emphasis>Expression</emphasis> is any combination of constants, variables, and function calls that can be evaluated to yield a result.</para>
+      <para id="id11799662">Example:</para>
+      <para id="id4046691">
+        <code>length = 25;</code>
+      </para>
+      <para id="id7108899">
+        <code>cMyCar = “Mercedes”;</code>
+      </para>
+      <para id="id3543642">
+        <code>sum = 3 + 7;</code>
+      </para>
+      <para id="id3543645">
+        <code>newtotal = 18.3*amount;</code>
+      </para>
+      <para id="id10761737">
+        <code>slope = (y2 – y1)/(x2 – x1);</code>
+      </para>
+      <para id="id11323077">The order of events when the computer executes an assignment statement is </para>
+      <para id="id9206326">- Evaluate the expression on the right hand side of the assignment operator. </para>
+      <para id="id12172996">- Store the resultant value of the expression in the variable on the left hand side of the assignment operator. </para>
+      <para id="id10942225">Note: </para>
+      <para id="id10436911">1. It’s important to note that the equal sign in C++ does not have the same meaning as an equal sign in mathematics.</para>
+      <para id="id11153472">2. Each time a new value is stored in a variable, the old one is overwritten.</para>
+      <para id="id4143739">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id12187727">
+        <code>// This program calculates the volume of a cylinder,</code>
+      </para>
+      <para id="id11454976">
+        <code>// given its radius and height</code>
+      </para>
+      <para id="id5147668">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id10803548">
+        <code>int main()</code>
+      </para>
+      <para id="id4046687">
+        <code>{</code>
+      </para>
+      <para id="id10881709">
+        <code>float radius, height, volume;</code>
+      </para>
+      <para id="id10791656">
+        <code/>
+      </para>
+      <para id="id3253197">
+        <code>radius = 2.5;</code>
+      </para>
+      <para id="id11250281">
+        <code>height = 16.0;</code>
+      </para>
+      <para id="id3799001">
+        <code>volume = 3.1416 * radius * radius * height;</code>
+      </para>
+      <para id="id10503330">
+        <code>cout &lt;&lt; "The volume of the cylinder is " &lt;&lt; volume &lt;&lt; endl;</code>
+      </para>
+      <para id="id11331499">
+        <code>return 0;</code>
+      </para>
+      <para id="id3277203">
+        <code>}</code>
+      </para>
+      <para id="id9970536">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id11183965">The volume of the cylinder is 314.16</para>
+      <para id="id11915658">We can write <emphasis>multiple assignments</emphasis>, such as a = b = c = 25;. Because the assignment operator has a right-to-left associativity, the final evaluation proceeds in the sequence</para>
+      <para id="id4078736">c = 25;</para>
+      <para id="id9807116">b = 25;</para>
+      <para id="id9529882">c = 25;</para>
+      <section id="id-002167697996">
+        <title>Data Type Conversion across Assignment Operator</title>
+        <para id="id10062793">Note that data type conversion can take place across assignment operators, that is, the value of the expression on the right side of the assignment operator is converted to the data type of the variable to the left side of the assignment operator.</para>
+        <para id="id3537771">For example, if temp is an integer variable, the assignment temp = 25.89 causes the integer value 25 to be stored in the integer variable temp.</para>
+      </section>
+      <section id="id-0746170000159">
+        <title>Assignment Variations</title>
+        <para id="id6676640">C++ also use a shorthand notation to perform an operation and an assignment at the same time. This is denoted by an operator followed by an equal sign. For example, to add 4 to the variable x and assign x to the result, you say: x += 4. Figure 1 illustrates assignment operator and all assignment variations.</para>
+        <figure id="id11892696"><media id="id4725342" alt=""><image src="../../media/graphics1-8dcf.png" mime-type="image/png" height="173" width="500"/></media>
+        <caption> Variations of  assignment</caption></figure>
+        <para id="id3961107">Assignment statements such as sum += 10 or its equivalent, sum = sum + 10, are very common in C++ programming.</para>
+      </section>
+      <section id="id-936724886923">
+        <title>Increment and decrement operators</title>
+        <para id="id12503644">For the special case in which a variable is either increased or decreased by 1, C++ provides two unary operators: <emphasis>increment operator</emphasis> and <emphasis>decrement operator</emphasis>.</para>
+        <figure id="id11003841"><media id="id2770626" alt=""><image src="../../media/graphics2-ad88.png" mime-type="image/png" height="93" width="375"/></media>
+        <caption>Increment operator and decrement operator</caption></figure>
+        <para id="id10067242">The increment (++) and decrement (--) unary operators can be used as prefix or postfix operators to increase or decrease value.</para>
+        <para id="id8762344">A <emphasis>prefix</emphasis> operator is placed <emphasis>before</emphasis> a variable and returns the value of the operand after the operation is performed.</para>
+        <para id="id3275651">A <emphasis>postfix</emphasis> operator is placed <emphasis>after</emphasis> a variable and returns the value of the operand before the operation is performed.</para>
+        <para id="id9425876">Prefix and postfix operators have different effects when used in a statement</para>
+        <para id="id10929941">b = ++a;</para>
+        <para id="id10601700">will first increase the value of a to 6, and then assign that new value to b. It is equivalent to</para>
+        <para id="id10600245">a = a +1;</para>
+        <para id="id5585626">b = a;</para>
+        <para id="id3514249">On the other hand, execution of the statement</para>
+        <para id="id11114759">b = a++;</para>
+        <para id="id10039370">will first assign the value of 5 to b, and then increase the value of a to 6. It is now equivalent to </para>
+        <para id="id10995501">b = a;</para>
+        <para id="id4185920">a = a + 1;</para>
+        <para id="id9514814">The decrement operators are used in a similar way.</para>
+        <para id="id11618076">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id6035096">
+          <code>// Preincrementing and postincrementing</code>
+        </para>
+        <para id="id10291468">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id11890009">
+          <code>int main()</code>
+        </para>
+        <para id="id10992815">
+          <code>{</code>
+        </para>
+        <para id="id4044450">
+          <code>int c;</code>
+        </para>
+        <para id="id10951942">
+          <code/>
+        </para>
+        <para id="id11917929">
+          <code>c = 5;</code>
+        </para>
+        <para id="id6261109">
+          <code>cout &lt;&lt; c &lt;&lt; endl; // print 5</code>
+        </para>
+        <para id="id11330070">
+          <code>cout &lt;&lt; c++ &lt;&lt; endl; // print 5 then postincrement</code>
+        </para>
+        <para id="id9503501">
+          <code>cout &lt;&lt; c &lt;&lt; endl &lt;&lt; endl; // print 6</code>
+        </para>
+        <para id="id9129974">
+          <code/>
+        </para>
+        <para id="id11614451">
+          <code>c = 5;</code>
+        </para>
+        <para id="id9842600">
+          <code>cout &lt;&lt; c &lt;&lt; endl; // print 5</code>
+        </para>
+        <para id="id11484440">
+          <code>cout &lt;&lt; ++c &lt;&lt; endl; // preincrement then print 6</code>
+        </para>
+        <para id="id11605519">
+          <code>cout &lt;&lt; c &lt;&lt; endl; // print 6</code>
+        </para>
+        <para id="id9940222">
+          <code/>
+        </para>
+        <para id="id7332552">
+          <code>return 0; // successful termination</code>
+        </para>
+        <para id="id10224403">
+          <code>}</code>
+        </para>
+        <para id="id12125424">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id11888802">5</para>
+        <para id="id4897232">5</para>
+        <para id="id11001982">6</para>
+        <para id="id10962709">5</para>
+        <para id="id8788572">6</para>
+        <para id="id11889767">6</para>
+      </section>
+    </section>
+    <section id="id-0334029094618">
+      <title>Formatting Number for Program Output</title>
+      <para id="id10883907">Besides displaying correct results, a program should present its results attractively with good formats.</para>
+      <section id="id-154720500687">
+        <title>Stream Manipulators</title>
+        <para id="id11756402"><emphasis>Stream manipulator</emphasis> functions are special stream functions that change certain characteristics of the input and output.</para>
+        <para id="id9201980">The main advantage of using manipulator functions is they facilitate the formatting of the input and output streams.</para>
+        <para id="id9775981">- setw(): The setw() stands for set width. This manipulator is used to specify the minimum number of the character positions on the output field a variable will consume.</para>
+        
+        
+        <para id="id11317881">- setprecision(): The setprecision() is used to control the number of digits of an output stream display of a floating point value. Setprecision(2) means 2 digits of precision to the right of the decimal point.</para>
+        
+        
+        <para id="id3040509">To carry out the operations of these manipulators in a user program, you must include the header file &lt;iomanip.h&gt;.</para>
+        <para id="id9077235">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id10770971">
+          <code>#include &lt;iostream.h&gt; </code>
+        </para>
+        <para id="id4191642">
+          <code>#include &lt;iomanip.h&gt;</code>
+        </para>
+        <para id="id10026056">
+          <code>int main()</code>
+        </para>
+        <para id="id7185494">
+          <code>{</code>
+        </para>
+        <para id="id10786537">
+          <code>cout &lt;&lt; setw(3) &lt;&lt; 6 &lt;&lt; endl</code>
+        </para>
+        <para id="id7399950">
+          <code>&lt;&lt; setw(3) &lt;&lt; 18 &lt;&lt; endl</code>
+        </para>
+        <para id="id10601788">
+          <code>&lt;&lt; setw(3) &lt;&lt; 124 &lt;&lt; endl</code>
+        </para>
+        <para id="id5700670">
+          <code>&lt;&lt; "---\n"</code>
+        </para>
+        <para id="id10317717">
+          <code>&lt;&lt; (6+18+124) &lt;&lt; endl;</code>
+        </para>
+        <para id="id11471917">
+          <code>return 0;</code>
+        </para>
+        <para id="id3300784">
+          <code>}</code>
+        </para>
+        <para id="id10565928">The <emphasis>output</emphasis> of the above program:</para>
+        <figure id="id8373227"><media id="id3254236" alt=""><image src="../../media/graphics3-7b50.png" mime-type="image/png" height="114" width="56"/></media>
+        <caption> Output of above program</caption></figure>
+        <para id="id6314066">Example:</para>
+        <para id="id10795152">
+          <code>cout &lt;&lt; “|” &lt;&lt; setw(10)</code>
+        </para>
+        <para id="id6013000">
+          <code>&lt;&lt; setioflags(ios::fixed)&lt;&lt; setprecision(3) &lt;&lt; 25.67&lt;&lt;”|”;</code>
+        </para>
+        <para id="id9319103">causes the printout</para>
+        <figure id="id8579939"><media id="id2681575" alt=""><image src="../../media/graphics4-b26c.png" mime-type="image/png" height="38" width="91"/></media>
+        <caption> Output of above code segment</caption></figure>
+        <para id="id3357552">- setiosflags: This manipulator is used to control different input and output settings.</para>
+        <para id="id11194586">setioflag(ios::fixed) means the output field will use conventional fixed-point decimal notation.</para>
+        
+        <para id="id10996218">setiosflag(ios::showpoint) means the output field will show the decimal point for floating point number.</para>
+        
+        <para id="id9225499">setiosflag(ios::scientific) means the output field will use exponential notation.</para>
+        <para id="id9295410">Note: In the absence of the ios::fixed flag, a floating point number is displayed with a default of 6 significant digits. If the integral part of the number requires more than 6 digits, the display will be in exponential notation.</para>
+        <para id="id11209173">Below are some other format flags for use with setiosflags().</para>
+        <figure id="id11615196"><media id="id1164721289118" alt=""><image src="../../media/graphics5-1aaf.png" mime-type="image/png" height="175" width="476"/></media>
+        <caption>Flags for use with setiosflags()</caption></figure>
+        <para id="id10761765">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id10077240">
+          <code>// This program will illustrate output conversions</code>
+        </para>
+        <para id="id4243508">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id11236090">
+          <code>#include &lt;iomanip.h&gt;</code>
+        </para>
+        <para id="id10419467">
+          <code>int main()</code>
+        </para>
+        <para id="id7283686">
+          <code>{</code>
+        </para>
+        <para id="id6902707">
+          <code>cout &lt;&lt; "The decimal (base 10) value of 15 is " &lt;&lt; 15 &lt;&lt; endl</code>
+        </para>
+        <para id="id12089971">
+          <code>&lt;&lt; "The octal (base 8) value of 15 is "</code>
+        </para>
+        <para id="id10101650">
+          <code>&lt;&lt; setiosflags(ios::oct) &lt;&lt; 15 &lt;&lt; endl</code>
+        </para>
+        <para id="id11220362">
+          <code>&lt;&lt; "The hexadecimal (base 16) value of 15 is "</code>
+        </para>
+        <para id="id3985115">
+          <code>&lt;&lt; setiosflags(ios::hex) &lt;&lt; 15 &lt;&lt; endl;</code>
+        </para>
+        <para id="id10612065">
+          <code>return 0;</code>
+        </para>
+        <para id="id6698659">
+          <code>}</code>
+        </para>
+        <para id="id10633773">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id6074165">The decimal (base 10) value of 15 is 15</para>
+        <para id="id3437398">The octal (base 8) value of 15 is 17</para>
+        <para id="id11446429">The hexadecimal (base 16) value of 15 is f</para>
+        <para id="id11318406">To designate an octal integer constant, the number must have a leading <emphasis>0</emphasis>. Hexadecimal number are denoted using a leading <emphasis>0x</emphasis>.</para>
+        <para id="id5612780">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id7912316">
+          <code>// Octal and hexadecimal integer constant</code>
+        </para>
+        <para id="id10255467">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id10948316">
+          <code/>
+        </para>
+        <para id="id8188176">
+          <code>int main()</code>
+        </para>
+        <para id="id9835601">
+          <code>{</code>
+        </para>
+        <para id="id10788044">
+          <code>cout &lt;&lt; "The decimal value of 025 is " &lt;&lt; 025 &lt;&lt; endl</code>
+        </para>
+        <para id="id3958613">
+          <code>&lt;&lt; "The decimal value of 0x37 is "&lt;&lt; 0x37 &lt;&lt; endl;</code>
+        </para>
+        <para id="id10957532">
+          <code>return 0;</code>
+        </para>
+        <para id="id11243756">
+          <code>}</code>
+        </para>
+        <para id="id11904270">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id11032646">The decimal value of 025 is 21</para>
+        <para id="id3985908">The decimal value of 0x37 is 55</para>
+      </section>
+    </section>
+    <section id="id-459895950074">
+      <title>Using Mathematical Library Functions</title>
+      <para id="id5548622">Although addition, subtraction, multiplication and division are easily accomplished using C++’s arithmetic operators, no such operators exist for finding the square root of a number or determining trigonometric values. To facilitate such calculations, C++ provides standard library functions that can be included in a program.</para>
+      <para id="id5547939">Functions are normally called by writing the name of the function, followed by a left parenthesis, followed by the <emphasis>argument</emphasis> (or a comma-separated list of arguments) of the function, followed by a right parenthesis. For example, a programmer desiring to calculate and print the square root of 900.0 might write:</para>
+      <para id="id11212726">
+        <code>cout &lt;&lt; sqrt(900.0);</code>
+      </para>
+      <para id="id10953948">When this statement is executed, the math library function <emphasis>sqrt</emphasis> is called to calculate the square root of the number contained in the parentheses (900.0). The number 900.0 is the argument of the <emphasis>sqrt</emphasis> function. The preceding statement would print 30. The <emphasis>sqrt</emphasis> function takes an argument of type double and returns a result of type double. </para>
+      <para id="id12503180">If your program uses mathematic function sqrt(), it should have the preprocessor command <emphasis>#include&lt;math.h&gt;</emphasis> in the beginning of the program. This makes a mathematical library accessible. Below are some commonly used mathematical functions provided in C++.</para>
+      <figure id="id3354502"><media id="id1164720628638" alt=""><image src="../../media/graphics6-18c3.png" mime-type="image/png" height="236" width="524"/></media>
+      <caption>Mathematical functions</caption></figure>
+      <para id="id10885377">Except abs(a), the functions all take an argument of type double and return a value of type double.</para>
+      <para id="id4452711">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id8173253">
+        <code>// this program calculates the area of a triangle</code>
+      </para>
+      <para id="id8188202">
+        <code>// given its three sides</code>
+      </para>
+      <para id="id11331558">
+        <code>#include &lt;iostream.h&gt; </code>
+      </para>
+      <para id="id6775746">
+        <code>#include &lt;math.h&gt; </code>
+      </para>
+      <para id="id10994837">
+        <code>int main()</code>
+      </para>
+      <para id="id10037737">
+        <code>{</code>
+      </para>
+      <para id="id10062298">
+        <code>double a,b,c, s;</code>
+      </para>
+      <para id="id11626894">
+        <code>a = 3; </code>
+      </para>
+      <para id="id11187101">
+        <code>b = 4; </code>
+      </para>
+      <para id="id11269670">
+        <code>c = 5;</code>
+      </para>
+      <para id="id4041090">
+        <code>s = (a+b+c)/2.0;</code>
+      </para>
+      <para id="id10991168">
+        <code>area = sqrt(s*(s-a)*(s-b)*(s-c)); </code>
+      </para>
+      <para id="id11626729">
+        <code>cout &lt;&lt; "The area of the triangle = " &lt;&lt; area &lt;&lt; endl;</code>
+      </para>
+      <para id="id10601343">
+        <code>return 0;</code>
+      </para>
+      <para id="id11798187">
+        <code>}</code>
+      </para>
+      <para id="id10799334">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id4148088">The area of the triangle = 6.0</para>
+      <section id="id-0750609983246">
+        <title>Casts</title>
+        <para id="id11563744">We have already seen the conversion of an operand’s data type within mixed-mode expressions and across assignment operators. In addition to these implicit data type conversions that are automatically made within mixed-mode expressions and assignment, C++ also provides for explicit user-specified type conversion. This method of type conversion is called <emphasis>casting</emphasis>. The word <emphasis>cast</emphasis> is used in the sense of “casting into a mold.” </para>
+        <para id="id11609840"><emphasis>Casting</emphasis> or <emphasis>type casting</emphasis>, copies the value contained in a variable of one data type into a variable of another data type.</para>
+        <para id="id10633189">The C++ syntax for casting variables is</para>
+        <para id="id10542735">
+          <code>variable = new_type( old_variable);</code>
+        </para>
+        <para id="id10049428">where the new_type portion is the keyword representing the type to which you want to cast the variable.</para>
+        <para id="id10938370">Example:</para>
+        <para id="id10852298">
+          <code>int iNum = 100;</code>
+        </para>
+        <para id="id10479190">
+          <code>float fNum;</code>
+        </para>
+        <para id="id10790447">
+          <code>fNum = float (inum);</code>
+        </para>
+        <para id="id8369339">If you do not explicitly cast a variable of one data type to another data type, then C++ will try to automatically perform the cast for you.</para>
+      </section>
+    </section>
+    <section id="id-843957171262">
+      <title>Program Input Using the CIN Object</title>
+      <para id="id11799652">So far, our programs have been limited in the sense that all their data must be defined within the program source code.</para>
+      <para id="id11958464">We will now learn how to write programs which enable data to be entered via the keyboard, while the program is running. </para>
+      <para id="id11638367">Such programs can be made to operate upon different data every time they run, making them much more flexible and useful. </para>
+      <section id="id-781815207311">
+        <title>Standard Input Stream</title>
+        <para id="id11466927">The <emphasis>cin</emphasis> object reads in information from the keyboard via the standard input stream.</para>
+        <para id="id11330972">The <emphasis>extraction operator</emphasis> (&gt;&gt;) retrieves information from the input stream.</para>
+        <para id="id9435996">When the statement cin &gt;&gt; num1; is encountered, the computer stops program execution and accepts data from the keyboard. The user responds by typing an integer (or float) and then pressing the Enter key (sometimes called the Return key) to send the number to the computer. When a data item is typed, the cin object stores the integer (or float) into the variable listed after the &gt;&gt; operator.</para>
+        <para id="id3964577">The <emphasis>cin</emphasis> and <emphasis>cout</emphasis> stream objects facilitate interaction between the user and the computer. Because this interaction resembles a dialogue, it is often called conversational computing or interactive computing.</para>
+        <para id="id13525719">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id11564183">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id11638908">
+          <code>int main()</code>
+        </para>
+        <para id="id6810929">
+          <code>{</code>
+        </para>
+        <para id="id4196372">
+          <code>int integer1, integer2, sum; // declaration</code>
+        </para>
+        <para id="id10737412">
+          <code/>
+        </para>
+        <para id="id9434422">
+          <code>cout &lt;&lt; "Enter first integer\n"; // prompt</code>
+        </para>
+        <para id="id7001103">
+          <code>cin &gt;&gt; integer1; // read an integer</code>
+        </para>
+        <para id="id10250343">
+          <code>cout &lt;&lt; "Enter second integer\n"; // prompt</code>
+        </para>
+        <para id="id9929863">
+          <code>cin &gt;&gt; integer2; // read an integer</code>
+        </para>
+        <para id="id10949696">
+          <code>sum = integer1 + integer2; </code>
+        </para>
+        <para id="id9007155">
+          <code>cout &lt;&lt; "Sum is " &lt;&lt; sum &lt;&lt; endl; </code>
+        </para>
+        <para id="id4198648">
+          <code>return 0; // indicate that program ended successfully</code>
+        </para>
+        <para id="id3966988">
+          <code>}</code>
+        </para>
+        <para id="id9059669">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id12120093">Enter the first integer</para>
+        <para id="id9339405">45</para>
+        <para id="id10950968">Enter the second integer</para>
+        <para id="id11271271">72</para>
+        <para id="id10940657">Sum is 117</para>
+        <para id="id4008151">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id3986258">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id4046359">
+          <code>int main()</code>
+        </para>
+        <para id="id11121742">
+          <code>{</code>
+        </para>
+        <para id="id11571354">
+          <code>int integer1, integer2, sum; // declaration</code>
+        </para>
+        <para id="id11486639">
+          <code/>
+        </para>
+        <para id="id11657348">
+          <code>cout &lt;&lt; "Enter two integers\n"; // prompt</code>
+        </para>
+        <para id="id4331906">
+          <code>cin &gt;&gt; integer1 &gt;&gt; integer2; // read two integers</code>
+        </para>
+        <para id="id6069769">
+          <code>sum = integer1 + integer2; </code>
+        </para>
+        <para id="id6083737">
+          <code>cout &lt;&lt; "Sum is " &lt;&lt; sum &lt;&lt; endl; </code>
+        </para>
+        <para id="id11438223">
+          <code>return 0; </code>
+        </para>
+        <para id="id10948410">
+          <code>}</code>
+        </para>
+        <para id="id11449270">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id4912732">Enter two integers</para>
+        <para id="id7515709">45 72</para>
+        <para id="id9537739">Sum is 117</para>
+      </section>
+    </section>
+    <section id="id-344111787925">
+      <title>Symbolic Constants</title>
+      <para id="id7354002">C++ introduces the concept of a named constant that is just like a variable, except that its value cannot be changed. The qualifier <emphasis>const</emphasis> tells the compiler that a name represents a constant. Any data type, built-in or user-defined, may be defined as const. If you define something as const and then attempt to modify it, the compiler will generate an error.</para>
+      <para id="id9449537">To define a constant in a program, we use const declaration qualifier.</para>
+      <para id="id12141640">Example:</para>
+      <para id="id7521785">
+        <code>const float PI = 3.1416;</code>
+      </para>
+      <para id="id9942015">
+        <code>const double SALESTAX = 0.05;</code>
+      </para>
+      <para id="id10921636">
+        <code>const int MAXNUM = 100;</code>
+      </para>
+      <para id="id7949709">Once declared, a constant can be used in any C++ statement in place of the number it represents.</para>
+      <para id="id9433821">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id10754826">
+        <code>// this program calculates the circumference of a circle</code>
+      </para>
+      <para id="id3970778">
+        <code>// given its radius</code>
+      </para>
+      <para id="id11613753">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id10893641">
+        <code/>
+      </para>
+      <para id="id11032715">
+        <code>int main()</code>
+      </para>
+      <para id="id7218115">
+        <code>{</code>
+      </para>
+      <para id="id10202407">
+        <code>const float PI = 3.1416</code>
+      </para>
+      <para id="id7573156">
+        <code>float radius, circumference;</code>
+      </para>
+      <para id="id10564441">
+        <code/>
+      </para>
+      <para id="id7949459">
+        <code>radius = 2.0;</code>
+      </para>
+      <para id="id10964150">
+        <code>circumference = 2.0 * PI * radius;</code>
+      </para>
+      <para id="id8417804">
+        <code>cout &lt;&lt; "The circumference of the circle is "</code>
+      </para>
+      <para id="id3960804">
+        <code>&lt;&lt; circumference &lt;&lt; endl;</code>
+      </para>
+      <para id="id11330820">
+        <code/>
+      </para>
+      <para id="id7237323">
+        <code>return 0;</code>
+      </para>
+      <para id="id5873499">
+        <code>}</code>
+      </para>
+      <para id="id4956199">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id3274399">The circumference of the circle is 12.5664</para>
+    </section>
+    <section id="id-322683818064">
+      <title>Focus on Problem Solving</title>
+      <para id="id11447772">In this section, we present a programming problem to further illustrate both the use of cin statements to accept user input data and the use of library functions for performing calculations.</para>
+      <para id="id10769570">
+        <emphasis>Problem: Approximating the Exponential Function</emphasis>
+      </para>
+      <para id="id11431131">The exponential function e^x, where e is known as Euler’s number (and has the value 2.718281828459045…) appears many times in descriptions of natural phenomena. The value of e^x can be approximated using the following series:</para>
+      <para id="id3777527">1 + x/1 + x^2/2 + x^3/6 + x^4/24 + x^5/120 + x^6/720 + …</para>
+      <para id="id11639696">Using this polynomial as a base, assume you are given the following assignment: Write a program that approximates e raised to a user input value of x using the first four terms of this series. For each approximation, display the value calculated by C++’s exponential function, exp(), the approximate value, and the absolute difference between the two. Make sure to verify your program using a hand calculation. Once the verification is complete, use the program to approximate e^4.</para>
+      <para id="id9504574">Using the top-down development procedure, we perform the following steps.</para>
+      <section id="id-176434218016">
+        <title>Step 1: Analyze the Problem </title>
+        <para id="id11487584">The statement of the problem specifies that four approximations are to be made using one, two, three, and four terms of the approximating polynomial, respectively. For each approximation, three output values are required: the value of produced by the exponential function, the approximate value, and the absolute difference between the two values. The structure of the required output display is as below (in symbolic form).</para>
+        <figure id="id10947120">
+          <media id="id1164717987922" alt=""><image src="../../media/graphics7-7a32.png" mime-type="image/png" height="133" width="515"/></media>
+        </figure>
+        <para id="id10723176">Realizing the each line in the display can only be produced by executing a cout statement, it should be clear that four such statements must be executed. Additionally, since each output line contains three computed values, each cout statement will have three items in its expression list.</para>
+        <para id="id11799541">The only input to the program consists of the value of x. This will, of course, require a single prompt and a cin statement to input the necessary value.</para>
+      </section>
+      <section id="id-307662483513">
+        <title>Step 2: Develop a Solution </title>
+        <para id="id10575566">Before any output items can be calculated, the program needs to prompt the user for a value of x and then accept the entered value. The output display consists of two title lines followed by four lines of calculated data. The title lines can be produced using two cout statements. Now let’s see how the data being displayed are produced.</para>
+        <para id="id10666967">The first item on the first data output line illustrated in Table 3.4 can be obtained using the exp() function. The second item on this line, the approximation to ex , can be obtained by using the first term in the polynomial that was given in the program specification. Finally, the third item on the line can be calculated by using the abs() function on the difference between the first two lines. When all of these items are calculated, a single cout statement can be used to display the three results on the same line.</para>
+        <para id="id10132830">The second output line illustrated in Table 3.4 displays the same type of items as the first line, except that the approximation to ex requires the two of two terms of the approximating polynomial. Notice also that the first item on the second line, the value obtained by the exp() function, is the same as the first item on the first line. This means that this item does not have to recalculated; the value calculated for the first line can simply be displayed a second line. Once the data for the second line have been calculated, a single cout statement can again be used to display the required values.</para>
+        <para id="id10795228">Finally, only the second and third items on the last two output lines shown in Figure 1 need to be recalculated because the first item on these lines is the same as previously calculated for the first line. Thus, for this problem, the complete algorithm described in pseudocode is:</para>
+        <para id="id7720972">
+          <code>Display a prompt for the input value of x.</code>
+        </para>
+        <para id="id12125472">
+          <code>Read the input value.</code>
+        </para>
+        <para id="id11526190">
+          <code>Display the heading lines.</code>
+        </para>
+        <para id="id9547327">
+          <code>Calculate the exponential value of x using the exp() function.</code>
+        </para>
+        <para id="id11014172">
+          <code>Calculate the first approximation.</code>
+        </para>
+        <para id="id9391259">
+          <code>Calculate the first difference.</code>
+        </para>
+        <para id="id9566629">
+          <code>Print the first output line.</code>
+        </para>
+        <para id="id9887437">
+          <code>Calculate the second approximation.</code>
+        </para>
+        <para id="id3961615">
+          <code>Calculate the second difference.</code>
+        </para>
+        <para id="id10599156">
+          <code>Print the second output line.</code>
+        </para>
+        <para id="id10291378">
+          <code>Calculate the third approximation.</code>
+        </para>
+        <para id="id3985014">
+          <code>Calculate the third difference.</code>
+        </para>
+        <para id="id10575340">
+          <code>Print the third output line.</code>
+        </para>
+        <para id="id10786377">
+          <code>Calculate the fourth approximation.</code>
+        </para>
+        <para id="id10605894">
+          <code>Calculate the fourth difference.</code>
+        </para>
+        <para id="id12180527">
+          <code>Print the fourth output line.</code>
+        </para>
+        <para id="id3382432">To ensure that we understand the processing used in the algorithm, we will do a hand calculation. The result of this calculation can then be used to verify the result produced by the program that we write. For test purposes, we use a value of 2 for x, which causes the following approximations:</para>
+        <para id="id5739604">Using the first term of the polynomial, the approximation is</para>
+        <para id="id9297988">e^2 = 1</para>
+        <para id="id9840815">Using the first two terms of the polynomial, the approximation is</para>
+        <para id="id9605554">e^2 = 1 + 2/1 = 3</para>
+        <para id="id10660294">Using the first three terms of the polynomial, the approximation is</para>
+        <para id="id12161608">e^2 = 3 + 2^2/2 = 5</para>
+        <para id="id11809708">Using the first four terms of the polynomial, the approximation is</para>
+        <para id="id6981984">e^2 = 5 + 2^3/6 = 6.3333</para>
+        <para id="id11958863">Notice that the first four terms of the polynomial, it was not necessary to recalculate the value of the first three terms; instead, we used the previously calculated value.</para>
+      </section>
+      <section id="id-543413671054">
+        <title>Step 3: Code the Algorithm </title>
+        <para id="id7756304">The following program represents a description of the selected algorithm in C++.</para>
+        <para id="id9314364">
+          <code>// This program approximates the function e raised to the x power</code>
+        </para>
+        <para id="id10788298">
+          <code>// using one, two, three, and four terms of an approximating polynomial.</code>
+        </para>
+        <para id="id10292473">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id8820395">
+          <code>#include &lt;iomanip.h&gt;</code>
+        </para>
+        <para id="id10606542">
+          <code>#include &lt;math.h&gt;</code>
+        </para>
+        <para id="id5231037">
+          <code>int main()</code>
+        </para>
+        <para id="id10422569">
+          <code>{</code>
+        </para>
+        <para id="id11514985">
+          <code>double x, funcValue, approx, difference;</code>
+        </para>
+        <para id="id10007241">
+          <code>cout &lt;&lt; “\n Enter a value of x: “;</code>
+        </para>
+        <para id="id7239932">
+          <code>cin &gt;&gt; x;</code>
+        </para>
+        <para id="id10773098">
+          <code>// print two title lines</code>
+        </para>
+        <para id="id3357370">
+          <code>cout &lt;&lt; “ e to the x Approximation Difference\n”</code>
+        </para>
+        <para id="id10761840">
+          <code>cout &lt;&lt; “------------ --------------------- --------------\n”;</code>
+        </para>
+        <para id="id10788439">
+          <code>funcValue = exp(x);</code>
+        </para>
+        <para id="id12141529">
+          <code>// calculate the first approximation</code>
+        </para>
+        <para id="id9732646">
+          <code>approx = 1;</code>
+        </para>
+        <para id="id6083756">
+          <code>difference = abs(funcValue – approx);</code>
+        </para>
+        <para id="id9841945">
+          <code>cout &lt;&lt; setw(10) &lt;&lt; setiosflags(iso::showpoint) &lt;&lt; funcValue</code>
+        </para>
+        <para id="id3281001">
+          <code>&lt;&lt; setw(18) &lt;&lt; approx</code>
+        </para>
+        <para id="id10033151">
+          <code>&lt;&lt; setw(18) &lt;&lt; difference &lt;&lt; endl;</code>
+        </para>
+        <para id="id11263658">
+          <code>// calculate the first approximation</code>
+        </para>
+        <para id="id10291451">
+          <code>approx = 1;</code>
+        </para>
+        <para id="id10951745">
+          <code>difference = abs(funcValue – approx);</code>
+        </para>
+        <para id="id3438088">
+          <code>cout &lt;&lt; setw(10) &lt;&lt; setiosflags(iso::showpoint) &lt;&lt; funcValue</code>
+        </para>
+        <para id="id6596242">
+          <code>&lt;&lt; setw(18) &lt;&lt; approx</code>
+        </para>
+        <para id="id4281106">
+          <code>&lt;&lt; setw(18) &lt;&lt; difference &lt;&lt; endl;</code>
+        </para>
+        <para id="id11252533">
+          <code>// calculate the second approximation</code>
+        </para>
+        <para id="id11662141">
+          <code>approx = approx + x;</code>
+        </para>
+        <para id="id11185121">
+          <code>difference = abs(funcValue – approx);</code>
+        </para>
+        <para id="id10843248">
+          <code>cout &lt;&lt; setw(10) &lt;&lt; setiosflags(iso::showpoint) &lt;&lt; funcValue</code>
+        </para>
+        <para id="id10677624">
+          <code>&lt;&lt; setw(18) &lt;&lt; approx</code>
+        </para>
+        <para id="id9970498">
+          <code>&lt;&lt; setw(18) &lt;&lt; difference &lt;&lt; endl;</code>
+        </para>
+        <para id="id10788040">
+          <code>// calculate the third approximation</code>
+        </para>
+        <para id="id11599705">
+          <code>approx = approx + pow(x,2)/2.0;</code>
+        </para>
+        <para id="id9502230">
+          <code>difference = abs(funcValue – approx);</code>
+        </para>
+        <para id="id10965086">
+          <code>cout &lt;&lt; setw(10) &lt;&lt; setiosflags(iso::showpoint) &lt;&lt; funcValue</code>
+        </para>
+        <para id="id3993322">
+          <code>&lt;&lt; setw(18) &lt;&lt; approx</code>
+        </para>
+        <para id="id4277043">
+          <code>&lt;&lt; setw(18) &lt;&lt; difference &lt;&lt; endl;</code>
+        </para>
+        <para id="id4279645">
+          <code/>
+        </para>
+        <para id="id7254601">
+          <code>// calculate the fourth approximation</code>
+        </para>
+        <para id="id8091196">
+          <code>approx = approx + pow(x,3)/6.0;</code>
+        </para>
+        <para id="id8508249">
+          <code>difference = abs(funcValue – approx);</code>
+        </para>
+        <para id="id3278505">
+          <code>cout &lt;&lt; setw(10) &lt;&lt; setiosflags(iso::showpoint) &lt;&lt; funcValue</code>
+        </para>
+        <para id="id7185511">
+          <code>&lt;&lt; setw(18) &lt;&lt; approx</code>
+        </para>
+        <para id="id10612020">
+          <code>&lt;&lt; setw(18) &lt;&lt; difference &lt;&lt; endl;</code>
+        </para>
+        <para id="id8508243">
+          <code>return 0;</code>
+        </para>
+        <para id="id6366296">
+          <code>}</code>
+        </para>
+        <para id="id3967137">In reviewing the program, notice that the input value of x is obtained first. The two title lines are then printed prior to any calculations being made. The value of ex is then computed using the exp() library function and assigned to the variable funcValue. This assignment permits this value to be used in the four difference calculations and displayed four times without the need for recalculation.</para>
+        <para id="id10710938">Since the approximation to the ex is “built up” using more and more terms of the approximating polynomial, only the new term for each approximation is calculated and added to the previous approximation. Finally, to permit the same variables to be reused, the values in them are immediately printed before the next approximation is made.</para>
+      </section>
+      <section id="id-558727579877">
+        <title>Step 4: Test and Correct the Program </title>
+        <para id="id9899182">The following is the sample run produced by the above program is:</para>
+        <figure id="id8821014"><media id="id1164722099353" alt=""><image src="../../media/graphics8-c91b.png" mime-type="image/png" height="152" width="438"/></media>
+        <caption>A sample run produced by the above program</caption></figure>
+        <para id="id7707233">The first two columns of output data produced by the sample run agree with our hand calculation. A hand check of the last column verifies that it also correctly contains the difference in values between the first two columns.</para>
+      </section>
+    </section>
+  </content>
+</document>

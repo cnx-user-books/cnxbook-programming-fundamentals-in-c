@@ -1,0 +1,356 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Syllabus</title>
+  <metadata>
+  <md:content-id>m27299</md:content-id><md:title>Syllabus</md:title>
+  <md:abstract/>
+  <md:uuid>3d949104-3e45-49ee-a501-fca2cff6900b</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-436721632363">
+      <title>LETTER TO STUDENTS</title>
+      <para id="id33785504">This course and this student manual reflect a collective effort by your constructor, the Vietnam Education Foundation, The Massachusetts Institute of Technology (MIT) Open Courseware Project and faculty colleagues within Vietnam and the United States who served as reviewers of drafts of this student manual. This course is an important component of our academic program. Although it has been offered for more than three years, this latest version represents an attempt to expand the ranges of sources of information and instruction so that the course continues to be up-to-date and the methods well suited to what is to be learned.</para>
+      <para id="id34973544">You will be asked from time to time to offer feedback on how the student manual is working and how the course is progressing. Your comments will inform the development team about what is working and what requires attention. Our goal is to help you learn what is important about this particular field and to eventually succeed as a professional applying what you learn in this course.</para>
+      <para id="id34581872">Thank you for your cooperation. I hope you enjoy the course.</para>
+    </section>
+    <section id="id-649402670253">
+      <title>COURSE INFORMATION</title>
+      <para id="id36233680"><emphasis>Course name:</emphasis> Programming Fundamentals In C++ (501125)</para>
+      <para id="id35676665"><emphasis>Semester:</emphasis> Spring Semester 2008</para>
+      <para id="id37504958"><emphasis>Institute:</emphasis> Faculty of Computer Science And Engineering, Hochiminh City University of Technology, Vietnam.</para>
+      <para id="id39033437"><emphasis>Credit Hours:</emphasis> 3</para>
+      <para id="id37327110"><emphasis>Instructor:</emphasis> Dr. Duong Tuan Anh, Associate Professor</para>
+      <para id="id34725622"><emphasis>Office Location:</emphasis> Faculty of Computer Science and Engineering, Ho Chi Minh City University of Technology, 268 Ly Thuong Kiet, Dist. 10, Ho Chi Minh City. </para>
+      <para id="id35344316"><emphasis>Office hours:</emphasis> 14:00 – 17:00 Wednesday or by appointment</para>
+      <para id="id37380199"><emphasis>Tel:</emphasis> 8647256/Ext. 5841; </para>
+      <para id="id34831984"><emphasis>Fax:</emphasis> (848) 8645137. </para>
+      <para id="id34822212"><emphasis>Email:</emphasis><link url="mailto:dtanh@cse.hcmut.edu.vn">dtanh@cse.hcmut.edu.vn</link>. </para>
+      <para id="id36138533">
+        <emphasis>Website:</emphasis>
+        <link url="http://www.dit.hcmut.edu.vn/~dtanh/">http://www.dit.hcmut.edu.vn/~dtanh/</link>
+      </para>
+      <para id="id35063358">
+        <emphasis>Teaching Assistants: </emphasis>
+      </para>
+      <para id="id36265461">Mr. Nguyen Quoc Viet Hung (<link url="mailto:nqvhung@cse.hcmut.edu.vn">nqvhung@cse.hcmut.edu.vn</link>)</para>
+      <para id="id36963764">Mr. Ly Hoang Hai (<link url="mailto:lhhai@cse.hcmut.edu.vn">lhhai@cse.hcmut.edu.vn</link>)</para>
+      <para id="id36911818">Mr. Nguyen Xuan Minh (<link url="mailto:nxminh@cse.hcmut.edu.vn">nxminh@cse.hcmut.edu.vn</link>)</para>
+      <para id="id33334421">Mr. Nguyen Van Doan (<link url="mailto:nvdoan@cse.hcmut.edu.vn">nvdoan@cse.hcmut.edu.vn</link>)</para>
+    </section>
+    <section id="id-96726016257">
+      <title>COURSE DESCRIPTION</title>
+      <para id="id31641613">This course is a comprehensive introductory course that is intended for students who have no background in computer programming. This course provides basic knowledge and skills on programming with two important programming paradigms: structured programming and object-oriented programming. The course covers structured programming paradigm in depth and introduces just some basics on object-oriented programming. The programming language used in this programming course is C++.</para>
+    </section>
+    <section id="id-713976818822">
+      <title>COURSE OBJECTIVES</title>
+      <para id="id37141787">Upon successful completion, students will be able to:</para>
+      <list id="id34163632" list-type="enumerated">
+        <item>Design algorithmic solutions to problems.</item>
+        <item>Translate a specified algorithm into correct self-documented C++ code using generally accepted programming style. In accomplishing this translation, the student shall be able to apply the structured programming mechanisms of C++ including sequence, selection, iteration, recursion, pointers and arrays.</item>
+        <item>Acquire an understanding of basic object-oriented concepts and the issues involved in effective class design.</item>
+        <item>Write C++ programs that use:<list id="id34233855" list-type="bulleted"><item>arrays</item><item>structures</item><item>pointers</item><item>object-oriented concepts such as information hiding, constructors, destructors, inheritance.</item></list></item>
+      </list>
+    </section>
+    <section id="id-980281710306">
+      <title>INTRUCTOR OBJECTIVES</title>
+      <para id="id35229994">In order to meet the course objectives, the students are expected to fulfill the following requirements:</para>
+      <list id="id34804676" list-type="bulleted">
+        <item>Class attendance must be more than 75%.</item>
+        <item>For each chapter, the students should complete at home a sufficient amount of exercises given for the chapter. All the exercises are given in Programming Fundamentals in C++ - Lecture Notes and Exercises, available at the instructor’s website.</item>
+        <item>Lab work participation is mandatory. At each lab session, the students must complete a sufficient amount of assignments assigned for that lab session. Lab assistants will evaluate the performance of each student at the end of each lab session. </item>
+        <item>There are two programming projects each student is required to produce solutions. These projects aim to train the student’s creativity and problem-solving skills. Project 1 aims to apply all the knowledge in the six first chapters and Project 2 aims to apply those of 2 last chapters. Due date of each project must be respected. Unless it is extremely exceptional, late submission is not accepted. </item>
+      </list>
+    </section>
+    <section id="id-575208134816">
+      <title>COURSE DURATION</title>
+      <para id="id34281167">This course is one semester long, meeting from February 18th through May 29th. Our semester is 16 weeks long. The course meets for three period lecture session and two period lab session. It consists of 42 periods for lectures and 28 periods for lab works (1 period = 45 minutes).</para>
+    </section>
+    <section id="id-40563573205">
+      <title>COURSE OUTLINE</title>
+      <para id="id36431349">
+        <emphasis>Chapter 1: Introduction to Computer and Programming</emphasis>
+      </para>
+      <list id="id37482338" list-type="enumerated">
+        <item>Hardware and software</item>
+        <item>Programming languages</item>
+        <item>Problem solving and software development</item>
+        <item>Algorithms</item>
+      </list>
+      <para id="id37479814">
+        <emphasis>Chapter 2: Basic Elements in C++</emphasis>
+      </para>
+      <list id="id37345200" list-type="enumerated">
+        <item>Program structures</item>
+        <item>Data types, and operators </item>
+        <item>Variables and variable declarations</item>
+        <item>Integer quantifiers</item>
+        <item>Focus on problem-solving</item>
+      </list>
+      <para id="id33342743">
+        <emphasis>Chapter 3: Completing the Basics</emphasis>
+      </para>
+      <list id="id33393460" list-type="enumerated">
+        <item>Assignment operators</item>
+        <item>Formatting numbers for program output</item>
+        <item>Using mathematical library functions</item>
+        <item>Program input using the cin object</item>
+        <item>Symbolic constants</item>
+      </list>
+      <para id="id37409444">
+        <emphasis>Chapter 4: Selection Structures</emphasis>
+      </para>
+      <list id="id36417283" list-type="enumerated">
+        <item>Selection criteria</item>
+        <item>The if-else statement</item>
+        <item>Nested if statement</item>
+        <item>The switch statement</item>
+        <item>The enum specifier</item>
+      </list>
+      <para id="id33367651">
+        <emphasis>Chapter 5: Repetition Structures – Arrays and Structured Programming</emphasis>
+      </para>
+      <list id="id22431860" list-type="enumerated">
+        <item>Basic loop structures</item>
+        <item>while loops</item>
+        <item>Interactive while loops</item>
+        <item>for loops</item>
+        <item>Nested loops</item>
+        <item>do-while loops</item>
+        <item>Structured programming with C++</item>
+        <item>Arrays</item>
+        <item>Structures</item>
+      </list>
+      <para id="id34960521">
+        <emphasis>Chapter 6: Functions and Pointers</emphasis>
+      </para>
+      <list id="id36170259" list-type="enumerated">
+        <item>Function and parameter declarations</item>
+        <item>Returning values</item>
+        <item>Variable scope</item>
+        <item>Variable storage class</item>
+        <item>Passing by reference</item>
+        <item>Recursion</item>
+        <item>Passing arrays to functions</item>
+        <item>Pointers</item>
+        <item>The typedef declaration</item>
+      </list>
+      <para id="id35212348">
+        <emphasis>Chapter 7: Introduction to Classes</emphasis>
+      </para>
+      <list id="id34461033" list-type="enumerated">
+        <item>Classes</item>
+        <item>Information hiding</item>
+        <item>Member functions</item>
+        <item>Dynamically Memory Allocation with operators new and delete</item>
+        <item>Pointers as class members</item>
+      </list>
+      <para id="id22843128">
+        <emphasis>Chapter 8: Object Manipulation - Inheritance</emphasis>
+      </para>
+      <list id="id34158834" list-type="enumerated">
+        <item>Advanced constructors</item>
+        <item>Destructors</item>
+        <item>Constant objects</item>
+        <item>Inheritance</item>
+      </list>
+    </section>
+    <section id="id-873602773858">
+      <title>LAB WORK</title>
+      <para id="id34667157">This course maintains a laboratory for its students. During semester, a group of lab assistants hang out in lab to answer students’ questions and help them in debugging. There are 10 lab sessions in the course and the first lab session starts at the third week of the semester. For each lab session, which is 3 period long, the students are requested to finish at least some required assignments. Notice that lab assistants will grade the performance of each student at the end of each lab session. Lab assistants inspect the working of student programs and ask questions on their program codes in order to grade the student lab performance in each lab session.</para>
+      <para id="id36305189">
+        <emphasis>Lab work materials</emphasis>
+      </para>
+      <para id="id36197869">Lab assignments for all lab sessions are given in <emphasis>Programming Fundamentals in C++ -Laboratory Manual,</emphasis> which is available in the instructor’s web site. </para>
+      <para id="id33924656">
+        <emphasis>System requirement</emphasis>
+      </para>
+      <para id="id35302246">This course is designed to be delivered in an environment supporting a C++ compiler. There is supplementary information included about the Visual C++ 6.0 development environment.</para>
+    </section>
+    <section id="id-203618527247">
+      <title>INSTRUCTIONAL METHODS</title>
+      <para id="id37756160">To facilitate the goal of making C++ accessible as a first-level programming course, the following instructional methods are used in this course.</para>
+      <para id="id36138671"><emphasis>End-of-Chapter Exercises.</emphasis> Every chapter in the Lecture Notes contains several diverse skill-builder and programming exercises. Students are encouraged to do all the exercises after each chapter. Solutions to some of them are provided by instructor or teaching assistants in the class.</para>
+      <para id="id36137102"><emphasis>Focus on Problem Solving.</emphasis> In the Chapter 2, 3, 4 and 7, each chapter contains a Focus on Problem Solving section with one complete problem per chapter. Each application is used to demonstrate effective problem solving within the context of a complete program solution. Two programming projects – one for structured programming paradigm and one for object-oriented programming paradigm will ask each student to write larger programs in order to help students to enhance their problem-solving skills.</para>
+      <para id="id34772461"><emphasis>Pseudocode Descriptions.</emphasis> Pseudocode is stressed throughout the course. Flowchart symbols are described, but are only used when visually presenting flow-of-control constructs.</para>
+      <para id="id34159740"><emphasis>Gentle Introduction to Object-Oriented Programming.</emphasis> In the course, there are two chapters (7and 8) that provide a “mini-course” introduction to basic object-oriented programming concepts and design techniques. Object oriented design techniques are illustrated in details in a Focus on Problem Solving section of Chapter 7 with one complete application. For more advanced features of object-oriented programming in C++, another course named “Object-Oriented Programming” which is offered one semester later will cover.</para>
+    </section>
+    <section id="id-528533226943">
+      <title>EVALUATION AND GRADING SYSTEMS</title>
+      <para id="id34157272">The final grade of each student shall be calculated by means of a weighted average as follows:</para>
+      <para id="id36001109"><emphasis>Lab works</emphasis> and <emphasis>programming projects</emphasis>: <emphasis>30%</emphasis></para>
+      <para id="id36305457"><emphasis>Midterm</emphasis> examination: <emphasis>20%</emphasis></para>
+      <para id="id35317129"><emphasis>Final</emphasis> examination: <emphasis>50%</emphasis></para>
+      <para id="id35563289">
+        <emphasis>Lab work and project evaluation:</emphasis>
+      </para>
+      <para id="id34940444">Lab work evaluation is based on lab work performance of all 10 lab sessions. Project evaluation is based on the working of 2 programming projects. Sample topics for programming projects are given in the last pages of Programming Fundamentals in C++ -Laboratory Manual, which is available in the instructor’s web site. </para>
+      <para id="id34283356">Lab assignments and projects are evaluated using the following grading criteria:</para>
+      <para id="id35467697">-correctness: 40%</para>
+      <para id="id34884056">- appropriate use of arrays/structures/pointers/functions and/or classes: 25%</para>
+      <para id="id38475532">- program structure (including efficiency): 10%</para>
+      <para id="id36506355">- program style: 10%</para>
+      <para id="id34761568">- documentation: 10%</para>
+      <para id="id33637940">- format of output: 5%</para>
+      <para id="id34837329">Scores are given in the range from 0 to 10 (rounded to 0.5) with the following interpretation:</para>
+      <figure id="id35528234"><media id="id7060163" alt=""><image src="../../media/graphics1-b512.png" mime-type="image/png" height="154" width="570"/></media>
+      <caption> Grading system</caption></figure>
+      <para id="id38518953">
+        <emphasis>Exams</emphasis>
+      </para>
+      <para id="id34158702">Exams are closed-book exams. Exams include one or more of: short answer, multiple choice, trace the given code, debug the given code or given a problem description, produce a solution in the form of a short program or a function(s). </para>
+      <para id="id35356135">The problems given in the exams are like those on exercises and lab work. The students who spend more time and effort in doing exercises and lab assignments will certainly have better performance in the exams. Exam scores are given in the range from 0 to 10. </para>
+    </section>
+    <section id="id-806588165575">
+      <title>COURSE MATERIALS</title>
+      <para id="id11253304">
+        <emphasis>Lecture Notes, Exercises, Laboratory Manual</emphasis>
+      </para>
+      <para id="id36481748">Available at the instructor’s website.</para>
+      <para id="id34321703">
+        <emphasis>Text book:</emphasis>
+      </para>
+      <para id="id34570499">[1] G. J. Bronson, Program Development and Design Using C++, 3nd Edition, Brooks/COLE Thomson Learning, 2006.</para>
+      <para id="id38519770">(All lecture notes and exercises used in this course are mainly from this textbook. Students can find more C++ language features, problem-solving guidelines as well as good exercises and assignments from this book for further self-study.)</para>
+      <para id="id22976781">
+        <emphasis>Reference books:</emphasis>
+      </para>
+      <para id="id36227353">[2] H. M Deitel and P. J. Deitel, C++ How to Program – 3rd Edition, Prentice-Hall, 2001.</para>
+      <para id="id34576606">(This book contains a lot of good C++ programming examples. All examples in this book are very well explained.)</para>
+      <para id="id33334809">[3] J. Farrel, Object-Oriented Programming Using C++, 2nd Edition, Course Technology/Thomson Learning, 2001.</para>
+      <para id="id35761316">(If students want to go in depth in object-oriented programming with C++, they will find this book very helpful.)</para>
+      <para id="id35185982">[4] D. Gosselin, Microsoft Visual C++ 6.0, Course Technology/Thomson Learning, 2001.</para>
+      <para id="id35335117">(This book is a supplementary text for the students who want to know more about Microsoft Visual C++ 6.0 programming environment.)</para>
+    </section>
+    <section id="id-584097389462">
+      <title>CALENDAR</title>
+      <para id="id33418220">There are 16 sessions which compose of 14 lectures, 1 mid-term exam and 1 final exam.</para>
+      <figure id="id36378398"><media id="id6545354" alt=""><image src="../../media/graphics2-99bf.png" mime-type="image/png" height="795" width="585"/></media>
+      <caption> Course calenda </caption></figure>
+    </section>
+    <section id="id-459651481128">
+      <title>END-OF-COURSE EVALUATION</title>
+      <para id="id35063204">To continuously improve course content and design, students are requested to complete end-of-course evaluation form. The student comments will be carefully reviewed and used to improve the quality of the course. Please take a moment to complete the following end-of-course feedback form.</para>
+      <para id="id35607951">OVERALL</para>
+      <list id="id36479678" list-type="enumerated">
+        <item>Rate your overall satisfaction with the course.</item>
+      </list>
+      <para id="id35118921">______Very Satisfied</para>
+      <para id="id34803923">______Satisfied</para>
+      <para id="id38477443">______Neutral</para>
+      <para id="id36775135">______Dissatisfied</para>
+      <para id="id35466416">______Very Dissatisfied</para>
+      <list id="id35232292" list-type="enumerated">
+        <item>Rate the course in terms of meeting your educational needs.</item>
+      </list>
+      <para id="id36939597">______Very Satisfied</para>
+      <para id="id36171698">______Satisfied</para>
+      <para id="id34758746">______Neutral</para>
+      <para id="id35509952">______Dissatisfied</para>
+      <para id="id38474842">______Very Dissatisfied</para>
+      <list id="id22844660" list-type="enumerated">
+        <item>Based on the knowledge/skill you require to do your job, how would you want to change this course?</item>
+      </list>
+      <para id="id34512210">----------------------------------------------------------------------------------------------</para>
+      <para id="id35333484">----------------------------------------------------------------------------------------------</para>
+      <para id="id33043569">COURSE CONTENT</para>
+      <list id="id35510147" list-type="enumerated">
+        <item>Rate the course in terms of meeting the stated objectives.</item>
+      </list>
+      <para id="id36177259">______Very Satisfied</para>
+      <para id="id36437654">______Satisfied</para>
+      <para id="id35762940">______Neutral</para>
+      <para id="id33974204">______Dissatisfied</para>
+      <para id="id36594573">______Very Dissatisfied</para>
+      <list id="id33352294" list-type="enumerated">
+        <item>Rate the course content (e.g., relevance, structure, level of details).</item>
+      </list>
+      <para id="id33352058">______Very Satisfied</para>
+      <para id="id34511935">______Satisfied</para>
+      <para id="id37668540">______Neutral</para>
+      <para id="id38135546">______Dissatisfied</para>
+      <para id="id36354110">______Very Dissatisfied</para>
+      <list id="id35024089" list-type="enumerated">
+        <item>Rate the participative activities (e.g., labs, exercises, projects).</item>
+      </list>
+      <para id="id23636816">______Very Satisfied</para>
+      <para id="id34223501">______Satisfied</para>
+      <para id="id35282322">______Neutral</para>
+      <para id="id38004429">______Dissatisfied</para>
+      <para id="id3783166">______Very Dissatisfied</para>
+      <list id="id35317300" list-type="enumerated">
+        <item>Rate the course materials (e.g., lecture notes, slides, lab manual, textbook).</item>
+      </list>
+      <para id="id36594543">______Very Satisfied</para>
+      <para id="id37929321">______Satisfied</para>
+      <para id="id34740413">______Neutral</para>
+      <para id="id35211326">______Dissatisfied</para>
+      <para id="id34042066">______Very Dissatisfied</para>
+      <list id="id35336925" list-type="enumerated">
+        <item>What topics in the course you like best? Why?</item>
+        <item>What topics in the course you like least? Why?</item>
+        <item>Course content comments:</item>
+      </list>
+      <para id="id36481267">------------------------------------------------------------------------------------------</para>
+      <para id="id35217863">------------------------------------------------------------------------------------------</para>
+      <para id="id37473580">INSTRUCTION</para>
+      <list id="id36221622" list-type="enumerated">
+        <item>Rate the instructor’s subject knowledge.</item>
+      </list>
+      <para id="id23099867">______Very Satisfied</para>
+      <para id="id23357112">______Satisfied</para>
+      <para id="id33925965">______Neutral</para>
+      <para id="id38021353">______Dissatisfied</para>
+      <para id="id34398223">______Very Dissatisfied</para>
+      <list id="id34873552" list-type="enumerated">
+        <item>Rate the instructor’s effectiveness (e.g., question handling, presentation, and ability to explain ideas).</item>
+      </list>
+      <para id="id34951661">______Very Satisfied</para>
+      <para id="id9235794">______Satisfied</para>
+      <para id="id35710525">______Neutral</para>
+      <para id="id19441398">______Dissatisfied</para>
+      <para id="id23790215">______Very Dissatisfied</para>
+      <list id="id35501570" list-type="enumerated">
+        <item>Instruction comments:</item>
+      </list>
+      <para id="id38522650">--------------------------------------------------------------------------------------------</para>
+      <para id="id34719202">--------------------------------------------------------------------------------------------</para>
+      <para id="id39048172">FACILITIES AND EQUIPMENT</para>
+      <list id="id37394179" list-type="enumerated">
+        <item>Rate the classroom facilities provided (e.g. ventilation, lightning, temperature, space, projector).</item>
+      </list>
+      <para id="id37396973">______Very Satisfied</para>
+      <para id="id36027197">______Satisfied</para>
+      <para id="id37475449">______Neutral</para>
+      <para id="id22243859">______Dissatisfied</para>
+      <para id="id37820210">______Very Dissatisfied</para>
+      <list id="id37276196" list-type="enumerated">
+        <item>Rate the computer lab equipment provided (e.g., computers, software, Internet access).</item>
+      </list>
+      <para id="id23669147">______Very Satisfied</para>
+      <para id="id20896546">______Satisfied</para>
+      <para id="id35332847">______Neutral</para>
+      <para id="id34945608">______Dissatisfied</para>
+      <para id="id37419859">______Very Dissatisfied</para>
+      <list id="id35761291" list-type="enumerated">
+        <item>Facilities and equipment comments:</item>
+      </list>
+      <para id="id34283180">------------------------------------------------------------------------------------------------</para>
+      <para id="id39033134">------------------------------------------------------------------------------------------------</para>
+      <para id="id34761574">SUPPORT</para>
+      <list id="id37866885" list-type="enumerated">
+        <item>Rate the lab/teaching assistant support. (enthusiasm, effectiveness, knowledge, skill, communication ability).</item>
+      </list>
+      <para id="id36571788">______Very Satisfied</para>
+      <para id="id24205776">______Satisfied</para>
+      <para id="id34275309">______Neutral</para>
+      <para id="id37452580">______Dissatisfied</para>
+      <para id="id36656856">______Very Dissatisfied</para>
+      <list id="id37573182" list-type="enumerated">
+        <item>Support comments.</item>
+      </list>
+      <para id="id34930707">------------------------------------------------------------------------------------------------</para>
+      <para id="id38475618">------------------------------------------------------------------------------------------------</para>
+      <para id="id37723604">Thank you for your comments.</para>
+    </section>
+  </content>
+</document>

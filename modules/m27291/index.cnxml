@@ -1,0 +1,960 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Selection Statements</title>
+  <metadata>
+  <md:content-id>m27291</md:content-id><md:title>Selection Statements</md:title>
+  <md:abstract>The flow of control refers to the order in which a program’s statements are executed. Unless directed otherwise, the normal flow of control for all programs is sequential. This means that statements are executed in sequence, one after another, in the order in which they are placed within the program.
+Selection, repetition and function invocation structures permit the flow of control to be altered in defined ways. This chapter introduces to you C++’s selection statements. Repetition and invocation techniques are presented in the next two chapters.</md:abstract>
+  <md:uuid>67f20652-d64b-42bb-bce1-688caf57ebb7</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-0481319381264">
+      <title>Selection Criteria</title>
+      <section id="id-65069448627">
+        <title>Relational Operators</title>
+        <para id="id24689542">Relational operators are used to compare two operands for equality and to determine if one numeric value is greater than another. A Boolean value of true or false is returned after two operands are compared. The list of relational operators is given below.</para>
+        <figure id="id38985994"><media id="id1169647775287" alt=""><image src="../../media/graphics1-4626.png" mime-type="image/png" height="169" width="314"/></media>
+        <caption> Relational operators </caption></figure>
+        <para id="id40103282">Example:</para>
+        <para id="id37466730">
+          <code>a = = b</code>
+        </para>
+        <para id="id37077983">
+          <code>(a*b) != c</code>
+        </para>
+        <para id="id22870498">
+          <code>s == ‘y’</code>
+        </para>
+        <para id="id38914954">
+          <code>x&lt;= 4</code>
+        </para>
+        <para id="id40990204">The value of a relational expression such as a &gt; 40 depends on the value stored in the variable a.</para>
+      </section>
+      <section id="id-948538197752">
+        <title>Logical Operators</title>
+        <para id="id41492837">Logical operators, AND, OR and NOT are used for creating more complex conditions. Like relational operators, a Boolean value of true or false is returned after the logical operation is executed.</para>
+        <para id="id40424699">When the AND operator, &amp;&amp;, is used with two simple expressions, the condition is true only if both individual expressions are true by themselves.</para>
+        <para id="id41166179">The logical OR operator, ||, is also applied with two expressions. When using the OR operator, the condition is satisfied if either one or both of the two expressions are true. </para>
+        <para id="id40254307">The NOT operator,!, is used to change an expression to its opposite state; thus, if the expression has any nonzero value (true),! expression produces a zero value (false). If an expression is false,! expression is true (and evaluates to false).</para>
+        <para id="id38916394">Example:</para>
+        <para id="id40874366">
+          <code>(age &gt; 40) &amp;&amp; (term &lt; 10)</code>
+        </para>
+        <para id="id36953259">
+          <code>(age &gt; 40) || (term &lt; 10)</code>
+        </para>
+        <para id="id37468995">
+          <code>!(age &gt; 40)</code>
+        </para>
+        <para id="id38512868">
+          <code>( i==j) || (a &lt; b) || complete</code>
+        </para>
+        <para id="id38886048">The relational and logical operators have a hierarchy of execution similar to the arithmetic operators. The following table lists the precedence of these operators in relation to the other operators we have used.</para>
+        <figure id="id34541386"><media id="id6512544" alt=""><image src="../../media/graphics2-f38e.png" mime-type="image/png" height="211" width="375"/></media>
+        <caption> Associativity of operators</caption></figure>
+        <para id="id34653074">Example: Assume the following declarations:</para>
+        <para id="id37263254">
+          <code>char key = ‘m’;</code>
+        </para>
+        <para id="id39524717">
+          <code>int i = 5, j = 7, k = 12;</code>
+        </para>
+        <para id="id40335230">
+          <code>double x = 22.5;</code>
+        </para>
+        <para id="id41161363"><figure id="id36953350"><media id="id1169651548108" alt=""><image src="../../media/graphics3-06f6.png" mime-type="image/png" height="108" width="599"/></media>
+<caption> Results of expressions</caption>
+</figure>
+
+By evaluating the expressions within parentheses first, the following compound condition is evaluated as:</para>
+        <figure id="id21870494"><media id="id2591638" alt=""><image src="../../media/graphics4-0673.png" mime-type="image/png" height="129" width="328"/></media>
+        <caption> Evaluation process </caption></figure>
+      </section>
+      <section id="id-0679420200156">
+        <title>The bool Data Type</title>
+        <para id="id20906794">As specified by the ANSO/ISO standard, C++ has a built-in Boolean data type, bool, containing the two values true and false. As currently implemented, the actual values represented by the bool values, true and false, are the integer values 1 and 0, respectively. For example, consider the following program, which declares two Boolean variables:</para>
+        <para id="id33334022">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id36836872">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id36658305">
+          <code>int main()</code>
+        </para>
+        <para id="id3952727">
+          <code>{</code>
+        </para>
+        <para id="id35378085">
+          <code>bool t1, t2;</code>
+        </para>
+        <para id="id38817522">
+          <code>t1 = true;</code>
+        </para>
+        <para id="id39252919">
+          <code>t2 = false;</code>
+        </para>
+        <para id="id38507363">
+          <code>cout &lt;&lt; “The value of t1 is “&lt;&lt; t1</code>
+        </para>
+        <para id="id38507566">
+          <code>&lt;&lt; “\n and the value of t2 is “&lt;&lt; t2 &lt;&lt; endl;</code>
+        </para>
+        <para id="id38634451">
+          <code>return 0;</code>
+        </para>
+        <para id="id37393212">
+          <code>}</code>
+        </para>
+        <para id="id39338811">The <emphasis>output</emphasis> of the program is:</para>
+        <para id="id39651306">The value of t1 is 1</para>
+        <para id="id38915270">and the value of t2 is 0</para>
+      </section>
+    </section>
+    <section id="id-634204874942">
+      <title>The If-Else Statement</title>
+      <para id="id38506763">The <emphasis>if-else</emphasis> statement directs the computer to select a sequence of one or more statements based on the result of a comparison.</para>
+      <para id="id19386809">The syntax for an if .. else statement:</para>
+      <para id="id44437180">
+        <code>if (conditional expression) {</code>
+      </para>
+      <para id="id35122483">
+        <code>statements;</code>
+      </para>
+      <para id="id41164772">
+        <code>}</code>
+      </para>
+      <para id="id41491671">
+        <code>else {</code>
+      </para>
+      <para id="id39727571">
+        <code>statements;</code>
+      </para>
+      <para id="id19874423">
+        <code>}</code>
+      </para>
+      <figure id="id37037985"><media id="id8323926" alt=""><image src="../../media/graphics5-c2dd.png" mime-type="image/png" height="350" width="401"/></media>
+      <caption> Flowchart of statement</caption></figure>
+    </section>
+    <section id="id-16718678006">
+      <title>Example 1</title>
+      <para id="id20942363">We construct a C++ program for determining income taxes. Assume that these taxes are assessed at 2% of taxable incomes less than or equal to $20,000. For taxable income greater than $20,000, taxes are 2.5% of the income that exceeds $20,000 plus a fixed amount of $400. (The flowchart of the program is given in Figure 2.)</para>
+      <para id="id37736794">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id40369999">
+        <code>#include &lt;iomanip.h&gt;</code>
+      </para>
+      <para id="id38761492">
+        <code/>
+      </para>
+      <para id="id40993141">
+        <code>const float LOWRATE = 0.02; // lower tax rate</code>
+      </para>
+      <para id="id40073162">
+        <code>const float HIGHRATE = 0.025; // higher tax rate</code>
+      </para>
+      <para id="id39118195">
+        <code>const float CUTOFF = 20000.0; // cut off for low rate</code>
+      </para>
+      <para id="id38635798">
+        <code>const float FIXEDAMT = 400; // fixed dollar amount for higher rate amounts</code>
+      </para>
+      <para id="id40368267">
+        <code>int main()</code>
+      </para>
+      <para id="id23317719">
+        <code>{</code>
+      </para>
+      <para id="id14231595">
+        <code>float taxable, taxes;</code>
+      </para>
+      <para id="id39793653">
+        <code>cout &lt;&lt; "Please type in the taxable income: ";</code>
+      </para>
+      <para id="id37264281">
+        <code>cin &gt;&gt; taxable;</code>
+      </para>
+      <para id="id41028334">
+        <code/>
+      </para>
+      <para id="id38471899">
+        <code>if (taxable &lt;= CUTOFF)</code>
+      </para>
+      <para id="id41728940">
+        <code>taxes = LOWRATE * taxable;</code>
+      </para>
+      <para id="id39432944">
+        <code>else</code>
+      </para>
+      <para id="id39731800">
+        <code>taxes = HIGHRATE * (taxable - CUTOFF) + FIXEDAMT;</code>
+      </para>
+      <para id="id38529560">
+        <code>// set output format</code>
+      </para>
+      <para id="id34972885">
+        <code>cout &lt;&lt; setiosflags(ios::fixed)</code>
+      </para>
+      <para id="id39397155">
+        <code>&lt;&lt; setiosflags(ios::showpoint)</code>
+      </para>
+      <para id="id39840802">
+        <code>&lt;&lt; setprecision(2);</code>
+      </para>
+      <para id="id41159918">
+        <code>cout &lt;&lt; "Taxes are $ " &lt;&lt; taxes &lt;&lt; endl;</code>
+      </para>
+      <para id="id38317285">
+        <code>return 0;</code>
+      </para>
+      <para id="id37387880">
+        <code>}</code>
+      </para>
+      <figure id="id38507991"><media id="id2611116" alt=""><image src="../../media/graphics6-8d84.png" mime-type="image/png" height="658" width="452"/></media>
+       <caption> Flowchart of example</caption></figure>
+      <para id="id38998165">The <emphasis>results</emphasis> of the above program:</para>
+      <para id="id34587545">Please type in the taxable income: 10000</para>
+      <para id="id40367046">Taxes are $ 200</para>
+      <para id="id38884938">and</para>
+      <para id="id35407876">Please type in the taxable income: 30000</para>
+      <para id="id35512656">Taxes are $ 650</para>
+      <section id="id-0100232260549">
+        <title>Block Scope</title>
+        <para id="id39340578">All statements within a compound statement constitute a single block of code, and any variable declared within such a block only is valid within the block.</para>
+        <para id="id41179624">The location within a program where a variable can be used formally referred to as the <emphasis>scope</emphasis> of the variable.</para>
+        <para id="id3461630">Example:</para>
+        <para id="id39432712">
+          <code>{ // start of outer block</code>
+        </para>
+        <para id="id39356085">
+          <code>int a = 25;</code>
+        </para>
+        <para id="id40371826">
+          <code>int b = 17;</code>
+        </para>
+        <para id="id41160047">
+          <code>cout &lt;&lt; “The value of a is “ &lt;&lt; a</code>
+        </para>
+        <para id="id39556021">
+          <code>&lt;&lt; “ and b is “ &lt;&lt; b &lt;&lt; endl;</code>
+        </para>
+        <para id="id41490341">
+          <code>{ // start of inner block</code>
+        </para>
+        <para id="id38994054">
+          <code>float a = 46.25;</code>
+        </para>
+        <para id="id39082111">
+          <code>int c = 10;</code>
+        </para>
+        <para id="id36505315">
+          <code>cout &lt;&lt; “ a is now “ &lt;&lt; a</code>
+        </para>
+        <para id="id38539670">
+          <code>&lt;&lt; “b is now “ &lt;&lt; b</code>
+        </para>
+        <para id="id35280022">
+          <code>&lt;&lt; “ and c is “ &lt;&lt; c &lt;&lt; endl;</code>
+        </para>
+        <para id="id41160863">
+          <code>}</code>
+        </para>
+        <para id="id41165001">
+          <code>cout &lt;&lt; “ a is now “ &lt;&lt; a</code>
+        </para>
+        <para id="id41163163">
+          <code>&lt;&lt; “b is now “ &lt;&lt; b &lt;&lt; endl;</code>
+        </para>
+        <para id="id23854139">
+          <code>} // end of outer block</code>
+        </para>
+        <para id="id39083334">The <emphasis>output</emphasis> is</para>
+        <para id="id40086382">The value of a is 25 and b is 17</para>
+        <para id="id37407400">a is now 46.25 b is now 17 and c is 10</para>
+        <para id="id37014885">a is now 25 b is now 17</para>
+      </section>
+      <section id="id-418039691991">
+        <title>One-way Selection</title>
+        <para id="id41489178">A useful modification of the if-else statement involves omitting the else part of the statement. In this case, the if statement takes a shortened format:</para>
+        <para id="id38101705">
+          <code>if (conditional expression) {</code>
+        </para>
+        <para id="id36981248">
+          <code>statements;</code>
+        </para>
+        <para id="id41028878">
+          <code>}</code>
+        </para>
+        <para id="id39398514">The flow chart of one-way if statement is as below.</para>
+        <figure id="id38761922"><media id="id1169647874678" alt=""><image src="../../media/graphics7-715d.png" mime-type="image/png" height="350" width="327"/></media>
+         <caption> Flowchart of statement</caption></figure>
+      </section>
+    </section>
+    <section id="id-718029094336">
+      <title>Example</title>
+      <para id="id39378490">The following program displays an error message for the grades that is less than 0 or more than 100.</para>
+      <para id="id39189066">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id40365058">
+        <code>int main()</code>
+      </para>
+      <para id="id37452403">
+        <code>{</code>
+      </para>
+      <para id="id40128233">
+        <code>int grade;</code>
+      </para>
+      <para id="id22834026">
+        <code/>
+      </para>
+      <para id="id40190217">
+        <code>cout &lt;&lt; "\nPlease enter a grade: ";</code>
+      </para>
+      <para id="id39733354">
+        <code>cin &gt;&gt; grade;</code>
+      </para>
+      <para id="id39079458">
+        <code/>
+      </para>
+      <para id="id39533295">
+        <code>if(grade &lt; 0 || grade &gt; 100)</code>
+      </para>
+      <para id="id39233561">
+        <code>cout &lt;&lt; " The grade is not valid\n";</code>
+      </para>
+      <para id="id38760405">
+        <code>return 0;</code>
+      </para>
+      <para id="id34337910">
+        <code>}</code>
+      </para>
+    </section>
+    <section id="id-13054054144">
+      <title>Nested If Statement</title>
+      <para id="id38505634">An if-else statement can contain simple or compound statements. Any valid C++ statement can be used, including another if-else statement. Thus, one or more if-else statements can be included within either part of an if-else statement. The inclusion of one or more if statement within an existing if statement is called a nested if statement.</para>
+      <section id="id-71894973636">
+        <title>The if-else Chain</title>
+        <para id="id38994050">When an if statement is included in the else part of an existing if statement, we have an if-else chain.</para>
+        <para id="id39326591">
+          <code>if (expression-1)</code>
+        </para>
+        <para id="id38177008">
+          <code> statement-1</code>
+        </para>
+        <para id="id40994505">
+          <code>else if (expression-2)</code>
+        </para>
+        <para id="id38884946">
+          <code> statement-2</code>
+        </para>
+        <para id="id19931723">
+          <code>else </code>
+        </para>
+        <para id="id20605770">
+          <code> statement-3</code>
+        </para>
+      </section>
+    </section>
+    <section id="id-429608685908">
+      <title>Example</title>
+      <para id="id19450483">The following program calculates the monthly income of a computer salesperson using the following commission schedule:</para>
+      <figure id="id33334128"><media id="id1169647775113" alt=""><image src="../../media/graphics8-b7af.png" mime-type="image/png" height="175" width="577"/></media>
+       <caption> Layout of result</caption></figure>
+      <para id="id41132812">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id34199772">
+        <code>#include &lt;iomanip.h&gt;</code>
+      </para>
+      <para id="id22543069">
+        <code/>
+      </para>
+      <para id="id38881020">
+        <code>int main()</code>
+      </para>
+      <para id="id39316712">
+        <code>{</code>
+      </para>
+      <para id="id39840988">
+        <code>float monthlySales, income;</code>
+      </para>
+      <para id="id35212438">
+        <code/>
+      </para>
+      <para id="id38509971">
+        <code>cout &lt;&lt; "\nEnter the value of monthly sales: ";</code>
+      </para>
+      <para id="id22806557">
+        <code>cin &gt;&gt; monthlySales;</code>
+      </para>
+      <para id="id21401690">
+        <code/>
+      </para>
+      <para id="id38703649">
+        <code>if (monthlySales &gt;= 50000.00)</code>
+      </para>
+      <para id="id19278149">
+        <code>income = 375.00 + .16 * monthlySales;</code>
+      </para>
+      <para id="id38760213">
+        <code>else if (monthlySales &gt;= 40000.00)</code>
+      </para>
+      <para id="id38828526">
+        <code>income = 350.00 + .14 * monthlySales;</code>
+      </para>
+      <para id="id36262014">
+        <code>else if (monthlySales &gt;= 30000.00)</code>
+      </para>
+      <para id="id34590258">
+        <code>income = 325.00 + .12 * monthlySales;</code>
+      </para>
+      <para id="id37877496">
+        <code>else if (monthlySales &gt;= 20000.00) </code>
+      </para>
+      <para id="id22132253">
+        <code>income = 300.00 + .09 * monthlySales;</code>
+      </para>
+      <para id="id38731142">
+        <code>else if (monthlySales &gt;= 10000.00)</code>
+      </para>
+      <para id="id37078172">
+        <code>income = 250.00 + .05 * monthlySales;</code>
+      </para>
+      <para id="id39727508">
+        <code>else</code>
+      </para>
+      <para id="id39838542">
+        <code>income = 200.00 + .03 * monthlySales;</code>
+      </para>
+      <para id="id40987454">
+        <code/>
+      </para>
+      <para id="id4411417">
+        <code>// set output format</code>
+      </para>
+      <para id="id41167590">
+        <code>cout &lt;&lt; setiosflags(ios::fixed)</code>
+      </para>
+      <para id="id38518816">
+        <code>&lt;&lt; setiosflags(ios::showpoint)</code>
+      </para>
+      <para id="id34283004">
+        <code>&lt;&lt; setprecision(2);</code>
+      </para>
+      <para id="id34939112">
+        <code/>
+      </para>
+      <para id="id40058571">
+        <code>cout &lt;&lt; "The income is $" &lt;&lt; income &lt;&lt; endl;</code>
+      </para>
+      <para id="id35762992">
+        <code/>
+      </para>
+      <para id="id35002225">
+        <code>return 0;</code>
+      </para>
+      <para id="id38918785">
+        <code>}</code>
+      </para>
+      <para id="id37646647">The <emphasis>output</emphasis> of the program:</para>
+      <para id="id41671974">Enter the value of monthly sales: 36243.89</para>
+      <para id="id4095215">The income is $4674.27</para>
+    </section>
+    <section id="id-686346272628">
+      <title>The Switch Statement</title>
+      <para id="id38311031">The <emphasis>switch</emphasis> statement controls program flow by executing a set of statements depending on the value of an expression.</para>
+      <para id="id38916402">Note: The value of expression must be an integer data type, which includes the char, int, long int, and short data types.</para>
+      <para id="id1603369">The syntax for the switch statement:</para>
+      <para id="id35449381">
+        <code>switch(expression){</code>
+      </para>
+      <para id="id41027891">
+        <code>case label:</code>
+      </para>
+      <para id="id19386415">
+        <code>statement(s);</code>
+      </para>
+      <para id="id38041743">
+        <code>break;</code>
+      </para>
+      <para id="id38912817">
+        <code>case label;</code>
+      </para>
+      <para id="id38106623">
+        <code>statement(s);</code>
+      </para>
+      <para id="id35599558">
+        <code>break;</code>
+      </para>
+      <para id="id4356194">
+        <code>default:</code>
+      </para>
+      <para id="id1764964">
+        <code>statement(s);</code>
+      </para>
+      <para id="id40253737">
+        <code>} </code>
+      </para>
+      <para id="id40334323">The expression in the switch statement must evaluate to an integer result. The switch expression’s value is compared to each of these case values in the order in which these values are listed until a match is found. When a match occurs, execution begins with the statement following the match.</para>
+      <para id="id12917295">If the value of the expression does not match any of the case values, no statement is executed unless the keyword <emphasis>default</emphasis> is encountered. If the value of the expression does not match any of the case values, program execution begins with the statement following the word default.</para>
+      <para id="id39081073">The break statement is used to identify the end of a particular case and causes an immediate exit from the switch statement. If the break statements are omitted, all cases following the matching case value, including the default case, are executed.</para>
+      <para id="id22505306">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id38845183">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id3947241">
+        <code>int main()</code>
+      </para>
+      <para id="id39303143">
+        <code>{</code>
+      </para>
+      <para id="id20033946">
+        <code>int iCity;</code>
+      </para>
+      <para id="id36977189">
+        <code/>
+      </para>
+      <para id="id21063715">
+        <code>cout &lt;&lt; "Enter a number to find the state where a city is located. "&lt;&lt; endl;</code>
+      </para>
+      <para id="id40349668">
+        <code>cout &lt;&lt; “1. Boston” &lt;&lt; endl;</code>
+      </para>
+      <para id="id39079076">
+        <code>cout &lt;&lt; "2. Chicago" &lt;&lt; endl;</code>
+      </para>
+      <para id="id44470887">
+        <code>cout &lt;&lt; "3. Los Angeles” &lt;&lt; endl; </code>
+      </para>
+      <para id="id34194022">
+        <code>cout &lt;&lt; "4. Miami” &lt;&lt; endl;</code>
+      </para>
+      <para id="id21155268">
+        <code>cout &lt;&lt; "5. Providence” &lt;&lt; endl;</code>
+      </para>
+      <para id="id39579354">
+        <code>cin &gt;&gt; iCity;</code>
+      </para>
+      <para id="id4305983">
+        <code>switch (iCity)</code>
+      </para>
+      <para id="id40370889">
+        <code>{</code>
+      </para>
+      <para id="id37453545">
+        <code>case 1:</code>
+      </para>
+      <para id="id24935346">
+        <code>cout &lt;&lt; "Boston is in Massachusetts " &lt;&lt; endl;</code>
+      </para>
+      <para id="id40366132">
+        <code>break;</code>
+      </para>
+      <para id="id37668526">
+        <code>case 2:</code>
+      </para>
+      <para id="id41160858">
+        <code>cout &lt;&lt; "Chicago is in Illinois " &lt;&lt; endl;</code>
+      </para>
+      <para id="id34841549">
+        <code>break;</code>
+      </para>
+      <para id="id38472974">
+        <code>case 3:</code>
+      </para>
+      <para id="id37091980">
+        <code>cout &lt;&lt; "Los Angeles is in California " &lt;&lt; endl;</code>
+      </para>
+      <para id="id41167124">
+        <code>break;</code>
+      </para>
+      <para id="id42150363">
+        <code>case 4:</code>
+      </para>
+      <para id="id38986633">
+        <code>cout &lt;&lt; "Miami is in Florida " &lt;&lt; endl;</code>
+      </para>
+      <para id="id38538805">
+        <code>break;</code>
+      </para>
+      <para id="id40991953">
+        <code>case 5:</code>
+      </para>
+      <para id="id13053578">
+        <code>cout &lt;&lt; "Providence is in Rhode Island " &lt;&lt; endl;</code>
+      </para>
+      <para id="id38477892">
+        <code>break;</code>
+      </para>
+      <para id="id38509737">
+        <code>default:</code>
+      </para>
+      <para id="id34087197">
+        <code>cout &lt;&lt; “You didn’t select one of the five cities” &lt;&lt; endl;</code>
+      </para>
+      <para id="id38633041">
+        <code>} // end of switch</code>
+      </para>
+      <para id="id38632860">
+        <code>return 0;</code>
+      </para>
+      <para id="id34822072">
+        <code>}</code>
+      </para>
+      <para id="id38473103">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id33351476">Enter a number to find the state where a city is located. </para>
+      <para id="id21449829">1. Boston</para>
+      <para id="id40103697">2. Chicago</para>
+      <para id="id40365242">3. Los Angeles</para>
+      <para id="id4146516">4. Miami</para>
+      <para id="id40371620">5. Providence</para>
+      <para id="id4253760">3</para>
+      <para id="id22494324">Los Angeles is in California</para>
+      <para id="id41490914">The <emphasis>switch</emphasis> statement is a clean way to implement multi-way selection (i.e., selecting from among a number of different execution paths), but it requires an expression that evaluates to an integral value at compile-time.</para>
+      <para id="id38632905">When writing a switch statement, you can use multiple case values to refer to the same set of statements; the default label is optional. For example, consider the following example:</para>
+      <para id="id41341436">
+        <code>switch(number)</code>
+      </para>
+      <para id="id36802099">
+        <code>{</code>
+      </para>
+      <para id="id38994210">
+        <code>case 1:</code>
+      </para>
+      <para id="id34590252">
+        <code>cout &lt;&lt; “Have a Good Morning\n”;</code>
+      </para>
+      <para id="id38704902">
+        <code>break;</code>
+      </para>
+      <para id="id38149745">
+        <code>case 2:</code>
+      </para>
+      <para id="id38827644">
+        <code>cout &lt;&lt; “Have a Happy Day\n”;</code>
+      </para>
+      <para id="id37409419">
+        <code>break;</code>
+      </para>
+      <para id="id20961047">
+        <code>case 3:</code>
+      </para>
+      <para id="id40371615">
+        <code>case 4:</code>
+      </para>
+      <para id="id38459496">
+        <code>case 5:</code>
+      </para>
+      <para id="id41344841">
+        <code>cout &lt;&lt; “Have a Nice Evening\n”;</code>
+      </para>
+      <para id="id40072925">
+        <code>}</code>
+      </para>
+      <para id="id39521301">
+        <code/>
+      </para>
+    </section>
+    <section id="id-435892829971">
+      <title>The Enum Specifier</title>
+      <para id="id23772822">An enumerated data type is a way of attaching names to numbers, thereby giving </para>
+      <para id="id40354032">more meaning to anyone reading the code. The <emphasis>enum</emphasis> specifier creates an enumerated data type, which is simply a user-defined list of values that is given its own data type name. Such data types are identified by the reserved word <emphasis>enum</emphasis> followed by an optional user-selected name for the data type and a listing of acceptable values for the data type. </para>
+      <para id="id38310080">Example:</para>
+      <para id="id38507619">
+        <code>enum day { mon, tue, wed, thu, fri, sat, sun};</code>
+      </para>
+      <para id="id39729375">
+        <code>enum color {red, green, yellow};</code>
+      </para>
+      <para id="id40993145">Any variable declared to be of type color can take only a value of red or green or yellow. Any variable declared to be of type day can take only a value among seven given values.</para>
+      <para id="id23365498">The statement</para>
+      <para id="id37876264">
+        <code>enum day a, b,c;</code>
+      </para>
+      <para id="id37387896">declares the variables a, b, and c to be of type day.</para>
+      <para id="id38506835">Internally, the acceptable values of each enumerated data type are ordered and assigned sequential integer values beginning with 0. For example, for the values of the user-defined type color, the correspondences created by the C++ compiler are that red is equivalent to 0, green is equivalent to 1, and yellow is equivalent to 2. The equivalent numbers are required when inputting values using cin or displaying values using cout.</para>
+    </section>
+    <section id="id-453779243725">
+      <title>Example</title>
+      <para id="id41167846">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id41166813">
+        <code>int main()</code>
+      </para>
+      <para id="id36835663">
+        <code>{</code>
+      </para>
+      <para id="id41157873">
+        <code>enum color{red, green, yellow};</code>
+      </para>
+      <para id="id37288975">
+        <code>enum color crayon = red;</code>
+      </para>
+      <para id="id38408593">
+        <code>cout &lt;&lt; “\nThe color is “ &lt;&lt; crayon &lt;&lt; endl;</code>
+      </para>
+      <para id="id39844332">
+        <code>cout &lt;&lt; “Enter a value: “;</code>
+      </para>
+      <para id="id37409170">
+        <code>cin &gt;&gt; crayon;</code>
+      </para>
+      <para id="id41176873">
+        <code>if (crayon == red)</code>
+      </para>
+      <para id="id37876516">
+        <code>cout &lt;&lt; “The crayon is red.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id38711004">
+        <code>else if (crayon == green)</code>
+      </para>
+      <para id="id38839025">
+        <code>cout &lt;&lt; “The crayon is green.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id39521934">
+        <code>else if (crayon== yellow)</code>
+      </para>
+      <para id="id40364660">
+        <code>cout &lt;&lt; “The crayon is yellow.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id33274821">
+        <code>else</code>
+      </para>
+      <para id="id38913287">
+        <code>cout &lt;&lt; “The color is not defined. \n” &lt;&lt; endl;</code>
+      </para>
+      <para id="id39079298">
+        <code>return 0;</code>
+      </para>
+      <para id="id38512828">
+        <code>}</code>
+      </para>
+      <para id="id35999272">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id38445470">The color is 0</para>
+      <para id="id39523491">Enter a value: 2</para>
+      <para id="id40087299">The crayon is yellow.</para>
+    </section>
+    <section id="id-234681532722">
+      <title>Focus on Problem Solving</title>
+      <para id="id40993112">Two major uses of C++’s <emphasis>if</emphasis> statements are to select appropriate processing paths and to prevent undesirable data from being processed at all. In this section, an example of both uses is provided.</para>
+      <para id="id41487298">
+        <emphasis>Problem: Solving Quadratic Equations</emphasis>
+      </para>
+      <para id="id38629572">A quadratic equation is an equation that has the form ax2 + bx + c = 0 or that can be algebraically manipulated into this form. In this equation, x is the unknown variable, and a, b and c are known constants. Although the constants b and c can be any numbers, including 0, the value of the constant a cannot be 0 (if a is 0, the equation becomes a linear equation in x). Examples of quadratic equations are:</para>
+      <para id="id35447083">5x^2 + 6x + 2 = 0</para>
+      <para id="id38918312"> x^2 - 7x + 20 = 0</para>
+      <para id="id38245300">34x^2 + 16 = 0</para>
+      <para id="id35284270">In the first equation, a = 5, b = 6, and c = 2; in the second equation, a = 1, b = -7, and c = 20; and in the third equation, a = 34, b = 0 and c = 16.</para>
+      <para id="id23201958">The real roots of a quadratic equation can be calculated using the quadratic formula as:</para>
+      <para id="id22992125">delta = b2 – 4ac</para>
+      <para id="id40103304">root1 = (-b + squared-root(delta))/(2a)</para>
+      <para id="id37471384">root2 = (-b - squared-root(delta))/(2a)</para>
+      <para id="id37462691">Using these equations, we will write a C++ program to solve for the roots of a quadratic equation.</para>
+      <section id="id-935641305486">
+        <title>Step 1: Analyze the Problem </title>
+        <para id="id39019143">The problem requires that we accept three inputs – the coefficients a, b and c of a quadratic equation – and compute the roots of the equation using the given formulas.</para>
+      </section>
+      <section id="id-300228652495">
+        <title>Step 2: Develop a Solution </title>
+        <para id="id32695661">A first attempt at a solution is to use the user-entered values of a, band c to directly calculate a value for each of the roots. Thus, our first solution is:</para>
+        <para id="id40303189">Display a program purpose message.</para>
+        <para id="id38989143">Accept user-input values for a, b, and c.</para>
+        <para id="id40367413">Calculate the two roots.</para>
+        <para id="id39525363">Display the values of the calculated roots.</para>
+        <para id="id37153226">However, this solution must be refined further to account for a number of possible input conditions. For example, if a user entered a value of 0 for both a and b, the equation is neither quadratic nor linear and has no solution (this is referred to as a degenerate case). </para>
+        <para id="id37057934">Another possibility is that the user supplies a nonzero value for b but make a 0. In this case, the equation becomes a linear one with a single solution of –c/b. A third possibility is that the value of the term b^2 – 4ac, which is called the discriminant, is negative. Since the square root of a negative number cannot be taken, this case has no real roots. Finally, when the discriminant is 0, both roots are the same (this is referred to as the repeated roots case).</para>
+        <para id="id40353486">Taking into account all four of these limiting cases, a refined solution for correctly determining the roots of a quadratic equation is expressed by the following pseudocode:</para>
+        <para id="id35280072">
+          <code>Display a program purpose message.</code>
+        </para>
+        <para id="id38339800">
+          <code>Accept user-input values for a, b, and c.</code>
+        </para>
+        <para id="id21181241">
+          <code>If a = 0 and b = 0 then</code>
+        </para>
+        <para id="id38309234">
+          <code>Display a message saying that the equation has no solution.</code>
+        </para>
+        <para id="id22806570">
+          <code>Else if a = 0 then</code>
+        </para>
+        <para id="id37997417">
+          <code>calculate the single root equal to –c/b.</code>
+        </para>
+        <para id="id38912663">
+          <code>display the single root.</code>
+        </para>
+        <para id="id38819235">
+          <code>Else </code>
+        </para>
+        <para id="id37528101">
+          <code>Calculate the discriminant.</code>
+        </para>
+        <para id="id37877685">
+          <code>If the discriminant &gt; 0 then</code>
+        </para>
+        <para id="id37463334">
+          <code>Solve for both roots using the given formulas.</code>
+        </para>
+        <para id="id38917106">
+          <code>Display the two roots.</code>
+        </para>
+        <para id="id38718726">
+          <code>Else if the discriminant &lt; 0 then</code>
+        </para>
+        <para id="id40799005">
+          <code>Display a message that there are no real roots.</code>
+        </para>
+        <para id="id41168238">
+          <code>Else</code>
+        </para>
+        <para id="id3246871">
+          <code>Calculate the repeated root equal to –b/(2a).</code>
+        </para>
+        <para id="id37390836">
+          <code>Display the repeated root.</code>
+        </para>
+        <para id="id39327587">
+          <code>Endif.</code>
+        </para>
+        <para id="id39521262">
+          <code>Endif.</code>
+        </para>
+        <para id="id39302109">Notice in the pseudocode that we have used nested if-else structures. The outer if-else structure is used to validate the entered coefficients and determine that we have a valid quadratic equation. The inner if-else structure is then used to determine if the equation has two real roots (discriminant &gt; 0), two imaginary roots (discriminant &lt; 0) or repeated roots (discriminant =0).</para>
+      </section>
+      <section id="id-938704410895">
+        <title>Step 3 : Code the Algorithm </title>
+        <para id="id38147874">The equivalent C++ code corresponding to our pseudocode is listed as the following program</para>
+        <para id="id35308710">
+          <code>// This program can solve quadratic equation</code>
+        </para>
+        <para id="id39523533">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id38375498">
+          <code>#include &lt;math.h&gt;</code>
+        </para>
+        <para id="id21628730">
+          <code>#include &lt;iomanip.h&gt;</code>
+        </para>
+        <para id="id22153605">
+          <code>int main()</code>
+        </para>
+        <para id="id36662599">
+          <code>{</code>
+        </para>
+        <para id="id38176538">
+          <code>double a, b, c, del, x1, x2;</code>
+        </para>
+        <para id="id38327774">
+          <code>cout &lt;&lt; “This program calculates the roots of a\n”;</code>
+        </para>
+        <para id="id40240347">
+          <code>cout &lt;&lt; “ quadratic equation of the form\n”;</code>
+        </para>
+        <para id="id40221613">
+          <code>cout &lt;&lt; “ 2\n”;</code>
+        </para>
+        <para id="id38129780">
+          <code>cout &lt;&lt; “ ax + bx + c = 0\n\n”;</code>
+        </para>
+        <para id="id39737791">
+          <code>cout &lt;&lt; “Enter values for a, b, and c: “;</code>
+        </para>
+        <para id="id38791348">
+          <code>cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</code>
+        </para>
+        <para id="id40347245">
+          <code>if ( a == 0.0 &amp;&amp; b == 0.0)</code>
+        </para>
+        <para id="id39840903">
+          <code>cout &lt;&lt; “The equation is degenerate and has no roots.\n”;</code>
+        </para>
+        <para id="id40215774">
+          <code>else if (a == 0.0)</code>
+        </para>
+        <para id="id38704172">
+          <code>cout &lt;&lt; “The equation has the single root x = “</code>
+        </para>
+        <para id="id22108979">
+          <code>&lt;&lt; -c/b &lt;&lt; endl;</code>
+        </para>
+        <para id="id38800908">
+          <code>else</code>
+        </para>
+        <para id="id39080404">
+          <code>{</code>
+        </para>
+        <para id="id39843357">
+          <code>del = b*b – 4.0*a*c;</code>
+        </para>
+        <para id="id39338668">
+          <code>if (del &gt; 0.0)</code>
+        </para>
+        <para id="id38318645">
+          <code>{</code>
+        </para>
+        <para id="id4314868">
+          <code>x1 = (-b + sqrt(del))/(2*a);</code>
+        </para>
+        <para id="id41003290">
+          <code>x2 = (-b – sqrt(del))/(2*a);</code>
+        </para>
+        <para id="id39711565">
+          <code>cout &lt;&lt; "The two roots are “</code>
+        </para>
+        <para id="id40988980">
+          <code>&lt;&lt; x1 &lt;&lt; “ and “ &lt;&lt; x2 &lt;&lt; endl;</code>
+        </para>
+        <para id="id40008759">
+          <code>}</code>
+        </para>
+        <para id="id39082148">
+          <code>else if (del &lt;0) </code>
+        </para>
+        <para id="id38658156">
+          <code>cout &lt;&lt; "Both roots are imaginary.\n";</code>
+        </para>
+        <para id="id39122233">
+          <code>else</code>
+        </para>
+        <para id="id4095159">
+          <code>cout &lt;&lt; “Both roots are equal to “ &lt;&lt; -b/(2*a) &lt;&lt; endl;</code>
+        </para>
+        <para id="id40349427">
+          <code>}</code>
+        </para>
+        <para id="id38915965">
+          <code>return 0;</code>
+        </para>
+        <para id="id22181193">
+          <code>}</code>
+        </para>
+      </section>
+      <section id="id-162320470948">
+        <title>Step 4: Test and Correct the Program </title>
+        <para id="id40348506">Test values should include values for a, b and c that result in two real roots, plus limiting values for a and b that result in linear equation (a = 0, b != 0), a degenerate equation ( a = 0, b = 0), and a negative and 0 discriminant. Two such test runs of the above program follow:</para>
+        <para id="id38512267">This program calculates the roots of a</para>
+        <para id="id37410641">quadratic equation of the form</para>
+        <para id="id41485371">ax^2 + bx + c = 0</para>
+        <para id="id39838557">Please enter values for a, b and c: 1 2 -35</para>
+        <para id="id38375693">The two real roots are 5 and –7</para>
+        <para id="id22795479">
+          <emphasis>and</emphasis>
+        </para>
+        <para id="id4377179">This program calculates the roots of a</para>
+        <para id="id40354153">quadratic equation of the form</para>
+        <para id="id37078366">ax^2 + bx + c = 0</para>
+        <para id="id35249516">Please enter values for a, b and c: 0 0 16</para>
+        <para id="id37860533">This equation is degenerate and has no roots.</para>
+        <para id="id44427071">We leave it as an exercise to create test data for the other limiting cases checked for by the program.</para>
+      </section>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,1467 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction to Classes</title>
+  <metadata>
+  <md:content-id>m27275</md:content-id><md:title>Introduction to Classes</md:title>
+  <md:abstract>Now we begin our introduction to object-oriented programming in C++. Why have we deferred object-oriented programming in C++ until this chapter? The answer is that the objects we will build will be composed in part of structured program pieces, so we need to establish a basis in structured programming first.
+Let us briefly explain some key concepts and terminology of object orientation. Object-oriented programming (OOP) encapsulates data (attributes) and functions (behavior) into packages called classes; the data and functions of a class are intimately tied together. A class is like a blueprint. Out of a blueprint, a builder can build a house. Out of a class, a programmer can create an object. One blueprint can be reused many times to make many objects of the same class. 
+Classes have the property of information hiding. This means that although class objects may know how to communicate with one another across well-defined interfaces, classes normally are not allowed to know how other classes are implemented – implementation details are hidden within the classes themselves.</md:abstract>
+  <md:uuid>f23f47d6-08e7-4cef-aed3-7c46595f3269</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-660538827791">
+      <title>Classes</title>
+      <para id="id24098946">In C++ programming, classes are structures that contain variables along with functions for manipulating that data.</para>
+      <para id="id39739034">The functions and variables defined in a class are referred to as class members.</para>
+      <para id="id39324991">Class variables are referred to as <emphasis>data members</emphasis>, while class functions are referred to as <emphasis>member functions</emphasis>.</para>
+      <para id="id38033761"><emphasis>Classes</emphasis> are referred to as user-defined data types or programmer-defined data types because you can work with a class as a single unit, or objects, in the same way you work with variables.</para>
+      <para id="id20778723">When you declare an object from a class, you are said to be instantiating an object.</para>
+      <para id="id41086778">The most important feature of C++ programming is class definition with the class keyword. You define classes the same way you define structures, and you access a class’s data members using the <emphasis>member selection operator</emphasis>.</para>
+      <para id="id39117763">
+        <emphasis>Example:</emphasis>
+      </para>
+      <para id="id41667258">
+        <code>class Time {</code>
+      </para>
+      <para id="id38937259">
+        <code>public:</code>
+      </para>
+      <para id="id38943608">
+        <code>Time(); </code>
+      </para>
+      <para id="id916269">
+        <code>void setTime( int, int, int );</code>
+      </para>
+      <para id="id37110386">
+        <code>void printMilitary(); </code>
+      </para>
+      <para id="id23129134">
+        <code>void printStandard(); </code>
+      </para>
+      <para id="id4090207">
+        <code>private:</code>
+      </para>
+      <para id="id41259457">
+        <code>int hour; </code>
+      </para>
+      <para id="id39727072">
+        <code>int minute; </code>
+      </para>
+      <para id="id1213661">
+        <code>int second; </code>
+      </para>
+      <para id="id38333370">
+        <code>};</code>
+      </para>
+      <para id="id32806776">Once the class has been defined, it can be used as a type in object, array and pointer definitions as follows:</para>
+      <para id="id39843646">
+        <quote id="id1166607346066" display="block">
+          <code>Time sunset, // object of type Times</code>
+        </quote>
+      </para>
+      <para id="id40990614">
+        <quote id="id1166609713748" display="block">
+          <code> ArOfTimes[5], // array of Times objects</code>
+        </quote>
+      </para>
+      <para id="id40582872">
+        <quote id="id1166612418347" display="block">
+          <code>*ptrTime; // pointer to a Times objects</code>
+        </quote>
+      </para>
+      <para id="id44465649">The class name becomes a new type specifier. There may be many objects of a class, just as there may be many variables of a type such as int. The programmer can create new class types as needed. This is one reason why C++ is said to be an extensible language.</para>
+    </section>
+    <section id="id-954462515442">
+      <title>Information Hiding</title>
+      <para id="id1261723">The principle of <emphasis>information hiding</emphasis> states that any class members that other programmers, or clients, do not need to access or know about should be hidden.</para>
+      <para id="id401796">Many programmers prefer to make all of their data member private in order to prevent clients from accidentally assigning the wrong value to a variable or from viewing the internal workings of their programs.</para>
+      <section id="id-287050452578">
+        <title>Access Specifiers</title>
+        <para id="id38885510">Access specifiers control a client’s access to data members and member functions. There are four levels of access specifiers: public, private, protected, and friend.</para>
+        <para id="id19369283">The <emphasis>public</emphasis> access specifier allows anyone to call a class’s function member or to modify a data member.</para>
+        <para id="id40352376">The <emphasis>private</emphasis> access specifier is one of the key elements in information hiding since it prevents clients from calling member functions or accessing data members.</para>
+        <para id="id313281">Both public and private specifiers have what is called <emphasis>class scope</emphasis>: class members of both access types are accessible from any of a class’s member functions.</para>
+        <para id="id40367906">Example:</para>
+        <para id="id1900345">
+          <code>class Time {</code>
+        </para>
+        <para id="id37268833">
+          <code>public:</code>
+        </para>
+        <para id="id39891350">
+          <code>Time(); </code>
+        </para>
+        <para id="id37737000">
+          <code>void setTime( int, int, int );</code>
+        </para>
+        <para id="id41284407">
+          <code>void printMilitary(); </code>
+        </para>
+        <para id="id38711296">
+          <code>void printStandard(); </code>
+        </para>
+        <para id="id38517248">
+          <code>private:</code>
+        </para>
+        <para id="id35678381">
+          <code>int hour; </code>
+        </para>
+        <para id="id40303126">
+          <code>int minute; </code>
+        </para>
+        <para id="id35300034">
+          <code>int second; </code>
+        </para>
+        <para id="id21082557">
+          <code>};</code>
+        </para>
+        <para id="id41672763">Note that the data members hour, minute, and second are preceded by the private member access specifier. A class’ private data members are normally not accessible outside the class. The philosophy here is that the actual data representation used within the class is of no concern to the class’ clients. In this sense, the implementation of a class is said to be hidden from its clients. Such information hiding promotes program modifiability and simplifies the client’s perception of a class.</para>
+        <para id="id39531357">You can depict the classes graphically in a class diagram as below.</para>
+        <figure id="id38937228"><media id="id1166607213505" alt=""><image src="../../media/graphics1-d0a4.png" mime-type="image/png" height="246" width="219"/></media>
+        <caption> Diagram of class Time </caption></figure>
+        <para id="id39841217">The diagram shown above follows the format of the Unified Modeling Language (UML). Each class is represented by a box, with the class name in the top portion of the box, any data members that you care to describe in the middle portion of the box, and the member functions (the functions that belong to this object, which receive any messages you send to that object) in the bottom portion of the box. </para>
+        
+        
+        
+        
+        
+      </section>
+      <section id="id-952051145149">
+        <title>Interface and Implementation Files</title>
+        <para id="id41650299">Although the first step in information hiding is to assign private access specifiers to class members, private access specifiers only designate which class members a client is not allowed to call or change. Private access specifiers do not prevent clients from seeing class code. To prevent clients from seeing the details of how your code is written, you place your class’s interface code and implementation code in separate files.</para>
+        <para id="id41731247">The separation of classes into separate <emphasis>interface</emphasis> and <emphasis>implementation</emphasis> files is considered to be a fundamental software development technique since it allows you to hide the details of how your classes are written and makes it easier to modify programs.</para>
+        <para id="id39653032">The <emphasis>interface</emphasis> code refers to the data member and function member declarations inside a class’s braces. Interface code does not usually contain definitions for function members, nor does it usually assigns values to the data members. You create interface code in a header file with an .h extension.</para>
+        <para id="id40232719">The <emphasis>implementation</emphasis> code refers to a class’s function definitions and any code that assigns values to a class’s data members. In other words, implementation code contains the actual member functions themselves and assigns values to data members. You add implementation code to standard C++ source files with an extension of .cpp.</para>
+        <para id="id39672847">As far as clients of a class are concerned, changes in the class’ implementation do not affect the client as long as the class’ interface originally provided to the client is unchanged. All that a client needs to know to use the class correctly should be provided by the interface.</para>
+      </section>
+      <section id="id-803190781347">
+        <title>Preventing Multiple Inclusion</title>
+        <para id="id39197241">Large class-based programs are sometimes composed of multiple interface and implementation files. With large program, you need to ensure that you do not include multiple instances of the same header file when you compile the program, since multiple inclusion will make your program unnecessary large.</para>
+        <para id="id35415046">C++ generates an error if you attempt to compile a program that includes multiple instances of the same header file. To prevent this kind of error, most C++ programmers use the #define preprocessor directive with the #if and #endif preprocessor directives in header files.</para>
+        <para id="id38761608">The #if and #endif preprocessor directives determine which portions of a file to compile depending on the result of a conditional expression.</para>
+        <para id="id514464">The syntax for the #if and #endif preprocessor directives:</para>
+        <para id="id36224790">
+          <code>#if conditional expression</code>
+        </para>
+        <para id="id20975369">
+          <code> statements to compile;</code>
+        </para>
+        <para id="id39163620">
+          <code>#endif</code>
+        </para>
+        <para id="id4136924">
+          <emphasis>Example:</emphasis>
+        </para>
+        <para id="id39522378">
+          <code>#if !defined(TIME1_H)</code>
+        </para>
+        <para id="id38527824">
+          <code>#define TIME1_H</code>
+        </para>
+        <para id="id41337825">
+          <code>class Time {</code>
+        </para>
+        <para id="id39195602">
+          <code>public:</code>
+        </para>
+        <para id="id40003769">
+          <code>Time(); </code>
+        </para>
+        <para id="id22488596">
+          <code>void setTime( int, int, int );</code>
+        </para>
+        <para id="id23178358">
+          <code>void printMilitary(); </code>
+        </para>
+        <para id="id38508224">
+          <code>void printStandard(); </code>
+        </para>
+        <para id="id35447015">
+          <code>private:</code>
+        </para>
+        <para id="id40293041">
+          <code>int hour; </code>
+        </para>
+        <para id="id35333151">
+          <code>int minute; </code>
+        </para>
+        <para id="id35610148">
+          <code>int second; </code>
+        </para>
+        <para id="id41136399">
+          <code>};</code>
+        </para>
+        <para id="id37480421">
+          <code>#endif</code>
+        </para>
+        <para id="id38635381">Note: Common practice when defining a header file’s constant is to use the header file’s name in uppercase letters appended with H. For example, the constant for the time1.h header file is usually defined as TIME1_H.</para>
+      </section>
+    </section>
+    <section id="id-197645519103">
+      <title>Member Functions</title>
+      <para id="id41341114">In this section, we learn how to write member functions for a class.</para>
+      <section id="id-756241726008">
+        <title>Inline functions</title>
+        <para id="id39161239">Although member functions are usually defined in an implementation file, they can also be defined in an interface file. Functions defined inside the class body in an interface file are called <emphasis>inline functions</emphasis>.</para>
+        <para id="id36506787">Example:</para>
+        <para id="id41085947">
+          <code>class Stocks {</code>
+        </para>
+        <para id="id4156809">
+          <code>public:</code>
+        </para>
+        <para id="id38109981">
+          <code>double getTotalValue(int iShares, double dCurPrice){</code>
+        </para>
+        <para id="id41141844">
+          <code>double dCurrentValue;</code>
+        </para>
+        <para id="id37482502">
+          <code>iNumShares = iShares;</code>
+        </para>
+        <para id="id33353932">
+          <code>dCurrentPricePerShare = dCurPrice;</code>
+        </para>
+        <para id="id1135720">
+          <code>dCurrentValue = iNumShares*dCurrentPricePerShare;</code>
+        </para>
+        <para id="id384484">
+          <code>return dCurrentValue;</code>
+        </para>
+        <para id="id40434797">
+          <code>}</code>
+        </para>
+        <para id="id39762819">
+          <code>private:</code>
+        </para>
+        <para id="id40428120">
+          <code>int iNumShares;</code>
+        </para>
+        <para id="id1321472">
+          <code>double dPurchasePricePerShare;</code>
+        </para>
+        <para id="id38902326">
+          <code>double dCurrentPricePerShare;</code>
+        </para>
+        <para id="id23580230">
+          <code>};</code>
+        </para>
+        <figure id="id384542"><media id="id1166607201094" alt=""><image src="../../media/graphics2-8484.png" mime-type="image/png" height="205" width="219"/></media>
+        <caption> Diagram of class stock </caption></figure>
+      </section>
+      <section id="id-713916513491">
+        <title>Member functions in Implementation File</title>
+        <para id="id1997929">Member function definitions are always placed in the implementation file. </para>
+        <para id="id20799471">In the example below, for the class Stocks, the definition of the member function getTotalValue is placed in the source-code file stocks.cpp in which the main program is also included.</para>
+        <para id="id22996482">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id3584895">
+          <emphasis/>
+        </para>
+        <para id="id279508">//stocks.h ---------------- interface section</para>
+        <para id="id23769548">
+          <code>#if !defined(STOCKS_H)</code>
+        </para>
+        <para id="id256784">
+          <code>#define STOCKS_H</code>
+        </para>
+        <para id="id916573">
+          <code>class Stocks{</code>
+        </para>
+        <para id="id39339413">
+          <code>public:</code>
+        </para>
+        <para id="id39188976">
+          <code>double getTotalValue(int iShares, double dCurPrice);</code>
+        </para>
+        <para id="id41285390">
+          <code>private:</code>
+        </para>
+        <para id="id39476449">
+          <code>int iNumShares;</code>
+        </para>
+        <para id="id20923086">
+          <code>double dPurchasePricePerShare;</code>
+        </para>
+        <para id="id36977901">
+          <code>double dCurrentPricePerShare;</code>
+        </para>
+        <para id="id35634693">
+          <code>};</code>
+        </para>
+        <para id="id37679704">
+          <code>#endif</code>
+        </para>
+        <para id="id9019774">// stocks.cpp ----------------- implementation section</para>
+        <para id="id39245888">
+          <code>#include “stocks.h”</code>
+        </para>
+        <para id="id41030245">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id34693437">
+          <code/>
+        </para>
+        <para id="id36649742">
+          <code>double Stocks::getTotalValue(int iShares, double dCurPrice){</code>
+        </para>
+        <para id="id37520062">
+          <code>double dCurrentValue;</code>
+        </para>
+        <para id="id37386637">
+          <code>iNumShares = iShares;</code>
+        </para>
+        <para id="id39446132">
+          <code>dCurrentPricePerShare = dCurPrice;</code>
+        </para>
+        <para id="id32914650">
+          <code>dCurrentValue = iNumShares*dCurrentPricePerShare;</code>
+        </para>
+        <para id="id36031938">
+          <code>return dCurrentValue;</code>
+        </para>
+        <para id="id5711798">
+          <code>}</code>
+        </para>
+        <para id="id38993374">
+          <code>int main(){</code>
+        </para>
+        <para id="id42171975">
+          <code>Stocks stockPick;</code>
+        </para>
+        <para id="id39371836">
+          <code>cout &lt;&lt; stockPick.getTotalValue(200, 64.25) &lt;&lt; endl;</code>
+        </para>
+        <para id="id41342532">
+          <code>return 0;</code>
+        </para>
+        <para id="id35484053">
+          <code>}</code>
+        </para>
+        <para id="id39282761"><emphasis>Output</emphasis> of the above program:</para>
+        <para id="id41728523">12850</para>
+        <para id="id1742760">Note: The format of member functions included in the implementation section is as follows:</para>
+        <para id="id23695537">
+          <code>return-type Class-name::functionName(parameter-list)</code>
+        </para>
+        <para id="id35755361">
+          <code>{</code>
+        </para>
+        <para id="id38476737">
+          <code>function body</code>
+        </para>
+        <para id="id38759198">
+          <code>}</code>
+        </para>
+        <para id="id39837693">In order for your class to identify which functions in an implementation section belong to it, you precede the function name in the function definition header with the class name and the <emphasis>scope resolution operator</emphasis> (::).</para>
+      </section>
+      <section id="id-4259453422">
+        <title>Access Functions</title>
+        <para id="id38827668">Access to a class’ private data should be carefully controlled by the use of member functions, called <emphasis>access functions</emphasis>. For example, to allow clients to read the value of private data, the class can provide a get function. </para>
+        <para id="id1743027">To enable clients to modify private data, the class can provide a set function. Such modification would seem to violate the notion of private data. But a set member function can provide data validation capabilities (such as range checking) to ensure that the value is set properly. A set function can also translate between the form of data used in the interface and the form used in the implementation. </para>
+        <para id="id38387919">A get function need not expose the data in “raw” format; rather, the get function can edit data and limit the view of the data the client will see.</para>
+        <para id="id38469571">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id37877671">// time1.h</para>
+        <para id="id37323535">
+          <code>#if !defined(TIME1_H)</code>
+        </para>
+        <para id="id47151144">
+          <code>#define TIME1_H</code>
+        </para>
+        <para id="id38517252">
+          <code>class Time {</code>
+        </para>
+        <para id="id40991300">
+          <code>public:</code>
+        </para>
+        <para id="id35727522">
+          <code>Time(); // constructor</code>
+        </para>
+        <para id="id5401383">
+          <code>void setTime( int, int, int ); // set hour, minute, second</code>
+        </para>
+        <para id="id32914662">
+          <code>void printMilitary(); // print military time format</code>
+        </para>
+        <para id="id37580747">
+          <code>void printStandard(); // print standard time format</code>
+        </para>
+        <para id="id37425824">
+          <code>private:</code>
+        </para>
+        <para id="id38178752">
+          <code>int hour; </code>
+        </para>
+        <para id="id460075">
+          <code>int minute;</code>
+        </para>
+        <para id="id38761950">
+          <code>int second; </code>
+        </para>
+        <para id="id234345">
+          <code>};</code>
+        </para>
+        <para id="id38763644">
+          <code>#endif;</code>
+        </para>
+        <para id="id37281297">// time1.cpp</para>
+        <para id="id38450203">
+          <code>#include “time1.h”</code>
+        </para>
+        <para id="id38158896">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id39826478">
+          <code/>
+        </para>
+        <para id="id37610955">
+          <code>// Time constructor initializes each data member to zero.</code>
+        </para>
+        <para id="id40190198">
+          <code>// Ensures all Time objects start in a consistent state.</code>
+        </para>
+        <para id="id38758979">
+          <code>Time::Time() { </code>
+        </para>
+        <para id="id39277792">
+          <code>hour = minute = second = 0; </code>
+        </para>
+        <para id="id43194992">
+          <code>}</code>
+        </para>
+        <para id="id256186">
+          <code/>
+        </para>
+        <para id="id38512690">
+          <code>void Time::setTime( int h, int m, int s )</code>
+        </para>
+        <para id="id41006234">
+          <code>{</code>
+        </para>
+        <para id="id39030669">
+          <code>hour = ( h &gt;= 0 &amp;&amp; h &lt; 24 ) ? h : 0;</code>
+        </para>
+        <para id="id38476357">
+          <code>minute = ( m &gt;= 0 &amp;&amp; m &lt; 60 ) ? m : 0;</code>
+        </para>
+        <para id="id1743685">
+          <code>second = ( s &gt;= 0 &amp;&amp; s &lt; 60 ) ? s : 0;</code>
+        </para>
+        <para id="id22769078">
+          <code>}</code>
+        </para>
+        <para id="id38879940">
+          <code/>
+        </para>
+        <para id="id39117755">
+          <code>void Time::printMilitary()</code>
+        </para>
+        <para id="id1175386">
+          <code>{</code>
+        </para>
+        <para id="id1060310">
+          <code>cout &lt;&lt; ( hour &lt; 10 ? "0" : "" ) &lt;&lt; hour &lt;&lt; ":"</code>
+        </para>
+        <para id="id40538630">
+          <code>&lt;&lt; ( minute &lt; 10 ? "0" : "" ) &lt;&lt; minute;</code>
+        </para>
+        <para id="id36795315">
+          <code>}</code>
+        </para>
+        <para id="id38761074">
+          <code/>
+        </para>
+        <para id="id40989349">
+          <code>void Time::printStandard()</code>
+        </para>
+        <para id="id23237929">
+          <code>{</code>
+        </para>
+        <para id="id39748072">
+          <code>cout &lt;&lt; ( ( hour == 0 || hour == 12 ) ? 12 : hour % 12 )</code>
+        </para>
+        <para id="id40596482">
+          <code>&lt;&lt; ":" &lt;&lt; ( minute &lt; 10 ? "0" : "" ) &lt;&lt; minute</code>
+        </para>
+        <para id="id37937692">
+          <code>&lt;&lt; ":" &lt;&lt; ( second &lt; 10 ? "0" : "" ) &lt;&lt; second</code>
+        </para>
+        <para id="id38671671">
+          <code>&lt;&lt; ( hour &lt; 12 ? " AM" : " PM" );</code>
+        </para>
+        <para id="id39711479">
+          <code>}</code>
+        </para>
+        <para id="id41334610">
+          <code/>
+        </para>
+        <para id="id1122996">
+          <code>// Driver to test simple class Time</code>
+        </para>
+        <para id="id38820137">
+          <code>int main()</code>
+        </para>
+        <para id="id36837432">
+          <code>{</code>
+        </para>
+        <para id="id35511454">
+          <code>Time t; // instantiate object t of class Time</code>
+        </para>
+        <para id="id39097192">
+          <code>cout &lt;&lt; "The initial military time is ";</code>
+        </para>
+        <para id="id40212086">
+          <code>t.printMilitary();</code>
+        </para>
+        <para id="id23233724">
+          <code>cout &lt;&lt; "\nThe initial standard time is ";</code>
+        </para>
+        <para id="id41342782">
+          <code>t.printStandard();</code>
+        </para>
+        <para id="id38516120">
+          <code/>
+        </para>
+        <para id="id33912481">
+          <code>t.setTime( 13, 27, 6 );</code>
+        </para>
+        <para id="id43201138">
+          <code>cout &lt;&lt; "\n\nMilitary time after setTime is ";</code>
+        </para>
+        <para id="id36238186">
+          <code>t.printMilitary();</code>
+        </para>
+        <para id="id41651889">
+          <code>cout &lt;&lt; "\nStandard time after setTime is ";</code>
+        </para>
+        <para id="id38511381">
+          <code>t.printStandard();</code>
+        </para>
+        <para id="id3775662">
+          <code/>
+        </para>
+        <para id="id34461806">
+          <code>t.setTime( 99, 99, 99 ); // attempt invalid settings</code>
+        </para>
+        <para id="id38865684">
+          <code>cout &lt;&lt; "\n\nAfter attempting invalid settings:"</code>
+        </para>
+        <para id="id41337433">
+          <code>&lt;&lt; "\nMilitary time: ";</code>
+        </para>
+        <para id="id41022080">
+          <code>t.printMilitary();</code>
+        </para>
+        <para id="id40369700">
+          <code>cout &lt;&lt; "\nStandard time: ";</code>
+        </para>
+        <para id="id4965531">
+          <code>t.printStandard();</code>
+        </para>
+        <para id="id17807745">
+          <code>cout &lt;&lt; endl;</code>
+        </para>
+        <para id="id35122453">
+          <code>return 0;</code>
+        </para>
+        <para id="id1270992">
+          <code>}</code>
+        </para>
+        <para id="id21061899">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id20812873">The initial military time is 00:00</para>
+        <para id="id38902488">The initial standard time is 12:00:00 AM</para>
+        <para id="id1358479">Military time after setTime is 13:37</para>
+        <para id="id37937664">Standard time after setTime is 1:27:06 PM</para>
+        <para id="id22871409">After attempting invalid settings:</para>
+        <para id="id41141807">Military time: 00:00</para>
+        <para id="id39078804">Standard time: 12:00:00 AM</para>
+        <para id="id37324952">In the above example, for the class Time we can see that member functions printStandard and printMilitary are two get function and member function setTime is a set function.</para>
+      </section>
+      <section id="id-145755309412">
+        <title>Constructor Functions</title>
+        <para id="id1219829">A <emphasis>constructor function</emphasis> is a special function with the same name as its class. This function is called automatically when an object from a class is instantiated.</para>
+        <para id="id23649055">You define and declare constructor functions the same way you define other functions, although you do not include a return type since constructor functions do not return values.</para>
+        <para id="id1743560">
+          <emphasis>Example:</emphasis>
+        </para>
+        <para id="id44466108">
+          <code>class Payroll{</code>
+        </para>
+        <para id="id38409747">
+          <code>public:</code>
+        </para>
+        <para id="id39328506">
+          <code>Payroll( ){ // constructor function</code>
+        </para>
+        <para id="id38513700">
+          <code>dFedTax = 0.28;</code>
+        </para>
+        <para id="id38826859">
+          <code>dStateTax = 0.05;</code>
+        </para>
+        <para id="id1556841">
+          <code>};</code>
+        </para>
+        <para id="id34587049">
+          <code>private:</code>
+        </para>
+        <para id="id22321939">
+          <code>double dFedTax;</code>
+        </para>
+        <para id="id36030755">
+          <code>double dStateTax;</code>
+        </para>
+        <para id="id41660231">
+          <code>}</code>
+        </para>
+        <para id="id41178018">You also include just a function prototype in the interface file for the constructor function and then create the function definition in the implementation file.</para>
+        <para id="id40412435">
+          <code>Payroll::Payroll( ){ // constructor function</code>
+        </para>
+        <para id="id1182278">
+          <code>dFedTax = 0.28;</code>
+        </para>
+        <para id="id35619212">
+          <code>dStateTax = 0.05;</code>
+        </para>
+        <para id="id40332504">
+          <code>};</code>
+        </para>
+        <para id="id44470664">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id37266346">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id4024047">
+          <code>#include &lt;iomanip.h&gt;</code>
+        </para>
+        <para id="id41181733">
+          <code/>
+        </para>
+        <para id="id4022927">
+          <code>// class declaration section</code>
+        </para>
+        <para id="id37996442">
+          <code>class Date</code>
+        </para>
+        <para id="id35249329">
+          <code>{</code>
+        </para>
+        <para id="id39841237">
+          <code>private:</code>
+        </para>
+        <para id="id3248188">
+          <code>int month;</code>
+        </para>
+        <para id="id4121992">
+          <code>int day;</code>
+        </para>
+        <para id="id22010634">
+          <code>int year;</code>
+        </para>
+        <para id="id22569684">
+          <code>public:</code>
+        </para>
+        <para id="id41147797">
+          <code>Date(int = 7, int = 4, int = 2001); // constructor with default values</code>
+        </para>
+        <para id="id38761964">
+          <code>};</code>
+        </para>
+        <para id="id39246097">
+          <code/>
+        </para>
+        <para id="id40423638">
+          <code>// implementation section</code>
+        </para>
+        <para id="id1174968">
+          <code>Date::Date(int mm, int dd, int yyyy) // constructor</code>
+        </para>
+        <para id="id38309192">
+          <code>{</code>
+        </para>
+        <para id="id40994416">
+          <code>month = mm;</code>
+        </para>
+        <para id="id41667079">
+          <code>day = dd;</code>
+        </para>
+        <para id="id40364514">
+          <code>year = yyyy;</code>
+        </para>
+        <para id="id35527845">
+          <code>cout &lt;&lt; "Created a new data object with data values "</code>
+        </para>
+        <para id="id23819857">
+          <code>&lt;&lt; month &lt;&lt; ", " &lt;&lt; day &lt;&lt; ", " &lt;&lt; year &lt;&lt; endl;</code>
+        </para>
+        <para id="id40491412">
+          <code>}</code>
+        </para>
+        <para id="id38317477">
+          <code/>
+        </para>
+        <para id="id543118">
+          <code>int main()</code>
+        </para>
+        <para id="id36224560">
+          <code>{</code>
+        </para>
+        <para id="id41602834">
+          <code>Date a; // declare an object</code>
+        </para>
+        <para id="id41085969">
+          <code>Date b; // declare an object</code>
+        </para>
+        <para id="id39163502">
+          <code>Date c(4,1,2002); // declare an object</code>
+        </para>
+        <para id="id39462249">
+          <code>return 0;</code>
+        </para>
+        <para id="id39555921">
+          <code>}</code>
+        </para>
+        <para id="id40987036">
+          <code/>
+        </para>
+        <para id="id41166274">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id2025918">Created a new data object with data values 7, 4, 2001</para>
+        <para id="id39011237">Created a new data object with data values 7, 4, 2001</para>
+        <para id="id41349881">Created a new data object with data values 4,1, 2002</para>
+        <para id="id40350100"><emphasis>Default constructor</emphasis> refers to any constructor that does not require any parameters when it is called.</para>
+        <para id="id40221804">In the above example, the prototype Date(int = 7, int = 4, int = 2001) is valid for a default constructor. Here, each argument has been given a default value. Then an object can be declared as type Date without supplying any further arguments.</para>
+        <para id="id40403313">Although any legitimate C++ statement can be used within a constructor function, such as the cout statement used in above example, it is best to keep constructors simple and use them only for initialization purposes.</para>
+      </section>
+      <section id="id-545413759786">
+        <title>Structures vesus Classes</title>
+        <para id="id41158604">
+          <emphasis>Similarities between Structures and Classes</emphasis>
+        </para>
+        <list id="id1182329" list-type="enumerated"><item>Both can be used to model objects with different attributes represented as data members (also called fields or instance varibles). They can thus be used to process non-homogeneous data sets.</item>
+          <item>They have essentially the same syntax.</item>
+        </list>
+        <para id="id45719900">
+          <emphasis>Differences between Structures and Classes</emphasis>
+        </para>
+        <list id="id39729806" list-type="enumerated">
+          <item>Member of a structure by default are public. Member of a class by default are private unless explicitly declared to be public</item>
+          <item>A structure consists of only data elements while a class consists of not only data elements but also functions (operations) which are operated on the data elements.</item>
+        </list>
+      </section>
+    </section>
+    <section id="id-0118438416953">
+      <title>Dynamic Memory Allocation with Operators New and Delete</title>
+      <para id="id38505385">The <emphasis>new</emphasis> and <emphasis>delete</emphasis> operators provides a nice means of performing dynamic memory allocation (for any built-in or user-defined type). Consider the following code</para>
+      <para id="id22413166">
+        <code>TypeName *typeNamPtr;</code>
+      </para>
+      <para id="id38473510">
+        <code>typeNamePtr = new TypeName;</code>
+      </para>
+      <para id="id39302327">The new operator automatically creates an object of the proper size, calls the constructor for the object and returns a pointer of the correct type.</para>
+      <para id="id36991018">To destroy the object and free the space for this object in C++ you must use the delete operator as follows:</para>
+      <para id="id36668414">
+        <code>delete typeNamePtr;</code>
+      </para>
+      <para id="id38800848">For built-in data types, we also can use the new and delete operators.</para>
+      <para id="id38809623">Example 1:</para>
+      <para id="id34195369">
+        <code>int *pPointer;</code>
+      </para>
+      <para id="id40239926">
+        <code>pPointer = new int;</code>
+      </para>
+      <para id="id36580794">Example 2:</para>
+      <para id="id558546">
+        <code>delete pPointer;</code>
+      </para>
+      <para id="id38701321">Example 3: A 10-element integer array can be created and assigned to arrayPtr as follows:</para>
+      <para id="id39733310">
+        <code>int *arrayPtr = new int[10];</code>
+      </para>
+      <para id="id37301984">This array is deleted with the statement</para>
+      <para id="id37876734">
+        <code>delete [] arrayPtr;</code>
+      </para>
+      <section id="id-348563706496">
+        <title>Stack versus heap</title>
+        <para id="id37475508">A <emphasis>stack</emphasis> is a region of memory where applications can store data such as local variables, function calls, and parameter information.</para>
+        <para id="id36504462">The programmers have no control over the stack. C++ automatically handles placing and removing data to and from stack.</para>
+        <para id="id38704081">The <emphasis>heap</emphasis> or free store, is an area of memory that is available to application for storing data whose existence and size are not known until run-time. </para>
+        <para id="id45727618">Notice that when we use <emphasis>new</emphasis> operator, we can allocate a piece of memory on the heap and when we use <emphasis>delete</emphasis> operator, we can deallocate (free) a piece of memory on the heap. In other words, we can manage the memory allocation on the heap explicitly through new and delete operators.</para>
+        <para id="id41729276">The syntax for using the new operator is</para>
+        <para id="id784176">
+          <code>pointer = new data_type;</code>
+        </para>
+        <para id="id41359742">For example, to declare an int pointer iPointer that points to a heap variable, you use the following statements:</para>
+        <para id="id41660271">
+          <code>int* iPointer;</code>
+        </para>
+        <para id="id41178868">
+          <code>iPointer = new int;</code>
+        </para>
+        <para id="id34716156">The syntax for using the delete operator is</para>
+        <para id="id38459392">
+          <code>delete pointer_name;</code>
+        </para>
+        <para id="id40422351">For example, to delete the heap memory pointed to by the iPointer pointer, you use the statement delele iPointer;.</para>
+        <para id="id401943">Deleting the contents of an array stored on the heap also requires a slightly different syntax. You must append two brackets to the delete keyword using the syntax delete[] array_name; . </para>
+        <para id="id35755769">Notice that the <emphasis>delete</emphasis> operator does not delete the pointer itself. Rather, it deletes the contents of the heap memory address pointed to by a pointer variable. You can reuse the pointer itself after calling the delete operator. The pointer still exists and points to the same heap memory address that it did before calling the delete operator.</para>
+        <para id="id38631198">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id40330392">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id39858648">
+          <code>int main( )</code>
+        </para>
+        <para id="id40353073">
+          <code>{</code>
+        </para>
+        <para id="id36837510">
+          <code>double* pPrimeInterest = new double;</code>
+        </para>
+        <para id="id39530948">
+          <code>*pPrimeInterest = 0.065;</code>
+        </para>
+        <para id="id38763532">
+          <code>cout &lt;&lt; “The value of pPrimeInterest is: “</code>
+        </para>
+        <para id="id37178937">
+          <code>&lt;&lt; *pPrimeInterest &lt;&lt; endl;</code>
+        </para>
+        <para id="id36580301">
+          <code>cout &lt;&lt; “The memory address of pPimeInterest is:”</code>
+        </para>
+        <para id="id35632767">
+          <code>&lt;&lt; &amp;pPrimeInterest &lt;&lt; endl;</code>
+        </para>
+        <para id="id37175407">
+          <code/>
+        </para>
+        <para id="id41179938">
+          <code>delete pPrimeInterest;</code>
+        </para>
+        <para id="id39010908">
+          <code>*pPimeInterest = 0.070;</code>
+        </para>
+        <para id="id42171968">
+          <code>cout &lt;&lt; “The value of pPrimeInterest is: “</code>
+        </para>
+        <para id="id41160013">
+          <code>&lt;&lt; *pPrimeInterest &lt;&lt; endl;</code>
+        </para>
+        <para id="id39843447">
+          <code>cout &lt;&lt; “The memory address of pPrimeInterest is: “</code>
+        </para>
+        <para id="id45731503">
+          <code>&lt;&lt; &amp;pPrimeInterest &lt;&lt; endl;</code>
+        </para>
+        <para id="id38918294">
+          <code>return 0;</code>
+        </para>
+        <para id="id37469036">
+          <code>}</code>
+        </para>
+        <para id="id38318154">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id36836106">The value of pPrimeInterest is: 0.065</para>
+        <para id="id39317064">The memory address of pPrimeInterest is: 0x0066FD74</para>
+        <para id="id40996702">The value of pPrimeInterest is: 0.070</para>
+        <para id="id41042359">The memory address of pPrimeInterest is: 0x0066FD74.</para>
+        <para id="id41040833">Note: The above program declares the pPrimeInterest pointer on the heap and assigns to it a value of 0.065. Then the delete operator deletes the heap address that stores the value of 0.065. Finally, a new value is added to the heap address. You can see that after the delete statement executes, the pPimeInterest pointer still point to the same memory address.</para>
+        <para id="id36032252">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id41136556">In the following program, we can create some objects of the class Stocks on the stack or on the heap and then manipulate them.</para>
+        <para id="id35526302">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id41142029">
+          <code>class Stocks{</code>
+        </para>
+        <para id="id38324476">
+          <code>public:</code>
+        </para>
+        <para id="id3479022">
+          <code>int iNumShares;</code>
+        </para>
+        <para id="id45729627">
+          <code>double dPurchasePricePerShare;</code>
+        </para>
+        <para id="id41649893">
+          <code>double dCurrentPricePerShare;</code>
+        </para>
+        <para id="id1182764">
+          <code>};</code>
+        </para>
+        <para id="id36951259">
+          <code>double totalValue(Stocks* pCurStock){</code>
+        </para>
+        <para id="id41144557">
+          <code>double dTotalValue;</code>
+        </para>
+        <para id="id37903766">
+          <code>dTotalValue = pCurStock-&gt;dCurrentPricePerShar*pCurStock-&gt;iNumShares;</code>
+        </para>
+        <para id="id3382925">
+          <code>return dTotalValue;</code>
+        </para>
+        <para id="id41485572">
+          <code>}</code>
+        </para>
+        <para id="id22563352">
+          <code>int main( ){</code>
+        </para>
+        <para id="id41284485">
+          <code>//allocated on the stack with a pointer to the stack object</code>
+        </para>
+        <para id="id39858660">
+          <code>Stocks stockPick;</code>
+        </para>
+        <para id="id39429833">
+          <code>Stocks* pStackStock = &amp;stockPick;</code>
+        </para>
+        <para id="id37077788">
+          <code>pStackStock-&gt;iNumShares = 500;</code>
+        </para>
+        <para id="id19080464">
+          <code>pStackStock-&gt; dPurchasePricePerShare = 10.785;</code>
+        </para>
+        <para id="id36978581">
+          <code>pStackStock-&gt; dCurrentPricePerShare = 6.5;</code>
+        </para>
+        <para id="id38761997">
+          <code>cout &lt;&lt; totalValue(pStackStock) &lt;&lt; endl;</code>
+        </para>
+        <para id="id39197257">
+          <code>//allocated on the heap</code>
+        </para>
+        <para id="id40345891">
+          <code>Stocks* pHeapStock = new Stocks;</code>
+        </para>
+        <para id="id38761466">
+          <code>pHeapStock-&gt;iNumShares = 200;</code>
+        </para>
+        <para id="id40211899">
+          <code>pHeapStock-&gt; dPurchasePricePerShare = 32.5;</code>
+        </para>
+        <para id="id40330731">
+          <code>pHeapStock-&gt; dCurrentPricePerShare = 48.25;</code>
+        </para>
+        <para id="id35999070">
+          <code>cout &lt;&lt; totalValue(pHeapStock) &lt;&lt; endl;</code>
+        </para>
+        <para id="id23617962">
+          <code>return 0;</code>
+        </para>
+        <para id="id39726917">
+          <code>}</code>
+        </para>
+        <para id="id35998401">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id38444675">3250</para>
+        <para id="id5878251">9650</para>
+        <para id="id22494512">In the above program, the new operator in the statement:</para>
+        <para id="id38911424">
+          <code>Stocks* pHeapStock = new Stocks;</code>
+        </para>
+        <para id="id39727054">invokes the constructor of the Stocks class to create a Stocks object on the heap and returns a pointer which is assigned to the pointer variable pHeapStock.</para>
+        <para id="id1430841">Note: </para>
+        <para id="id34855916">1. The totalValue() function is not a function member of the Stocks class. Rather, it is a function that is available to the entire program.</para>
+        <para id="id19236350">2. When declaring and using pointers and references to class objects, follow the same rules as you would when declaring and using pointers and references to structures. You can use the <emphasis>indirect member selection operator</emphasis> (-&gt;) to access class members through a pointer to an object either on stack or on the heap.</para>
+        <para id="id1753142">As we will see, using new and delete offers other benefits as well. In particular, new invokes the constructor and delete invokes the class’destructor.</para>
+        <para id="id36000697">
+          <code/>
+        </para>
+      </section>
+    </section>
+    <section id="id-79824322817">
+      <title>Pointers as Class Members</title>
+      <para id="id40369359">A class can contain any C++ data type. Thus, the inclusion of a pointer variable in a class should not seem surprising.</para>
+      <para id="id39459790">In some cases, pointers as class members are advantageous. For example, assume that in the class Book we need to store a book title. Rather than using a fixed length character array as a data member to hold each book title, we could include a pointer member to a character array and then allocate the correct size array for each book title as it is needed.</para>
+      <para id="id1557154">
+        <emphasis>Example </emphasis>
+      </para>
+      <para id="id39727984">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id41145677">
+        <code>#include &lt;string.h&gt;</code>
+      </para>
+      <para id="id35403508">
+        <code/>
+      </para>
+      <para id="id39066381">
+        <code>// class declaration</code>
+      </para>
+      <para id="id23730265">
+        <code>class Book</code>
+      </para>
+      <para id="id39752480">
+        <code>{</code>
+      </para>
+      <para id="id21196876">
+        <code>private:</code>
+      </para>
+      <para id="id39841915">
+        <code>char *title; // a pointer to a book title</code>
+      </para>
+      <para id="id39580233">
+        <code>public:</code>
+      </para>
+      <para id="id38516047">
+        <code>Book(char * = NULL); // constructor with a default value</code>
+      </para>
+      <para id="id40521572">
+        <code>void showtitle(); // display the title</code>
+      </para>
+      <para id="id38634832">
+        <code>};</code>
+      </para>
+      <para id="id45727625">
+        <code>// class implementation</code>
+      </para>
+      <para id="id40110440">
+        <code>Book::Book(char *strng)</code>
+      </para>
+      <para id="id39520931">
+        <code>{</code>
+      </para>
+      <para id="id41391893">
+        <code>title = new char[strlen(strng)+1]; // allocate memory</code>
+      </para>
+      <para id="id38685659">
+        <code>strcpy(title,strng); // store the string</code>
+      </para>
+      <para id="id37481809">
+        <code>}</code>
+      </para>
+      <para id="id39866999">
+        <code>void Book::showtitle()</code>
+      </para>
+      <para id="id39986899">
+        <code>{</code>
+      </para>
+      <para id="id23896811">
+        <code>cout &lt;&lt; title &lt;&lt; endl;</code>
+      </para>
+      <para id="id38626248">
+        <code>return;</code>
+      </para>
+      <para id="id266717">
+        <code>}</code>
+      </para>
+      <para id="id1153410">
+        <code/>
+      </para>
+      <para id="id36387647">
+        <code>int main()</code>
+      </para>
+      <para id="id3382930">
+        <code>{</code>
+      </para>
+      <para id="id1261197">
+        <code>Book book1("DOS Primer"); // create 1st title</code>
+      </para>
+      <para id="id4292766">
+        <code>Book book2("A Brief History of Western Civilization"); // 2nd title</code>
+      </para>
+      <para id="id39673230">
+        <code/>
+      </para>
+      <para id="id36836661">
+        <code>book1.showtitle(); // display book1's title</code>
+      </para>
+      <para id="id20054964">
+        <code>book2.showtitle(); // display book2's title</code>
+      </para>
+      <para id="id40348492">
+        <code/>
+      </para>
+      <para id="id37685064">
+        <code>return 0;</code>
+      </para>
+      <para id="id40293300">
+        <code>}</code>
+      </para>
+      <para id="id4928740">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id39368212">DOS Primer</para>
+      <para id="id40400979">A Brief History of Western Civilization</para>
+      <para id="id1663692">The body of the Book() constructor contains two statements. The first statement performs two taks: First, the statement allocates enough storage for the length of the name parameter plus one to accommodate the end-of-string null character, ‘\n’. Next, the address of the first allocated character position is assigned to the pointer variable title.</para>
+    </section>
+    <section id="id-791019558891">
+      <title>Focus on Problem Solving</title>
+      <para id="id35761827">
+        <emphasis>Problem: Constructing an Elevator Object</emphasis>
+      </para>
+      <para id="id39386998">In this application, you are required to simulate the operation of an elevator. Output is required that describes the current floor on which the elevator is stationed or is passing. Additionally, an internal elevator button that is pushed as a request to move to another floor should be provided. The elevator can travel between the first and fifteenth floors of the building in which it is situated.</para>
+      <section id="id-203652279526">
+        <title>Analyze the Problem </title>
+        <para id="id1250214">For this application, we have one object, an elevator. The only attribute of interest is its location. A rider can request a change in the elevator’s position (state). Additionally, we must be able to establish the initial floor position when a new elevator is put in service. Figure below illustrates an object diagram that includes both the required attributes and operations.</para>
+        <figure id="id1223280"><media id="id1166609853300" alt=""><image src="../../media/graphics3-6ee9.png" mime-type="image/png" height="185" width="274"/></media>
+        <caption> Object diagram </caption></figure>
+        <para id="id291002">Figure 7.3 An Elevator Class Diagram</para>
+      </section>
+      <section id="id-123904283434">
+        <title>Develop a Solution </title>
+        <para id="id40392492">For this application, the location of the elevator, which corresponds to its current floor position, can be represented by an integer member variable whose value ranges between 1 and 15. The variable is named currentFloor. The value of currentFloor effectively represents the current state of the elevator. The services that we provide for changing the state of the elevator are an initialization function to set the initial floor position when a new elevator is put in service and a request function to change the elevator’s position (state) to a new floor. Putting an elevator in service is accomplished by declaring a single class instance and requesting a new floor position is equivalent to pushing an elevator button.</para>
+        <para id="id41238530">The response to the elevator button should be as follows:</para>
+        <para id="id558316">
+          <code>If a request is made for either a nonexistent floor or the current floor,</code>
+        </para>
+        <para id="id39524344">
+          <code>Do nothing</code>
+        </para>
+        <para id="id40989111">
+          <code>Else if the request is for a floor above the current floor,</code>
+        </para>
+        <para id="id36029715">
+          <code>Display the current floor number</code>
+        </para>
+        <para id="id39339381">
+          <code>While not at the designated floor</code>
+        </para>
+        <para id="id41343751">
+          <code>Increment the floor number</code>
+        </para>
+        <para id="id37100169">
+          <code>Display the new floor number</code>
+        </para>
+        <para id="id37391773">
+          <code>End while</code>
+        </para>
+        <para id="id41340254">
+          <code>Display the ending floor number</code>
+        </para>
+        <para id="id39555936">
+          <code>Else</code>
+        </para>
+        <para id="id1711974">
+          <code>Display the current floor number</code>
+        </para>
+        <para id="id37438656">
+          <code>While not at the designated floor</code>
+        </para>
+        <para id="id39723603">
+          <code>Decrement the floor number</code>
+        </para>
+        <para id="id384572">
+          <code>Display the new floor number</code>
+        </para>
+        <para id="id40348021">
+          <code>End while</code>
+        </para>
+        <para id="id39273090">
+          <code>Display the ending floor number</code>
+        </para>
+        <para id="id41343759">
+          <code>Endif</code>
+        </para>
+      </section>
+      <section id="id-418276967778">
+        <title>Coding the Solution </title>
+        <para id="id40204900">From the design, a suitable class declaration is:</para>
+        <para id="id45730717">//class declaration</para>
+        <para id="id38845360">
+          <code>class Elevator</code>
+        </para>
+        <para id="id1382318">
+          <code>{</code>
+        </para>
+        <para id="id771304">
+          <code>private:</code>
+        </para>
+        <para id="id460078">
+          <code>int currentFloor;</code>
+        </para>
+        <para id="id34281084">
+          <code>public:</code>
+        </para>
+        <para id="id33970231">
+          <code>Elevator(int = 1); //constructor</code>
+        </para>
+        <para id="id38633367">
+          <code>void request(int);</code>
+        </para>
+        <para id="id38318638">
+          <code>};</code>
+        </para>
+        <para id="id37450491">The two declared public member functions, Elevator() and request(), are used to define the external services provided by each Elevator object. The Elevator() function becomes a constructor function that is automatically called when an object of type Elevator is created. We use this function to initialize the starting floor position of the elevator. The request() function is used to alter its position. To accomplish these services, a suitable class implementation section is:</para>
+        <para id="id542460">// class implementation section</para>
+        <para id="id22553676">
+          <code>Elevator::Elevator(int cfloor)</code>
+        </para>
+        <para id="id21001220">
+          <code>{</code>
+        </para>
+        <para id="id41259797">
+          <code>currentFloor = cfloor;</code>
+        </para>
+        <para id="id49483148">
+          <code>}</code>
+        </para>
+        <para id="id1556845">
+          <code>void Elevator::request(int newfloor)</code>
+        </para>
+        <para id="id37464173">
+          <code>{</code>
+        </para>
+        <para id="id39134962">
+          <code>if (newfloor &lt; 1 || newfloor &gt; MAXFLOOR || newfloor == currentFloor)</code>
+        </para>
+        <para id="id3526357">
+          <code>; // doing nothing</code>
+        </para>
+        <para id="id38214904">
+          <code>else if (newfloor &gt; currentFloor) // move elevator up</code>
+        </para>
+        <para id="id39711488">
+          <code>{</code>
+        </para>
+        <para id="id38519194">
+          <code>cout &lt;&lt; “\nStarting at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id39164740">
+          <code>while (newfloor &gt; currentFloor)</code>
+        </para>
+        <para id="id40282746">
+          <code>{</code>
+        </para>
+        <para id="id41340148">
+          <code>currentFloor++;</code>
+        </para>
+        <para id="id39836478">
+          <code>cout &lt;&lt; “ Going up – now at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id39733276">
+          <code>}</code>
+        </para>
+        <para id="id41030261">
+          <code>cout &lt;&lt; “ Stopping at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id37450481">
+          <code>}</code>
+        </para>
+        <para id="id39499347">
+          <code>else // move elevator down</code>
+        </para>
+        <para id="id37875894">
+          <code>{</code>
+        </para>
+        <para id="id33415618">
+          <code>cout &lt;&lt; “\nStarting at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id20338842">
+          <code>while (newfloor &lt; currentFloor)</code>
+        </para>
+        <para id="id39966652">
+          <code>{</code>
+        </para>
+        <para id="id1743542">
+          <code>currentFloor--;</code>
+        </para>
+        <para id="id38800861">
+          <code>cout &lt;&lt; “ Going down – now at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id38776045">
+          <code>}</code>
+        </para>
+        <para id="id40838833">
+          <code>cout &lt;&lt; “ Stopping at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id514451">
+          <code>}</code>
+        </para>
+        <para id="id1320293">
+          <code>return;</code>
+        </para>
+        <para id="id39433091">
+          <code>}</code>
+        </para>
+        <para id="id39119858">The constructor function is straightforward. When an Elevator object is declared, it is initialized to the floor specified; if no floor is explicitly given, the default value of 1 is used. For example, the declaration</para>
+        <para id="id39429241">
+          <code>Elevator a(7);</code>
+        </para>
+        <para id="id40391758">Initializes the variable a.currentFloor to 7, whereas the declaration</para>
+        <para id="id44465590">
+          <code>Elevator a;</code>
+        </para>
+        <para id="id35300160">uses the default argument value and initializes the variable a.currentFloor to 1.</para>
+        <para id="id38851077">The request() function defined in the implementation section is more complicated and provides the class’s primary service. Essentially, this function consists of an if-else statement having three parts: If an incorrect service is requested, no action is taken; if a floor above the current position is selected, the elevator is moved up; and if a floor below the current position is selected, the elevator is moved down. For movement up or down, the function uses a while loop to increment or decrement the position one floor at a time and report the elevator’s movement using a cout statement. The following program includes this class in a working program.</para>
+        <para id="id47151172">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id23417379">
+          <code>const int MAXFLOOR = 15;</code>
+        </para>
+        <para id="id40205735">
+          <code/>
+        </para>
+        <para id="id35033767">
+          <code>//class declaration</code>
+        </para>
+        <para id="id38776861">
+          <code>class Elevator</code>
+        </para>
+        <para id="id41342526">
+          <code>{</code>
+        </para>
+        <para id="id558497">
+          <code>private:</code>
+        </para>
+        <para id="id36691229">
+          <code>int currentFloor;</code>
+        </para>
+        <para id="id19950877">
+          <code>public:</code>
+        </para>
+        <para id="id41042854">
+          <code>Elevator(int = 1); //constructor</code>
+        </para>
+        <para id="id40522159">
+          <code>void request(int);</code>
+        </para>
+        <para id="id21849701">
+          <code>};</code>
+        </para>
+        <para id="id39282902">
+          <code/>
+        </para>
+        <para id="id460084">
+          <code>// implementation section</code>
+        </para>
+        <para id="id40193713">
+          <code>Elevator::Elevator(int cfloor)</code>
+        </para>
+        <para id="id41729875">
+          <code>{</code>
+        </para>
+        <para id="id1999024">
+          <code>currentFloor = cfloor;</code>
+        </para>
+        <para id="id40086755">
+          <code>}</code>
+        </para>
+        <para id="id40988644">
+          <code>void Elevator::request(int newfloor)</code>
+        </para>
+        <para id="id36032176">
+          <code>{</code>
+        </para>
+        <para id="id41490464">
+          <code>if (newfloor &lt; 1 || newfloor &gt; MAXFLOOR || newfloor == currentFloor)</code>
+        </para>
+        <para id="id40491566">
+          <code>; // doing nothing</code>
+        </para>
+        <para id="id37502002">
+          <code>else if (newfloor &gt; currentFloor) // move elevator up</code>
+        </para>
+        <para id="id1995071">
+          <code>{</code>
+        </para>
+        <para id="id39078885">
+          <code>cout &lt;&lt; “\nStarting at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id784138">
+          <code>while (newfloor &gt; currentFloor)</code>
+        </para>
+        <para id="id39868473">
+          <code>{</code>
+        </para>
+        <para id="id36752424">
+          <code>currentFloor++;</code>
+        </para>
+        <para id="id38540530">
+          <code>cout &lt;&lt; “ Going up – now at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id24392742">
+          <code>}</code>
+        </para>
+        <para id="id39735181">
+          <code>cout &lt;&lt; “ Stopping at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id41488704">
+          <code>}</code>
+        </para>
+        <para id="id1432045">
+          <code>else // move elevator down</code>
+        </para>
+        <para id="id36837488">
+          <code>{</code>
+        </para>
+        <para id="id39730702">
+          <code>cout &lt;&lt; “\nStarting at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id36868816">
+          <code>while (newfloor &lt; currentFloor)</code>
+        </para>
+        <para id="id22229568">
+          <code>{</code>
+        </para>
+        <para id="id35130062">
+          <code>currentFloor--;</code>
+        </para>
+        <para id="id40392566">
+          <code>cout &lt;&lt; “ Going down – now at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id39697786">
+          <code>}</code>
+        </para>
+        <para id="id39727105">
+          <code>cout &lt;&lt; “ Stopping at floor “ &lt;&lt; currentFloor &lt;&lt; endl;</code>
+        </para>
+        <para id="id37440615">
+          <code>}</code>
+        </para>
+        <para id="id37009173">
+          <code>return;</code>
+        </para>
+        <para id="id41532149">
+          <code>}</code>
+        </para>
+        <para id="id41341130">
+          <code/>
+        </para>
+        <para id="id39733506">
+          <code>int main()</code>
+        </para>
+        <para id="id1213591">
+          <code>{</code>
+        </para>
+        <para id="id1270754">
+          <code>Elevator a; // declare 1 object of type Elevator</code>
+        </para>
+        <para id="id40125302">
+          <code>a.request(6);</code>
+        </para>
+        <para id="id1743086">
+          <code>a.request(3);</code>
+        </para>
+        <para id="id40392571">
+          <code>return 0;</code>
+        </para>
+        <para id="id35247826">
+          <code>}</code>
+        </para>
+      </section>
+      <section id="id-959301007712">
+        <title>Test and Correct the Program </title>
+        <para id="id1057978">Within the main() function, three class function calls are included. The first statement creates an object name a of type Elevator. Since no explicit floor has been given, the elevator begins at floor 1, which is the default constructor argument.</para>
+        <para id="id41014224">A request is then made to move the elevator to floor 6, which is followed by a request to move to floor 3. The output produced by the program is:</para>
+        <figure id="id40428137"><media id="id1166608301280" alt=""><image src="../../media/graphics4-dd81.png" mime-type="image/png" height="265" width="251"/></media>
+        <caption> Output of program </caption></figure>
+        <para id="id39163603">Note that control is provided by the main() function. This control is sequential, with two calls made to the same object operation, using different argument values. This control is perfectly correct for testing purposes. However, by incorporating calls to request() within a while loop and using the random number function rand() to generate random floor requests, a continuous simulation of the elevator’s operation is possible.</para>
+      </section>
+      <section id="id-779440440552">
+        <title>Design Techniques of Object-Oriented Programs</title>
+        <para id="id40527095">The basic requirements of object-oriented programming are evident in even as simple a program as the above program. Before the main() function can be written, a useful class must be constructed. For programs that used objects, the design process is loaded with the requirement that careful consideration of the class – its declaration and implementation – be given. Code contained in the implementation section effectively removes code that would otherwise be part of main()’s responsibility. Thus, any program that uses the object does not have to repeat the implementation details within its main() function. Rather, the main() function is only concerned with sending messages and how the state of the object is retained are not main()’s concern; these details are hidden within the class construction.</para>
+      </section>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,709 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Basic Elements in C++</title>
+  <metadata>
+  <md:content-id>m27205</md:content-id><md:title>Basic Elements in C++</md:title>
+  <md:abstract>This chapter gets you started immediately writing some simple C++ programs and helps you to understand some basic elements in any high level programming language such as data types, arithmetic operators, output statements and assignment statements.</md:abstract>
+  <md:uuid>0d609766-0e6c-44ec-894a-fd2a096ec817</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-625751282319">
+      <title>Program Structures</title>
+      <section id="id-665699893217">
+        <title>Modular Programs</title>
+        <para id="id7448065">A large program should be organized as several interrelated segments, arranged in a logical order: The segments are called modules. A program which consists of such modules is called a modular program.</para>
+        <para id="id5976116">In C++, modules can be classes or functions.</para>
+        <para id="id10751256">We can think of a function as a program segment that transforms the data it receives into a finished result.</para>
+        <para id="id4144892">Each function must have a name. Names or identifiers in C++ can made up of any combination of letters, digits, or underscores selected according to the following rules:</para>
+        <list id="id11015839" list-type="bulleted">
+          <item>Identifiers must begin within an uppercase or lowercase ASCII letter or an underscore (_).</item>
+          <item>You can use digits in an identifier, but not as the first character. You are not allowed to use special characters such as $, &amp;, * or %.</item>
+          <item>Reserved words cannot be used for variable names.</item>
+        </list>
+        <para id="id11190626">
+          <emphasis>Examples:</emphasis>
+        </para>
+        <para id="id7595412">DegToRadintersectaddNums</para>
+        <para id="id9373811">FindMax1_densityslope</para>
+        <para id="id5655963">
+          <emphasis>Examples of invalid identifiers:</emphasis>
+        </para>
+        <para id="id11657156">1AB3</para>
+        <para id="id11539826">E%6</para>
+        <para id="id11002856">while</para>
+        <para id="id5504542">Note: C++ is a case-sensitive language (i.e. upper and lower case characters are treated as different letters).</para>
+      </section>
+      <section id="id-419583233435">
+        <title>The main() function</title>
+        <para id="id6429214">The main() function is a special function that runs automatically when a program first executes.</para>
+        <para id="id4280855">All C++ programs must include one main() function. All other functions in a C++ program are executed from the main() function.</para>
+        <para id="id10970400">The first line of the function, in this case int main() is called a function header line.</para>
+        <para id="id10434921">The function header line contains three pieces of information:</para>
+        <list id="id10611948" list-type="enumerated">
+          <item>What type of data, if any, is returned from the function.</item>
+          <item>The name of the function</item>
+          <item>What type of data, if any, is sent into the function.</item>
+        </list>
+        <para id="id3514992">
+          <code>int main()</code>
+        </para>
+        <para id="id5580911">
+          <code>{</code>
+        </para>
+        <para id="id6981915">
+          <code/>
+        </para>
+        <para id="id10439311">
+          <code>program statements in here</code>
+        </para>
+        <para id="id3522405">
+          <code>return 0;</code>
+        </para>
+        <para id="id5606118">
+          <code>}</code>
+        </para>
+        <para id="id6995792">Note: The line</para>
+        <para id="id10952870">return 0;</para>
+        <para id="id6354570">is included at the end of every main function. C++ keyword return is one of several means we will use to exit a function. When the return statement is used at the end of main as shown here, the value 0 indicates that the program has terminates successfully.</para>
+      </section>
+      <section id="id-612532929221">
+        <title>The cout Object</title>
+        <para id="id3437756">The cout object is an output object that sends data given to it to the standard output display device.</para>
+        <para id="id4987940">To send a message to the cout object, you use the following pattern:</para>
+        <para id="id9337207">cout &lt;&lt; “text”;</para>
+        <para id="id11645223">The insertion operator, &lt;&lt;, is used for sending text to an output device.</para>
+        <para id="id8112809">The text portion of the statement is called a text string. Text string is text that is contained within double quotation marks.</para>
+        <para id="id7095293">Consider the following program.</para>
+        <para id="id6986583">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id11126276">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id6445759">
+          <code>int main()</code>
+        </para>
+        <para id="id8683756">
+          <code>{</code>
+        </para>
+        <para id="id8974939">
+          <code>cout &lt;&lt; "Hello world!”;</code>
+        </para>
+        <para id="id8047701">
+          <code>return 0;</code>
+        </para>
+        <para id="id3355354">
+          <code>}</code>
+        </para>
+        <para id="id10284912">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id11368802">Hello world!</para>
+      </section>
+      <section id="id-632937010216">
+        <title>Preprocessor Directives</title>
+        <para id="id11521420">Before you can use any runtime libraries in your program, you must first add a header-file into your program, using the #include statement. A header file is a file with an extension of .h that is included as part of a program and notifies the compiler that a program uses run-time libraries.</para>
+        <para id="id7515937">One set of classes you will use extensively in the next few chapters is the iostream classes. The iostream classes are used for giving C++ programs input capabilities and output capabilities.</para>
+        <para id="id3384471">The header file for the iostream class is iostream.h.</para>
+        <para id="id12202646">The #include statement is one of the several preprocessor directives that are used with C++.</para>
+        <para id="id4392352">The preprocessor is a program that runs before the compiler. When it encounters an #include statement, the preprocessor places the entire contents of the designated file into the current file.</para>
+        <para id="id10761230">Preprocessor directives and include statements allow the current file to use any of the classes, functions, variables, and other code contained within the included file.</para>
+        <para id="id6201186">Example: To include the iostream.h file you use the following statement:</para>
+        <para id="id6267019">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id5692382">An i/o manipulator is a special function that can be used with an i/o statement. The endl i/o manipulator is part of the iostream classes and represents a new line character.</para>
+        <para id="id9085141">Example:</para>
+        <para id="id4204912">
+          <code>cout &lt;&lt; “Program type: console application” &lt;&lt; endl;</code>
+        </para>
+        <para id="id9431962">
+          <code>cout &lt;&lt; “Create with: Visual C++ “&lt;&lt; endl;</code>
+        </para>
+        <para id="id11895056">
+          <code>cout &lt;&lt; “Programmer: Don Gesselin” &lt;&lt; endl;</code>
+        </para>
+        <para id="id7268477">All statements in C++ must end with a semicolon. Large statements can span multiple lines of code.</para>
+        <para id="id5416302">Example:</para>
+        <para id="id9502796">
+          <code>cout &lt;&lt; “Program type: console application,” </code>
+        </para>
+        <para id="id10516401">
+          <code>&lt;&lt; “Create with: Visual C++ “</code>
+        </para>
+        <para id="id3968124">
+          <code>&lt;&lt; “Programmer: Don Gesselin”;</code>
+        </para>
+      </section>
+      <section id="id-763415917726">
+        <title>Comments</title>
+        <para id="id3932848">Comments are lines that you place in your code to contain various type of remarks. C++ support two types of comments: line and block. </para>
+        <para id="id10956282">C++ line comments are created by adding two slashes (//) before the text you want to use as a comment.</para>
+        <para id="id6239470">Block comments span multiple lines. Such comments begin with /* and end with the symbols */.</para>
+        <para id="id3926280">
+          <emphasis>Example:</emphasis>
+        </para>
+        <para id="id6775114">
+          <code>void main()</code>
+        </para>
+        <para id="id11255700">
+          <code>{</code>
+        </para>
+        <para id="id10953812">
+          <code>/*</code>
+        </para>
+        <para id="id3354694">
+          <code>This line is part of the block comment.</code>
+        </para>
+        <para id="id5864679">
+          <code>This line is also part of the block</code>
+        </para>
+        <para id="id6996477">
+          <code>comment.</code>
+        </para>
+        <para id="id6996436">
+          <code>*/</code>
+        </para>
+        <para id="id11559131">
+          <code>cout &lt;&lt; “Line comment 1 “;</code>
+        </para>
+        <para id="id10948491">
+          <code>cout &lt;&lt; “Line comment 2 “;</code>
+        </para>
+        <para id="id9577506">
+          <code>// This line comment takes up an entire line.</code>
+        </para>
+        <para id="id9440980">
+          <code>}</code>
+        </para>
+        <para id="id3368536">All programs should contain comments. They are </para>
+        <para id="id3443100">remarks, insights, wisdom in code without affecting the program. The compiler ignores comments</para>
+        <para id="id11657196">.</para>
+      </section>
+    </section>
+    <section id="id-287932977189">
+      <title>Data Types and Operators</title>
+      <section id="id-566950659126">
+        <title>Data Types</title>
+        <para id="id3274302">A data type is the specific category of information that a variable contains.</para>
+        <para id="id5738954">There are three basic data types used in C++: integers, floating point numbers and characters.</para>
+        <para id="id8170276">
+          <emphasis>Integers</emphasis>
+        </para>
+        <para id="id8684250">An integer is a positive or negative number with no decimal places.</para>
+        <para id="id4204475">- 259 -13 0 200</para>
+        <para id="id8990046">
+          <emphasis>Floating Point Numbers</emphasis>
+        </para>
+        <para id="id7569908">A floating point number contains decimal places or is written using exponential notations.</para>
+        <para id="id11255685">-6.16 -4.4 2.7541 10.5</para>
+        <para id="id10014057">Exponential notation, or scientific notation is a way of writing a very large numbers or numbers with many decimal places using a shortened format.</para>
+        <para id="id3602839">2.0e11 means 2*1011</para>
+        <para id="id10449759">C++ supports three different kinds of floating-point numbers:</para>
+        <list id="id3299322" list-type="bulleted">
+          <item>float (i.e. single precision numbers),</item>
+          <item>double (i.e. double precision numbers)</item>
+          <item>long double.</item>
+        </list>
+        <para id="id7732225">A double precision floating-point number can contain up to 15 significant digits.</para>
+        <para id="id3521032">
+          <emphasis>The Character Data Type</emphasis>
+        </para>
+        <para id="id3001264">To store text, you use the character data type. To store one character in a variable, you use the char keyword and place the character in single quotation marks.</para>
+        <para id="id10078285">Example:</para>
+        <para id="id10413954">char cLetter = ‘A’;</para>
+      </section>
+      <section id="id-632538850701">
+        <title>Escape Sequence</title>
+        <para id="id4041524">The combination of a backlash (\) and a special character is called an escape sequence. When this character is placed directly in front of a select group of character, it tells the compiler to escape from the way these characters would normally be interpreted.</para>
+        <para id="id10713053">Examples:</para>
+        <para id="id5702111">\n : move to the next line</para>
+        <para id="id7727234">\t : move to the next tab</para>
+        <para id="id5134958">
+          <emphasis>The bool Data Type</emphasis>
+        </para>
+        <para id="id6813872">The C++ bool type can have two states expressed by the built-in constants true (which converts to an integral one) and false (which converts to an integral zero). All three names are keywords. This data type is most useful when a program must examine a specific condition and, as a result of the condition being either true or false, take a prescribed course of action.</para>
+      </section>
+      <section id="id-353879398352">
+        <title>Arithmetic Operators</title>
+        <para id="id11318051">Most programs perform arithmetic calculations. Arithmetic operators are used to perform mathematical calculations, such as addition, subtraction, multiplication, and division in C++.</para>
+        <figure id="id6612510"><media id="id6777005" alt=""><image src="../../media/graphics1-99d7.png" mime-type="image/png" height="144" width="433"/></media>
+        <caption> Arithmetic operators </caption></figure>
+        <para id="id10135384">A simple arithmetic expression consists of an arithmetic operator connecting two operands in the form:</para>
+        <para id="id10823255">
+          <code>operand operator operand</code>
+        </para>
+        <para id="id4205542">Examples:</para>
+        <para id="id5628520">3 + 7</para>
+        <para id="id7153839">18 – 3</para>
+        <para id="id11317876">12.62 + 9.8</para>
+        <para id="id3299853">12.6/2.0</para>
+        <para id="id6301526">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id7281591">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id11438816">
+          <code>int main()</code>
+        </para>
+        <para id="id10030580">
+          <code>{</code>
+        </para>
+        <para id="id5277124">
+          <code>cout &lt;&lt; "15.0 plus 2.0 equals " &lt;&lt; (15.0 + 2.0) &lt;&lt; '\n'</code>
+        </para>
+        <para id="id5415317">
+          <code>&lt;&lt; "15.0 minus 2.0 equals " &lt;&lt; (15.0 - 2.0) &lt;&lt; '\n'</code>
+        </para>
+        <para id="id10788031">
+          <code>&lt;&lt; "15.0 times 2.0 equals " &lt;&lt; (15.0 * 2.0) &lt;&lt; '\n'</code>
+        </para>
+        <para id="id9585735">
+          <code>&lt;&lt; "15.0 divided by 2.0 equals " &lt;&lt; (15.0 / 2.0) &lt;&lt; '\n';</code>
+        </para>
+        <para id="id11016349">
+          <code>return 0;</code>
+        </para>
+        <para id="id11618303">
+          <code>}</code>
+        </para>
+        <para id="id3711984">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id10007858">15.0 plus 2.0 equals 17</para>
+        <para id="id10557170">15.0 minus 2.0 equals 13</para>
+        <para id="id11583535">15.0 times 2.0 equals 30</para>
+        <para id="id12139496">15.0 divided by 2.0 equals 7.5</para>
+      </section>
+      <section id="id-858467531852">
+        <title>Integer Division</title>
+        <para id="id11271172">The division of two integers yields integer result. Thus the value of 15/2 is 7.</para>
+        <para id="id3537751">Modulus % operator produces the remainder of an integer division.</para>
+        <para id="id10953697">Example:</para>
+        <para id="id7682111">9%4 is 1</para>
+        <para id="id6083688">17%3 is 2</para>
+        <para id="id4193168">14%2 is 0</para>
+      </section>
+      <section id="id-915446888052">
+        <title>Operator Precedence and Associativity</title>
+        <para id="id6899533">Expressions containing multiple operators are evaluated by the priority, or precedence, of the operators.</para>
+        <para id="id7403579">Operator precedence defines the order in which an expression evaluates when several different operators are present. C++ have specific rules to determine the order of evaluation. The easiest to remember is that multiplication and division happen before addition and subtraction. </para>
+        <para id="id4041039">The following table lists both precedence and associativity of the operators.</para>
+        <figure id="id3986431"><media id="id4483751" alt=""><image src="../../media/graphics2-d761.png" mime-type="image/png" height="114" width="210"/></media>
+        <caption> Precedence and associativity of the operators </caption></figure>
+        <para id="id3273660">Example: Let us use the precedence rules to evaluate an expression containing operators of different precedence, such as 8 + 5*7%2*4. Because the multiplication and modulus operators have a higher precedence than the addition operator, these two operations are evaluated first (P2), using their left-to-right associativity, before the addition is evaluated (P3). Thus, the complete expression is evaluated as:</para>
+        <figure id="id9586684"><media id="id8809990" alt=""><image src="../../media/graphics3-7f1d.png" mime-type="image/png" height="93" width="170"/></media>
+        <caption> Expression evaluation</caption></figure>
+      </section>
+      <section id="id-696380265396">
+        <title>Expression Types</title>
+        <para id="id9974230">An expression is any combination of operators and operands that can be evaluated to yield a value. An expression that contains only integer values as operands is called an integer expression, and the result of the expression is an integer value. Similarly, an expression containing only floating-point values (single and double precision) as operands is called a floating-point expression, and the result of the expression is a floating point value (the term real expression is also used).</para>
+      </section>
+    </section>
+    <section id="id-0750564810289">
+      <title>Variables and Declaration Statements</title>
+      <para id="id9431902">One of the most important aspects of programming is storing and manipulating the values stored in <emphasis>variables</emphasis>. A variable is simply a name chosen by the programmer that is used to refer to computer storage locations. The term <emphasis>variable</emphasis> is used because the value stored in the variable can change, or vary.</para>
+      <para id="id10716677">Variable names are also selected according to the rules of identifiers:</para>
+      <list id="id8119467" list-type="bulleted">
+        <item>Identifiers must begin with an uppercase or lowercase ASCII letter or an underscore (_).</item>
+        <item>You can use digits in an identifier, but not as the first character. You are not allowed to use special characters such as $, &amp;, * or %.</item>
+        <item>Reserved words cannot be used for variable names.</item>
+      </list>
+      <para id="id6789085">Example: Some valid identifiers</para>
+      <para id="id6789089">my_variable</para>
+      <para id="id3985501">Temperature</para>
+      <para id="id10932438">x1</para>
+      <para id="id9927082">x2</para>
+      <para id="id11503059">_my_variable</para>
+      <para id="id11503063">Some invalid identifiers are as follows:</para>
+      <para id="id9975497">%x1%my_var@x2</para>
+      <para id="id9325024">We should always give variables meaningful names, from which a reader might be able to make a reasonable guess at their purpose. We may use comments if further clarification is necessary.</para>
+      <section id="id-239521433718">
+        <title>Declaration Statements</title>
+        <para id="id9516453">Naming a variable and specifying the data type that can be stored in it is accomplished using <emphasis>declaration statement</emphasis>. A declaration statement in C++ programs has the following syntax:</para>
+        <para id="id10601782">
+          <code>type name;</code>
+        </para>
+        <para id="id10553695">The type portion refers to the data type of the variable.</para>
+        <para id="id9529932">The data type determines the type of information that can be stored in the variable.</para>
+        <para id="id6916118">Example:</para>
+        <para id="id12125405">
+          <code>int sum;</code>
+        </para>
+        <para id="id10503702">
+          <code>long datenem;</code>
+        </para>
+        <para id="id3933208">
+          <code>double secnum;</code>
+        </para>
+        <para id="id4145900">Note:</para>
+        <list id="id10590092" list-type="enumerated">
+          <item>A variable must be declared before it can be used.</item>
+          <item>Declaration statements can also be used to store an initial value into declared variables.</item>
+        </list>
+        <para id="id8726895">Example:</para>
+        <para id="id3960978">
+          <code>int num = 15;</code>
+        </para>
+        <para id="id12158916">
+          <code>float grade1 = 87.0;</code>
+        </para>
+        <para id="id11496682">Variable declarations are just the instructions that tell the compiler to allocate memory locations for the variables to be used in a program.</para>
+        <para id="id11322811">A variable declaration creates a memory location but it is undefined to start with, that means it's empty.</para>
+        <para id="id10575111">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id3515517">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id9890622">
+          <code>int main()</code>
+        </para>
+        <para id="id12146183">
+          <code>{</code>
+        </para>
+        <para id="id3299383">
+          <code>float price1 = 85.5; </code>
+        </para>
+        <para id="id10757810">
+          <code>float price2 = 97.0;</code>
+        </para>
+        <para id="id10583968">
+          <code>float total, average;</code>
+        </para>
+        <para id="id10804876">
+          <code/>
+        </para>
+        <para id="id4185571">
+          <code>total = price1 + price2;</code>
+        </para>
+        <para id="id7543884">
+          <code>average = total/2.0; // divide the total by 2.0</code>
+        </para>
+        <para id="id10846361">
+          <code>cout &lt;&lt; "The average price is " &lt;&lt; average &lt;&lt; endl;</code>
+        </para>
+        <para id="id6016955">
+          <code>return 0;</code>
+        </para>
+        <para id="id6492751">
+          <code>}</code>
+        </para>
+        <para id="id9465983">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id4204345">The average price is 91.25</para>
+        <para id="id8191952">Let notice the two statements in the above program:</para>
+        <para id="id9363619">
+          <code>total = price1 + price2;</code>
+        </para>
+        <para id="id9337598">
+          <code>average = total/2.0; </code>
+        </para>
+        <para id="id10945078">Each of these statements is called an assignment statement because it tells the computer to assign (store) a value into a variable. Assignment statements always have an equal (=) sign and one variable name on the left of this sign. The value on the right of the equal sign is assigned to the variable on the left of the equal sign.</para>
+      </section>
+      <section id="id-0217823594597">
+        <title>Display a Variable’s Address</title>
+        <para id="id7923382">Every variable has three major items associated with it: its data type, its actual value stored in the variable and the address of the variable. The value stored in the variable is referred to as the variable’s contents, while the address of the first memory location used for the variable constitutes its address.</para>
+        <para id="id7217121">To see the address of a variable, we can use <emphasis>address operator</emphasis>, &amp;, which means “the address of “. For example, &amp;num means the address of num.</para>
+        <para id="id5733458">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id9999353">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id10318993">
+          <code>int main()</code>
+        </para>
+        <para id="id10136845">
+          <code>{</code>
+        </para>
+        <para id="id10737321">
+          <code>int a;</code>
+        </para>
+        <para id="id3964574">
+          <code/>
+        </para>
+        <para id="id9093293">
+          <code>a = 22;</code>
+        </para>
+        <para id="id10325436">
+          <code>cout &lt;&lt; "The value stored in a is " &lt;&lt; a &lt;&lt; endl;</code>
+        </para>
+        <para id="id7515963">
+          <code>cout &lt;&lt; "The address of a = " &lt;&lt; &amp;a &lt;&lt; endl;</code>
+        </para>
+        <para id="id11278817">
+          <code>return 0;</code>
+        </para>
+        <para id="id10725116">
+          <code>}</code>
+        </para>
+        <para id="id10992293">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id10558361">The value stored in a is 22</para>
+        <para id="id10892795">The address of a = 0x0065FDF4</para>
+        <para id="id11271109">The display of addresses is in hexadecimal notation.</para>
+      </section>
+    </section>
+    <section id="id-606388365849">
+      <title>Integer Quantifiers</title>
+      <para id="id7008704">Portable languages like C++ must have flexible data type sizes. Different applications might need integers of different sizes. C++ provides <emphasis>long integer</emphasis>, <emphasis>short integer</emphasis>, and <emphasis>unsigned integer</emphasis> data types. These three additional integer data types are obtained by adding the quantifier <emphasis>long</emphasis>, <emphasis>short</emphasis> or <emphasis>unsigned</emphasis> to the normal integer declaration statements.</para>
+      <para id="id10573726">Example:</para>
+      <para id="id10573729">
+        <code>long int days;</code>
+      </para>
+      <para id="id11456874">
+        <code>unsigned int num_of_days;</code>
+      </para>
+      <para id="id11902995">The reserved words <emphasis>unsigned int</emphasis> are used to specify an integer that can only store nonnegative numbers.</para>
+      <para id="id7686770">The <emphasis>signed</emphasis> and <emphasis>unsigned</emphasis> quantifiers tell the compiler how to use the sign bit with integral types and characters (floating-point numbers always contain a sign). An unsigned number does not keep track of the sign and thus has an extra bit available, so it can store positive numbers twice as large as the positive numbers that can be stored in a signed number. </para>
+      
+      
+      
+      
+      <figure id="id3986108"><media id="id6417962" alt=""><image src="../../media/graphics4-ed22.png" mime-type="image/png" height="114" width="438"/></media>
+      <caption> Integer types with quantifiers</caption></figure>
+      <para id="id11467543">When you are modifying an <emphasis>int</emphasis> with <emphasis>short</emphasis> or long, the keyword <emphasis>int</emphasis> is optional. </para>
+      <para id="id3523906">Now all the built-in data types provide by C++ are given in the following list, ordered descendingly by the size of the data types.</para>
+      <para id="id4186052">
+        <emphasis>Data types</emphasis>
+      </para>
+      <para id="id8627784">--------------</para>
+      <para id="id8627788">long double</para>
+      <para id="id10829471">double</para>
+      <para id="id3355631">float</para>
+      <para id="id9502224">unsigned long</para>
+      <para id="id4238021">long int</para>
+      <para id="id4238026">unsigned int</para>
+      <para id="id8627781">int</para>
+      <para id="id4243699">short in</para>
+      <para id="id7940923">char</para>
+      <section id="id-367101881406">
+        <title>Data Type Conversions</title>
+        <para id="id3985420">An expression containing both integer and floating point operands is called a mixed mode expression.</para>
+        <para id="id9317880">Example:</para>
+        <para id="id11587616">
+          <code>int a;</code>
+        </para>
+        <para id="id3972727">
+          <code>float x = 2.5;</code>
+        </para>
+        <para id="id7895368">
+          <code>a = x + 6; // x + 6 is a mixed mode expression</code>
+        </para>
+        <para id="id10893597">Note: We should <emphasis>avoid</emphasis> mixed-mode expression.</para>
+        <para id="id10723032">Examples:</para>
+        <para id="id4197577">
+          <code>char Ch;</code>
+        </para>
+        <para id="id10040885">
+          <code>int In1 = 129, In2, In3;</code>
+        </para>
+        <para id="id12209338">
+          <code>double Real1 = 12.34, Real2;</code>
+        </para>
+        <para id="id7476847">What happens with the following mixed mode assignments?</para>
+        <para id="id3538917">
+          <code>Ch = In1/2 + 1; // Right side = 65; assigns ‘A’ to Ch</code>
+        </para>
+        <para id="id9872709">
+          <code>In2 = Ch + 1; // Right side = 66; assigns 66 to In2</code>
+        </para>
+        <para id="id4192456">
+          <code>Real2 = In1/2; // Right side = 64; assigns 64.0 to Real2</code>
+        </para>
+        <para id="id8745612">
+          <code>In3 = Real1/2.0 // Right side = 6.17; truncates this value and assigns 6 to In3</code>
+        </para>
+        <para id="id3341274">The general rules for converting integer and floating point operands in mixed mode arithmetic expressions were presented as follows:</para>
+        <list id="id8222418" list-type="enumerated">
+          <item>If both operands are either character or integer operands:<list id="id11619645" list-type="bulleted"><item>when both operands are character, short or integer data types, the result of the expression is an integer value.</item><item>when one of the operand is a long integer, the result is a long integer, unless one of the operand is an unsigned integer. In the later case, the other operand is converted to an unsigned integer value and the resulting value of the expression is an unsigned value.</item></list></item>
+          <item>If any one operand is a floating point value:<list id="id5308104" list-type="bulleted"><item>when one or both operands are floats, the result of the operation is a float value;</item><item>when one or both operands are doubles, the result of the operation is a double value;</item><item>when one or both operands are long doubles, the result of the operation is a long double value;</item></list></item>
+        </list>
+        <para id="id4193366">Notice that converting values to lower types can result in incorrect values. For example, the floating point value 4.5 gives the value 4 when it is converted to an integer value. The following table lists the built-in data types in order from “highest type” to “lowest type”.</para>
+      </section>
+      <section id="id-807213255604">
+        <title>Determining Storage Size</title>
+        <para id="id5543719">C++ provides an operator for determining the amount of storage your compiler allocates for each data type. This operator, called the sizeof() operator.</para>
+        <para id="id6019480">Example:</para>
+        <para id="id9942038">sizeof(num1)</para>
+        <para id="id11588018">sizeof(int)</para>
+        <para id="id7891127">sizeof(float)</para>
+        <para id="id9888684">The item in parentheses can be a variable or a data type.</para>
+        <para id="id4185925">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id10450507">
+          <code>// Demonstrating the sizeof operator</code>
+        </para>
+        <para id="id4195224">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id3275645">
+          <code>int main()</code>
+        </para>
+        <para id="id3275043">
+          <code>{</code>
+        </para>
+        <para id="id9743717">
+          <code>char c;</code>
+        </para>
+        <para id="id3513591">
+          <code>short s;</code>
+        </para>
+        <para id="id9201238">
+          <code>int i;</code>
+        </para>
+        <para id="id3443559">
+          <code>long l;</code>
+        </para>
+        <para id="id9350428">
+          <code>float f;</code>
+        </para>
+        <para id="id3971995">
+          <code>double d;</code>
+        </para>
+        <para id="id9281278">
+          <code>long double ld;</code>
+        </para>
+        <para id="id11115160">
+          <code>cout &lt;&lt; "sizeof c = " &lt;&lt; sizeof(c)</code>
+        </para>
+        <para id="id11428499">
+          <code>&lt;&lt; "\tsizeof(char) = " &lt;&lt; sizeof( char )</code>
+        </para>
+        <para id="id8593968">
+          <code>&lt;&lt; "\nsizeof s = " &lt;&lt; sizeof(s)</code>
+        </para>
+        <para id="id4452007">
+          <code>&lt;&lt; "\tsizeof(short) = " &lt;&lt; sizeof( short )</code>
+        </para>
+        <para id="id11159868">
+          <code>&lt;&lt; "\nsizeof i = " &lt;&lt; sizeof (i)</code>
+        </para>
+        <para id="id3532772">
+          <code>&lt;&lt; "\tsizeof(int) = " &lt;&lt; sizeof( int )</code>
+        </para>
+        <para id="id3370152">
+          <code>&lt;&lt; "\nsizeof l = " &lt;&lt; sizeof(l)</code>
+        </para>
+        <para id="id4276162">
+          <code>&lt;&lt; "\tsizeof(long) = " &lt;&lt; sizeof( long )</code>
+        </para>
+        <para id="id4045420">
+          <code>&lt;&lt; "\nsizeof f = " &lt;&lt; sizeof (f)</code>
+        </para>
+        <para id="id11552014">
+          <code>&lt;&lt; "\tsizeof(float) = " &lt;&lt; sizeof(float)</code>
+        </para>
+        <para id="id4043365">
+          <code>&lt;&lt; "\nsizeof d = " &lt;&lt; sizeof (d)</code>
+        </para>
+        <para id="id4135879">
+          <code>&lt;&lt; "\tsizeof(double) = " &lt;&lt; sizeof(double)</code>
+        </para>
+        <para id="id3353317">
+          <code>&lt;&lt; endl;</code>
+        </para>
+        <para id="id3299967">
+          <code>return 0;</code>
+        </para>
+        <para id="id4452461">
+          <code>}</code>
+        </para>
+        <para id="id8179160">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id10892725">sizeof c = 1sizeof(char) = 1</para>
+        <para id="id3972526">sizeof s = 2sizeof(short) = 2</para>
+        <para id="id7169690">sizeof i = 4sizeof(int) = 4 </para>
+        <para id="id6218793">sizeof l = 4sizeof(long) = 4</para>
+        <para id="id7584532">sizeof f = 4sizeof(float) = 4</para>
+        <para id="id7675011">sizeof d = 8sizeof(double) = 8</para>
+      </section>
+    </section>
+    <section id="id-306467291036">
+      <title>Focus on Problem Solving</title>
+      <para id="id5565307">In this section, the software development procedure presented in the previous chapter is applied to a specific programming problem. This procedure can be applied to any programming problem to produce a completed program and forms the foundation for all programs developed in this text.</para>
+      <para id="id3048077">
+        <emphasis>Problem: Telephone Switching Networks</emphasis>
+      </para>
+      <para id="id10893353">A directly connected telephone network is one in which all telephones in the network are connected directly and do not require a central switching station to establish calls between two telephones.</para>
+      <para id="id10320066">The number of direct lines needed to maintain a directly connected network for n telephones is given by the formula:</para>
+      <para id="id3275982">
+        <emphasis>lines = n(n-1)/2</emphasis>
+      </para>
+      <para id="id11568163">For example, directly connecting four telephones requires six individual lines. </para>
+      <para id="id6218533">Using the formula, write a C++ program that determines the number of direct lines for 100 telephones and the additional lines required if 10 new telephones were added to the network. Use our top-down software development procedure.</para>
+      <section id="id-963021641513">
+        <title>Step 1: Analyze the Problem </title>
+        <para id="id6698714">For this program, two outputs are required: the number of direct lines required for 100 telephones and the additional lines needed when 10 new telephones are added to the existing network. The input item required for this problem is the number of telephones, which is denoted as n in the formula.</para>
+      </section>
+      <section id="id-529254581317">
+        <title>Step 2: Develop a Solution </title>
+        <para id="id6783733">The first output is easily obtained using the given formula lines = n(n-1)/2. Although there is no formula given for additional lines, we can use the given formula to determine the total number of lines needed for 110 subscribers. Subtracting the number of lines for 100 subscribers from the number of lines needed for 110 subscribers then yields the number of additional lines required. Thus, the complete algorithm for our program, in pseudocode, is:</para>
+        <para id="id4281521">
+          <code>Calculate the number of direct lines for 100 subscribers.</code>
+        </para>
+        <para id="id6996000">
+          <code>Calculate the number of direct lines for 110 subscribers.</code>
+        </para>
+        <para id="id6807920">
+          <code>Calculate the additional lined needed, which is the </code>
+        </para>
+        <para id="id3280316">
+          <code>difference between the second and the first calculation.</code>
+        </para>
+        <para id="id4374670">
+          <code>Display the number of lines for 100 subscribers.</code>
+        </para>
+        <para id="id10062769">
+          <code>Display the additional lines needed.</code>
+        </para>
+      </section>
+      <section id="id-427813630732">
+        <title>Step 3: Code the Solution </title>
+        <para id="id11094607">The following program provides the necessary code.</para>
+        <para id="id10686222">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id10921745">
+          <code>int main()</code>
+        </para>
+        <para id="id11616752">
+          <code>{</code>
+        </para>
+        <para id="id3959542">
+          <code>int numin1, numin2, lines1, lines2;</code>
+        </para>
+        <para id="id8847560">
+          <code>numin1 = 100;</code>
+        </para>
+        <para id="id4205947">
+          <code>numin2 = 110;</code>
+        </para>
+        <para id="id7927744">
+          <code>lines1 = numin1*(numin1 – 1)/2;</code>
+        </para>
+        <para id="id9442036">
+          <code>lines2 = numin2*(numin2 – 1)/2;</code>
+        </para>
+        <para id="id5395365">
+          <code>cout &lt;&lt; “The number of initial lines is “ &lt;&lt; lines1 &lt;&lt; “.\n”;</code>
+        </para>
+        <para id="id8945817">
+          <code>cout &lt;&lt; “There are “ &lt;&lt; lines2 – lines1</code>
+        </para>
+        <para id="id10911366">
+          <code>&lt;&lt; “ additional lines needed.\n”;</code>
+        </para>
+        <para id="id11204507">
+          <code>return 0;</code>
+        </para>
+        <para id="id8215386">
+          <code>}</code>
+        </para>
+      </section>
+      <section id="id-988209454508">
+        <title>Step 4: Test and Correct the Program </title>
+        <para id="id3536905">The following <emphasis>output</emphasis> is produced when the program is compiled and executed:</para>
+        <para id="id3958672">The number of initial lines is 4950.</para>
+        <para id="id7396413">There are 1045 additional lines needed.</para>
+        <para id="id12108946">Because the displayed value agrees with the hand calculation, we have established a degree of confidence in the program.</para>
+      </section>
+    </section>
+  </content>
+</document>

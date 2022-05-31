@@ -1,0 +1,2031 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Functions and Pointers</title>
+  <metadata>
+  <md:content-id>m27259</md:content-id><md:title>Functions and Pointers</md:title>
+  <md:abstract>Most computer programs that solve real-world problems are much larger than the programs in the first few chapters. Experience has shown that the best way to develop and maintain a large program is to construct it from smaller pieces or program units each, of which is more manageable than the original program. Generally, user-defined program units are called subprograms. This technique is called divide-and-conquer.
+This chapter deals with the method of declaration of the user-defined function and its use in C++. Besides, this chapter also covers pointer data type which is one of the strength of the C++ language.</md:abstract>
+  <md:uuid>d5a3a100-118b-4cc0-b4bb-04e531eeafae</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-131162601689">
+      <title>Function and Parameter Declarations</title>
+      <para id="id39523738">In C++ all <emphasis>subprograms</emphasis> are referred to as <emphasis>functions</emphasis>. A function allows you to treat a related group of C++ statements as a single unit. The programmer can write functions to define specific tasks that could be used at many points in a program. </para>
+      <para id="id37860633">Functions allow the programmer to modulize a program. All variables declared in function definitions are <emphasis>local variables</emphasis> – they are known only in the function in which they are defined. Most functions have a list of parameters that provide the means for communicating information between functions. </para>
+      <para id="id21652398">There are several motivations for dividing a program into functions. The <emphasis>divide-and-conquer </emphasis>approach makes program development more manageable. Another motivation is software reusability – using existing functions as building blocks to create new programs. Software reusability is a major factor in object-oriented programming. With good function naming and definition, programs can be created from standardized functions that accomplish specific tasks. A third motivation is to avoid repeating code in a program. Packing code as a function allows the code to be executed from several location in a program simply by calling the function.</para>
+      <section id="id-518189262245">
+        <title>Defining a Function</title>
+        <para id="id36691364">The lines that compose a function within a C++ program are called a function definition. The syntax for defining a function is</para>
+        <para id="id41181625">
+          <code>data_type name_of_function (parameters){</code>
+        </para>
+        <para id="id38710886">
+          <code>statements;</code>
+        </para>
+        <para id="id35728585">
+          <code>}</code>
+        </para>
+        <para id="id4103677">A function definition consists of four parts:</para>
+        <para id="id40986506">- A reserved word indicating the return data type of the function’s return value.</para>
+        <para id="id22459477">- The function name</para>
+        <para id="id35606701">- Any parameters required by the function, contained within parentheses.</para>
+        <para id="id36580799">- The function’s statements enclosed in curly braces { }.</para>
+        <para id="id41161584">Example: The following function determines the largest integer among three parameters passed to it.</para>
+        <para id="id40240498">
+          <code>int maximum( int x, int y, int z )</code>
+        </para>
+        <para id="id39119890">
+          <code>{</code>
+        </para>
+        <para id="id20701300">
+          <code>int max = x;</code>
+        </para>
+        <para id="id40367530">
+          <code>if ( y &gt; max )</code>
+        </para>
+        <para id="id37745751">
+          <code>max = y;</code>
+        </para>
+        <para id="id37471358">
+          <code>if ( z &gt; max )</code>
+        </para>
+        <para id="id38528405">
+          <code>max = z;</code>
+        </para>
+        <para id="id4088290">
+          <code>return max;</code>
+        </para>
+        <para id="id37876785">
+          <code>}</code>
+        </para>
+        <para id="id16917742">You designate a data type for function since it is common to return a value from a function after it executes.</para>
+        <para id="id41397333">General format of a function is described below.</para>
+        <figure id="id36836646"><media id="id1166613798507" alt=""><image src="../../media/graphics1-545f.png" mime-type="image/png" height="264" width="416"/></media>
+        <caption> General format of a function </caption></figure>
+        <para id="id40988422">Variable names that will be used in the function header line are called formal parameters.</para>
+      </section>
+      <section id="id-557276820233">
+        <title>How to Call Functions</title>
+        <para id="id1739128">To execute a function, you must invoke, or call, it from the <emphasis>main</emphasis>() function.</para>
+        <para id="id39180214">The values or variables that you place within the parentheses of a function call statement are called arguments or actual parameters.</para>
+        <para id="id22337753">Example: Function maximum is invoked or called in main() with the call</para>
+        <para id="id41232922">maximum(a, b, c)</para>
+      </section>
+      <section id="id-46728403093">
+        <title>Function Prototypes</title>
+        <para id="id33353543">One of the most important features of C++ is the function prototype. A <emphasis>function prototype</emphasis> declares to the compiler that you intend to use a function later in the program. It informs the compiler the name of the function, the type of data returned by the function, the number of parameters the function expects to receive, the types of the parameters and the order in which these parameters are expected. The compiler uses function prototypes to validate function calls.</para>
+        <para id="id39499313">If you try to call a function at any point in the program prior to its function prototype or function definition, you will receive an error when you compile the project.</para>
+        <section id="id-0588119382039">
+          <title>Example</title>
+          <para id="id38514384">
+            <code>// Finding the maximum of three integers</code>
+          </para>
+          <para id="id38422442">
+            <code>#include &lt;iostream.h&gt;</code>
+          </para>
+          <para id="id778923">
+            <code>int maximum(int, int, int); // function prototype</code>
+          </para>
+          <para id="id39268635">
+            <code>int main()</code>
+          </para>
+          <para id="id40353773">
+            <code>{</code>
+          </para>
+          <para id="id41309510">
+            <code>int a, b, c;</code>
+          </para>
+          <para id="id39891254">
+            <code>cout &lt;&lt; "Enter three integers: ";</code>
+          </para>
+          <para id="id33985168">
+            <code>cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</code>
+          </para>
+          <para id="id38885499">
+            <code/>
+          </para>
+          <para id="id38764915">
+            <code>// a, b and c below are arguments to the maximum function call</code>
+          </para>
+          <para id="id38443797">
+            <code>cout &lt;&lt; "Maximum is: " &lt;&lt; maximum (a, b, c) &lt;&lt; endl;</code>
+          </para>
+          <para id="id38911376">
+            <code>return 0;</code>
+          </para>
+          <para id="id38661490">
+            <code>}</code>
+          </para>
+          <para id="id39844951">
+            <code/>
+          </para>
+          <para id="id23016736">
+            <code>// Function maximum definition</code>
+          </para>
+          <para id="id779629">
+            <code>// x, y and z are parameters to the maximum function definition</code>
+          </para>
+          <para id="id40539371">
+            <code>int maximum( int x, int y, int z)</code>
+          </para>
+          <para id="id34586683">
+            <code>{</code>
+          </para>
+          <para id="id39843694">
+            <code>int max = x;</code>
+          </para>
+          <para id="id39727938">
+            <code>if ( y &gt; max )</code>
+          </para>
+          <para id="id36903154">
+            <code>max = y;</code>
+          </para>
+          <para id="id39793923">
+            <code>if ( z &gt; max )</code>
+          </para>
+          <para id="id4304086">
+            <code>max = z;</code>
+          </para>
+          <para id="id37479677">
+            <code>return max;</code>
+          </para>
+          <para id="id4363631">
+            <code>}</code>
+          </para>
+          <para id="id40366901">
+            <code/>
+          </para>
+          <para id="id41342516">The <emphasis>output</emphasis> of the above program:</para>
+          <para id="id38522098">Enter three integers: 22 85 17</para>
+          <para id="id38915676">Maximum is: 85</para>
+        </section>
+      </section>
+      <section id="id-468449546363">
+        <title>Passing by Value</title>
+        <para id="id41028244">If a variable is one of the actual parameters in a function call, the called function receives a copy of the values stored in the variable. After the values are passed to the called function, control is transferred to the called function.</para>
+        <para id="id40086336">Example: The expression maximum( a, b, c) calls the function maximum() and causes the values currently residing in the variables a, b and c to be passed to maximum().</para>
+        <para id="id39175108">The method of passing values to a called function is called pass by value.</para>
+      </section>
+      <section id="id-944756935372">
+        <title>Functions with Empty Parameter Lists</title>
+        <para id="id19362044">Functions may have empty parameter list. The function prototype for such a function requires either the keyword void or nothing at all between the parentheses following the function name.</para>
+        <para id="id38989648">Example:</para>
+        <para id="id34875304">int display();</para>
+        <para id="id35446749">int display(void);</para>
+      </section>
+    </section>
+    <section id="id-259240869193">
+      <title>Returning Values</title>
+      <para id="id40254230">To actually return a value, the function must use a <emphasis>return</emphasis> statement, which has the form: </para>
+      <para id="id39865742">
+        <code>return expression;</code>
+      </para>
+      <para id="id32862085">or</para>
+      <para id="id22638066">
+        <code>return(expression);</code>
+      </para>
+      <para id="id41021507">Remember that values passes back and forth between functions must be of the same data type.</para>
+      <para id="id39447047">When the <emphasis>return</emphasis> statement is encountered, the expression is evaluated first. The value of the expression is then automatically converted to the data type declared in the function header before being sent back to the calling function. After the value is returned, program control reverts to the calling function.</para>
+      <section id="id-0192393774701">
+        <title>Inline functions</title>
+        <para id="id36795304">For small functions, you can use the inline keyword to request that the compiler replace calls to a function with the function definition wherever the function is called in a program.</para>
+      </section>
+    </section>
+    <section id="id-15938124889">
+      <title>Example</title>
+      <para id="id35605351">
+        <code>// Using an inline function to calculate</code>
+      </para>
+      <para id="id20489106">
+        <code>// the volume of a cube.</code>
+      </para>
+      <para id="id37745749">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id37481770">
+        <code>inline double cube(double s) { return s * s * s; }</code>
+      </para>
+      <para id="id33933796">
+        <code>int main()</code>
+      </para>
+      <para id="id3776874">
+        <code>{</code>
+      </para>
+      <para id="id23647254">
+        <code>cout &lt;&lt; "Enter the side length of your cube: ";</code>
+      </para>
+      <para id="id19311560">
+        <code>double side;</code>
+      </para>
+      <para id="id36234464">
+        <code>cin &gt;&gt; side;</code>
+      </para>
+      <para id="id40990060">
+        <code>cout &lt;&lt; "Volume of cube with side " </code>
+      </para>
+      <para id="id41341334">
+        <code>&lt;&lt; side &lt;&lt; " is " &lt;&lt; cube(side) &lt;&lt; endl;</code>
+      </para>
+      <para id="id22372215">
+        <code>return 0;</code>
+      </para>
+      <para id="id1739092">
+        <code>}</code>
+      </para>
+      <para id="id37756076">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id43201276">Enter the side length of your cube: 3.5</para>
+      <para id="id38476593">Volume of cube with side 3.5 is 42.875</para>
+      <section id="id-350180402435">
+        <title>Function Overloading</title>
+        <para id="id35761863">C++ enables several functions of the same name to be defined, as long as these functions have different sets of parameters (at least their types are different). This capability is called <emphasis>function overloading</emphasis>.</para>
+        <para id="id35467043">When an overloaded function is called, the C++ compiler selects the proper functions by examining the number, types and order of the arguments in the call.</para>
+        <para id="id21622596">Function overloading is commonly used to create several functions of the same name that perform similar tasks but on different data types.</para>
+        <para id="id1275758">Example:</para>
+        <para id="id20658176">
+          <code>void showabs(int x)</code>
+        </para>
+        <para id="id39369648">
+          <code>{</code>
+        </para>
+        <para id="id41285589">
+          <code>if( x &lt; 0)</code>
+        </para>
+        <para id="id38913360">
+          <code>x = -x;</code>
+        </para>
+        <para id="id36580488">
+          <code>cout &lt;&lt; “The absolute value of the integer is “ &lt;&lt; x &lt;&lt; endl;</code>
+        </para>
+        <para id="id37502091">
+          <code>}</code>
+        </para>
+        <para id="id4365938">
+          <code>void showabs(double x)</code>
+        </para>
+        <para id="id4935359">
+          <code>{</code>
+        </para>
+        <para id="id41339599">
+          <code>if( x &lt; 0)</code>
+        </para>
+        <para id="id22417177">
+          <code>x = -x;</code>
+        </para>
+        <para id="id38512908">
+          <code>cout &lt;&lt; “The absolute value of the double is “ &lt;&lt; x &lt;&lt; endl;</code>
+        </para>
+        <para id="id37438635">
+          <code>}</code>
+        </para>
+        <para id="id38760662">The function call</para>
+        <para id="id37110388">showabs(10);</para>
+        <para id="id37466571">causes the compiler to use the first version of the function showabs.</para>
+        <para id="id36637110">The function call</para>
+        <para id="id953110">showabs(6.28);</para>
+        <para id="id39269080">causes the compiler to use the second version of the function showabs.</para>
+      </section>
+      <section id="id-138196535161">
+        <title>Default Arguments</title>
+        <para id="id23831658">C++ allows <emphasis>default arguments</emphasis> in a function call. Default argument values are listed in the function prototype and are automatically transmitted to the called function when the corresponding arguments are omitted from the function call.</para>
+        <para id="id20510415">Example: The function prototype</para>
+        <para id="id38681450">
+          <code>void example (int, int = 5, float = 6.78);</code>
+        </para>
+        <para id="id39843719">provides default values for the two last arguments.</para>
+        <para id="id3419478">If any of these arguments are omitted when the function is actually called, the C++ compiler supplies these default values.</para>
+        <para id="id40065915">Thus, all following function calls are valid:</para>
+        <para id="id1213414">
+          <code>example(7, 2, 9.3); // no default used</code>
+        </para>
+        <para id="id41179711">
+          <code>example(7, 2); // same as example(7, 2, 6.78)</code>
+        </para>
+        <para id="id39739117">
+          <code>example(7); // same as example(7, 5, 6.78)</code>
+        </para>
+      </section>
+    </section>
+    <section id="id-302182747474">
+      <title>Variable Scope</title>
+      <para id="id38539367">Scope refers to where in your program a declared variable or constant is allowed used. A variable can be used only when inside its scope.</para>
+      <para id="id39748087"><emphasis>Global scope</emphasis> refers to variables declared outside of any functions or classes and that are available to all parts of your program.</para>
+      <para id="id4761734"><emphasis>Local scope</emphasis> refers to a variable declared inside a function and that is available only within the function in which it is declared.</para>
+      <section id="id-020358125785">
+        <title>Example:</title>
+        <para id="id39833238">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id37937676">
+          <code>int x; // create a global variable named firstnum</code>
+        </para>
+        <para id="id19931384">
+          <code>void valfun(); // function prototype (declaration)</code>
+        </para>
+        <para id="id3703065">
+          <code>int main()</code>
+        </para>
+        <para id="id41284666">
+          <code>{</code>
+        </para>
+        <para id="id22212936">
+          <code>int y; // create a local variable named secnum</code>
+        </para>
+        <para id="id41376515">
+          <code>x = 10; // store a value into the global variable</code>
+        </para>
+        <para id="id3480528">
+          <code>y = 20; // store a value into the local variable</code>
+        </para>
+        <para id="id41014234">
+          <code>cout &lt;&lt; "From main(): x = " &lt;&lt; x &lt;&lt; endl;</code>
+        </para>
+        <para id="id41336680">
+          <code>cout &lt;&lt; "From main(): y = " &lt;&lt; y &lt;&lt; endl;</code>
+        </para>
+        <para id="id35407780">
+          <code>valfun(); // call the function valfun</code>
+        </para>
+        <para id="id38711100">
+          <code>cout &lt;&lt; "\nFrom main() again: x = " &lt;&lt; x &lt;&lt; endl;</code>
+        </para>
+        <para id="id35246472">
+          <code>cout &lt;&lt; "From main() again: y = " &lt;&lt; y &lt;&lt; endl;</code>
+        </para>
+        <para id="id39142048">
+          <code>return 0;</code>
+        </para>
+        <para id="id39122442">
+          <code>}</code>
+        </para>
+        <para id="id38928413">
+          <code/>
+        </para>
+        <para id="id38963816">
+          <code>void valfun() // no values are passed to this function</code>
+        </para>
+        <para id="id41660228">
+          <code>{</code>
+        </para>
+        <para id="id41283165">
+          <code>int y; // create a second local variable named y</code>
+        </para>
+        <para id="id41136360">
+          <code>y = 30; // this only affects this local variable's value</code>
+        </para>
+        <para id="id39369631">
+          <code>cout &lt;&lt; "\nFrom valfun(): x = " &lt;&lt; x &lt;&lt; endl;</code>
+        </para>
+        <para id="id38539315">
+          <code>cout &lt;&lt; "\nFrom valfun(): y = " &lt;&lt; y &lt;&lt; endl;</code>
+        </para>
+        <para id="id38761081">
+          <code>x = 40; // this changes x for both functions</code>
+        </para>
+        <para id="id41157629">
+          <code>return;</code>
+        </para>
+        <para id="id48514053">
+          <code>}</code>
+        </para>
+        <para id="id38317215">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id39845609">From main(): x = 10</para>
+        <para id="id38513305">From main(): y = 20</para>
+        <para id="id255091">From valfun(): x = 10</para>
+        <para id="id558279">From valfun(): y = 30</para>
+        <para id="id38827262">From main() again: x = 40</para>
+        <para id="id39838115">From main() again: y = 20</para>
+        <para id="id39163626">In the above program, the variable x is a global variable because its storage is created by a definition statement located outside a function. Both functions, main() and valfun() can use this global variable with no further declaration needed. The program also contains two separate local variables, both named y. Each of the variables named y is local to the function in which their storage is created, and each of these variables can only be used within the appropriate functions.</para>
+      </section>
+      <section id="id-405776248613">
+        <title>Scope Resolution Operator</title>
+        <para id="id38764004">When a local variable has the same name as a global variable, all uses of the variable’s name within the scope of the local variable refer to the local variable.</para>
+        <para id="id38514434">In such cases, we can still access to the global variable by using <emphasis>scope resolution operator</emphasis> (::) immediately before the variable name.</para>
+        <para id="id41378663">The :: operator tells the compiler to use the global variable.</para>
+      </section>
+    </section>
+    <section id="id-41173854992">
+      <title>Example</title>
+      <para id="id37092209">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id40991263">
+        <code>float number = 42.8; // a global variable named number</code>
+      </para>
+      <para id="id39727980">
+        <code>int main()</code>
+      </para>
+      <para id="id38936862">
+        <code>{</code>
+      </para>
+      <para id="id22473491">
+        <code>float number = 26.4; // a local variable named number</code>
+      </para>
+      <para id="id40221534">
+        <code>cout &lt;&lt; "The value of number is " &lt;&lt; number &lt;&lt; endl;</code>
+      </para>
+      <para id="id39739402">
+        <code>return 0;</code>
+      </para>
+      <para id="id40205556">
+        <code>}</code>
+      </para>
+      <para id="id22010642">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id35446744">The value of number is 26.4</para>
+      <section id="id-0901070967085">
+        <title>Example </title>
+        <para id="id5983954">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id39738844">
+          <code>float number = 42.8; // a global variable named number</code>
+        </para>
+        <para id="id1742699">
+          <code>int main()</code>
+        </para>
+        <para id="id40061808">
+          <code>{</code>
+        </para>
+        <para id="id38516446">
+          <code>float number = 26.4; // a local variable named number</code>
+        </para>
+        <para id="id39081478">
+          <code>cout &lt;&lt; "The value of number is " &lt;&lt; ::number &lt;&lt; endl;</code>
+        </para>
+        <para id="id39729829">
+          <code>return 0;</code>
+        </para>
+        <para id="id22463782">
+          <code>}</code>
+        </para>
+        <para id="id38521392">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id39858827">The value of number is 42.8</para>
+      </section>
+    </section>
+    <section id="id-989048291341">
+      <title>Variable Storage Class</title>
+      <para id="id36837493">The <emphasis>lifetime</emphasis> of a variable is referred to as the <emphasis>storage duration</emphasis>, or storage class.</para>
+      <para id="id33978089">The four available storage classes are <emphasis>auto</emphasis>, <emphasis>static</emphasis>, <emphasis>extern</emphasis> and <emphasis>register</emphasis>.</para>
+      <para id="id40584175">If one of these class names is used, it must be placed before the variable’s data type in a declaration statement.</para>
+      <para id="id4294151">Examples:</para>
+      <para id="id35063288">
+        <code>auto int num;</code>
+      </para>
+      <para id="id20998831">
+        <code>static int miles;</code>
+      </para>
+      <para id="id39429284">
+        <code>register int dist;</code>
+      </para>
+      <para id="id23252701">
+        <code>extern float price;</code>
+      </para>
+      <para id="id22976779">
+        <code>extern float yld;</code>
+      </para>
+      <section id="id-542036660015">
+        <title>Local Variable Storage Classes</title>
+        <para id="id22866920">Local variables can only be members of the auto, static, or register storage classes.</para>
+        <para id="id20236256">If no class description is included in the declaration statement, the variable is automatically assigned to the auto class.</para>
+        <section id="id-0959772905403">
+          <title>Automatic Variables</title>
+          <para id="id44469863">The term auto is short for automatic. Automatic storage duration refers to variables that exist only during the lifetime of the command block (such as a function) that contains them.</para>
+        </section>
+        <section id="id-0659099701203">
+          <title>Example</title>
+          <para id="id35599554">
+            <code>#include &lt;iostream.h&gt;</code>
+          </para>
+          <para id="id41175436">
+            <code>int funct(int); // function prototype</code>
+          </para>
+          <para id="id40086389">
+            <code>int main()</code>
+          </para>
+          <para id="id39324836">
+            <code>{</code>
+          </para>
+          <para id="id38506530">
+            <code>int count, value; // count is a local auto variable</code>
+          </para>
+          <para id="id22969134">
+            <code>for(count = 1; count &lt;= 10; count++)</code>
+          </para>
+          <para id="id5878258">
+            <code>value = funct(count);</code>
+          </para>
+          <para id="id36166647">
+            <code>cout &lt;&lt; count &lt;&lt; ‘\t’ &lt;&lt; value &lt;&lt; endl;</code>
+          </para>
+          <para id="id36934938">
+            <code>return 0;</code>
+          </para>
+          <para id="id19383890">
+            <code>}</code>
+          </para>
+          <para id="id40239244">
+            <code/>
+          </para>
+          <para id="id39726748">
+            <code>int funct( int x)</code>
+          </para>
+          <para id="id34234786">
+            <code>{</code>
+          </para>
+          <para id="id38342903">
+            <code>int sum = 100; // sum is a local auto variable</code>
+          </para>
+          <para id="id1128846">
+            <code>sum += x;</code>
+          </para>
+          <para id="id41303540">
+            <code>return sum;</code>
+          </para>
+          <para id="id34856069">
+            <code>}</code>
+          </para>
+          <para id="id21424728">The <emphasis>output</emphasis> of the above program:</para>
+          <para id="id39337181">1 101</para>
+          <para id="id38985951">2 102</para>
+          <para id="id40596742">3 103</para>
+          <para id="id38506804">4 104</para>
+          <para id="id34773214">5 105</para>
+          <para id="id18136671">6 106</para>
+          <para id="id38175864">7 107</para>
+          <para id="id22191331">8 108</para>
+          <para id="id36303282">9 109</para>
+          <para id="id4135904">10 110</para>
+          <para id="id22153827">Note: The effect of increasing sum in funct(), before the function’s return statement, is lost when control is returned to main().</para>
+          <para id="id20813996">In some applications, we want a function to remember values between function calls. This is the purpose of the static storage class.</para>
+          <para id="id23829750">A local static variable is not created and destroyed each time the function declaring the static variable is called. Once created, local static variables remain in existence for the life of the program.</para>
+          <para id="id39291536">
+            <emphasis>Example </emphasis>
+          </para>
+          <para id="id38711138">
+            <code>#include &lt;iostream.h&gt;</code>
+          </para>
+          <para id="id41490308">
+            <code>int funct( int); // function prototype</code>
+          </para>
+          <para id="id22895102">
+            <code>int main()</code>
+          </para>
+          <para id="id41448738">
+            <code>{</code>
+          </para>
+          <para id="id22474069">
+            <code>int count, value; // count is a local auto variable</code>
+          </para>
+          <para id="id40206124">
+            <code>for(count = 1; count &lt;= 10; count++)</code>
+          </para>
+          <para id="id39791361">
+            <code>value = funct( count);</code>
+          </para>
+          <para id="id41181747">
+            <code>cout &lt;&lt; count &lt;&lt; ‘\t’ &lt;&lt; value &lt;&lt; endl;</code>
+          </para>
+          <para id="id41603872">
+            <code>return 0;</code>
+          </para>
+          <para id="id22810165">
+            <code>}</code>
+          </para>
+          <para id="id40206494">
+            <code/>
+          </para>
+          <para id="id1811318">
+            <code>int funct( int x)</code>
+          </para>
+          <para id="id45730689">
+            <code>{</code>
+          </para>
+          <para id="id40108500">
+            <code>static int sum = 100; // sum is a local auto variable</code>
+          </para>
+          <para id="id38760330">
+            <code>sum += x;</code>
+          </para>
+          <para id="id784160">
+            <code>return sum;</code>
+          </para>
+          <para id="id5077295">
+            <code>}</code>
+          </para>
+          <para id="id35054092">The <emphasis>output</emphasis> of the above program:</para>
+          <para id="id1900338">1 101</para>
+          <para id="id4438989">2 103</para>
+          <para id="id1939851">3 106</para>
+          <para id="id3713939">4 110</para>
+          <para id="id38514411">5 115</para>
+          <para id="id3740155">6 121</para>
+          <para id="id20812521">7 128</para>
+          <para id="id39142044">8 136</para>
+          <para id="id20987449">9 145</para>
+          <para id="id37467547">10 155</para>
+          <para id="id38828484">Since sum has a permanent memory space it retains the same value in the period of time between leaving function and again entering it later.</para>
+          <para id="id38422398">Note:</para>
+          <list id="id40238700" list-type="enumerated">
+            <item>The initialization of static variables is done only once when the program is first compiled. At compile time, the variable is created and any initialization value is placed in it. Thereafter, the value in the variable is kept without further initialization each time is called. (compile-time initialization).</item>
+            <item>All static variables are set to zero when no explicit initialization is given.</item>
+          </list>
+        </section>
+        <section id="id-00574756133666">
+          <title>Register Variables</title>
+          <para id="id558471">Register variables have the same time duration as automatic variables. The only difference between register and automatic variables is where the storage for the variable is located.</para>
+          <para id="id664014">Register variables are stored in CPU’s internal registers rather than in memory.</para>
+          <para id="id38300560">Examples:</para>
+          <para id="id36704435">
+            <code>register int time;</code>
+          </para>
+          <para id="id4523790">
+            <code>register double difference;</code>
+          </para>
+        </section>
+      </section>
+      <section id="id-703410114523">
+        <title>Global Variable Storage Classes</title>
+        <para id="id38673250">Global variables are created by definition statements external to a function. Once a global variable is created, it exists until the program in which it is declared is finished executing.</para>
+        <para id="id41534364">Global variables may be declared as <emphasis>static</emphasis> or <emphasis>extern</emphasis> (but not both).</para>
+        <para id="id916333">The purpose of the extern storage class is to extend the scope of a global variable beyond its normal boundaries. To understand this, we must notice that the programs we have written so far have always been contained together in one file. Thus, when you have saved or retrieved programs, you have only needed to give the computer a single name for your program. Larger programs typically consist of many functions stored in multiple files and all of these files are compiled separately. Consider the following exaple.</para>
+        <para id="id36708609">
+          <emphasis>Example:</emphasis>
+        </para>
+        <para id="id33970221">
+          <code>//file1</code>
+        </para>
+        <para id="id41178884">
+          <code>int a;</code>
+        </para>
+        <para id="id41178998">
+          <code>float c;</code>
+        </para>
+        <para id="id40367529">
+          <code>static double d;</code>
+        </para>
+        <para id="id39429212">
+          <code>.</code>
+        </para>
+        <para id="id37264811">
+          <code>.</code>
+        </para>
+        <para id="id21199628">
+          <code>int main()</code>
+        </para>
+        <para id="id37389078">
+          <code>{</code>
+        </para>
+        <para id="id37436822">
+          <code>func1();</code>
+        </para>
+        <para id="id22905706">
+          <code>func2();</code>
+        </para>
+        <para id="id41485838">
+          <code>func3();</code>
+        </para>
+        <para id="id37471329">
+          <code>func4();</code>
+        </para>
+        <para id="id39453558">
+          <code>.</code>
+        </para>
+        <para id="id21628653">
+          <code>}</code>
+        </para>
+        <para id="id21060586">
+          <code>int func1();</code>
+        </para>
+        <para id="id41532629">
+          <code>{</code>
+        </para>
+        <para id="id37164982">
+          <code>.</code>
+        </para>
+        <para id="id38634778">
+          <code>.</code>
+        </para>
+        <para id="id20488936">
+          <code>}</code>
+        </para>
+        <para id="id35513812">
+          <code>int func2();</code>
+        </para>
+        <para id="id36748818">
+          <code>{</code>
+        </para>
+        <para id="id37122020">
+          <code>.</code>
+        </para>
+        <para id="id39533416">
+          <code>.</code>
+        </para>
+        <para id="id41176928">
+          <code>}</code>
+        </para>
+        <para id="id1432741">
+          <code>//end of file1</code>
+        </para>
+        <para id="id38851654">
+          <code/>
+        </para>
+        <para id="id38833296">
+          <code>//file2</code>
+        </para>
+        <para id="id39460244">
+          <code>double b;</code>
+        </para>
+        <para id="id21608364">
+          <code>int func3();</code>
+        </para>
+        <para id="id39301844">
+          <code>{</code>
+        </para>
+        <para id="id38633096">
+          <code>.</code>
+        </para>
+        <para id="id39728423">
+          <code>.</code>
+        </para>
+        <para id="id38529732">
+          <code>}</code>
+        </para>
+        <para id="id41165443">
+          <code>int func4();</code>
+        </para>
+        <para id="id38372907">
+          <code>{</code>
+        </para>
+        <para id="id41660195">
+          <code>.</code>
+        </para>
+        <para id="id39522900">
+          <code>.</code>
+        </para>
+        <para id="id35755739">
+          <code>}</code>
+        </para>
+        <para id="id22878910">
+          <code>//end of file2</code>
+        </para>
+        <para id="id39356581">Although the variable a has been declared in file1, we want to use it in file2. Placing the statement extern int a in file2, we can extend the scope of the variable a into file2.</para>
+        <para id="id37482485"><emphasis>Now</emphasis> the scope of the variable a is not only in file1, but also in func3 and func4.</para>
+        <para id="id38986851">
+          <code>//file1</code>
+        </para>
+        <para id="id49480741">
+          <code>int a;</code>
+        </para>
+        <para id="id38760060">
+          <code>float c;</code>
+        </para>
+        <para id="id39524500">
+          <code>static double d;</code>
+        </para>
+        <para id="id38529137">
+          <code>.</code>
+        </para>
+        <para id="id41343549">
+          <code>.</code>
+        </para>
+        <para id="id38838744">
+          <code>int main()</code>
+        </para>
+        <para id="id22395490">
+          <code>{</code>
+        </para>
+        <para id="id1212082">
+          <code>func1();</code>
+        </para>
+        <para id="id41144004">
+          <code>func2();</code>
+        </para>
+        <para id="id22991859">
+          <code>func3();</code>
+        </para>
+        <para id="id39121734">
+          <code>func4();</code>
+        </para>
+        <para id="id39453398">
+          <code>.</code>
+        </para>
+        <para id="id48511962">
+          <code>}</code>
+        </para>
+        <para id="id40369830">
+          <code>extern double b;</code>
+        </para>
+        <para id="id37288410">
+          <code>int func1();</code>
+        </para>
+        <para id="id36951092">
+          <code>{</code>
+        </para>
+        <para id="id39453509">
+          <code>.</code>
+        </para>
+        <para id="id4031420">
+          <code>.</code>
+        </para>
+        <para id="id36267797">
+          <code>}</code>
+        </para>
+        <para id="id40330238">
+          <code>int func2();</code>
+        </para>
+        <para id="id41180540">
+          <code>{</code>
+        </para>
+        <para id="id39191733">
+          <code>.</code>
+        </para>
+        <para id="id40330257">
+          <code>.</code>
+        </para>
+        <para id="id41378782">
+          <code>}</code>
+        </para>
+        <para id="id21133253">
+          <code>//end of file1</code>
+        </para>
+        <para id="id39316958">
+          <code/>
+        </para>
+        <para id="id38702197">
+          <code>//file2</code>
+        </para>
+        <para id="id38764688">
+          <code>double b;</code>
+        </para>
+        <para id="id34025324">
+          <code>extern int a;</code>
+        </para>
+        <para id="id38914537">
+          <code>int func3();</code>
+        </para>
+        <para id="id1058884">
+          <code>{</code>
+        </para>
+        <para id="id37572804">
+          <code>.</code>
+        </para>
+        <para id="id40350089">
+          <code>.</code>
+        </para>
+        <para id="id22307131">
+          <code>}</code>
+        </para>
+        <para id="id38838661">
+          <code>int func4();</code>
+        </para>
+        <para id="id22991729">
+          <code>{</code>
+        </para>
+        <para id="id39867086">
+          <code>extern float c;</code>
+        </para>
+        <para id="id34804111">
+          <code>.</code>
+        </para>
+        <para id="id37453616">
+          <code>.</code>
+        </para>
+        <para id="id36837074">
+          <code>}</code>
+        </para>
+        <para id="id49455480">
+          <code>//end of file2</code>
+        </para>
+        <para id="id40190497">Besides, placing the statement extern float c; in func4() extends the scope of this global variable, created in file1, into func4(), and the scope of the global variable b, created in file2, is extended into func1() and func2() by the declaration statement extern double b; placed before func1(). </para>
+        
+        <para id="id39729995">Note:</para>
+        <list id="id25783118" list-type="enumerated">
+          <item>We cannot make static variables external.</item>
+          <item>The scope of a global static variable cannot extend beyond the file in which it is declared.</item>
+        </list>
+        <para id="id38178020">
+          <code/>
+        </para>
+      </section>
+    </section>
+    <section id="id-656506015624">
+      <title>Pass by Reference Using Reference Parameters</title>
+      <para id="id37464380">Two ways to invoke functions in many programming languages are: call by value and</para>
+      <para id="id23208444">call by reference</para>
+      <para id="id39462316">When an argument is passed <emphasis>call by value</emphasis>, a copy of the argument’s value is made and passed to the called function. Changes to the copy do not affect the original variable’s value in the caller.</para>
+      <para id="id916189">With <emphasis>call-by-reference</emphasis>, the caller gives the called function the ability to access the caller’s data directly, and to modify that data if the called function chooses so.</para>
+      <para id="id36835528">To indicate that the function parameter is <emphasis>passed-by-reference</emphasis>, simply follow the parameter’s type in the function prototype of function header by an ampersand (&amp;).</para>
+      <para id="id34506316">For example, the declaration</para>
+      <para id="id38316585">
+        <code>int&amp; count;</code>
+      </para>
+      <para id="id37388529">in the function header means “count is a reference parameter to an int”.</para>
+      <para id="id20225163">
+        <emphasis>Example </emphasis>
+      </para>
+      <para id="id41028498">
+        <code>// Comparing call-by-value and call-by-reference with references.</code>
+      </para>
+      <para id="id1779792">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id35493420">
+        <code>int squareByValue( int );</code>
+      </para>
+      <para id="id256789">
+        <code>void squareByReference( int &amp; );</code>
+      </para>
+      <para id="id39547439">
+        <code/>
+      </para>
+      <para id="id39440552">
+        <code>int main()</code>
+      </para>
+      <para id="id30722349">
+        <code>{</code>
+      </para>
+      <para id="id1743666">
+        <code>int x = 2, z = 4;</code>
+      </para>
+      <para id="id39851795">
+        <code>cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; " before squareByValue\n"</code>
+      </para>
+      <para id="id40367015">
+        <code>&lt;&lt; "Value returned by squareByValue: "</code>
+      </para>
+      <para id="id23102131">
+        <code>&lt;&lt; squareByValue( x ) &lt;&lt; endl</code>
+      </para>
+      <para id="id36502222">
+        <code>&lt;&lt; "x = " &lt;&lt; x &lt;&lt; " after squareByValue\n" &lt;&lt; endl;</code>
+      </para>
+      <para id="id38759586">
+        <code>cout &lt;&lt; "z = " &lt;&lt; z &lt;&lt; " before squareByReference" &lt;&lt; endl;</code>
+      </para>
+      <para id="id457693">
+        <code>squareByReference( z );</code>
+      </para>
+      <para id="id41179064">
+        <code>cout &lt;&lt; "z = " &lt;&lt; z &lt;&lt; " after squareByReference" &lt;&lt; endl;</code>
+      </para>
+      <para id="id39080727">
+        <code>return 0;</code>
+      </para>
+      <para id="id37606657">
+        <code>}</code>
+      </para>
+      <para id="id19505129">
+        <code>int squareByValue( int a )</code>
+      </para>
+      <para id="id35513639">
+        <code>{</code>
+      </para>
+      <para id="id41400174">
+        <code>return a *= a; // caller's argument not modified</code>
+      </para>
+      <para id="id38851650">
+        <code>}</code>
+      </para>
+      <para id="id33715479">
+        <code>void squareByReference( int &amp;cRef )</code>
+      </para>
+      <para id="id38509030">
+        <code>{</code>
+      </para>
+      <para id="id40969298">
+        <code>cRef *= cRef; // caller's argument modified</code>
+      </para>
+      <para id="id40263311">
+        <code>}</code>
+      </para>
+      <para id="id37464921">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id36690869">x = 2 before squareByValue</para>
+      <para id="id41259874">Value returned by squareByValue: 4</para>
+      <para id="id40074442">x = 2 after squareByReference</para>
+      <para id="id38771594">z = 4 before squareByReference</para>
+      <para id="id36386989">z = 16 after squareByReference</para>
+      <para id="id40205731">Since cRef is a reference parameter, so, squareByReference() now has direct access to the argument z. Thus, any change to cRef within squareByReference() directly alters the value of z in main(). The assignment of value to cRef within squareByReference() is relected in main() as the altering of z’s value.</para>
+      <para id="id40991466">Recall from Chapter 2 that the ampersand, &amp;, in C++ means “the address of”. Additionally, an &amp; symbol used within a declaration refers to “the address of” the preceding data type. Using this information, declaration such as double&amp; num1 and int&amp; secnum are sometimes more clearly understood if they are read backward. Reading the declaration int&amp; cRef in this manner yields the information that “cRef is the address of an int value.”</para>
+      <para id="id40992575">
+        <emphasis>Example </emphasis>
+      </para>
+      <para id="id36755577">
+        <code>// This program can solve quadratic equation</code>
+      </para>
+      <para id="id39540467">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id40212352">
+        <code>#include &lt;math.h&gt;</code>
+      </para>
+      <para id="id38517073">
+        <code>#include &lt;iomanip.h&gt;</code>
+      </para>
+      <para id="id41040418">
+        <code>in quad( double, double, double, double &amp;, double &amp;);</code>
+      </para>
+      <para id="id39739454">
+        <code>int main()</code>
+      </para>
+      <para id="id38848418">
+        <code>{</code>
+      </para>
+      <para id="id36976949">
+        <code>double a, b, c, x1, x2;</code>
+      </para>
+      <para id="id21063443">
+        <code>int code;</code>
+      </para>
+      <para id="id41341082">
+        <code>cout &lt;&lt; “Enter the coefficients of the equation: “&lt;&lt; endl;</code>
+      </para>
+      <para id="id45730674">
+        <code>cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</code>
+      </para>
+      <para id="id37476407">
+        <code>code = quad(a, b, c, x1, x2);</code>
+      </para>
+      <para id="id41167910">
+        <code>if (code == 1 || code == 2)</code>
+      </para>
+      <para id="id39187678">
+        <code>cout &lt;&lt; "x1 = “ &lt;&lt; x1 &lt;&lt; setw(20) &lt;&lt; “x2 = “ &lt;&lt; x2 &lt;&lt; endl;</code>
+      </para>
+      <para id="id35155638">
+        <code>else if (code == 3)</code>
+      </para>
+      <para id="id41259371">
+        <code>cout &lt;&lt; “ There is no solution “ &lt;&lt; endl;</code>
+      </para>
+      <para id="id664001">
+        <code>return 0;</code>
+      </para>
+      <para id="id41728613">
+        <code>}</code>
+      </para>
+      <para id="id40372298">
+        <code>int quad(double a, double b, double c, double &amp;px1, double &amp;px2)</code>
+      </para>
+      <para id="id38762290">
+        <code>{</code>
+      </para>
+      <para id="id39729668">
+        <code>double del;</code>
+      </para>
+      <para id="id38743555">
+        <code>del = b*b – 4.0*a*c;</code>
+      </para>
+      <para id="id40199775">
+        <code>if (del == 0.0)</code>
+      </para>
+      <para id="id35249806">
+        <code>{</code>
+      </para>
+      <para id="id38895423">
+        <code>px1 = -b/(2*a);</code>
+      </para>
+      <para id="id1925449">
+        <code>px2 = px1;</code>
+      </para>
+      <para id="id32915347">
+        <code>return 1;</code>
+      </para>
+      <para id="id39732014">
+        <code>}</code>
+      </para>
+      <para id="id25205545">
+        <code>else if (del &gt; 0.0)</code>
+      </para>
+      <para id="id953107">
+        <code>{</code>
+      </para>
+      <para id="id38443780">
+        <code>px1 = (-b + sqrt(del))/(2*a);</code>
+      </para>
+      <para id="id41260366">
+        <code>px2 = (-b – sqrt(del))/(2*a);</code>
+      </para>
+      <para id="id37469305">
+        <code>return 2;</code>
+      </para>
+      <para id="id40371031">
+        <code>}</code>
+      </para>
+      <para id="id1899608">
+        <code>else </code>
+      </para>
+      <para id="id37996817">
+        <code>return 3;</code>
+      </para>
+      <para id="id40073157">
+        <code>}</code>
+      </para>
+      <para id="id34776329">Note: The called-by-value parameters a, b, and c are used to passed the data from the calling function to the called function, and the two reference parameters px1 and px2 are used to pass the results from the called function to the calling function.</para>
+    </section>
+    <section id="id-0345239951072">
+      <title>Recursion</title>
+      <para id="id41283158">In C++, it’s possible for a function to call itself. Functions that do so are called seft-referential or <emphasis>recursive</emphasis> functions.</para>
+      <para id="id35138006">Example: To compute factorial of an integer</para>
+      <para id="id39302218">1! = 1</para>
+      <para id="id1415575">n! = n*(n-1)!</para>
+      <para id="id41392119">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id40521543">
+        <code>// Recursive factorial function</code>
+      </para>
+      <para id="id40522134">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id1899632">
+        <code>#include &lt;iomanip.h&gt;</code>
+      </para>
+      <para id="id37390080">
+        <code>unsigned long factorial( unsigned long );</code>
+      </para>
+      <para id="id39033434">
+        <code>int main()</code>
+      </para>
+      <para id="id41487625">
+        <code>{</code>
+      </para>
+      <para id="id22598376">
+        <code>for ( int i = 0; i &lt;= 10; i++ )</code>
+      </para>
+      <para id="id40104233">
+        <code>cout &lt;&lt; setw( 2 ) &lt;&lt; i &lt;&lt; "! = " &lt;&lt; factorial( i ) &lt;&lt; endl;</code>
+      </para>
+      <para id="id39355932">
+        <code>return 0;</code>
+      </para>
+      <para id="id1270663">
+        <code>}</code>
+      </para>
+      <para id="id41168764">
+        <code>// Recursive definition of function factorial</code>
+      </para>
+      <para id="id39971224">
+        <code>unsigned long factorial( unsigned long number )</code>
+      </para>
+      <para id="id22843802">
+        <code>{</code>
+      </para>
+      <para id="id38472059">
+        <code>if (number &lt; 1) // base case</code>
+      </para>
+      <para id="id37736839">
+        <code>return 1;</code>
+      </para>
+      <para id="id36950836">
+        <code>else // recursive case</code>
+      </para>
+      <para id="id38986265">
+        <code>return number * factorial( number - 1 );</code>
+      </para>
+      <para id="id36378367">
+        <code>}</code>
+      </para>
+      <para id="id39291527">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id39731693">0! = 1</para>
+      <para id="id35761309">1! = 1</para>
+      <para id="id40348756">2! = 2</para>
+      <para id="id39739199">3! = 6</para>
+      <para id="id40091347">4! = 24</para>
+      <para id="id1441378">5! = 120</para>
+      <para id="id40993289">6! = 720</para>
+      <para id="id37461106">7! = 5040</para>
+      <para id="id34853804">8! = 40320</para>
+      <para id="id38658822">9! = 362880</para>
+      <para id="id41040728">10! = 3628800</para>
+      <section id="id-598764693075">
+        <title>How the Computation is Performed</title>
+        <para id="id21168604">The mechanism that makes it possible for a C++ function to call itself is that C++ allocates new memory locations for all function parameters and local variables as each function is called. There is a <emphasis>dynamic data area</emphasis> for each execution of a function. This allocation is made dynamically, as a program is executed, in a memory area referred as the stack.</para>
+        <para id="id23605182">A <emphasis>memory stack</emphasis> is an area of memory used for rapidly storing and retrieving data areas for active functions. Each function call reserves memory locations on the stack for its parameters, its local variables, a return value, and the address where execution is to resume in the calling program when the function has completed execution (return address). Inserting and removing items from a stack are based on last-in/first-out mechanism.</para>
+        <para id="id41491979">Thus, when the function call factorial(n) is made, a data area for the execution of this function call is pushed on top of the stack. This data area is shown as figure below.</para>
+        <figure id="id3952701"><media id="id1166613961595" alt=""><image src="../../media/graphics2-955c.png" mime-type="image/png" height="172" width="149"/></media>
+        <caption> The data area for the first call to factorial</caption></figure>
+        <para id="id38539311"/>
+        <para id="id40366772">The progress of execution for the recursive function factorial applied with n = 3 is as follows:</para>
+        <figure id="id34198202"><media id="id1166613961655" alt=""><image src="../../media/graphics3-964d.png" mime-type="image/png" height="148" width="257"/></media>
+        <caption> Progress of execution for the recursive function</caption></figure>
+        <para id="id953112">During the execution of the function call factorial(3), the memory stack evolves as shown in the figure below. Whenever the recursive function calls itself, a new data area is pushed on top of the stack for that function call. When the execution of the recursive function at a given level is finished, the corresponding data area is popped from the stack and the return value is passed back to its calling function.</para>
+        <figure id="id22163858"><media id="id1166613961709" alt=""><image src="../../media/graphics4-1507.png" mime-type="image/png" height="97" width="600"/></media>
+        <caption> The memory stack for execution of function call factorial(3)</caption></figure>
+        <para id="id34586582"/>
+        <para id="id41166346"><emphasis>Example: </emphasis>Fibonacci numbers:</para>
+        <para id="id850301">F(N) = F(N-1) + F(N-2) for N&gt;= 2 </para>
+        <para id="id40330021">F(0) = F(1) = 1</para>
+        <para id="id39119656">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id3670165">
+          <code>int fibonacci(int);</code>
+        </para>
+        <para id="id22354605">
+          <code>int main()</code>
+        </para>
+        <para id="id41029676">
+          <code>{</code>
+        </para>
+        <para id="id38838011">
+          <code>int m;</code>
+        </para>
+        <para id="id33416785">
+          <code>cout &lt;&lt;"Enter a number: ";</code>
+        </para>
+        <para id="id35117599">
+          <code>cin&gt;&gt; m;</code>
+        </para>
+        <para id="id40369817">
+          <code>cout &lt;&lt;"The fibonacci of "&lt;&lt;m&lt;&lt;" is: "</code>
+        </para>
+        <para id="id17120672">
+          <code> &lt;&lt; fibonacci(m)&lt;&lt; endl;</code>
+        </para>
+        <para id="id38529849">
+          <code>return 0;</code>
+        </para>
+        <para id="id37467599">
+          <code>}</code>
+        </para>
+        <para id="id40986210">
+          <code>int fibonacci(int n)</code>
+        </para>
+        <para id="id21016799">
+          <code>{</code>
+        </para>
+        <para id="id40392531">
+          <code>if (n&lt;= 1) return 1;</code>
+        </para>
+        <para id="id40401072">
+          <code>return (fibonacci(n-1)+ fibonacci(n-2));</code>
+        </para>
+        <para id="id40401087">
+          <code>}</code>
+        </para>
+        <para id="id41488256">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id39180261">Enter a number: 4</para>
+        <para id="id1213610">The fibonacci of 4 is: 5</para>
+      </section>
+      <section id="id-166851881978">
+        <title>Recursion vs. Iteration</title>
+        <para id="id38801305">In this section, we compare recursion and iteration and discuss why the programmer might choose one approach over the other in a particular situation.</para>
+        <para id="id1939815">Both iteration and recursion are based on a control structure: Iteration uses a repetition structure; recursion uses a selection structure. Both iteration and recursion involve repetition: Iteration explicitly used a repetition structure while recursion achieves repetition through repeated function calls. Iteration and recursion both involve a termitation test: Iteration terminates when the loop-continuation condition fails; recursion terminates when a base case is recognized. Iteration with counter-controlled repetition and recursion both gradually approach termination: Iteration keeps modifying a counter variable until the counter assumes a value that makes the loop-continuation condtion falil; recursion keeps producing simpler versions of the original problem until the base case is reached. Both iteration and recursion can occur indefinitely: An infinite loop occurs with iteration if the loop-continuation test never become false; infinite recursion occurs if the recursion step does not reduce the problem each time in a manner that converges on the base case.</para>
+        <para id="id41343796">Recursion has many inconveniences. It repeatedly invokes the mechanism, and consequently the overhead, of function calls. This can be expensive in both CPU time and memory space. Each recursive call causes another copy of the function (actually only the function’s variables) to be created; this can consume considerable memory. Iteration normally occurs within a function, so the overhead of repeated function calls and extra memory assignment is omitted.</para>
+        <para id="id39838162">Any problem that can be solved recursively can also be solved iteratively (nonrecursively). A recursive approach is normally chosen in preference to an iterative approach when the recursive approach more naturally reflects the problem and results in a program that is easier to understand and debug. Another reason to choose a recursive solution is that an iterative solution is not apparent.</para>
+      </section>
+    </section>
+    <section id="id-267062297843">
+      <title>Passing Arrays to Functions</title>
+      <para id="id38538700">To pass an array to a function, specify the name of the array without any brackets. For example, if array hourlyTemperature has been declared as</para>
+      <para id="id38443835">
+        <code>int hourlyTemperature[24];</code>
+      </para>
+      <para id="id40262646">The function call statement</para>
+      <para id="id21081744">
+        <code>modifyArray(hourlyTemperature, size);</code>
+      </para>
+      <para id="id38462064">passes the array hourlyTemperature and its size to function modifyArray.</para>
+      <para id="id39525760">For the function to receive an array through a function call, the function’s parameter list must specify that an array will be received. </para>
+      <para id="id39283734">For example, the function header for function modifyArray might be written as</para>
+      <para id="id20826872">
+        <code>void modifyArray(int b[], int arraySize)</code>
+      </para>
+      <para id="id37345090">Notice that the size of the array is not required between the array brackets.</para>
+      <para id="id41159766">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id34810374">To illustrate the use of array and function, we set for ourselves the following tasks:</para>
+      <list id="id38106682" list-type="enumerated">
+        <item>Read in the amount to be deposited in the bank, the interest rate and the number of years to deposit.</item>
+        <item>Invoke the function to compute a table which keeps the amount we get after i years of deposit at the i-th component of the array.</item>
+        <item>Display out the above array</item>
+      </list>
+      <para id="id23830121">
+        <code>/* Compute compound interest */</code>
+      </para>
+      <para id="id33390529">
+        <code>#include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id22867721">
+        <code>#include&lt;iomanip.h&gt;</code>
+      </para>
+      <para id="id41041509">
+        <code>#define YMAX 50</code>
+      </para>
+      <para id="id38884889">
+        <code>void interest(double, double, int, double []);</code>
+      </para>
+      <para id="id39378573">
+        <code>int main()</code>
+      </para>
+      <para id="id543132">
+        <code>{</code>
+      </para>
+      <para id="id22613395">
+        <code>double deposit, rate;</code>
+      </para>
+      <para id="id41166817">
+        <code>int i, years;</code>
+      </para>
+      <para id="id21717536">
+        <code>double compounded[YMAX];</code>
+      </para>
+      <para id="id1923782">
+        <code>cout&lt;&lt; “\n ENTER DEPOSIT, INTEREST RATE, NUMBER OF YEARS \n”;</code>
+      </para>
+      <para id="id38423425">
+        <code>cin&gt;&gt;deposit&gt;&gt;rate&gt;&gt;years;</code>
+      </para>
+      <para id="id34124712">
+        <code>cout&lt;&lt;endl;</code>
+      </para>
+      <para id="id37873193">
+        <code>if(years&gt;YMAX)</code>
+      </para>
+      <para id="id23084726">
+        <code>cout&lt;&lt;”\n Number of years must be less than</code>
+      </para>
+      <para id="id19293687">
+        <code>or equal”&lt;&lt;YMAX;</code>
+      </para>
+      <para id="id39745210">
+        <code>else</code>
+      </para>
+      <para id="id1743169">
+        <code>{</code>
+      </para>
+      <para id="id1059591">
+        <code>interest(deposit, rate, years, compounded);</code>
+      </para>
+      <para id="id39081500">
+        <code>for( i = 0; i &lt; years; ++i)</code>
+      </para>
+      <para id="id37407422">
+        <code>cout&lt;&lt; i+1 &lt;&lt; setw(25)&lt;&lt; compounded[i]</code>
+      </para>
+      <para id="id23756018">
+        <code>&lt;&lt; endl;</code>
+      </para>
+      <para id="id40262960">
+        <code>}</code>
+      </para>
+      <para id="id33393445">
+        <code>cout&lt;&lt; endl;</code>
+      </para>
+      <para id="id38443812">
+        <code>return 0;</code>
+      </para>
+      <para id="id41162332">
+        <code>}</code>
+      </para>
+      <para id="id37468499">
+        <code>void interest(double deposit, double rate, </code>
+      </para>
+      <para id="id3386424">
+        <code>int years, double cp[])</code>
+      </para>
+      <para id="id33336094">
+        <code>{</code>
+      </para>
+      <para id="id35540281">
+        <code>int i;</code>
+      </para>
+      <para id="id1951904">
+        <code>for( i = 0; i &lt; years; ++i){</code>
+      </para>
+      <para id="id39163735">
+        <code>deposit = deposit*(1.0 + rate);</code>
+      </para>
+      <para id="id33367714">
+        <code>cp[i] = deposit;</code>
+      </para>
+      <para id="id40731086">
+        <code>}</code>
+      </para>
+      <para id="id37287849">
+        <code>}</code>
+      </para>
+      <para id="id1183104">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id39325931">In the following program, we have to search an integer array for a given element. We use linear search in which each item in the array is examined sequentially until the desired item is found or the end of the array is reached.</para>
+      <para id="id1430911">
+        <code>#include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id22707614">
+        <code>int linearSearch( int [], int, int);</code>
+      </para>
+      <para id="id23688678">
+        <code>int main()</code>
+      </para>
+      <para id="id37469087">
+        <code>{</code>
+      </para>
+      <para id="id41342795">
+        <code>const int arraySize = 100;</code>
+      </para>
+      <para id="id37345540">
+        <code>int a[arraySize], searchkey, element;</code>
+      </para>
+      <para id="id31715259">
+        <code>for (int x = 0; x &lt; arraySize, x++) </code>
+      </para>
+      <para id="id1742350">
+        <code>// create some data</code>
+      </para>
+      <para id="id41164889">
+        <code>a[x] = 2*x;</code>
+      </para>
+      <para id="id36352873">
+        <code>cout&lt;&lt; “Enter integer search key: “&lt;&lt; endl;</code>
+      </para>
+      <para id="id35247049">
+        <code>cin &gt;&gt; searchKey;</code>
+      </para>
+      <para id="id1321580">
+        <code>element = linearSearch(a, searchKey, arraySize);</code>
+      </para>
+      <para id="id41177990">
+        <code>if(element !=-1)</code>
+      </para>
+      <para id="id40991693">
+        <code>cout&lt;&lt;”Found value in element “&lt;&lt; element</code>
+      </para>
+      <para id="id36719718">
+        <code>&lt;&lt; endl;</code>
+      </para>
+      <para id="id38083327">
+        <code>else</code>
+      </para>
+      <para id="id35458073">
+        <code>cout&lt;&lt; “Value not found “ &lt;&lt; endl;</code>
+      </para>
+      <para id="id39398484">
+        <code>return 0;</code>
+      </para>
+      <para id="id35350911">
+        <code>}</code>
+      </para>
+      <para id="id37468439">
+        <code>int linearSearch(int array[], int key, int sizeofArray)</code>
+      </para>
+      <para id="id37876317">
+        <code>{</code>
+      </para>
+      <para id="id45721792">
+        <code>for(int n = 0; n&lt; sizeofArray; n++)</code>
+      </para>
+      <para id="id21181414">
+        <code>if (array[n] = = key)</code>
+      </para>
+      <para id="id34180627">
+        <code>return n;</code>
+      </para>
+      <para id="id40330733">
+        <code>return –1;</code>
+      </para>
+      <para id="id22158321">
+        <code>}</code>
+      </para>
+    </section>
+    <section id="id-487286146862">
+      <title>Pointers</title>
+      <para id="id41727079">In this section, we discuss one of the most powerful features of the C++ programming language, the <emphasis>pointer</emphasis>. Pointers are among C++’s most different capabilities to master. In section <emphasis>Pass by Reference</emphasis>, we saw that references can be used to perform call-by-reference. Pointers enable programs to simulate call-by-reference and to create and manipulate dynamic data structures (i.e., data structures that can grow and shrink).</para>
+      <para id="id41490002">A <emphasis>pointer</emphasis> is a special type of variable that stores the memory address of other variables.</para>
+      <para id="id1432958">You declare a variable as a pointer by placing the <emphasis>indirection operator</emphasis> (*) after the data type or before the variable name.</para>
+      <para id="id20490088">Examples:</para>
+      <para id="id1321110">
+        <code>int *pFirstPtr;</code>
+      </para>
+      <para id="id21571742">
+        <code>int *pSecondPtr;</code>
+      </para>
+      <para id="id41178221">You use the <emphasis>address-of operator</emphasis> (&amp;) to assign to the pointer variable the memory address of another variable.</para>
+      <para id="id42180117">Examples:</para>
+      <para id="id42180121">
+        <code>double dPrimeInterest;</code>
+      </para>
+      <para id="id39397168">
+        <code>double *pPrimeInterest;</code>
+      </para>
+      <para id="id39304198">
+        <code>pPrimeInterest = &amp;dPrimeInterest;</code>
+      </para>
+      <para id="id38508702">Once you assign the memory address of a variable to a pointer, to access or modify the contents of the variable pointed to by the pointer, you precede a pointer name in an expression with the <emphasis>de-reference</emphasis> (*) operator.</para>
+      <para id="id34776073">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id36574701">The program in this example demonstrates the pointer operators. Memory locations are output in this example as hexadecimal integers.</para>
+      <para id="id41051935">
+        <code>#include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id35602908">
+        <code>int main()</code>
+      </para>
+      <para id="id41399970">
+        <code>{</code>
+      </para>
+      <para id="id33790496">
+        <code>int a;</code>
+      </para>
+      <para id="id38633917">
+        <code>int *aPtr; // aPtr is a pointer to an integer</code>
+      </para>
+      <para id="id33352273">
+        <code/>
+      </para>
+      <para id="id36314725">
+        <code>a = 7;</code>
+      </para>
+      <para id="id3774726">
+        <code>aPtr = &amp;a; //aPtr set to address of a</code>
+      </para>
+      <para id="id4160188">
+        <code>cout &lt;&lt; “The address of a is “ &lt;&lt; &amp;a</code>
+      </para>
+      <para id="id35122468">
+        <code>&lt;&lt; “\nThe value of aPtr is “ &lt;&lt; aPtr;</code>
+      </para>
+      <para id="id22994725">
+        <code>cout &lt;&lt; “\n\nThe value of a is “&lt;&lt; a</code>
+      </para>
+      <para id="id38106689">
+        <code>&lt;&lt; “\nThe value of *aPtr is “ &lt;&lt; *aPtr</code>
+      </para>
+      <para id="id44465637">
+        <code>&lt;&lt; endl;</code>
+      </para>
+      <para id="id39876782">
+        <code>return 0;</code>
+      </para>
+      <para id="id39838109">
+        <code>}</code>
+      </para>
+      <para id="id39249434">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id41334811">The address of a is 0x0065FDF4</para>
+      <para id="id41178885">The value of aPtr is 0x0065FDF4</para>
+      <para id="id1213028">The value of a is 7</para>
+      <para id="id1213032">The value of *aPtr is 7</para>
+      <para id="id40353973">Notice that the address of a and the value of aPtr are identical in the output, confirming that the address of a is assigned to the pointer variable aPtr.</para>
+      <section id="id-111039757856">
+        <title>Calling Functions by Reference with Pointer Arguments</title>
+        <para id="id35754822">In C++, programmers can use pointers and the dereference operator to simulate call-by-reference. When calling a function with arguments should be modified, the addresses of the arguments are passed. This is normally achieved by applying the address-of operator (&amp;) to the name of the variable whose value will be used. A function receiving an address as an argument must define a pointer parameter to receive the address.</para>
+        <para id="id39908051">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id39012383">
+          <code>// Cube a variable using call-by-reference </code>
+        </para>
+        <para id="id41177465">
+          <code>// with a pointer argument</code>
+        </para>
+        <para id="id39733060">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id35728390">
+          <code>void cubeByReference( int * ); // prototype</code>
+        </para>
+        <para id="id38382050">
+          <code>int main()</code>
+        </para>
+        <para id="id38763972">
+          <code>{</code>
+        </para>
+        <para id="id38765174">
+          <code>int number = 5;</code>
+        </para>
+        <para id="id41052052">
+          <code>cout &lt;&lt; "The original value of number is " &lt;&lt; number;</code>
+        </para>
+        <para id="id41398994">
+          <code>cubeByReference( &amp;number );</code>
+        </para>
+        <para id="id39726804">
+          <code>cout &lt;&lt; "\nThe new value of number is " &lt;&lt; number &lt;&lt; endl;</code>
+        </para>
+        <para id="id22248709">
+          <code>return 0;</code>
+        </para>
+        <para id="id41487055">
+          <code>}</code>
+        </para>
+        <para id="id41019168">
+          <code/>
+        </para>
+        <para id="id40303001">
+          <code>void cubeByReference( int *nPtr )</code>
+        </para>
+        <para id="id1221128">
+          <code>{</code>
+        </para>
+        <para id="id38791652">
+          <code>*nPtr = (*nPtr) * (*nPtr) * (*nPtr); // cube number in main</code>
+        </para>
+        <para id="id40336522">
+          <code>}</code>
+        </para>
+        <para id="id37863017">The <emphasis>output</emphasis> of the above propgram:</para>
+        <para id="id36849769">The original value of number is 5</para>
+        <para id="id34874552">The new value of number is 125</para>
+      </section>
+      <section id="id-985412600886">
+        <title>Pointers and Arrays</title>
+        <para id="id21017648">Notice that the name of an array by itself is equivalent to the base address of that array. That is, the name z in isolation is equivalent to the expression &amp;z[0]. </para>
+        <para id="id41532446">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id40367165">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id36486491">
+          <code>int main()</code>
+        </para>
+        <para id="id38673323">
+          <code>{</code>
+        </para>
+        <para id="id38507918">
+          <code>int z[] = { 1, 2, 3, 4, 5};</code>
+        </para>
+        <para id="id43201226">
+          <code>cout &lt;&lt; “The value return by ‘z’ itself is </code>
+        </para>
+        <para id="id39078999">
+          <code>the addr “ &lt;&lt; z &lt;&lt; endl;</code>
+        </para>
+        <para id="id39033421">
+          <code>cout &lt;&lt; “The address of the 0th element of </code>
+        </para>
+        <para id="id39175164">
+          <code>z is “ &lt;&lt; &amp;z[0] &lt;&lt; endl;</code>
+        </para>
+        <para id="id36477596">
+          <code>return 0;</code>
+        </para>
+        <para id="id38511643">
+          <code>}</code>
+        </para>
+        <para id="id33390145">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id39161214">The value return by ‘z’ itself is the addr 0x0065FDF4</para>
+        <para id="id24467322">The address of the 0th element of z is 0x0065FDF4</para>
+        <para id="id38300832"><emphasis>Accessing Array Element Using Pointer and Offset</emphasis></para>
+        <para id="id24991021">Now, let us store the address of array element 0 in a pointer. Then using the indirection operator, *, we can use the address in the pointer to access each array element. </para>
+        <para id="id3987977">For example, if we store the address of grade[0] into a pointer named gPtr, then the expression *gPtr refers to grade[0].</para>
+        <para id="id38409812">One unique feature of pointers is that offset may be included in pointer expression. </para>
+        <para id="id40546196">For example, the expression *(gPtr + 3) refers to the variable that is three (elements) beyond the variable pointed to by gPtr. </para>
+        <para id="id38817241">The number 3 in the pointer expression is an offset. So gPtr + 3 points to the element grade[3] of the grade array.</para>
+        <para id="id39733266">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id39168018">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id41178318">
+          <code>int main()</code>
+        </para>
+        <para id="id558879">
+          <code>{</code>
+        </para>
+        <para id="id38179326">
+          <code>int b[] = { 10, 20, 30, 40 }, i, offset;</code>
+        </para>
+        <para id="id38522218">
+          <code>int *bPtr = b; // set bPtr to point to array b</code>
+        </para>
+        <para id="id38828559">
+          <code/>
+        </para>
+        <para id="id1135705">
+          <code>cout &lt;&lt; "Array b printed with:\n" </code>
+        </para>
+        <para id="id34856044">
+          <code>&lt;&lt; "Array subscript notation\n";</code>
+        </para>
+        <para id="id39521617">
+          <code/>
+        </para>
+        <para id="id1310401">
+          <code>for ( i = 0; i &lt; 4; i++ )</code>
+        </para>
+        <para id="id39317026">
+          <code>cout &lt;&lt; "b[" &lt;&lt; i &lt;&lt; "] = " &lt;&lt; b[ i ] &lt;&lt; '\n';</code>
+        </para>
+        <para id="id40225572">
+          <code/>
+        </para>
+        <para id="id256723">
+          <code>cout &lt;&lt; "\nPointer/offset notation\n";</code>
+        </para>
+        <para id="id38712411">
+          <code>for ( offset = 0; offset &lt; 4; offset++ )</code>
+        </para>
+        <para id="id37502726">
+          <code>cout &lt;&lt; "*(bPtr + " &lt;&lt; offset &lt;&lt; ") = "</code>
+        </para>
+        <para id="id20988958">
+          <code>&lt;&lt; *( bPtr + offset ) &lt;&lt; '\n';</code>
+        </para>
+        <para id="id36835300">
+          <code>return 0;</code>
+        </para>
+        <para id="id36929600">
+          <code>}</code>
+        </para>
+        <para id="id22190464">The <emphasis>output</emphasis> of the above program is:</para>
+        <para id="id41532461">Array b printed with:</para>
+        <para id="id40801960">Array subscript notation</para>
+        <para id="id38106645">b[0] = 10</para>
+        <para id="id38315838">b[1] = 20</para>
+        <para id="id37937649">b[2] = 30</para>
+        <para id="id21413945">b[3] = 40</para>
+        <para id="id38631429">Pointer/offset notation</para>
+        <para id="id38631433">*(bPtr + 0) = 10</para>
+        <para id="id41284650">*(bPtr + 1) = 20</para>
+        <para id="id40199791">*(bPtr + 2) = 30</para>
+        <para id="id1749760">*(bPtr + 3) = 40</para>
+      </section>
+      <section id="id-832104857966">
+        <title>Pointers and Strings</title>
+        <para id="id40344692">In C++ we often use character arrays to represent strings. A string is an array of characters ending in a null character (‘\0’). Therefore, we can scan through a string by using a pointer. Thus, in C++, it is appropriate to say that a string is a <emphasis>constant pointer</emphasis> – a pointer to the string’s first character. </para>
+        <para id="id770902">A string may be assigned in a declaration to either a character array or a variable of type char *. The declarations</para>
+        <para id="id38513237">
+          <code>char color[] = “blue”;</code>
+        </para>
+        <para id="id41179529">
+          <code>char* colorPtr = “blue”;</code>
+        </para>
+        <para id="id22768949">each initialize a variable to the string “blue”. The first declaration creates a 5-element array color containing the characters ‘b’, ‘l’, ‘u’, ‘e’ and ‘\0’. The second declaration creates pointer variable colorPtr that points to the string “blue” somewhere in the memory.</para>
+        <para id="id514335">The first declaration determines the size of the array automatically based on the number of initializers provided in the initializer list.</para>
+        <para id="id38177872">
+          <emphasis>Example </emphasis>
+        </para>
+        <para id="id1150127">
+          <code>/* Printing a string one character at a time using a non-constant pointer to constant data */</code>
+        </para>
+        <para id="id41176936">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id38865706">
+          <code>int main( )</code>
+        </para>
+        <para id="id40491622">
+          <code>{</code>
+        </para>
+        <para id="id234298">
+          <code>char strng[] = “Adams”;</code>
+        </para>
+        <para id="id2009768">
+          <code>char *sPtr;</code>
+        </para>
+        <para id="id39336147">
+          <code/>
+        </para>
+        <para id="id39522137">
+          <code>sPtr = &amp;strng[0];</code>
+        </para>
+        <para id="id22517680">
+          <code>cout &lt;&lt; “\nThe string is: \n”;</code>
+        </para>
+        <para id="id663979">
+          <code>for( ; *sPtr != ‘\0’; sPtr++)</code>
+        </para>
+        <para id="id41232906">
+          <code>cout &lt;&lt; *sPtr &lt;&lt; ‘ ‘;</code>
+        </para>
+        <para id="id41335886">
+          <code>return 0;</code>
+        </para>
+        <para id="id41342858">
+          <code>}</code>
+        </para>
+        <para id="id784149">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id1059780">The string is:</para>
+        <para id="id45727609">A d a m s</para>
+        <para id="id38742073">Note: The name of a string by itself is equivalent to the base address of that string.</para>
+      </section>
+      <section id="id-216008358776">
+        <title>Passing Structures as Parameters</title>
+        <para id="id49315190">Complete copies of all members of a structure can be passed to a function by including the name of the structure as an argument to the called function.</para>
+        <para id="id41027859">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id37127455">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id1811280">
+          <code>struct Employee // declare a global type</code>
+        </para>
+        <para id="id38520908">
+          <code>{</code>
+        </para>
+        <para id="id38443748">
+          <code>int idNum;</code>
+        </para>
+        <para id="id41532598">
+          <code>double payRate;</code>
+        </para>
+        <para id="id39711424">
+          <code>double hours;</code>
+        </para>
+        <para id="id41340788">
+          <code>};</code>
+        </para>
+        <para id="id39826440">
+          <code>double calcNet(Employee); // function prototype</code>
+        </para>
+        <para id="id39141782">
+          <code>int main()</code>
+        </para>
+        <para id="id37467968">
+          <code>{</code>
+        </para>
+        <para id="id39011524">
+          <code>Employee emp = {6782, 8.93, 40.5};</code>
+        </para>
+        <para id="id35063073">
+          <code>double netPay;</code>
+        </para>
+        <para id="id38246174">
+          <code>netPay = calcNet(emp); // pass by value</code>
+        </para>
+        <para id="id38759466">
+          <code>cout &lt;&lt; "The net pay for employee " </code>
+        </para>
+        <para id="id37469292">
+          <code>&lt;&lt; emp.idNum &lt;&lt; " is $" &lt;&lt; netPay &lt;&lt; endl;</code>
+        </para>
+        <para id="id40262663">
+          <code>return 0;</code>
+        </para>
+        <para id="id40988463">
+          <code>}</code>
+        </para>
+        <para id="id39711418">
+          <code/>
+        </para>
+        <para id="id778904">
+          <code>double calcNet(Employee temp) // temp is of data </code>
+        </para>
+        <para id="id38626545">
+          <code>// type Employee</code>
+        </para>
+        <para id="id39729363">
+          <code>{</code>
+        </para>
+        <para id="id3247607">
+          <code>return (temp.payRate * temp.hours);</code>
+        </para>
+        <para id="id41338197">
+          <code>}</code>
+        </para>
+        <para id="id38914856">The <emphasis>output</emphasis> is:</para><para id="element-872">The net pay for employee 6782 is $361.665</para>
+      </section>
+        
+
+        <para id="id19455946">In the above program, the function call</para>
+        <para id="id19455950">
+          <code>calcNet(emp);</code>
+        </para>
+        <para id="id40976967">passes a copy of the complete emp structure to the function calcNet( ). The parameter passing mechanism here is call-by-value.</para>
+        <para id="id1739124">An alternative to the pass-by-value function call, we can pass a structure by <emphasis>passing a pointer</emphasis>. The following example shows how to pass a structure by passing a pointer.</para>
+        <para id="id39441618">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id40321131">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id38885555">
+          <code>struct Employee // declare a global type</code>
+        </para>
+        <para id="id37711424">
+          <code>{</code>
+        </para>
+        <para id="id40224051">
+          <code>int idNum;</code>
+        </para>
+        <para id="id44465626">
+          <code>double payRate;</code>
+        </para>
+        <para id="id234377">
+          <code>double hours;</code>
+        </para>
+        <para id="id39166700">
+          <code>};</code>
+        </para>
+        <para id="id40539378">
+          <code>double calcNet(Employee *); //function prototype</code>
+        </para>
+        <para id="id40527152">
+          <code>int main()</code>
+        </para>
+        <para id="id38630138">
+          <code>{</code>
+        </para>
+        <para id="id40989502">
+          <code>Employee emp = {6782, 8.93, 40.5};</code>
+        </para>
+        <para id="id47151095">
+          <code>double netPay;</code>
+        </para>
+        <para id="id41030463">
+          <code>netPay = calcNet(&amp;emp); // pass an address</code>
+        </para>
+        <para id="id39836725">
+          <code>cout &lt;&lt; "The net pay for employee " </code>
+        </para>
+        <para id="id37879242">
+          <code>&lt;&lt; emp.idNum &lt;&lt; " is $" &lt;&lt; netPay &lt;&lt; endl;</code>
+        </para>
+        <para id="id39841946">
+          <code>return 0;</code>
+        </para>
+        <para id="id39525816">
+          <code>}</code>
+        </para>
+        <para id="id40987320">
+          <code/>
+        </para>
+        <para id="id43201105">
+          <code>double calcNet(Employee* pt) //pt is a pointer </code>
+        </para>
+        <para id="id38522225">
+          <code>{ //to a structure of Employee type</code>
+        </para>
+        <para id="id38633356">
+          <code>return (pt-&gt;payRate * pt-&gt;hours);</code>
+        </para>
+        <para id="id34856014">
+          <code>}</code>
+        </para>
+        <para id="id778886">The <emphasis>output</emphasis> is:</para>
+        <para id="id38540581">The net pay for employee 6782 is $361.665</para>
+    </section>
+    <section id="id-336996352181">
+      <title>The Typedef Declaration Statement</title>
+      <para id="id39729880">The <emphasis>typedef</emphasis> declaration statement permits us to construct alternate names for an existing C++ data type name. The syntax of a typedef statement is:</para>
+      <para id="id38997709">
+        <code>typedef data-type new-type-name</code>
+      </para>
+      <para id="id22942436">For example, the statement:</para>
+      <para id="id1324484">
+        <code>typedef float REAL;</code>
+      </para>
+      <para id="id41145265">make the name REAL a synonym for float. The name REAL can now be used in place of the term float anywhere in the program after the synonym has been declared.</para>
+      <para id="id41309507">The definition</para>
+      <para id="id648227">
+        <code>REAL val;</code>
+      </para>
+      <para id="id35063323">is equivalent to</para>
+      <para id="id41488824">
+        <code>float val;</code>
+      </para>
+      <para id="id39163471">Example: Consider the following statement:</para>
+      <para id="id39163475">
+        <code>typedef struct</code>
+      </para>
+      <para id="id39316979">
+        <code>{</code>
+      </para>
+      <para id="id1745257">
+        <code> char name[20];</code>
+      </para>
+      <para id="id41392161">
+        <code> int idNum;</code>
+      </para>
+      <para id="id41040819">
+        <code>} EMPREC;</code>
+      </para>
+      <para id="id41041952">The declaration </para>
+      <para id="id39550022">
+        <code>EMPREC employee[75];</code>
+      </para>
+      <para id="id40391791">is equivalent to</para>
+      <para id="id36260159">
+        <code>struct</code>
+      </para>
+      <para id="id41086658">
+        <code>{</code>
+      </para>
+      <para id="id40220564">
+        <code> char name[20];</code>
+      </para>
+      <para id="id38317188">
+        <code> int idNum;</code>
+      </para>
+      <para id="id19926871">
+        <code>} employee[75];</code>
+      </para>
+      <para id="id37417692">Example: Consider the following statement:</para>
+      <para id="id41309498">
+        <code>typedef double* DPTR;</code>
+      </para>
+      <para id="id49478517">The declaration:</para>
+      <para id="id49478520">
+        <code>DPTR pointer1;</code>
+      </para>
+      <para id="id40989977">is equivalent to</para>
+      <para id="id41086004">
+        <code>double* pointer1;</code>
+      </para>
+    </section>
+  </content>
+</document>

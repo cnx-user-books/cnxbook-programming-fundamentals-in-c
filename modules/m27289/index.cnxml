@@ -1,0 +1,1557 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Repetition Statements, Arrays and Structured Programming</title>
+  <metadata>
+  <md:content-id>m27289</md:content-id><md:title>Repetition Statements, Arrays and Structured Programming</md:title>
+  <md:abstract>This chapter explores the different methods programmers use to construct repeating sections of code and how that code can be implemented in C++.  More commonly, a section of code that is repeated is referred to as a loop, because after the last statement in the code is executed, the program branches, or loops, back to the first statement and start another repetition through the code. Each repetition is also referred to as an iteration.</md:abstract>
+  <md:uuid>c00c2405-d597-43ec-a11a-c6542906cdc0</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-241182828913">
+      <title>Basic Loop Structures</title>
+      <para id="id23855927">The real power of a program is realized when the same type of operation must be made over and over.</para>
+      <para id="id39303381">Constructing a repetitive section of code requires that four elements be present. The first necessary element is a repetition statement. This repetition statement defines the boundaries containing the repeating section of code and also controls whether the code is executed or not. C++ provides three different forms of repetition statements:</para>
+      <list id="id39441833" list-type="enumerated">
+        <item><emphasis>while</emphasis> structure</item>
+        <item><emphasis>for</emphasis> structure</item>
+        <item><emphasis>do-while</emphasis> structure</item>
+      </list>
+      <para id="id38851114">Each of these statements requires a condition that must be evaluated, which is the second required element for constructing repeating sections of code. Valid conditions are similar to those used in selection statements. If the condition is true, the code is executed; otherwise, it is not.</para>
+      <para id="id38915901">The third required element is a statement that initially sets the condition. This statement must always be placed before the condition is first evaluated to ensure correct loop execution the first time the condition is evaluated.</para>
+      <para id="id4347657">Finally, there must be a statement within the repeating section of code that allows the condition to become false. This is necessary to ensure that, at some point, the repetition stop.</para>
+      <para id="id39283428">The condition being tested can be evaluated at either (1) the beginning or (2) the end of the repeating section of code.</para>
+      <para id="id41144457">If the test occurs at the beginning of the loop, the type of loop is called a <emphasis>pre-test loop</emphasis> or entrance-controlled loop. If the test occurs at the end of the loop, the type of loop is called <emphasis>a post-test loop</emphasis> or exit-controlled-loop.</para>
+      <para id="id37875253">In addition to where the condition is tested (pretest or posttest), repeating sections of code are also classified. In a fixed count loop, the condition is used to keep track of how many repetitions have occurred. In this kind of loops, a fixed number of repetitions are performed, at which point the repeating section of code is exited.</para>
+      <para id="id38628837">In many situations, the exact number of repetitions are not known in advance or the items are too numerous to count beforehand. In such cases, a variable condition loop is used. In a variable condition loop, the tested condition does not depend on a count being achieved, but rather on a variable that can change interactively with each pass through the loop. When a specified value is encountered, regardless of how many iterations have occurred, repetitions stop.</para>
+    </section>
+    <section id="id-505345810519">
+      <title>While Loops</title>
+      <para id="id34840607">The <emphasis>while</emphasis> statement is used for repeating a statement or series of statements as long as a given conditional expression is evaluated to true.</para>
+      <para id="id20898827">The syntax for the while statement:</para>
+      <para id="id40221789">
+        <code>while( condition expression){</code>
+      </para>
+      <para id="id37967567">
+        <code>statements;</code>
+      </para>
+      <para id="id2067029">
+        <code>}</code>
+      </para>
+      <para id="id38446266">The flow chart of the while statement is given below.</para>
+      <figure id="id33974451"><media id="id2445701" alt=""><image src="../../media/graphics1-fabc.png" mime-type="image/png" height="323" width="469"/></media>
+      <caption> Flow chart of the while statement</caption></figure>
+    </section>
+    <section id="id-12832964111">
+      <title>Example</title>
+      <para id="id41161516">
+        <code>// this program computes the sum of 10 first integers starting from 1</code>
+      </para>
+      <para id="id41531801">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id41488209">
+        <code>int main()</code>
+      </para>
+      <para id="id41603868">
+        <code>{</code>
+      </para>
+      <para id="id39523252">
+        <code>const int N = 10</code>
+      </para>
+      <para id="id778117">
+        <code>int sum = 0;</code>
+      </para>
+      <para id="id829895">
+        <code>int count = 1; // initialize count</code>
+      </para>
+      <para id="id40100348">
+        <code>while (count &lt;= N){</code>
+      </para>
+      <para id="id41490736">
+        <code>sum = sum + count;</code>
+      </para>
+      <para id="id49449061">
+        <code>count++; // increment count</code>
+      </para>
+      <para id="id39432871">
+        <code>}</code>
+      </para>
+      <para id="id6002772">
+        <code>cout &lt;&lt; “The sum is “ &lt;&lt; sum &lt;&lt; endl;</code>
+      </para>
+      <para id="id20116692">
+        <code>return 0;</code>
+      </para>
+      <para id="id38505356">
+        <code>}</code>
+      </para>
+      <para id="id38765925">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id34119824">The sum is 55</para>
+      <para id="id41649774">In the above program, the loop incurs a counter-controlled repetition. Counter-controlled repetition requires: </para>
+      <list id="id38494666" list-type="enumerated">
+        <item>the name of a control variable (the variable count in this case);</item>
+        <item>the initial value of the control variable ( count is initialized to 1 in this case)</item>
+        <item>the condition that tests for the final value of the control variable (i.e., whether looping should continue) ;</item>
+        <item>the increment (or decrement) by which the control variable is modified each time through the loop.</item>
+      </list>
+      <section id="id-378122769437">
+        <title>Example</title>
+        <para id="id23158297">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id34157431">
+          <code>int main()</code>
+        </para>
+        <para id="id37263557">
+          <code>{</code>
+        </para>
+        <para id="id2062459">
+          <code>int i;</code>
+        </para>
+        <para id="id36274181">
+          <code>i = 10;</code>
+        </para>
+        <para id="id36950730">
+          <code>while (i &gt;= 1)</code>
+        </para>
+        <para id="id36836926">
+          <code>{</code>
+        </para>
+        <para id="id38839476">
+          <code>cout &lt;&lt; i &lt;&lt; " ";</code>
+        </para>
+        <para id="id22429632">
+          <code>i--; // subtract 1 from i</code>
+        </para>
+        <para id="id19369499">
+          <code>}</code>
+        </para>
+        <para id="id34369905">
+          <code>return 0;</code>
+        </para>
+        <para id="id41157372">
+          <code>}</code>
+        </para>
+        <para id="id34268076">The <emphasis>output</emphasis> of the above program:</para>
+        <list id="id36657864" list-type="enumerated">
+          <item>9 8 7 6 5 4 3 2 1</item>
+        </list>
+      </section>
+    </section>
+    <section id="id-532166916684">
+      <title>Interactive While Loops</title>
+      <para id="id38175658">Combining interactive data entry with the repetition capabilities of the while statement produces very adaptable and powerful programs.</para>
+    </section>
+    <section id="id-512780755076">
+      <title>Example</title>
+      <para id="id38300836">
+        <code>// Class average program with counter-controlled repetition</code>
+      </para>
+      <para id="id35476475">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id20999144">
+        <code>int main()</code>
+      </para>
+      <para id="id36691822">
+        <code>{</code>
+      </para>
+      <para id="id41005657">
+        <code>int total, // sum of grades </code>
+      </para>
+      <para id="id39841605">
+        <code>gradeCounter, // number of grades entered</code>
+      </para>
+      <para id="id21004567">
+        <code>grade, // one grade</code>
+      </para>
+      <para id="id33741710">
+        <code>average; // average of grades</code>
+      </para>
+      <para id="id34884176">
+        <code/>
+      </para>
+      <para id="id34513011">
+        <code>// initialization phase</code>
+      </para>
+      <para id="id38239580">
+        <code>total = 0; </code>
+      </para>
+      <para id="id39431292">
+        <code>gradeCounter = 1; // prepare to loop</code>
+      </para>
+      <para id="id38475453">
+        <code/>
+      </para>
+      <para id="id36749972">
+        <code>while ( gradeCounter &lt;= 10 ) { // loop 10 times</code>
+      </para>
+      <para id="id36633954">
+        <code>cout &lt;&lt; "Enter grade: "; // prompt for input</code>
+      </para>
+      <para id="id19871265">
+        <code>cin &gt;&gt; grade; // input grade</code>
+      </para>
+      <para id="id37461335">
+        <code>total = total + grade; // add grade to total</code>
+      </para>
+      <para id="id40976710">
+        <code>gradeCounter = gradeCounter + 1; // increment counter</code>
+      </para>
+      <para id="id22153696">
+        <code>}</code>
+      </para>
+      <para id="id35218533">
+        <code/>
+      </para>
+      <para id="id35183140">
+        <code>// termination phase</code>
+      </para>
+      <para id="id38988240">
+        <code>average = total / 10; // integer division</code>
+      </para>
+      <para id="id37316899">
+        <code>cout &lt;&lt; "Class average is " &lt;&lt; average &lt;&lt; endl;</code>
+      </para>
+      <para id="id39011837">
+        <code>return 0;</code>
+      </para>
+      <para id="id1150164">
+        <code>}</code>
+      </para>
+      <para id="id34928745">The following is a <emphasis>sample run</emphasis> of the above program:</para>
+      <para id="id41400180">Enter grade: 98</para>
+      <para id="id22330958">Enter grade: 76</para>
+      <para id="id38671608">Enter grade: 71</para>
+      <para id="id38671612">Enter grade: 87</para>
+      <para id="id38635720">Enter grade: 83</para>
+      <para id="id37876571">Enter grade: 90</para>
+      <para id="id36934959">Enter grade: 57</para>
+      <para id="id40212323">Enter grade: 79</para>
+      <para id="id40212327">Enter grade: 82</para>
+      <para id="id39734044">Enter grade: 94</para>
+      <para id="id4359731">Class average is 81</para>
+      <section id="id-34066863101">
+        <title>Sentinels</title>
+        <para id="id40206075">In programming, data values used to indicate either the start or end of a data series are called sentinels. The sentinel values must be selected so as not to conflict with legitimate data values.</para>
+        <para id="id38521809">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id38539543">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id22996113">
+          <code>int main()</code>
+        </para>
+        <para id="id37880193">
+          <code>{</code>
+        </para>
+        <para id="id20900957">
+          <code>float grade, total;</code>
+        </para>
+        <para id="id35458014">
+          <code>grade = 0;</code>
+        </para>
+        <para id="id20047317">
+          <code>total = 0;</code>
+        </para>
+        <para id="id39533282">
+          <code>cout &lt;&lt; "\nTo stop entering grades, type in any number less than 0.\n\n";</code>
+        </para>
+        <para id="id35246853">
+          <code>cout &lt;&lt; "Enter a grade: ";</code>
+        </para>
+        <para id="id38522103">
+          <code>cin &gt;&gt; grade;</code>
+        </para>
+        <para id="id39844142">
+          <code>while (grade &gt;= 0 )</code>
+        </para>
+        <para id="id1755310">
+          <code>{</code>
+        </para>
+        <para id="id32805373">
+          <code>total = total + grade;</code>
+        </para>
+        <para id="id40239910">
+          <code>cout &lt;&lt; "Enter a grade: ";</code>
+        </para>
+        <para id="id40400790">
+          <code>cin &gt;&gt; grade;</code>
+        </para>
+        <para id="id37258442">
+          <code>}</code>
+        </para>
+        <para id="id38509122">
+          <code>cout &lt;&lt; "\nThe total of the grades is " &lt;&lt; total &lt;&lt; endl;</code>
+        </para>
+        <para id="id1479571">
+          <code>return 0;</code>
+        </para>
+        <para id="id38476345">
+          <code>}</code>
+        </para>
+        <para id="id41304629">The following is a <emphasis>sample run</emphasis> of the above program:</para>
+        <para id="id41032365">To stop entering grades, type in any number less than 0.</para>
+        <para id="id38629881">Enter a grade: 95</para>
+        <para id="id4304115">Enter a grade: 100</para>
+        <para id="id39697656">Enter a grade: 82</para>
+        <para id="id39697660">Enter a grade: -2</para>
+        <para id="id835206">The total of the grades is 277</para>
+      </section>
+      <section id="id-835690990272">
+        <title>break statement</title>
+        <para id="id38475333">The <emphasis> break </emphasis> statement causes an exit from the innermost enclosing loop statement.</para>
+        <para id="id21180112">Example:</para>
+        <para id="id37938878">
+          <code>while( count &lt;= 10)</code>
+        </para>
+        <para id="id38631149">
+          <code>{</code>
+        </para>
+        <para id="id35351435">
+          <code>cout &lt;&lt; “Enter a number: “:</code>
+        </para>
+        <para id="id34587250">
+          <code>cin &gt;&gt; num;</code>
+        </para>
+        <para id="id39441415">
+          <code>if (num &gt; 76){</code>
+        </para>
+        <para id="id37508553">
+          <code>cout &lt;&lt; “you lose!\n”;</code>
+        </para>
+        <para id="id38996490">
+          <code>break;</code>
+        </para>
+        <para id="id4316159">
+          <code>}</code>
+        </para>
+        <para id="id41491546">
+          <code>else</code>
+        </para>
+        <para id="id39081830">
+          <code>cout &lt;&lt; “Keep on trucking!\n”;</code>
+        </para>
+        <para id="id37470869">
+          <code>count++;</code>
+        </para>
+        <para id="id22153592">
+          <code>}</code>
+        </para>
+        <para id="id39524911">
+          <code>//break jumps to here</code>
+        </para>
+        <para id="id37465326">The <emphasis> break </emphasis> statement violates pure structured programming principles because it provides a second, nonstandard exit from a loop.</para>
+        <para id="id35609669">However, it is useful and valuable for breaking out of loops when an unusual condition is detected.</para>
+      </section>
+      <section id="id-0411249627788">
+        <title>continue Statements</title>
+        <para id="id22352696">The <emphasis>continue</emphasis> statement halts a looping statement and restarts the loop with a new iteration.</para>
+        <para id="id4932552">
+          <code>while( count &lt; 30)</code>
+        </para>
+        <para id="id4122704">
+          <code>{</code>
+        </para>
+        <para id="id39840721">
+          <code>cout &lt;&lt; “Enter a grade: “;</code>
+        </para>
+        <para id="id38901526">
+          <code>cin &gt;&gt; grade;</code>
+        </para>
+        <para id="id764711">
+          <code>if (grade &lt; 0 || grade &gt; 100)</code>
+        </para>
+        <para id="id37468421">
+          <code>continue;</code>
+        </para>
+        <para id="id20901067">
+          <code>total = total + grade;</code>
+        </para>
+        <para id="id34971919">
+          <code>count++;</code>
+        </para>
+        <para id="id38175738">
+          <code>}</code>
+        </para>
+        <para id="id40102426">In the above program, invalid grades are simply ignored and only valid grades are added to the total.</para>
+      </section>
+      <section id="id-0470748838494">
+        <title>The null statement</title>
+        <para id="id39731942">All statements must be terminated by a semicolon. A semicolon with nothing preceding it is also a valid statement, called the <emphasis>null</emphasis> statement. Thus, the statement</para>
+        <para id="id34929234">;</para>
+        <para id="id19931550">is a null statement.</para>
+        <para id="id19931554">Example:</para>
+        <para id="id38916227">
+          <code>if (a &gt; 0)</code>
+        </para>
+        <para id="id41157091">
+          <code>b = 7;</code>
+        </para>
+        <para id="id40343599">
+          <code>else ;</code>
+        </para>
+        <para id="id39300970">The <emphasis>null</emphasis> statement is a do-nothing statement.</para>
+      </section>
+    </section>
+    <section id="id-38720485664">
+      <title>For Loops</title>
+      <para id="id22338774">The <emphasis>for</emphasis> statement is used for repeating a statement or series of statements as long as a given conditional expression evaluates to true.</para>
+      <para id="id37472701">One of the main differences between while statement and for statement is that in addition to a conditional expression, you can also include code in the for statement</para>
+      <list id="id22156763" list-type="bulleted">
+        <item>to initialize a counter variable and</item>
+        <item>changes its value with each iteration</item>
+      </list>
+      <para id="id23766965">The syntax of the for statement:</para>
+      <para id="id37390192">
+        <code>for ( initialization expression; condition; update statement){</code>
+      </para>
+      <para id="id37589411">
+        <code>statement(s);</code>
+      </para>
+      <para id="id40058617">
+        <code>}</code>
+      </para>
+      <para id="id4103988">In its most common form, the initialization expression consists of a single statement used to set the starting value of a counter variable, the condition contains the maximum or minimum value of the counter variable can have and determines when the loop is finished, and the update statement provides the increment value that is added to or subtracted from the counter variable each time the loop is executed.</para>
+      <para id="id24542873">The flowchart of the for statement is given below.</para>
+      <figure id="id20811850"><media id="id1171351131018" alt=""><image src="../../media/graphics2-6eb2.png" mime-type="image/png" height="477" width="478"/></media>
+      <caption> Flow chart of the for statement</caption></figure>
+    </section>
+    <section id="id-256909361873">
+      <title>Example</title>
+      <para id="id36702516">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id38317086">
+        <code>int main()</code>
+      </para>
+      <para id="id22867416">
+        <code>{</code>
+      </para>
+      <para id="id38915590">
+        <code>int sum = 0;</code>
+      </para>
+      <para id="id41660344">
+        <code>for (int number = 2; number &lt;= 100; number += 2)</code>
+      </para>
+      <para id="id24336093">
+        <code>sum += number;</code>
+      </para>
+      <para id="id38316415">
+        <code>cout &lt;&lt; “Sum is “ &lt;&lt; sum &lt;&lt; endl;</code>
+      </para>
+      <para id="id49450666">
+        <code>return 0;</code>
+      </para>
+      <para id="id37466202">
+        <code>}</code>
+      </para>
+      <para id="id36978238">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id4846499">Sum is 2550</para>
+      
+      <para id="id39745274">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id23248707">In this example, we have to solve the following problem: </para>
+      <para id="id35416670">A person invests $1000.00 in a saving account with 5 percent interest. Assuming that all interest is left on deposit in the account, calculate and print the amount of money in the account at the end of each year for 10 years. Use the following formula for determining these amounts: </para>
+      <para id="id4121575">a = p(1 + r)^n</para>
+      <para id="id4546318">where p is the original amount invested, r is the annual interest rate and n is the number of years and a is the amount on deposit at the end of the nth year.</para>
+      <para id="id41029354">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id37419885">
+        <code>#include &lt;iomanip.h&gt;</code>
+      </para>
+      <para id="id35807654">
+        <code>#include &lt;math.h&gt;</code>
+      </para>
+      <para id="id37325110">
+        <code>int main()</code>
+      </para>
+      <para id="id36782306">
+        <code>{</code>
+      </para>
+      <para id="id36782289">
+        <code>double amount,</code>
+      </para>
+      <para id="id40073704">
+        <code>principal = 1000.0,</code>
+      </para>
+      <para id="id39012437">
+        <code>rate = 0.05;</code>
+      </para>
+      <para id="id38179333">
+        <code/>
+      </para>
+      <para id="id40103199">
+        <code>cout &lt;&lt; "Year” &lt;&lt; setw(21)</code>
+      </para>
+      <para id="id40188578">
+        <code>&lt;&lt; "Amount on deposit" &lt;&lt; endl;</code>
+      </para>
+      <para id="id38034045">
+        <code/>
+      </para>
+      <para id="id36398592">
+        <code>cout &lt;&lt; setiosflags(ios::fixed | ios::showpoint) &lt;&lt; setprecision(2);</code>
+      </para>
+      <para id="id38987191">
+        <code>for (int year = 1; year &lt;= 10; year++) </code>
+      </para>
+      <para id="id38513164">
+        <code>{</code>
+      </para>
+      <para id="id40336476">
+        <code>amount = principal*pow(1.0 + rate, year);</code>
+      </para>
+      <para id="id20914118">
+        <code>cout &lt;&lt; setw(4) &lt;&lt; year</code>
+      </para>
+      <para id="id41157795">
+        <code>&lt;&lt; setw(21) &lt;&lt; amount &lt;&lt; endl;</code>
+      </para>
+      <para id="id25233574">
+        <code>}</code>
+      </para>
+      <para id="id37878727">
+        <code>return 0;</code>
+      </para>
+      <para id="id20496258">
+        <code>}</code>
+      </para>
+      <para id="id25048156">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id20004530">YearAmount on deposit</para>
+      <para id="id41664631">1 1050.00</para>
+      <list id="id40337165" list-type="enumerated">
+        <item>1102.50</item>
+        <item>1157.62</item>
+        <item>1215.51</item>
+        <item>1276.28</item>
+        <item>1340.10</item>
+        <item>1407.10</item>
+        <item>1477.46</item>
+        <item>1551.33</item>
+        <item>1628.89</item>
+      </list>
+    </section>
+    <section id="id-760268213716">
+      <title>Nested Loops</title>
+      <para id="id39304255">In many situations, it is convenient to use a loop contained within another loop. Such loops are called <emphasis>nested loops</emphasis>.</para>
+    </section>
+    <section id="id-621811247434">
+      <title>Example</title>
+      <para id="id40352044">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id22942428">
+        <code/>
+      </para>
+      <para id="id37754548">
+        <code>int main()</code>
+      </para>
+      <para id="id4120671">
+        <code>{</code>
+      </para>
+      <para id="id36980441">
+        <code>const int MAXI = 5;</code>
+      </para>
+      <para id="id40008515">
+        <code>const int MAXJ = 4;</code>
+      </para>
+      <para id="id39836878">
+        <code>int i, j;</code>
+      </para>
+      <para id="id39078918">
+        <code>for(i = 1; i &lt;= MAXI; i++) // start of outer loop </code>
+      </para>
+      <para id="id40240241">
+        <code>{ </code>
+      </para>
+      <para id="id36660419">
+        <code>cout &lt;&lt; "\ni is now " &lt;&lt; i &lt;&lt; endl; </code>
+      </para>
+      <para id="id41485339">
+        <code/>
+      </para>
+      <para id="id34478126">
+        <code>for(j = 1; j &lt;= MAXJ; j++) // start of inner loop </code>
+      </para>
+      <para id="id37318308">
+        <code>cout &lt;&lt; " j = " &lt;&lt; j; // end of inner loop </code>
+      </para>
+      <para id="id40336313">
+        <code>} // end of outer loop </code>
+      </para>
+      <para id="id41660488">
+        <code>cout &lt;&lt; endl;</code>
+      </para>
+      <para id="id35218649">
+        <code>return 0;</code>
+      </para>
+      <para id="id39079562">
+        <code>}</code>
+      </para>
+      <para id="id19570734">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id39011346">i is now 1</para>
+      <para id="id39896723">j = 1 j = 2 j = 3 j = 4</para>
+      <para id="id41043097">i is now 2</para>
+      <para id="id38506166">j = 1 j = 2 j = 3 j = 4</para>
+      <para id="id34587243">i is now 3</para>
+      <para id="id22439673">j = 1 j = 2 j = 3 j = 4</para>
+      <para id="id39844314">i is now 4</para>
+      <para id="id38790479">j = 1 j = 2 j = 3 j = 4</para>
+      <para id="id41164425">i is now 5</para>
+      <para id="id37875512">j = 1 j = 2 j = 3 j = 4</para>
+    </section>
+    <section id="id-175122712293">
+      <title>Do-While Loops</title>
+      <para id="id38760207">The <emphasis>do..while</emphasis> statement executes a statement or statements once, then repeats the execution as long as a given conditional expression evaluates to true.</para>
+      <para id="id39524904">The do..while statement is used to create post-test loops.</para>
+      <para id="id39304741">The syntax for the do..while statement:</para>
+      <para id="id40086418">
+        <code>do { </code>
+      </para>
+      <para id="id1298922">
+        <code>statements;</code>
+      </para>
+      <para id="id41660464">
+        <code>} while (conditional expression);</code>
+      </para>
+      <para id="id38177217">Example:</para>
+      <para id="id41160836">
+        <code>do { </code>
+      </para>
+      <para id="id38475641">
+        <code>cout&lt;&lt; “\nEnter an identification number:”;</code>
+      </para>
+      <para id="id39430785">
+        <code>cin &gt;&gt; idNum;</code>
+      </para>
+      <para id="id41159011">
+        <code>} while (idNum &lt; 1000|| idNum&gt; 1999);</code>
+      </para>
+      <figure id="id40348689"><media id="id2855114" alt=""><image src="../../media/graphics3-bee3.png" mime-type="image/png" height="432" width="477"/></media>
+      <caption> Flow chart of the do...while statement</caption></figure>
+      <para id="id40364970">Here, a request for a new id-number is repeated until a valid number is entered.</para>
+      <para id="id38316534">
+        <code>do { </code>
+      </para>
+      <para id="id38539707">
+        <code>cout&lt;&lt; “\nEnter an identification number:”;</code>
+      </para>
+      <para id="id20901419">
+        <code>cin &gt;&gt; idNum;</code>
+      </para>
+      <para id="id38631564">
+        <code>if (idNum &lt; 1000 || idNum &gt; 1999)</code>
+      </para>
+      <para id="id38175781">
+        <code>{</code>
+      </para>
+      <para id="id33333798">
+        <code>cout &lt;&lt; “An invalid number was just entered\n”;</code>
+      </para>
+      <para id="id41485750">
+        <code>cout &lt;&lt; “Please reenter an ID number /n”;</code>
+      </para>
+      <para id="id41486387">
+        <code>}</code>
+      </para>
+      <para id="id40509628">
+        <code>else break;</code>
+      </para>
+      <para id="id34478307">
+        <code>} while (true);</code>
+      </para>
+    </section>
+    <section id="id-707466011858">
+      <title>Structured Programming with C++</title>
+      <section id="id-0146795409886">
+        <title>The goto Statement</title>
+        <para id="id37396860">In C++, <emphasis>goto</emphasis> statement – an unconditional branch, is just a legacy code from C language. The result of the goto statement is a change in the flow of control of the program to the first statement after the <emphasis>label</emphasis> specified in the goto statement.</para>
+        <para id="id20836827">Example:</para>
+        <para id="id20836831">
+          <code>start: // label</code>
+        </para>
+        <para id="id38994504">
+          <code> if (cout &gt; 10) go to end;</code>
+        </para>
+        <para id="id33349760">
+          <code>…</code>
+        </para>
+        <para id="id24356306">
+          <code> …</code>
+        </para>
+        <para id="id37156334">
+          <code> go to start;</code>
+        </para>
+        <para id="id38359350">
+          <code>end: cout &lt;&lt; endl;</code>
+        </para>
+        <para id="id40346734">The goto statement can lead to programs that are more difficult to debug, maintain, and modify. </para>
+      </section>
+      <section id="id-393032961098">
+        <title>Structured Programming</title>
+        <para id="id38828445">During the 1960s, it became clear that the indiscriminate use of transfers of control through goto statements was the root of much difficulty experienced by programmer groups. The notion of so-called structured programming became almost synonymous with “<emphasis>goto elimination</emphasis>.”</para>
+        <para id="id35249339">Bohm and Jacopini’s work demonstrated that all programs could be written in terms of only three control structures:</para>
+        <list id="id37481480" list-type="bulleted">
+          <item>sequence structure</item>
+          <item>selection structure</item>
+          <item>repetition structure</item>
+        </list>
+        <para id="id40102242">The sequence structure is built into C++. Unless directed otherwise, the computer executes C++ statements one after the other in the order in which they are written. Below is a sequence structure.</para>
+        <figure id="id35727182"><media id="id1171343962990" alt=""><image src="../../media/graphics4-3c62.png" mime-type="image/png" height="181" width="159"/></media>
+        <caption> Sequence Structure</caption></figure>
+        <para id="id39153701">C++ provides three types of selection structures: </para>
+        <para id="id20778786">- if statement (single-selection structure)</para>
+        <para id="id38934795">- if-else statement (double-selection structure)</para>
+        <para id="id34447550">- switch statement. (multiple-selection structure)</para>
+        <para id="id37078087">C++ provides three types of repetition structures: </para>
+        <para id="id38819537">- while statement</para>
+        <para id="id40370338">- do-while statement</para>
+        <para id="id39732617">- for statement</para>
+        <para id="id22866900">So C++ has only seven control structures: sequence, three types of selection and three types of repetition. Each C++ program is formed by combining as many of each type of control structures as is appropriate for the algorithm the program implements. </para>
+        <para id="id23197259">We will see that each control structure has only one <emphasis>entry point</emphasis> and one <emphasis>exit point</emphasis>. These single-entry/single-exit control structures make it easy to build programs.</para>
+        <para id="id38515624">One way to build program is to connect the exit point of one control structure to the entry point of the next. This way is called control-structure-stacking.</para>
+        <para id="id41328202">Another way is to place one control structure inside another control structure. This way is called <emphasis>control-structure-nesting</emphasis>.</para>
+        <para id="id22157006">Consistent applying reasonable indentation conventions throughout your programs greatly improves program readability. We suggest a fixed-size tab of about ¼ inch or three blanks per indent.</para>
+        
+        <para id="id40074005">For example, we indent both body statements of an if..else structure as in the following statement:</para>
+        <para id="id39134532">
+          <code>if (grade &gt;= 60)</code>
+        </para>
+        <para id="id40240691">
+          <code> cout &lt;&lt; “Passed”;</code>
+        </para>
+        <para id="id34181393">
+          <code>else</code>
+        </para>
+        <para id="id24962350">
+          <code> cout &lt;&lt; “Failed”;</code>
+        </para>
+      </section>
+      <section id="id-535676254756">
+        <title>Top-down Stepwise Refinement</title>
+        <para id="id22458857">Using good control structures to build programs is one of the main principles of structured programming. Another principle of structured programming is top-down, stepwise refinement.</para>
+        <para id="id40013996">Consider the following problem:</para>
+        <para id="id37047561">Develop a class-averaging program that will process an arbitrary number of grades each time the program is run.</para>
+        <para id="id39328613">We begin with a pseudocode representation of the top:</para>
+        <para id="id36802076">Determine the class average for the exam</para>
+        <para id="id37479362">Now we begin the refinement process. We divide the top into a series of smaller tasks and list these in the order in which they need to be performed. This results in the following first refinement.</para>
+        <para id="id41400663">
+          <emphasis>First Refinement:</emphasis>
+        </para>
+        <para id="id36835308">Initialize variables</para>
+        <para id="id34874701">Input, sum and count the exam grades</para>
+        <para id="id35727647">Calculate and print the class average</para>
+        <para id="id34843755">Here only the sequence structure has been used.</para>
+        <para id="id33367642">To proceed to the next level of refinement, we need some variables and a repetition structure. We need a running total of the numbers, a count of how many numbers have been processed, a variable to receive the value of each grade as it is input and a variable to hold the calculated average. We need a loop to calculate the total of the grades before deriving the average. Because we do not know in advance how many grades are to be processed, we will use sentinel-controlled repetition. The program will test for the sentinel value after each grade is input and will terminate the loop when the sentinel value is entered by the user. Now we come to the pseudocode of the second refinement.</para>
+        <para id="id36024449">
+          <emphasis>Second Refinement:</emphasis>
+        </para>
+        <para id="id21731268">
+          <code>Input the first grade(possibly the sentinel)</code>
+        </para>
+        <para id="id36924617">
+          <code>While the user has not as yet entered the sentinel</code>
+        </para>
+
+          <para id="element-292"><code> Add this grade into the running total</code></para>
+          <para id="id40102433">
+            <code> Input the next grade(possibly the sentinel)</code>
+          </para>
+          <para id="id35447264">
+            <code>Calculate and print the class average</code>
+          </para>
+          <para id="id20280590">The pseudocode statement</para>
+          <para id="id20280594">
+            <code>Calculate and print the class average</code>
+          </para>
+          <para id="id40073793">can be refined as follows:</para>
+          <para id="id36387653">
+            <code>If the counter is not equal to zero</code>
+          </para>
+          <para id="id38446244">
+            <code> set the average to the total divided by the counter</code>
+          </para>
+          <para id="id38826652">
+            <code> print the average</code>
+          </para>
+          <para id="id37078289">
+            <code>else</code>
+          </para>
+          <para id="id37109032">
+            <code> Print “No grades were entered”.</code>
+          </para>
+          <para id="id21588409">Notice that we are being careful here to test for the possibility of division by zero – a fatal error, if undetected, would cause the program to fail. Now we come to the pseudocode of the third refinement.</para>
+          <para id="id36690878">
+            <emphasis>Third Refinement:</emphasis>
+          </para>
+          <para id="id20882087">
+            <code>Initialize total to zero</code>
+          </para>
+          <para id="id39301618">
+            <code>Initialize counter to zero</code>
+          </para>
+
+
+          <para id="element-706"><code> Input the first grade</code></para><para id="id41650251">
+            <code>While the user has not as yet entered the sentinel</code>
+          </para>
+          <para id="id35728562">
+            <code> Add this grade into the running total</code>
+          </para>
+          <para id="id21608954">
+            <code> Add one to the grade counter</code>
+          </para>
+          <para id="id20895342">
+            <code> Input the next grade</code>
+          </para>
+          <para id="id39341712">
+            <code>If the counter is not equal to zero</code>
+          </para>
+          <para id="id40345847">
+            <code> set the average to the total divided by the counter</code>
+          </para>
+          <para id="id22644363">
+            <code> print the average</code>
+          </para>
+          <para id="id35023669">
+            <code>else</code>
+          </para>
+          <para id="id35390036">
+            <code> Print “No grades were entered”.</code>
+          </para>
+          <para id="id39986222"><emphasis>Final step:</emphasis> After coding, we come to the following C++ program.</para>
+          <para id="id41145199">
+            <code>#include &lt;iostream.h&gt;</code>
+          </para>
+          <para id="id41160641">
+            <code>#include &lt;iomanip.h&gt;</code>
+          </para>
+          <para id="id39629747">
+            <code>int main()</code>
+          </para>
+          <para id="id20950860">
+            <code>{</code>
+          </para>
+          <para id="id38135587">
+            <code>int total, // sum of grades</code>
+          </para>
+          <para id="id39030060">
+            <code>gradeCounter, // number of grades entered</code>
+          </para>
+          <para id="id35614287">
+            <code>grade; // one grade </code>
+          </para>
+          <para id="id39525683">
+            <code>double average; // number with decimal point for average</code>
+          </para>
+          <para id="id37711387">
+            <code/>
+          </para>
+          <para id="id21398888">
+            <code>// initialization phase</code>
+          </para>
+          <para id="id40232041">
+            <code>total = 0;</code>
+          </para>
+          <para id="id39842257">
+            <code>gradeCounter = 0;</code>
+          </para>
+          <para id="id40456845">
+            <code/>
+          </para>
+          <para id="id37103688">
+            <code>// processing phase</code>
+          </para>
+          <para id="id39356500">
+            <code>cout &lt;&lt; "Enter grade, -1 to end: "; </code>
+          </para>
+          <para id="id22330754">
+            <code>cin &gt;&gt; grade; </code>
+          </para>
+          <para id="id40460398">
+            <code>while ( grade != -1 ) { </code>
+          </para>
+          <para id="id25652843">
+            <code>total = total + grade; </code>
+          </para>
+          <para id="id3424521">
+            <code>gradeCounter = gradeCounter + 1; </code>
+          </para>
+          <para id="id40509624">
+            <code>cout &lt;&lt; "Enter grade, -1 to end: "; </code>
+          </para>
+          <para id="id20224881">
+            <code>cin &gt;&gt; grade; </code>
+          </para>
+          <para id="id38445760">
+            <code>}</code>
+          </para>
+          <para id="id38760734">
+            <code>// termination phase</code>
+          </para>
+          <para id="id36046509">
+            <code>if ( gradeCounter != 0 ) { </code>
+          </para>
+          <para id="id4135798">
+            <code>average = double ( total ) / gradeCounter; </code>
+          </para>
+          <para id="id24506785">
+            <code>cout &lt;&lt; "Class average is " &lt;&lt; setprecision( 2 )</code>
+          </para>
+          <para id="id4022307">
+            <code>&lt;&lt; setiosflags( ios::fixed | ios::showpoint )</code>
+          </para>
+          <para id="id38827688">
+            <code>&lt;&lt; average &lt;&lt; endl;</code>
+          </para>
+          <para id="id40086574">
+            <code>}</code>
+          </para>
+          <para id="id41392340">
+            <code>else</code>
+          </para>
+          <para id="id40254301">
+            <code>cout &lt;&lt; "No grades were entered" &lt;&lt; endl;</code>
+          </para>
+          <para id="id41043357">
+            <code>return 0;</code>
+          </para>
+          <para id="id37464052">
+            <code>}</code>
+          </para>
+      </section>
+    </section>
+    <section id="id-836464452213">
+      <title>Arrays</title>
+      <para id="id38372543">An <emphasis>array</emphasis> is an advanced data type that contains a set of data represented by a single variable name.</para>
+      <para id="id23601078">An element is an individual piece of data contained in an array.</para>
+      <section id="id-00962312496266">
+        <title>Array Declaration</title>
+        <para id="id37544202">The syntax for declaring an array is</para>
+        <para id="id38477608">
+          <code>type name[elements];</code>
+        </para>
+        <para id="id39082216">Array names follow the same naming conventions as variable names and other identifiers.</para>
+        <para id="id35356487">Example:</para>
+        <para id="id36989939">
+          <code>int MyArray[4];</code>
+        </para>
+        <para id="id38937666">
+          <code>char StudentGrade[5];</code>
+        </para>
+        <para id="id4345924">The declaration int MyArray[3]; tells the compiler to reserve 4 elements for integer array MyArray.</para>
+        <para id="id39673076">
+          <emphasis>The numbering of elements within an array starts with an index number of 0. An index number is an element’s numeric position within an array. It is also called a subsript.</emphasis>
+        </para>
+        <para id="id39326274">Each individual element is referred to as an indexed variable or a subscripted variable because both a variable name and an index or subscrip value must be used to reference the element.</para>
+        <para id="id38845268">Example:</para>
+        <para id="id36235466">StudentGrade[0] refers to the first element in the StudentGrade array.</para>
+        <para id="id21017806">StudentGrade[1] refers to the second element in the StudentGrade array.</para>
+        <para id="id39290586">StudentGrade[2] refers to the third element in the StudentGrade array.</para>
+        <para id="id38316701">StudentGrade[3] refers to the fourth element in the StudentGrade array.</para>
+        <para id="id38156583">StudentGrade[4] refers to the fifth element in the StudentGrade array.</para>
+        <para id="id40365289">Subscripted variables can be used anywhere scalar variables are valid. Examples using the elements of the MyArray array are:</para>
+        <para id="id34666925">
+          <code>MyArray[0] = 17;</code>
+        </para>
+        <para id="id39837926">
+          <code>MyArray[1] = MyArray[0] – 11;</code>
+        </para>
+        <para id="id35727698">
+          <code>MyArray[2] = 5*MyArray[0];</code>
+        </para>
+        <para id="id21308496">
+          <code>MyArray[3] = (MyArray[1] + MyArray[2] –3)/2;</code>
+        </para>
+        <para id="id38469544">
+          <code>Sum = MyArray[0] +MyArray[1] +MyArray[2] + MyArray[3]; </code>
+        </para>
+      </section>
+    </section>
+    <section id="id-228796493347">
+      <title>Example</title>
+      <para id="id40104155">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id38881907">
+        <code>int main(){</code>
+      </para>
+      <para id="id39080321">
+        <code>char StudentGrade[5]= {‘A’, ‘B’, ‘C’, ‘D’, ‘F’};</code>
+      </para>
+      <para id="id40456818">
+        <code>for ( int i = 0; i &lt; 5; i++)</code>
+      </para>
+      <para id="id38856386">
+        <code>cout &lt;&lt; StudentGrade[i] &lt;&lt; endl;</code>
+      </para>
+      <para id="id39841562">
+        <code>return 0;</code>
+      </para>
+      <para id="id38758863">
+        <code>}</code>
+      </para>
+      <para id="id17149808">The <emphasis>output</emphasis> is:</para>
+      <para id="id35727686">A</para>
+      <para id="id38318368">B</para>
+      <para id="id39188889">C</para>
+      <para id="id39188893">D</para>
+      <para id="id20984720">F</para>
+    </section>
+    <section id="id-79000334591">
+      <title>Example </title>
+      <para id="id39839833">
+        <code>// Compute the sum of the elements of the array</code>
+      </para>
+      <para id="id41659282">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id40074414">
+        <code/>
+      </para>
+      <para id="id41161774">
+        <code>int main()</code>
+      </para>
+      <para id="id39302912">
+        <code>{</code>
+      </para>
+      <para id="id36796271">
+        <code>const int arraySize = 12;</code>
+      </para>
+      <para id="id23598710">
+        <code>int a[ arraySize ] = { 1, 3, 5, 4, 7, 2, 99, 16, 45, 67, 89, 45 };</code>
+      </para>
+      <para id="id38916370">
+        <code>int total = 0;</code>
+      </para>
+      <para id="id24356296">
+        <code/>
+      </para>
+      <para id="id39453555">
+        <code>for ( int i = 0; i &lt; arraySize; i++ )</code>
+      </para>
+      <para id="id38761503">
+        <code>total += a[ i ];</code>
+      </para>
+      <para id="id39082735">
+        <code/>
+      </para>
+      <para id="id38476760">
+        <code>cout &lt;&lt; "Total of array element values is " &lt;&lt; total &lt;&lt; endl;</code>
+      </para>
+      <para id="id41156770">
+        <code>return 0 ;</code>
+      </para>
+      <para id="id38318563">
+        <code>}</code>
+      </para>
+      <para id="id25746887">The <emphasis>output</emphasis> of the above program is as follows :</para>
+      <para id="id37265137">Total of array element values is 383</para>
+      <section id="id-0324137276676">
+        <title>Multi-Dimensional Arrays</title>
+        <para id="id35694817">The C++ language allows arrays of any type, including arrays of arrays. With two bracket pairs we obtain a two-dimensional array. The idea can be iterated to obtain arrays of higher dimension. With each bracket pair we add another array dimension.</para>
+        <para id="id38671540">Some examples of array declarations</para>
+        <para id="id22893369">
+          <code>int a[1000]; // a one-dimensional array</code>
+        </para>
+        <para id="id38343508">
+          <code>int b[3][5]; // a two-dimensional array</code>
+        </para>
+        <para id="id24666355">
+          <code>int c[7][9][2]; // a three-dimensional array</code>
+        </para>
+        <para id="id40288647">In these above example, b has 3 X 5 elements, and c has 7 X 9 X 2 elements. Starting at the base address of the array, all the array elements are stored contiguously in memory. </para>
+        <para id="id32654267">For the array b, we can think of the array elements arranged as follows:</para>
+        <figure id="id41378172"><media id="id6803264" alt=""><image src="../../media/graphics5-629a.png" mime-type="image/png" height="116" width="523"/></media>
+        <caption> Multi-dimensional array</caption></figure>
+      </section>
+    </section>
+    <section id="id-581227744788">
+      <title>Example</title>
+      <para id="id22146827">This program checks if a matrix is symmetric or not.</para>
+      <para id="id36814686">
+        <code>#include&lt;iostream.h&gt;</code>
+      </para>
+      <para id="id37477781">
+        <code>const int N = 3;</code>
+      </para>
+      <para id="id40072815">
+        <code>int main()</code>
+      </para>
+      <para id="id4384535">
+        <code>{</code>
+      </para>
+      <para id="id39338506">
+        <code>int i, j;</code>
+      </para>
+      <para id="id3462753">
+        <code>int a[N][N];</code>
+      </para>
+      <para id="id23810803">
+        <code>bool symmetr = true;</code>
+      </para>
+      <para id="id39324142">
+        <code>for(i= 0; i&lt;N; i++)</code>
+      </para>
+      <para id="id41167775">
+        <code>for (j = 0; j &lt; N; j++)</code>
+      </para>
+      <para id="id38994035">
+        <code>cin &gt;&gt; a[i][j];</code>
+      </para>
+      <para id="id41649309">
+        <code>for(i= 0; i&lt;N; i++)</code>
+      </para>
+      <para id="id39710459">
+        <code>for (j = 0; j &lt; N; j++)</code>
+      </para>
+      <para id="id22885369">
+        <code>cout &lt;&lt; a[i][j]&lt;&lt; endl;</code>
+      </para>
+      <para id="id1216185">
+        <code>for(i= 0; i&lt;N; i++){</code>
+      </para>
+      <para id="id40058142">
+        <code>for (j = 0; j &lt; N; j++)</code>
+      </para>
+      <para id="id35447202">
+        <code> if(a[i][j] != a[j][i]){</code>
+      </para>
+      <para id="id3774598">
+        <code> symmetr = false;</code>
+      </para>
+      <para id="id39881470">
+        <code> break;</code>
+      </para>
+      <para id="id36377854">
+        <code> }</code>
+      </para>
+      <para id="id39338665">
+        <code>if(!symmetr)</code>
+      </para>
+      <para id="id22195246">
+        <code> break;</code>
+      </para>
+      <para id="id22153848">
+        <code>}</code>
+      </para>
+      <para id="id8490268">
+        <code>if(symmetr)</code>
+      </para>
+      <para id="id1321555">
+        <code>cout&lt;&lt;"\nThe matrix is symmetric"&lt;&lt; endl;</code>
+      </para>
+      <para id="id40369752">
+        <code>else</code>
+      </para>
+      <para id="id37407428">
+        <code> cout&lt;&lt;"\nThe matrix is not symmetric"&lt;&lt; endl;</code>
+      </para>
+      <para id="id38491725">
+        <code>return 0; </code>
+      </para>
+      <para id="id35504370">
+        <code>}</code>
+      </para>
+      <section id="id-862039434828">
+        <title>Strings and String Built-in Functions</title>
+        <para id="id38790890">In C++ we often use character arrays to represent strings. A string is an array of characters ending in a null character (‘\0’). A string may be assigned in a declaration to a character array. The declaration</para>
+        <para id="id38800897">
+          <code>char strg[] = “C++”;</code>
+        </para>
+        <para id="id38143661">initializes a variable to the string “C++”. The declaration creates a 4-element array strg containing the characters ‘C’, ‘+’, ‘+’ and ‘\0’. The null character (\0) marks the end of the text string. The declaration determines the size of the array automatically based on the number of initializers provided in the initializer list.</para>
+        <para id="id38508903">C++ does not provide built-in operations for strings. In C++, you must use a string built-in functions to manipulate char variables. Some commonly used string functions are listed below.</para>
+        <figure id="id39327330"><media id="id1171349996751" alt=""><image src="../../media/graphics6-57d7.png" mime-type="image/png" height="156" width="549"/></media>
+        <caption> String functions</caption></figure>
+        <para id="id41160040">The strcpy() function copies a literal string or the contents of a char variable into another char variable using the syntax:</para>
+        <para id="id34588682">
+          <code>strcpy(destination, source);</code>
+        </para>
+        <para id="id38826724">where destination represents the char variable to which you want to assign a new value to and the source variable represents a literal string or the char variable contains the string you want to assign to the destination.</para>
+        <para id="id39119897">The strcat() function combines two strings using the syntax:</para>
+        <para id="id38912438">
+          <code>strcat(destination, source);</code>
+        </para>
+        <para id="id41168065">where destination represents the char variable whose string you want to combine with another string. When you execute strcat(), the string represented by the source argument is appended to the string contained in the destination variable.</para>
+        <para id="id37392746">Example:</para>
+        <para id="id39913152">
+          <code>char FirstName[25];</code>
+        </para>
+        <para id="id41003310">
+          <code>char LastName[25];</code>
+        </para>
+        <para id="id41343930">
+          <code>char FullName[50];</code>
+        </para>
+        <para id="id42137478">
+          <code>strcpy(FirstName, “Mike”);</code>
+        </para>
+        <para id="id37879072">
+          <code>strcpy(LastName, “Thomson”);</code>
+        </para>
+        <para id="id3480501">
+          <code>strcpy(FullName, FirstName);</code>
+        </para>
+        <para id="id41485584">
+          <code>strcat(FullName, “ “);</code>
+        </para>
+        <para id="id38918354">
+          <code>strcat(FullName, LastName);</code>
+        </para>
+        <para id="id41156418">
+          <code/>
+        </para>
+        <para id="id41145207">Two strings may be compared for equality using the strcmp() function. When two strings are compared, their individual characters are compared a pair at a time. If no differences are found, the strings are equal; if a difference is found, the string with the first lower character is considered the smaller string. </para>
+        <para id="id40314597">The functions listed in Figure 2 are contained in the string.h header file. To use the functions, you must add the statement #include&lt;string.h&gt; to your program.</para>
+      </section>
+      <section id="id-25698948133">
+        <title>Example</title>
+        <para id="id21580613">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id33378214">
+          <code>#include&lt;string.h&gt;</code>
+        </para>
+        <para id="id38931549">
+          <code>int main()</code>
+        </para>
+        <para id="id37000209">
+          <code>{</code>
+        </para>
+        <para id="id37878056">
+          <code>char FirstName[25];</code>
+        </para>
+        <para id="id24729850">
+          <code>char LastName[25];</code>
+        </para>
+        <para id="id40102541">
+          <code>char FullName[50];</code>
+        </para>
+        <para id="id39082557">
+          <code>strcpy(FirstName, "Mike");</code>
+        </para>
+        <para id="id38885902">
+          <code>strcpy(LastName, "Thomson");</code>
+        </para>
+        <para id="id39011699">
+          <code>strcpy(FullName, FirstName);</code>
+        </para>
+        <para id="id39729336">
+          <code>strcat(FullName, " ");</code>
+        </para>
+        <para id="id35350662">
+          <code>strcat(FullName, LastName);</code>
+        </para>
+        <para id="id37471920">
+          <code>cout &lt;&lt; FullName &lt;&lt; endl;</code>
+        </para>
+        <para id="id38915865">
+          <code>int n;</code>
+        </para>
+        <para id="id41132556">
+          <code>n = strcmp(FirstName, LastName);</code>
+        </para>
+        <para id="id34486728">
+          <code>if(n&lt;0)</code>
+        </para>
+        <para id="id37407412">
+          <code>cout&lt;&lt; FirstName &lt;&lt; " is less than "&lt;&lt; LastName&lt;&lt;endl;</code>
+        </para>
+        <para id="id37997440">
+          <code>else if(n ==0)</code>
+        </para>
+        <para id="id41488466">
+          <code>cout&lt;&lt; FirstName &lt;&lt; " is equal to "&lt;&lt; LastName&lt;&lt;endl;</code>
+        </para>
+        <para id="id38627840">
+          <code>else</code>
+        </para>
+        <para id="id41027810">
+          <code>cout&lt;&lt; FirstName &lt;&lt; " is greater than "&lt;&lt; LastName&lt;&lt;endl;</code>
+        </para>
+        <para id="id41166223">
+          <code>return 0;</code>
+        </para>
+        <para id="id38530969">
+          <code>}</code>
+        </para>
+        <para id="id39326272">The <emphasis>output</emphasis> of the program:</para>
+        <para id="id34375537">Mike Thomson</para>
+        <para id="id37396942">Mike is less than Thomson</para>
+        <para id="id37318291">
+          <emphasis>How to input a string</emphasis>
+        </para>
+        <para id="id37465521">Inputting a string from a keyboard requires the string I/O library function cin.geline(). The cin.getline() function has the syntax:</para>
+        <para id="id39326935">
+          <code>cin.getline(str, terminatingLength, terminatingChar)</code>
+        </para>
+        <para id="id39080664">where str is a string or character pointer variable, terminatingLength is an integer constant or variable indicating the maximum number of input characters that can be input, and terminatingChar is an optional character constant or variable specifying the terminating character. If this optional third argument is omitted, the default terminating character is the newline (‘\n’) character.</para>
+        <para id="id39303002">The function call stops reading characters when the terminatingChar key is pressed or until terminatingLength characters have been read, whichever comes first.</para>
+        <para id="id39283714">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id36836430">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id16768995">
+          <code>int main()</code>
+        </para>
+        <para id="id41450905">
+          <code>{</code>
+        </para>
+        <para id="id37440232">
+          <code>char Text[40];</code>
+        </para>
+        <para id="id40526999">
+          <code>cin.getline(Text, 40, ‘\n’);</code>
+        </para>
+        <para id="id1321602">
+          <code>cout &lt;&lt; Text &lt;&lt; endl;</code>
+        </para>
+        <para id="id40086682">
+          <code>return 0;</code>
+        </para>
+        <para id="id40144930">
+          <code>}</code>
+        </para>
+        <para id="id39896672">The cin.getline() function continously accepts and stores characters typed at the keyboard into the character array named Text until either 39 characters are entered (the 40th character is then used to store the end-of-string marker, \0), or the ENTER key is detected.</para>
+      </section>
+    </section>
+    <section id="id-625011376078">
+      <title>Structures</title>
+      <para id="id41531916">A <emphasis>structure</emphasis>, or <emphasis>struct</emphasis>, is an advanced, user-defined data type that uses a single variable name to store multiple pieces of related information.</para>
+      <para id="id1358557">The individual pieces of information stored in a structure are referred to as <emphasis>elements</emphasis>, field, or members.</para>
+      <para id="id36835667">You define a structure using the syntax:</para>
+      <para id="id39078816">
+        <code>struct struct_name{</code>
+      </para>
+      <para id="id39338557">
+        <code>data_type field_name;</code>
+      </para>
+      <para id="id41659816">
+        <code>data_type field_name;</code>
+      </para>
+      <para id="id34587216">
+        <code>……..</code>
+      </para>
+      <para id="id40353858">
+        <code>} variable_name;</code>
+      </para>
+      <para id="id39843224">For example, the statement</para>
+      <para id="id39525561">
+        <code>struct emloyee{</code>
+      </para>
+      <para id="id39327148">
+        <code> char idnum[5];</code>
+      </para>
+      <para id="id38316010">
+        <code> char name[40];</code>
+      </para>
+      <para id="id4438524">
+        <code> long salary;</code>
+      </para>
+      <para id="id38177126">
+        <code>};</code>
+      </para>
+      <para id="id21477497">declares the form of a structure named employee and reserves storage for the individual data items listed in the structure. The employee structure consists of three data items or fields.</para>
+      <para id="id40212353">And the statement </para>
+      <para id="id35727270">
+        <code>struct emloyee{</code>
+      </para>
+      <para id="id37468418">
+        <code> char idnum[5];</code>
+      </para>
+      <para id="id40998088">
+        <code> char name[40];</code>
+      </para>
+      <para id="id37436865">
+        <code> long salary;</code>
+      </para>
+      <para id="id38514962">
+        <code>} Emp;</code>
+      </para>
+      <para id="id38539562">declares that Emp is a structure variable which has the form of the structure employee.</para>
+      <para id="id38633088">To access the field inside a structure variable, you append a period to the variable name, followed by the field name using the syntax:</para>
+      <para id="id38511944">
+        <code>variable.field;</code>
+      </para>
+      <para id="id23481934">When you use a period to access a structure fields, the period is referred to as the <emphasis>member selection operator</emphasis>.</para>
+    </section>
+    <section id="id-6517206772">
+      <title>Example</title>
+      <para id="id20647022">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id25705210">
+        <code>struct Date // this is a global declaration</code>
+      </para>
+      <para id="id4154824">
+        <code>{</code>
+      </para>
+      <para id="id41344818">
+        <code>int month;</code>
+      </para>
+      <para id="id22206376">
+        <code>int day;</code>
+      </para>
+      <para id="id34926015">
+        <code>int year;</code>
+      </para>
+      <para id="id37464602">
+        <code>};</code>
+      </para>
+      <para id="id37573186">
+        <code>int main()</code>
+      </para>
+      <para id="id38443202">
+        <code>{</code>
+      </para>
+      <para id="id40262934">
+        <code>Date birth;</code>
+      </para>
+      <para id="id38843736">
+        <code>birth.month = 12;</code>
+      </para>
+      <para id="id36836826">
+        <code>birth.day = 28;</code>
+      </para>
+      <para id="id39010930">
+        <code>birth.year = 1986;</code>
+      </para>
+      <para id="id36950926">
+        <code>cout &lt;&lt; "\nMy birth date is "</code>
+      </para>
+      <para id="id38506750">
+        <code>&lt;&lt; birth.month &lt;&lt; '/'</code>
+      </para>
+      <para id="id22300548">
+        <code>&lt;&lt; birth.day &lt;&lt; '/'</code>
+      </para>
+      <para id="id42161942">
+        <code>&lt;&lt; birth.year % 100 &lt;&lt; endl;</code>
+      </para>
+      <para id="id40992991">
+        <code>return 0;</code>
+      </para>
+      <para id="id38986656">
+        <code>}</code>
+      </para>
+      <para id="id38635537">The <emphasis>ouput</emphasis> of the above program is:</para>
+      <para id="id37575277">My birth date is 12/28/86</para>
+      <section id="id-877403337322">
+        <title>Arrays of Structures</title>
+        <para id="id41650319">The real power of structures is realized when the same structure is used for lists of data. Declaring an array of structures is the same as declaring an array of any other variable type.</para>
+        <para id="id37464708">
+          <emphasis>Example </emphasis>
+        </para>
+        <para id="id19368978">The following program uses array of employee records. Each of employee record is a structure named PayRecord. The program displays the first five employee records.</para>
+        <para id="id39079244">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id38445429">
+          <code>#include &lt;iomanip.h&gt;</code>
+        </para>
+        <para id="id23236400">
+          <code>const int MAXNAME = 20; </code>
+        </para>
+        <para id="id36221520">
+          <code>// maximum characters in a name</code>
+        </para>
+        <para id="id23121239">
+          <code>struct PayRecord // this is a global declaration</code>
+        </para>
+        <para id="id4289857">
+          <code>{</code>
+        </para>
+        <para id="id39730964">
+          <code>long id;</code>
+        </para>
+        <para id="id38507346">
+          <code>char name[MAXNAME];</code>
+        </para>
+        <para id="id39330225">
+          <code>float rate;</code>
+        </para>
+        <para id="id38665040">
+          <code>};</code>
+        </para>
+        <para id="id38319775">
+          <code/>
+        </para>
+        <para id="id41487530">
+          <code>int main()</code>
+        </para>
+        <para id="id38631516">
+          <code>{</code>
+        </para>
+        <para id="id35432910">
+          <code>const int NUMRECS = 5; </code>
+        </para>
+        <para id="id38994166">
+          <code>// maximum number of records</code>
+        </para>
+        <para id="id38472342">
+          <code>int i;</code>
+        </para>
+        <para id="id34727313">
+          <code>PayRecord employee[NUMRECS] = {</code>
+        </para>
+        <para id="id34447827">
+          <code>{ 32479, "Abrams, B.", 6.72 },</code>
+        </para>
+        <para id="id3677294">
+          <code>{ 33623, "Bohm, P.", 7.54},</code>
+        </para>
+        <para id="id22886332">
+          <code>{ 34145, "Donaldson, S.", 5.56},</code>
+        </para>
+        <para id="id41175736">
+          <code>{ 35987, "Ernst, T.", 5.43 },</code>
+        </para>
+        <para id="id39164978">
+          <code>{ 36203, "Gwodz, K.", 8.72 }</code>
+        </para>
+        <para id="id41341364">
+          <code>};</code>
+        </para>
+        <para id="id37364704">
+          <code/>
+        </para>
+        <para id="id21180745">
+          <code>cout &lt;&lt; endl; // start on a new line</code>
+        </para>
+        <para id="id36795413">
+          <code>cout &lt;&lt; setiosflags(ios::left); </code>
+        </para>
+        <para id="id35492105">
+          <code>// left justify the output</code>
+        </para>
+        <para id="id39838378">
+          <code>for ( i = 0; i &lt; NUMRECS; i++)</code>
+        </para>
+        <para id="id38380596">
+          <code>cout &lt;&lt; setw(7) &lt;&lt; employee[i].id</code>
+        </para>
+        <para id="id33795403">
+          <code> &lt;&lt; setw(15) &lt;&lt; employee[i].name</code>
+        </para>
+        <para id="id39372469">
+          <code> &lt;&lt; setw(6) &lt;&lt; employee[i].rate &lt;&lt; endl;</code>
+        </para>
+        <para id="id39080812">
+          <code>return 0;</code>
+        </para>
+        <para id="id36953160">
+          <code>}</code>
+        </para>
+        <para id="id39315028">The <emphasis>output</emphasis> of the program is:</para>
+        <figure id="id24444038"><media id="id6027556" alt=""><image src="../../media/graphics7-723c.png" mime-type="image/png" height="120" width="317"/></media>
+        <caption> Output of program</caption></figure>
+      </section>
+    </section>
+  </content>
+</document>

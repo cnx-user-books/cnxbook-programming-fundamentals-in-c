@@ -1,0 +1,1542 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Object Manipulation - Inheritance</title>
+  <metadata>
+  <md:content-id>m27280</md:content-id><md:title>Object Manipulation - Inheritance</md:title>
+  <md:abstract>In the previous chapter, the declaration, initialization, and display of objects were presented. In this chapter, we continue our construction of classes by discussing how to write advanced constructors and destructors.
+Besides, this chapter also discusses one of C++ most powerful features, inheritance. Inheritance permits the reuse and extension of existing code in a way that ensures the new code does not adversely affect what has already been written.</md:abstract>
+  <md:uuid>17d105fc-7f0d-4c85-a234-6fa63755893e</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-534076247291">
+      <title>Advanced Constructors</title>
+      <para id="id559193">In the last chapter, we already notice that constructors can provide a mechanism for initializing data members. However, constructors can do more than initializing data members. They can execute member functions and perform other type of initialization routines that a class may require when it first starts.</para>
+      <section id="id-610926724714">
+        <title>Parameterized Constructors</title>
+        <para id="id266409">Although constructor functions do not return values, they can accept <emphasis>parameters</emphasis> that a client can use to pass initialization values to the class.</para>
+        <para id="id23091997">Example: We can have a constructor function definition in the implementation file as follows:</para>
+        <para id="id39734065">
+          <code>Payroll::Payroll(double dFed, double dState){</code>
+        </para>
+        <para id="id1997969">
+          <code>dFedTax = dFed;</code>
+        </para>
+        <para id="id39327652">
+          <code>dStateTax = dState;</code>
+        </para>
+        <para id="id38318894">
+          <code>};</code>
+        </para>
+        <para id="id39739239">Once you create a parameterized constructor, you have to supply parameters when you instantiate a new object.</para>
+        <para id="id3385471">
+          <emphasis>Example:</emphasis>
+        </para>
+        <para id="id41145179">//Payroll.h</para>
+        <para id="id41602436">
+          <code>class Payroll{</code>
+        </para>
+        <para id="id4310158">
+          <code>public:</code>
+        </para>
+        <para id="id41302940">
+          <code>Payroll(double, double);</code>
+        </para>
+        <para id="id40103809">
+          <code>private:</code>
+        </para>
+        <para id="id37502021">
+          <code>double dFedTax;</code>
+        </para>
+        <para id="id38672095">
+          <code>double dStateTax;</code>
+        </para>
+        <para id="id41163144">
+          <code>}</code>
+        </para>
+        <para id="id39580247">//Payroll.cpp</para>
+        <para id="id38477919">
+          <code>#include “Payroll.h</code>
+        </para>
+        <para id="id1321065">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id40272840">
+          <code>Payroll::Payroll(double dFred, double dState){</code>
+        </para>
+        <para id="id4316841">
+          <code>dFedTax = dFed;</code>
+        </para>
+        <para id="id38476014">
+          <code>dStateTax = dState;</code>
+        </para>
+        <para id="id33323386">
+          <code>};</code>
+        </para>
+        <para id="id21597105">
+          <code>int main( ){</code>
+        </para>
+        <para id="id1057840">
+          <code>Payroll employee; //illegal</code>
+        </para>
+        <para id="id279431">
+          <code>……</code>
+        </para>
+        <para id="id3046417">
+          <code>return 0;</code>
+        </para>
+        <para id="id34718862">
+          <code>}</code>
+        </para>
+        <para id="id24388519">
+          <emphasis>Example </emphasis>
+        </para>
+        <para id="id38705036">The program in this example finds the distance between two points using the pointer to class objects technique.</para>
+        <para id="id38761446">
+          <code>//points</code>
+        </para>
+        <para id="id41174934">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id40293345">
+          <code>#include&lt;math.h&gt;</code>
+        </para>
+        <para id="id38742013">
+          <code>class point {</code>
+        </para>
+        <para id="id41175424">
+          <code>private:</code>
+        </para>
+        <para id="id39187709">
+          <code>int x,y;</code>
+        </para>
+        <para id="id41534371">
+          <code>public:</code>
+        </para>
+        <para id="id1749978">
+          <code>point( int xnew, int ynew);</code>
+        </para>
+        <para id="id22124729">
+          <code>inline int getx(){</code>
+        </para>
+        <para id="id41392534">
+          <code>return(x);</code>
+        </para>
+        <para id="id1432220">
+          <code>}</code>
+        </para>
+        <para id="id39534203">
+          <code>inline int gety(){</code>
+        </para>
+        <para id="id39326985">
+          <code>return(y);</code>
+        </para>
+        <para id="id40225580">
+          <code>}</code>
+        </para>
+        <para id="id39521515">
+          <code>double finddist(point a, point b);</code>
+        </para>
+        <para id="id37996465">
+          <code>};</code>
+        </para>
+        <para id="id39180289">
+          <code/>
+        </para>
+        <para id="id38771607">
+          <code>point::point(int xnew, ynew) //parameterized constructor</code>
+        </para>
+        <para id="id39356027">
+          <code>{</code>
+        </para>
+        <para id="id1321462">
+          <code>x = xnew;</code>
+        </para>
+        <para id="id6031264">
+          <code>y = ynew;</code>
+        </para>
+        <para id="id39446181">
+          <code>}</code>
+        </para>
+        <para id="id40841464">
+          <code>double point::finddist(point a, point b)</code>
+        </para>
+        <para id="id855436">
+          <code>{</code>
+        </para>
+        <para id="id36755600">
+          <code>double temp;</code>
+        </para>
+        <para id="id38033736">
+          <code>temp = ((b.y – a.y)*(b.y – a.y) + (b.x – a.x)*(b.x – a.x));</code>
+        </para>
+        <para id="id23516552">
+          <code>return(sqrt(temp)):</code>
+        </para>
+        <para id="id36656822">
+          <code>}</code>
+        </para>
+        <para id="id39498405">
+          <code>int main()</code>
+        </para>
+        <para id="id39730818">
+          <code>{</code>
+        </para>
+        <para id="id38741348">
+          <code>double value;</code>
+        </para>
+        <para id="id40527106">
+          <code>point aobj(4,3), bobj(0, -1);</code>
+        </para>
+        <para id="id38761941">
+          <code/>
+        </para>
+        <para id="id38512811">
+          <code>value = aobj.finddist(aobj, bobj);</code>
+        </para>
+        <para id="id42150604">
+          <code>cout &lt;&lt; “Distance between two points = “&lt;&lt; value &lt;&lt; endl;</code>
+        </para>
+        <para id="id856253">
+          <code>return 0;</code>
+        </para>
+        <para id="id247780">
+          <code>}</code>
+        </para>
+        <para id="id38083941">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id40293180">Distance between two points = 5.656855</para>
+        <para id="id37756537">Constructor functions can be <emphasis>overloaded</emphasis>, just like other functions. This means that you can instantiate different versions of a class, depending on the supplied parameters</para>
+        <para id="id38115998">Being able to overload a constructor function allows you to instantiate an object in multiple ways.</para>
+        <para id="id38116003">
+          <emphasis>Example:</emphasis>
+        </para>
+        <para id="id41131309">//Payroll.h</para>
+        <para id="id41131313">
+          <code>class Payroll{</code>
+        </para>
+        <para id="id37164780">
+          <code>public:</code>
+        </para>
+        <para id="id39530878">
+          <code>Payroll();</code>
+        </para>
+        <para id="id37878992">
+          <code>Payroll(double dFed);</code>
+        </para>
+        <para id="id2025902">
+          <code>Payroll(double dFed, double dState);</code>
+        </para>
+        <para id="id41019281">
+          <code>private:</code>
+        </para>
+        <para id="id38423467">
+          <code>double dFedTax;</code>
+        </para>
+        <para id="id40988449">
+          <code>double dStateTax;</code>
+        </para>
+        <para id="id39326993">
+          <code>}</code>
+        </para>
+        <para id="id37109671">//Payroll.cpp</para>
+        <para id="id40400866">
+          <code>#include “Payroll.h</code>
+        </para>
+        <para id="id38993939">
+          <code>#include &lt;iostream.h&gt;</code>
+        </para>
+        <para id="id37440292">
+          <code>Payroll::Payroll(){</code>
+        </para>
+        <para id="id1320272">
+          <code>dFedTax = 0.28;</code>
+        </para>
+        <para id="id34587622">
+          <code>dStateTax = 0.05;</code>
+        </para>
+        <para id="id38764909">
+          <code>};</code>
+        </para>
+        <para id="id41027345">
+          <code>Payroll::Payroll(double dFed){</code>
+        </para>
+        <para id="id41338313">
+          <code>dFedTax = dFed;</code>
+        </para>
+        <para id="id41336140">
+          <code>};</code>
+        </para>
+        <para id="id39747997">
+          <code/>
+        </para>
+        <para id="id38761929">
+          <code>Payroll::Payroll(double dFred, double dState){</code>
+        </para>
+        <para id="id1479436">
+          <code>dFedTax = dFed;</code>
+        </para>
+        <para id="id36835687">
+          <code>dStateTax = dState;</code>
+        </para>
+        <para id="id38109876">
+          <code>};</code>
+        </para>
+        <para id="id41359740">
+          <code>int main( ){</code>
+        </para>
+        <para id="id43201201">
+          <code>Payroll employeeFL(0.28);</code>
+        </para>
+        <para id="id856222">
+          <code>Payroll employeeMA(0.28, 0.0595);</code>
+        </para>
+        <para id="id40582842">
+          <code>return 0;</code>
+        </para>
+        <para id="id19901562">
+          <code>}</code>
+        </para>
+        <para id="id38631634">In the above example, the Payroll class has two parameterized constructor functions: one for states that have a state income tax and one for states that do not have a state income tax.</para>
+      </section>
+      <section id="id-611122144396">
+        <title>Initialization Lists</title>
+        <para id="id45730647"><emphasis>Initialization lists</emphasis>, or member initialization lists, are another way of assigning initial values to a class’s data members.</para>
+        <para id="id41238520">An initialization list is placed after a function header’s closing parenthesis, but before the function’s opening curly braces.</para>
+        <para id="id41238524">Example: Given the simple constructor that assigns parameter values to the Payroll class.</para>
+        <para id="id306704">
+          <code>Payroll::Payroll(double dFed, double dState){</code>
+        </para>
+        <para id="id38915744">
+          <code>dFedTax = dFed;</code>
+        </para>
+        <para id="id39250805">
+          <code>dStateTax = dState;</code>
+        </para>
+        <para id="id37440288">
+          <code>};</code>
+        </para>
+        <para id="id42172047">You can use initialization list to rewrite the above constructor function.</para>
+        <para id="id39387044">
+          <code>Payroll::Payroll(double dFed, double dState)</code>
+        </para>
+        <para id="id514499">
+          <code>:dFedTax(dFed), dStateTax(dState){</code>
+        </para>
+        <para id="id38297261">
+          <code>};</code>
+        </para>
+      </section>
+      <section id="id-73899817146">
+        <title>Parameterized Constructors that Uses Default Arguments</title>
+        <para id="id35511709">To create a parameterized constructor that uses default arguments, we can put the default values at the constructor prototype.</para>
+        <para id="id36978011">In the following example, the class Employee has a constructor with the prototype:</para>
+        <para id="id41041489">
+          <code>Employee(const int id = 999, const double hourly = 5.65);</code>
+        </para>
+        <para id="id866237">This format provides the constructor function with default values for two arguments. When we create an Employee object, the default values in the constructor function prototype are assigned to the class variables.</para>
+        <para id="id41013719">
+          <emphasis>Example </emphasis>
+        </para>
+        <para id="id38632953">
+          <emphasis/>
+        </para>
+        <para id="id36796515">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id38711070">
+          <code>class Employee{</code>
+        </para>
+        <para id="id37450510">
+          <code>private:</code>
+        </para>
+        <para id="id39365004">
+          <code>int idNum;</code>
+        </para>
+        <para id="id4253425">
+          <code>double hourlyRate;</code>
+        </para>
+        <para id="id1998989">
+          <code>public:</code>
+        </para>
+        <para id="id38540241">
+          <code>Employee(const int id = 9999, const double hourly = 5.65);</code>
+        </para>
+        <para id="id37385011">
+          <code>void setValues(const int id, const double hourly);</code>
+        </para>
+        <para id="id36261290">
+          <code>void displayValues();</code>
+        </para>
+        <para id="id41041463">
+          <code>};</code>
+        </para>
+        <para id="id21617561">
+          <code>Employee::Employee(const int id, const double hourly)</code>
+        </para>
+        <para id="id41340601">
+          <code>{</code>
+        </para>
+        <para id="id38915134">
+          <code>idNum = id;</code>
+        </para>
+        <para id="id39739210">
+          <code>hourlyRate = hourly;</code>
+        </para>
+        <para id="id23832107">
+          <code>}</code>
+        </para>
+        <para id="id40991085">
+          <code>void Employee::displayValues()</code>
+        </para>
+        <para id="id39732775">
+          <code>{</code>
+        </para>
+        <para id="id34589152">
+          <code>cout&lt;&lt;”Employee #&lt;&lt; idNum&lt;&lt;” rate $”&lt;&lt;</code>
+        </para>
+        <para id="id20930663">
+          <code>hourlyRate&lt;&lt; “ per hour “&lt;&lt;endl;</code>
+        </para>
+        <para id="id41336979">
+          <code>}</code>
+        </para>
+        <para id="id916249">
+          <code>void Employee::setValues(const int id, const double hourly)</code>
+        </para>
+        <para id="id38629009">
+          <code>{</code>
+        </para>
+        <para id="id36649785">
+          <code>idNum = id;</code>
+        </para>
+        <para id="id39876535">
+          <code>hourlyRate = hourly;</code>
+        </para>
+        <para id="id38826853">
+          <code>}</code>
+        </para>
+        <para id="id41660097">
+          <code>int main(){</code>
+        </para>
+        <para id="id306502">
+          <code>Employee assistant;</code>
+        </para>
+        <para id="id1556979">
+          <code>cout&lt;&lt; “Before setting values with setValues()”&lt;&lt; endl;</code>
+        </para>
+        <para id="id41141942">
+          <code>assistant.displayValues();</code>
+        </para>
+        <para id="id39245772">
+          <code>assistant.setValues(4321, 12.75);</code>
+        </para>
+        <para id="id45730789">
+          <code>cout&lt;&lt; “After setting values with setValues()”&lt;&lt; endl;</code>
+        </para>
+        <para id="id1182702">
+          <code>assistant.displayValues();</code>
+        </para>
+        <para id="id45719892">
+          <code>return 0;</code>
+        </para>
+        <para id="id38175568">
+          <code>}</code>
+        </para>
+        <para id="id38691958">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id41141968">Before setting values with setValues()</para>
+        <para id="id41141849">Employee #9999 rate $5.65 per hour</para>
+        <para id="id1059371">After setting values with setValues()</para>
+        <para id="id1059375">Employee #4321 rate $12.75 per hour</para>
+      </section>
+    </section>
+    <section id="id-706377440419">
+      <title>Destructors</title>
+      <para id="id34820020">A <emphasis>default destructor</emphasis> cleans up any resources allocated to an object once the object is destroyed. The default constructor is sufficient for most classes, except when you have allocated memory on the heap.</para>
+      <para id="id41448728">To delete any heap variables declared by your class, you must write your own destructor function.</para>
+      <para id="id41041450">You create a destructor function using the name of the class, the same as a constructor function, preceded by a tilde ~. Destructor functions cannot be overloaded. A destructor accepts no parameter and returns no value.</para>
+      <para id="id39653710">A destructor is called in two ways:</para>
+      <para id="id21132430">- when a stack object loses scope when the function in which it is declared ends.</para>
+      <para id="id37113491">- when a heap object is destroyed with the delete operator.</para>
+      <para id="id40133580">The destructor itself does not actually destroy the object – it performs termination house keeping before the system reclaims the object’s memory so that memory may be reused to hold new objects.</para>
+      <para id="id1358410">
+        <emphasis>Example</emphasis>
+      </para>
+      <para id="id41141906">//Stocks_02.h</para>
+      <para id="id19570896">
+        <code>class Stocks {</code>
+      </para>
+      <para id="id256735">
+        <code>public:</code>
+      </para>
+      <para id="id306551">
+        <code>Stocks(char* szName);</code>
+      </para>
+      <para id="id3269081">
+        <code>~Stocks(); //destructor</code>
+      </para>
+      <para id="id1275748">
+        <code>void setStockName(char* szName);</code>
+      </para>
+      <para id="id39476509">
+        <code>char* getStockName();</code>
+      </para>
+      <para id="id37256955">
+        <code>void setNumShares(int);</code>
+      </para>
+      <para id="id38711383">
+        <code>int getNumShares(int);</code>
+      </para>
+      <para id="id39341561">
+        <code>void setPricePerShare(double);</code>
+      </para>
+      <para id="id35501643">
+        <code>double getPricePerShar();</code>
+      </para>
+      <para id="id39057586">
+        <code>double calcTotalValue();</code>
+      </para>
+      <para id="id41531851">
+        <code>private:</code>
+      </para>
+      <para id="id22519078">
+        <code>char* szStockName;</code>
+      </para>
+      <para id="id39364657">
+        <code>int iNumShares;</code>
+      </para>
+      <para id="id22415544">
+        <code>double dCurrentValue;</code>
+      </para>
+      <para id="id39268803">
+        <code>double dPricePerShare;</code>
+      </para>
+      <para id="id41727253">
+        <code>};</code>
+      </para>
+      <para id="id40133540">//Stocks.cpp</para>
+      <para id="id543196">
+        <code>#include “stocks_02.h”</code>
+      </para>
+      <para id="id36836081">
+        <code>#include &lt;string.h&gt;</code>
+      </para>
+      <para id="id41344618">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id648187">
+        <code>Stocks::Stocks(char* szName){</code>
+      </para>
+      <para id="id514615">
+        <code>szStockName = new char[25];</code>
+      </para>
+      <para id="id255195">
+        <code>strcpy(szStockName, szName);</code>
+      </para>
+      <para id="id37944506">
+        <code>};</code>
+      </para>
+      <para id="id38937887">
+        <code>Stocks::~Stocks(){</code>
+      </para>
+      <para id="id39161394">
+        <code>delete[] szStockName;</code>
+      </para>
+      <para id="id1603186">
+        <code>cout &lt;&lt;”Destructor called” &lt;&lt; endl;</code>
+      </para>
+      <para id="id38915778">
+        <code>}</code>
+      </para>
+      <para id="id38520280">
+        <code>void Stocks::setNumShares(int iShares){</code>
+      </para>
+      <para id="id47156571">
+        <code>iNumShares = iShares;</code>
+      </para>
+      <para id="id38143199">
+        <code>}</code>
+      </para>
+      <para id="id39666123">
+        <code>int Stocks::getNumShares()const{</code>
+      </para>
+      <para id="id38672070">
+        <code>return iNumShares;</code>
+      </para>
+      <para id="id20704003">
+        <code>}</code>
+      </para>
+      <para id="id1845116">
+        <code>void Stocks::setPricePerShare(double dPrice){</code>
+      </para>
+      <para id="id38762459">
+        <code>dPricePerShare = dPrice;</code>
+      </para>
+      <para id="id35565706">
+        <code>}</code>
+      </para>
+      <para id="id1432871">
+        <code>int Stocks::getPricePerShare() const{</code>
+      </para>
+      <para id="id34586923">
+        <code>return dPricePerShare;</code>
+      </para>
+      <para id="id40382837">
+        <code>}</code>
+      </para>
+      <para id="id789604">
+        <code>void Stocks::setStockName(char* szName){</code>
+      </para>
+      <para id="id37580731">
+        <code>strcpy(szStockName, szName);</code>
+      </para>
+      <para id="id41162423">
+        <code>}</code>
+      </para>
+      <para id="id22330636">
+        <code>char* Stock::getStockName() const{</code>
+      </para>
+      <para id="id1059343">
+        <code>return szStockName;</code>
+      </para>
+      <para id="id2073695">
+        <code>}</code>
+      </para>
+      <para id="id835931">
+        <code>double Stocks::calcTotalValue(){</code>
+      </para>
+      <para id="id37164732">
+        <code>dCurrentValue = iNumShares*dPricePerShare;</code>
+      </para>
+      <para id="id41057949">
+        <code>return dCurrentValue;</code>
+      </para>
+      <para id="id41179151">
+        <code>}</code>
+      </para>
+      <para id="id39338425">
+        <code>int main(){</code>
+      </para>
+      <para id="id256225">
+        <code>Stocks stockPick1(“Cisco”);</code>
+      </para>
+      <para id="id40058343">
+        <code>stockPick1.setNumShares(100);</code>
+      </para>
+      <para id="id39727167">
+        <code>stockPick1.setPricePerShare(68.875);</code>
+      </para>
+      <para id="id34588404">
+        <code>Stocks* stockPick2 = new Stocks(“Lucent”); //heap object</code>
+      </para>
+      <para id="id1076038">
+        <code>stockPick2-&gt;setNumShares(200);</code>
+      </para>
+      <para id="id1357874">
+        <code>stockPick2-&gt;setPricePerShare(59.5);</code>
+      </para>
+      <para id="id38764724">
+        <code>cout &lt;&lt; “The current value of your stock in “</code>
+      </para>
+      <para id="id41378340">
+        <code> &lt;&lt; stockPick1.getStockName() &lt;&lt; “ is $”</code>
+      </para>
+      <para id="id38512640">
+        <code> &lt;&lt; stockPick1.calcTotalValue()</code>
+      </para>
+      <para id="id37260597">
+        <code> &lt;&lt; “.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id41359697">
+        <code>cout &lt;&lt; “The current value of your stock in “</code>
+      </para>
+      <para id="id35248021">
+        <code> &lt;&lt; stockPick2-&gt;getStockName() &lt;&lt; “ is $”</code>
+      </para>
+      <para id="id41651405">
+        <code> &lt;&lt; stockPick2-&gt;calcTotalValue()</code>
+      </para>
+      <para id="id40212028">
+        <code> &lt;&lt; “.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id1357850">
+        <code>return 0;</code>
+      </para>
+      <para id="id306535">
+        <code>}</code>
+      </para>
+      <para id="id39476496">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id39866846">The current value of your stock in Cisco is $6887.5</para>
+      <para id="id1677241">The current value of your stock in Lucent is $11900</para>
+      <para id="id41371719">Destructor called.</para>
+      <para id="id1219709">Notice that in the above program, the destructor function is called only once. The stockPick1 object calls the destructor when it is destroyed by the main() function going out of scope. The stockPick2 object does not call the destructor since it is declared on the heap and must be deleted manually.</para>
+      <para id="id38137585">To delete the stockPick2 object manually, add the statement delete stockPick2; to the main() function as in the following program:</para>
+      <para id="id1765271">
+        <code>int main(){</code>
+      </para>
+      <para id="id41371758">
+        <code>Stocks stockPick1(“Cisco”);</code>
+      </para>
+      <para id="id37747822">
+        <code>stockPick1.setNumShares(100);</code>
+      </para>
+      <para id="id39462214">
+        <code>stockPick1.setPricePerShare(68.875);</code>
+      </para>
+      <para id="id38300652">
+        <code>Stocks* stockPick2 = new Stocks(“Lucent”); //heap object</code>
+      </para>
+      <para id="id39987426">
+        <code>stockPick2-&gt;setNumShares(200);</code>
+      </para>
+      <para id="id855577">
+        <code>stockPick2-&gt;setPricePerShare(59.5);</code>
+      </para>
+      <para id="id38634497">
+        <code>cout &lt;&lt; “The current value of your stock in “</code>
+      </para>
+      <para id="id38038868">
+        <code> &lt;&lt; stockPick1.getStockName() &lt;&lt; “ is $”</code>
+      </para>
+      <para id="id39476521">
+        <code> &lt;&lt; stockPick1.calcTotalValue()</code>
+      </para>
+      <para id="id1270937">
+        <code> &lt;&lt; “.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id1175276">
+        <code>cout &lt;&lt; “The current value of your stock in “</code>
+      </para>
+      <para id="id41603915">
+        <code> &lt;&lt; stockPick2-&gt;getStockName() &lt;&lt; “ is $”</code>
+      </para>
+      <para id="id1994452">
+        <code> &lt;&lt; stockPick2-&gt;calcTotalValue()</code>
+      </para>
+      <para id="id556941">
+        <code> &lt;&lt; “.” &lt;&lt; endl;</code>
+      </para>
+      <para id="id41144050">
+        <code>delete stockPick2;</code>
+      </para>
+      <para id="id1219724">
+        <code>return 0;</code>
+      </para>
+      <para id="id38629723">
+        <code>}</code>
+      </para>
+      <para id="id36674044">The <emphasis>output</emphasis> of the above program:</para>
+      <para id="id1261332">The current value of your stock in Cisco is $6887.5</para>
+      <para id="id37679652">The current value of your stock in Lucent is $11900</para>
+      <para id="id39462202">Destructor called.</para>
+      <para id="id37527606">Destructor called.</para>
+    </section>
+    <section id="id-274872712872">
+      <title>Constant Objects</title>
+      <para id="id39987408">If you have any type of variable in a program that does not change, you should always use the <emphasis>const</emphasis> keyword to declare the variable as a constant.</para>
+      <para id="id40841515">To declare an object as constant, place the const keyword in front of the object declaration.</para>
+      <para id="id1782480">Example:</para>
+      <para id="id39461992">
+        <code>const Date currentDate;</code>
+      </para>
+      <para id="id37012334">Note: Constant data members in a class can not be assigned values using a standard assignment statement. Therefore, you must use an initialization list to assign initial values to constant data members.</para>
+      <para id="id34708929">Example:</para>
+      <para id="id787724">//Payroll.h</para>
+      <para id="id38857717">
+        <code>class Payroll{</code>
+      </para>
+      <para id="id37501976">
+        <code>public:</code>
+      </para>
+      <para id="id38926206">
+        <code>Payroll();</code>
+      </para>
+      <para id="id1994442">
+        <code>private:</code>
+      </para>
+      <para id="id38705011">
+        <code>const double dFedTax;</code>
+      </para>
+      <para id="id255325">
+        <code>const double dStateTax;</code>
+      </para>
+      <para id="id38422338">
+        <code>};</code>
+      </para>
+      <para id="id41332943">//Payroll.cpp</para>
+      <para id="id38761699">
+        <code>#include “Payroll.h</code>
+      </para>
+      <para id="id1220028">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id45721637">
+        <code>Payroll::Payroll()</code>
+      </para>
+      <para id="id37501959">
+        <code>:dFedTax(0.28), dStateTax(0.05){</code>
+      </para>
+      <para id="id36755759">
+        <code>};</code>
+      </para>
+      <para id="id40841545">In contrast, the following code raises several compiler errors since constant data members must be initialized in an initialization list:</para>
+      <para id="id38038912">Example:</para>
+      <para id="id39840092">//Payroll.h</para>
+      <para id="id34708559">
+        <code>class Payroll{</code>
+      </para>
+      <para id="id1994570">
+        <code>public:</code>
+      </para>
+      <para id="id39157820">
+        <code>Payroll();</code>
+      </para>
+      <para id="id33912391">
+        <code>private:</code>
+      </para>
+      <para id="id39763128">
+        <code>const double dFedTax;</code>
+      </para>
+      <para id="id22857801">
+        <code>const double dStateTax;</code>
+      </para>
+      <para id="id1219735">
+        <code>};</code>
+      </para>
+      <para id="id1261633">//Payroll.cpp</para>
+      <para id="id39462174">
+        <code>#include “Payroll.h”</code>
+      </para>
+      <para id="id1060226">
+        <code>#include &lt;iostream.h&gt;</code>
+      </para>
+      <para id="id35033745">
+        <code>Payroll::Payroll( ){</code>
+      </para>
+      <para id="id41027776">
+        <code>dFedTax = 0.28; //illegal </code>
+      </para>
+      <para id="id721052">
+        <code>dStateTax = 0.05; //illegal</code>
+      </para>
+      <para id="id38762345">
+        <code>};</code>
+      </para>
+      <section id="id-415504579501">
+        <title>Constant Functions</title>
+        <para id="id787734">Another good programming technique is to use the <emphasis>const</emphasis> keyword to declare <emphasis>get functions</emphasis> as constant function. Get functions are function members which do not modify data members.</para>
+        <para id="id40371242">The const keyword makes your programs more reliable by ensuring that functions that are not supposed to modify data cannot modify data. To declare a function as constant, you add the const keyword after a function’s parentheses in both the function declaration and definition.</para>
+        <para id="id45721664">//Payroll.h</para>
+        <para id="id306524">
+          <code>double getStateTax(Payroll* pStateTax) const;</code>
+        </para>
+        <para id="id39530932">//Payroll.cpp</para>
+        <para id="id1320236">
+          <code>double Payroll::getStateTax(Payroll* pStateTax) const {</code>
+        </para>
+        <para id="id1059533">
+          <code>return pStateTax-&gt;dStateTax;</code>
+        </para>
+        <para id="id23599107">
+          <code>};</code>
+        </para>
+      </section>
+    </section>
+    <section id="id-170568148944">
+      <title>Inheritance</title>
+      <para id="id41040997"><emphasis>Inheritance</emphasis> is a form of software reusability in which new classes are created from existing classes by absorbing their attributes and behaviors, and overriding or embellishing these with capabilities the new classes require. Software reusability saves time in programming development. It encourages the reuse of proven and debugged high quality software, thus reducing problems after a system becomes functional.</para>
+      <section id="id-271112561352">
+        <title>Basic Inheritance</title>
+        <para id="id39738308">Inheritance refers to the ability of one class to take on the characteristics of another class.</para>
+        <para id="id37443240">Often, classes do not have to be created “from scratch”. Rather, they may be derived from other classes that provide attributes and behaviors the new classes can use. Such software reuse can greatly enhance programmer productivity.</para>
+      </section>
+      <section id="id-519765951135">
+        <title>Base Classes and Derived Classes</title>
+        <para id="id38038894">When you write a new class that inherits the characteristics of another class, you are said to be deriving or subclassing a class.</para>
+        <para id="id43201024">An inherited class is called the <emphasis>base class</emphasis>, or <emphasis>superclass</emphasis> and the class that inherits a base class is called a <emphasis>derived class</emphasis> or <emphasis>subclass</emphasis>.</para>
+        <para id="id255222">A class that inherits the characteristics of a base class is said to be extending the base class since you often extend the class by adding your own class members.</para>
+        <para id="id41307206">When a class is derived from a base class, the derived class inherits all of the base class members and all of its member functions, with the exception of:</para>
+        <list id="id41667436" list-type="bulleted">
+          <item>constructor functions</item>
+          <item>copy constructor functions</item>
+          <item>destructor functions</item>
+          <item>overloaded assignment (=) functions</item>
+        </list>
+        <para id="id41487181">A derived class must provide its own implementation of these functions.</para>
+        <para id="id34590377">Consider a class originally developed by a company to hold an individual’s data, such as an ID number and name. The class, named Person, contains three fields and two member functions.</para>
+        <para id="id37580705">
+          <code>class Person</code>
+        </para>
+        <para id="id40193739">
+          <code>{</code>
+        </para>
+        <para id="id1765259">
+          <code>private:</code>
+        </para>
+        <para id="id38512767">
+          <code>int idnum;</code>
+        </para>
+        <para id="id41144074">
+          <code>char lastName[20];</code>
+        </para>
+        <para id="id1261289">
+          <code>char firstName[15];</code>
+        </para>
+        <para id="id39840138">
+          <code>public:</code>
+        </para>
+        <para id="id39531011">
+          <code>void setFields(int, char[], char[]);</code>
+        </para>
+        <para id="id41343695">
+          <code>void outputData( );</code>
+        </para>
+        <para id="id40285191">
+          <code>};</code>
+        </para>
+        <para id="id41163523">
+          <code>void Person::setFields(int num, char last[], char first[])</code>
+        </para>
+        <para id="id41308707">
+          <code>{</code>
+        </para>
+        <para id="id35760467">
+          <code>idnum = num;</code>
+        </para>
+        <para id="id1260537">
+          <code>strcpy(lastName, last);</code>
+        </para>
+        <para id="id23779826">
+          <code>strcpy(firstName, first);</code>
+        </para>
+        <para id="id41178011">
+          <code>}</code>
+        </para>
+        <para id="id41532005">
+          <code>void Person::outputData( )</code>
+        </para>
+        <para id="id41238544">
+          <code>{</code>
+        </para>
+        <para id="id41158226">
+          <code>cout&lt;&lt; “ID#”&lt;&lt; idnum &lt;&lt; “ Name: “&lt;&lt; firstName &lt;&lt; “ “&lt;&lt; lastName &lt;&lt; endl;</code>
+        </para>
+        <para id="id1221438">
+          <code>}</code>
+        </para>
+        <para id="id41308224">.</para>
+        <para id="id38300603">The company that uses the Person class soon realizes that the class can be used for all kinds of individuals – customers, full-time employees, part-time employees, and suppliers all have names and numbers as well. Now, the company wants to define the Customer class which inherits the members of the Person class. </para>
+        <para id="id39718892">The class header declaration for a derived class Customer which inherits the characteristics of the Person class is as follows:</para>
+        <para id="id39302316">
+          <code>class Customer: public Person</code>
+        </para>
+        <para id="id40205895">
+          <code>{</code>
+        </para>
+        <para id="id41651390">
+          <code>……// other statements go here</code>
+        </para>
+        <para id="id40986618">
+          <code>}</code>
+        </para>
+        <para id="id34371096">The access modifiers and base class names following the colon in a class’s header declaration statement are called the base list. Here, the public inheritance is used since it is most common.</para>
+        <para id="id38764379">The Customer class contains all the members of Person because it inherits them. In other words, every Customer object has an idNum, lastName and firstName, just as a Person object does. Additionally, you can define the Customer class to include an additional data member, balanceDue, and two more functions: setBalDue() and outputBalDue(). </para>
+        <para id="id41029033">The base class Person and the derived class Customer can be graphically represented as in the figure below.</para>
+        <para id="id41003377">The arrow in the above class diagram points from the derived class to the base </para>
+        <para id="id40263285">class.</para>
+        <figure id="id39341795"><media id="id8275872" alt=""><image src="../../media/graphics1-b983.png" mime-type="image/png" height="533" width="294"/></media>
+        <caption> Base class and derived class </caption></figure>
+        
+        <para id="id38512978">Once you extend a base class, you can access its class member directly through objects instantiated from the derived class.</para>
+        <para id="id39440575">Example:</para>
+        <para id="id41532408">
+          <code>int main(){</code>
+        </para>
+        <para id="id787676">
+          <code>customer cust;</code>
+        </para>
+        <para id="id37473851">
+          <code>cust.setField(123, “Richard”, “Leakey”);</code>
+        </para>
+        <para id="id39300894">
+          <code>cust.outputData( );</code>
+        </para>
+        <para id="id38539250">
+          <code/>
+        </para>
+        <para id="id38848430">
+          <code>return 0;</code>
+        </para>
+        <para id="id40190263">
+          <code>}</code>
+        </para>
+        <para id="id38762665">The object cust which belongs to the class Customer can call the member functions setFields() and outputData() that belongs to the base class Person.</para>
+        <para id="id41485779">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id39282586">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id37110403">
+          <code>#include&lt;string.h&gt;</code>
+        </para>
+        <para id="id40991056">
+          <code>class Person</code>
+        </para>
+        <para id="id663989">
+          <code>{</code>
+        </para>
+        <para id="id33393407">
+          <code>private:</code>
+        </para>
+        <para id="id39732489">
+          <code>int idnum;</code>
+        </para>
+        <para id="id39283963">
+          <code>char lastName[20];</code>
+        </para>
+        <para id="id38760115">
+          <code>char firstName[15];</code>
+        </para>
+        <para id="id37440982">
+          <code>public:</code>
+        </para>
+        <para id="id40199689">
+          <code>void setFields(int, char[], char[]);</code>
+        </para>
+        <para id="id41157917">
+          <code>void outputData( );</code>
+        </para>
+        <para id="id771268">
+          <code>};</code>
+        </para>
+        <para id="id39338873">
+          <code>void Person::setFields(int num, char last[], char first[])</code>
+        </para>
+        <para id="id41672005">
+          <code>{</code>
+        </para>
+        <para id="id38762237">
+          <code>idnum = num;</code>
+        </para>
+        <para id="id40991030">
+          <code>strcpy(lastName, last);</code>
+        </para>
+        <para id="id37904448">
+          <code>strcpy(firstName, first);</code>
+        </para>
+        <para id="id39731135">
+          <code>}</code>
+        </para>
+        <para id="id41085998">
+          <code>void Person::outputData( )</code>
+        </para>
+        <para id="id40852462">
+          <code>{</code>
+        </para>
+        <para id="id39841195">
+          <code>cout&lt;&lt; “ID#”&lt;&lt; idnum &lt;&lt; “ Name: “&lt;&lt; firstName &lt;&lt; “ “&lt;&lt; lastName &lt;&lt; endl;</code>
+        </para>
+        <para id="id37953884">
+          <code>}</code>
+        </para>
+        <para id="id39462106">
+          <code>class Customer:public Person</code>
+        </para>
+        <para id="id35513631">
+          <code>{</code>
+        </para>
+        <para id="id35676596">
+          <code>private:</code>
+        </para>
+        <para id="id1430819">
+          <code>double balanceDue;</code>
+        </para>
+        <para id="id41728348">
+          <code>public:</code>
+        </para>
+        <para id="id39838153">
+          <code>void setBalDue;</code>
+        </para>
+        <para id="id41351575">
+          <code>void outputBalDue( );</code>
+        </para>
+        <para id="id41044958">
+          <code>};</code>
+        </para>
+        <para id="id38632898">
+          <code>void Customer::setBalDue(double bal)</code>
+        </para>
+        <para id="id41342694">
+          <code>{</code>
+        </para>
+        <para id="id41532693">
+          <code>balanceDue = bal;</code>
+        </para>
+        <para id="id37113468">
+          <code>}</code>
+        </para>
+        <para id="id38807136">
+          <code>void Customer::outputBalDue()</code>
+        </para>
+        <para id="id41010503">
+          <code>{</code>
+        </para>
+        <para id="id38985884">
+          <code>cout&lt;&lt; “Balance due $” &lt;&lt; balanceDue&lt;&lt; endl;</code>
+        </para>
+        <para id="id40516085">
+          <code>}</code>
+        </para>
+        <para id="id24871852">
+          <code>int main()</code>
+        </para>
+        <para id="id40363448">
+          <code>{</code>
+        </para>
+        <para id="id3383518">
+          <code>Customer cust;</code>
+        </para>
+        <para id="id558838">
+          <code>cust.setFields(215, “Santini”, “Linda”);</code>
+        </para>
+        <para id="id36762278">
+          <code>cust.outputData();</code>
+        </para>
+        <para id="id1899916">
+          <code>cust.setBalDue(147.95);</code>
+        </para>
+        <para id="id36762262">
+          <code>cust.outputBalDue();</code>
+        </para>
+        <para id="id41159048">
+          <code>return 0;</code>
+        </para>
+        <para id="id41177974">
+          <code>}</code>
+        </para>
+        <para id="id41397301">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id41177960">ID#215 Name: Linda Santini</para>
+        <para id="id1182556">Balance due $147.95</para>
+        <para id="id1182560">Of course, a Customer object can use its own class’ member functions, setBalDue() and outputBalDue(). Additionally, it can use the Person functions, setFields() and outputData(), as if they were its own.</para>
+      </section>
+      <section id="id-641694270701">
+        <title>Class Hierarchy</title>
+        <para id="id37467243">Derived classes themselves can serve as base classes for other derived classes. When you build a series of base classes and derived classes, the chain of inherited classes is known as a class hierarchy. </para>
+        <para id="id39718938">Figure below shows a simple inheritance hierarchy. A typical company has hundreds of persons. An important subset of these persons is a set of employees. Employees are either workers or secretaries.</para>
+        <figure id="id39726854"><media id="id1171349400669" alt=""><image src="../../media/graphics2-2fa4.png" mime-type="image/png" height="240" width="567"/></media>
+        <caption> Person class hierarchy </caption></figure>
+        <para id="id41532082"/>
+        <para id="id38474764">Each class in a class hierarchy cumulatively inherits the class members of all classes that precede it in the hierarchy chain.</para>
+        <para id="id40369420">A class that directly precedes another class in a class hierarchy, and is included in the derived class’s base list, is called the direct base class.</para>
+        <para id="id41003336">A class that does not directly precede another class in a class hierarchy, and that not included in the derived class’s base list, is called the indirect base class.</para>
+      </section>
+      <section id="id-423766472424">
+        <title>Access Specifiers and Inheritance</title>
+        <para id="id38513211">Even though a derived class inherits the class members of a base class, the base class’s members are still bound by its access specifiers.</para>
+        <para id="id39524363">Private class members in the base class can be accessed only the base class’s member functions.</para>
+        <para id="id1059403">For example, the idNum data member in the Person class is private. If you write the following member function in the Customer class, which attempts to directly access to the idNum data member, you will get a compiler error.</para>
+        <para id="id21291589">void Customer::outputBalDue(){</para>
+        <para id="id40336550"> cout&lt;&lt; “ ID #”&lt;&lt; idNum&lt;&lt; “ Balance due $”&lt;&lt; balanceDue&lt;&lt;endl;</para>
+        <para id="id41159281">}</para>
+        <para id="id34281683">Instead, to access the idNum data member you must call the Person class’s outputData() member function, which is public. Alternatively, you can declare the idNum data member with the protected access specifier.</para>
+        <para id="id39246109">The protected access modifier restricts class member access to</para>
+        <list id="id41398935" list-type="enumerated">
+          <item>the class itself</item>
+          <item>to classes derived from the class, or</item>
+        </list>
+        <para id="id38527697">The following code shows a modified version of the Person class declaration in which the private access modifier has been changed to protected. </para>
+        <para id="id41176291">Example:</para>
+        <para id="id39839195">
+          <code>class Person {</code>
+        </para>
+        <para id="id38106716">
+          <code>protected:</code>
+        </para>
+        <para id="id38761967">
+          <code>int idNum;</code>
+        </para>
+        <para id="id34590344">
+          <code>char lastName[20];</code>
+        </para>
+        <para id="id22153843">
+          <code>char firstName[15];</code>
+        </para>
+        <para id="id1122940">
+          <code>public:</code>
+        </para>
+        <para id="id38808077">
+          <code>void setFields(int num, char last[], char first[]);</code>
+        </para>
+        <para id="id39727510">
+          <code>void outputData();</code>
+        </para>
+        <para id="id22327168">
+          <code>};</code>
+        </para>
+        <para id="id1138204">A member function in Customer class that attempts to directly access to the idNum data member will work correctly since the Customer class is a derived class of the Person class and the idNum data member is now declared as protected.</para>
+      </section>
+      <section id="id-178729152398">
+        <title>Overriding Base Class Member Functions</title>
+        <para id="id38633134">Derived classes are not required to use a base class’s member functions. You can write a more suitable version of a member function for a derived class when necessary. Writing a member function in a derived class to replace a base class member function is called <emphasis>function overriding</emphasis>.</para>
+        <para id="id39011107">To override a base class function, the derived member function declaration must exactly match the base class member function declaration, including the function name, return type and parameters.</para>
+        <para id="id38130011">To force an object of a derived class to use the base class version of an overridden function, you precede the function name with the base class name and the scope resolution operator using the syntax:</para>
+        <para id="id36836057">
+          <code>object.base_class::function();</code>
+        </para>
+        <para id="id1060252">
+          <emphasis>Example </emphasis>
+        </para>
+        <para id="id41178671">In the following code, the base class Person and the derived class Employee have their own function member with the same name setFields().</para>
+        <para id="id39300918">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id916140">
+          <code>#include&lt;string.h&gt;</code>
+        </para>
+        <para id="id40294379">
+          <code>class Person</code>
+        </para>
+        <para id="id39429813">
+          <code>{</code>
+        </para>
+        <para id="id36719611">
+          <code>private:</code>
+        </para>
+        <para id="id40986555">
+          <code>int idnum;</code>
+        </para>
+        <para id="id39369582">
+          <code>char lastName[20];</code>
+        </para>
+        <para id="id290585">
+          <code>char firstName[15];</code>
+        </para>
+        <para id="id39555977">
+          <code>public:</code>
+        </para>
+        <para id="id40365279">
+          <code>void setFields(int, char[], char[]);</code>
+        </para>
+        <para id="id41651381">
+          <code>void outputData( );</code>
+        </para>
+        <para id="id38279432">
+          <code>};</code>
+        </para>
+        <para id="id22216809">
+          <code>void Person::setFields(int num, char last[], char first[])</code>
+        </para>
+        <para id="id41308694">
+          <code>{</code>
+        </para>
+        <para id="id1848986">
+          <code>idnum = num;</code>
+        </para>
+        <para id="id19571299">
+          <code>strcpy(lastName, last);</code>
+        </para>
+        <para id="id37164745">
+          <code>strcpy(firstName, first);</code>
+        </para>
+        <para id="id42150413">
+          <code>}</code>
+        </para>
+        <para id="id41398090">
+          <code>void Person::outputData( )</code>
+        </para>
+        <para id="id720998">
+          <code>{</code>
+        </para>
+        <para id="id38300520">
+          <code>cout&lt;&lt; “ID#”&lt;&lt; idnum &lt;&lt; “ Name: “&lt;&lt; firstName &lt;&lt; “ “&lt;&lt; lastName &lt;&lt; endl;</code>
+        </para>
+        <para id="id39843808">
+          <code>}</code>
+        </para>
+        <para id="id1677193">
+          <code/>
+        </para>
+        <para id="id40992510">// derived class</para>
+        <para id="id39291547">
+          <code>class Employee:public Person </code>
+        </para>
+        <para id="id784223">
+          <code>{</code>
+        </para>
+        <para id="id38764876">
+          <code>private:</code>
+        </para>
+        <para id="id41041956">
+          <code>int dept;</code>
+        </para>
+        <para id="id1765324">
+          <code>double hourlyRate;</code>
+        </para>
+        <para id="id41342807">
+          <code>public:</code>
+        </para>
+        <para id="id39891370">
+          <code>void setFields(int, char[], char[], int, double);</code>
+        </para>
+        <para id="id42180149">
+          <code>};</code>
+        </para>
+        <para id="id41359762">
+          <code>void Employee::setFields(int num, char last[], char first[], int dept, double sal)</code>
+        </para>
+        <para id="id39446853">
+          <code>{</code>
+        </para>
+        <para id="id36795247">
+          <code>Person::setFields(num, last, first);</code>
+        </para>
+        <para id="id41341265">
+          <code>dept = dep;</code>
+        </para>
+        <para id="id41177583">
+          <code>hourlyRate = sal;</code>
+        </para>
+        <para id="id36781061">
+          <code>}</code>
+        </para>
+        <para id="id860848">
+          <code>int main()</code>
+        </para>
+        <para id="id35247865">
+          <code>{</code>
+        </para>
+        <para id="id37467285">
+          <code>Person aPerson;</code>
+        </para>
+        <para id="id256201">
+          <code>aPerson.setFields(123, “Kroening”, “Ginny”);</code>
+        </para>
+        <para id="id41178912">
+          <code>aPerson.outputData();</code>
+        </para>
+        <para id="id40987068">
+          <code>cout&lt;&lt; endl&lt;&lt;endl;</code>
+        </para>
+        <para id="id558867">
+          <code>Employee worker;</code>
+        </para>
+        <para id="id5878239">
+          <code>worker.Person::setFields(777,”John”, “Smith”);</code>
+        </para>
+        <para id="id40992461">
+          <code>worket.outputData();</code>
+        </para>
+        <para id="id37092157">
+          <code>worker.setFields(987,”Lewis”, “Kathy”, 6, 23.55);</code>
+        </para>
+        <para id="id39739587">
+          <code>worker.outputData();</code>
+        </para>
+        <para id="id39249771">
+          <code>return 0;</code>
+        </para>
+        <para id="id40522110">
+          <code>}</code>
+        </para>
+        <para id="id41336270">The <emphasis>output</emphasis> of the above program:</para>
+        <para id="id38879961">ID # 123 Name: Ginny Kroening</para>
+        <para id="id860744">ID # 777 Name: John Smith</para>
+        <para id="id37502859">ID # 987 Name: Kathy Lewis</para>
+        <para id="id38828374">In the above program, when you use the Employee class to instantiate an Employee object with a statement such as Employee worker; and then the statement worker.setFields(); uses the child function with the name setFields(). When used with a child class object, the child class function overrides the parent class version. On the other hand, the statement worker.outputData(); uses the parent class function because no child class function has the name outputData().</para>
+        <para id="id41399665">Overriding a base class member functions with a derived member function demonstrates the concept of polymorphism. Recall that polymorphism permits the same function name to take many forms.</para>
+      </section>
+      <section id="id-993426166084">
+        <title>Constructors and Destructors in Derived Classes</title>
+        <para id="id37880222">When you derive one class from another class, you can think of any instantiated object of the derived class as having two portions:</para>
+        <list id="id39735111" list-type="bulleted">
+          <item>the base class portion and</item>
+          <item>the derived class portion.</item>
+        </list>
+        <para id="id720826">During the instantiating process, the base class portion of the object is instantiated, and then the derived class portion of the object is instantiated.</para>
+        <para id="id41285543">So, two constructors execute for a single derived class object: the base class constructor and the derived class constructor.</para>
+        <para id="id916218">When a derived class object instantiates, constructors begin executing at the top of the class hierarchy. First, the base constructor executes, then any indirect base class’s constructors execute. Finally, the derived class’ constructor executes.</para>
+        <para id="id916223">When an object is destroyed, class destructors are executed in the reverse order. First, the derived class’s destructor is called, then the destructors for any indirect base classes, and finally, the destructor for the base class. Figure below illustrates this process using a class hierarchy with four levels.</para>
+        <para id="id38661536">The order of construction makes sense, since it allows base classes to perform any initialization on class members that may be used by derived classes. And the order of destruction ensures that any base class members required by derived classes are not destroyed until all objects of any derived classes are destroyed first.</para>
+        <figure id="id38920896"><media id="id1171350372057" alt=""><image src="../../media/graphics3-0c5e.png" mime-type="image/png" height="368" width="481"/></media>
+        <caption> Execution of constructors and destructors in a class hierarchy. </caption></figure>
+        <para id="id543186"/>
+        <para id="id41057924">
+          <emphasis>Example</emphasis>
+        </para>
+        <para id="id37580692">
+          <code>#include&lt;iostream.h&gt;</code>
+        </para>
+        <para id="id19371097">
+          <code>#include&lt;string.h&gt;</code>
+        </para>
+        <para id="id34707870">
+          <code>class Person</code>
+        </para>
+        <para id="id1925402">
+          <code>{</code>
+        </para>
+        <para id="id1677229">
+          <code>private:</code>
+        </para>
+        <para id="id35593083">
+          <code>int idnum;</code>
+        </para>
+        <para id="id38838658">
+          <code>char lastName[20];</code>
+        </para>
+        <para id="id41532742">
+          <code>char firstName[15];</code>
+        </para>
+        <para id="id39341521">
+          <code>public:</code>
+        </para>
+        <para id="id38994592">
+          <code>Person();</code>
+        </para>
+        <para id="id40994430">
+          <code>void setFields(int, char[], char[]);</code>
+        </para>
+        <para id="id40065890">
+          <code>void outputData( );</code>
+        </para>
+        <para id="id19292705">
+          <code>};</code>
+        </para>
+        <para id="id39302713">
+          <code>Person::Person(){</code>
+        </para>
+        <para id="id1557264">
+          <code>cout &lt;&lt; “Base class constructor call “&lt;&lt; endl;</code>
+        </para>
+        <para id="id13007546">
+          <code>}</code>
+        </para>
+        <para id="id34481034">
+          <code>void Person::setFields(int num, char last[], char first[])</code>
+        </para>
+        <para id="id39731202">
+          <code>{</code>
+        </para>
+        <para id="id1060108">
+          <code>idnum = num;</code>
+        </para>
+        <para id="id39324918">
+          <code>strcpy(lastName, last);</code>
+        </para>
+        <para id="id40412552">
+          <code>strcpy(firstName, first);</code>
+        </para>
+        <para id="id22893490">
+          <code>}</code>
+        </para>
+        <para id="id38937901">
+          <code>void Person::outputData( )</code>
+        </para>
+        <para id="id49455564">
+          <code>{</code>
+        </para>
+        <para id="id22864288">
+          <code>cout&lt;&lt; “ID#”&lt;&lt; idnum &lt;&lt; “ Name: “&lt;&lt; firstName &lt;&lt; “ “&lt;&lt; lastName &lt;&lt; endl;</code>
+        </para>
+        <para id="id41162327">
+          <code>}</code>
+        </para>
+        <para id="id1270889">
+          <code>class Customer:public Person</code>
+        </para>
+        <para id="id38631025">
+          <code>{</code>
+        </para>
+        <para id="id33378223">
+          <code>private:</code>
+        </para>
+        <para id="id1182596">
+          <code>double balanceDue;</code>
+        </para>
+        <para id="id39733252">
+          <code>public:</code>
+        </para>
+        <para id="id40368114">
+          <code>Customer();</code>
+        </para>
+        <para id="id20794434">
+          <code>void setBalDue;</code>
+        </para>
+        <para id="id39166931">
+          <code>void outputBalDue( );</code>
+        </para>
+        <para id="id41336807">
+          <code>};</code>
+        </para>
+        <para id="id41338157">
+          <code>Customer::Customer(){</code>
+        </para>
+        <para id="id38511250">
+          <code>cout &lt;&lt; “Derived constructor called” &lt;&lt; endl;</code>
+        </para>
+        <para id="id37942649">
+          <code>}</code>
+        </para>
+        <para id="id39163754">
+          <code>void Customer::setBalDue(double bal)</code>
+        </para>
+        <para id="id39731280">
+          <code>{</code>
+        </para>
+        <para id="id38522526">
+          <code>balanceDue = bal;</code>
+        </para>
+        <para id="id40400833">
+          <code>}</code>
+        </para>
+        <para id="id38428247">
+          <code>void Customer::outputBalDue()</code>
+        </para>
+        <para id="id3388956">
+          <code>{</code>
+        </para>
+        <para id="id20204722">
+          <code>cout&lt;&lt; “Balance due $” &lt;&lt; balanceDue&lt;&lt; endl;</code>
+        </para>
+        <para id="id1059922">
+          <code>}</code>
+        </para>
+        <para id="id40125194">
+          <code>int main()</code>
+        </para>
+        <para id="id37454178">
+          <code>{</code>
+        </para>
+        <para id="id21869868">
+          <code>Customer cust;</code>
+        </para>
+        <para id="id39838192">
+          <code>cust.setFields(215, “Santini”, “Linda”);</code>
+        </para>
+        <para id="id38918569">
+          <code>cust.outputData();</code>
+        </para>
+        <para id="id37288889">
+          <code>cust.setBalDue(147.95);</code>
+        </para>
+        <para id="id38988380">
+          <code>cust.outputBalDue();</code>
+        </para>
+        <para id="id40364886">
+          <code>return 0;</code>
+        </para>
+        <para id="id40079378">
+          <code>}</code>
+        </para>
+        <para id="id37380328">The <emphasis>output</emphasis> of the above program is:</para>
+        <para id="id1261464">Base class constructor called</para>
+        <para id="id38516371">Derived class constructor called</para>
+        <para id="id38516375">ID #215 Name: Linda Santini</para>
+        <para id="id721029">Balance due $147.95</para>
+        <para id="id1899900">The output shows that both the constructor of Person class and the constructor of Customer class involve in creating the object Cust.</para>
+        <para id="id40240027">
+          <code/>
+        </para>
+      </section>
+    </section>
+  </content>
+</document>
